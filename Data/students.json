@@ -1,0 +1,18 @@
+{
+  "student_id": 1,
+  "name": "Ananya",
+  "year": 3,
+  "branch": "Computer Science",
+  "skills": [
+    "Python",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Git"
+  ],
+  "interests": [
+    "Artificial Intelligence",
+    "Machine Learning"
+  ],
+  "career_goal": "AI/ML Engineer"
+}

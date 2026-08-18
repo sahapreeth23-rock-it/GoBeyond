@@ -1,0 +1,46 @@
+[
+  {
+    "career": "AI/ML Engineer",
+    "steps": [
+      "Python",
+      "SQL",
+      "Machine Learning",
+      "AI/ML Projects",
+      "Internship",
+      "AI/ML Engineer"
+    ]
+  },
+  {
+    "career": "Web Developer",
+    "steps": [
+      "HTML & CSS",
+      "JavaScript",
+      "React",
+      "Frontend Projects",
+      "Internship",
+      "Web Developer"
+    ]
+  },
+  {
+    "career": "Data Scientist",
+    "steps": [
+      "Python",
+      "Statistics",
+      "SQL",
+      "Data Analysis",
+      "Machine Learning",
+      "Data Scientist"
+    ]
+  },
+  {
+    "career": "Cybersecurity Engineer",
+    "steps": [
+      "Networking",
+      "Linux",
+      "Cybersecurity Fundamentals",
+      "Security Tools",
+      "Security Projects",
+      "Cybersecurity Engineer"
+    ]
+  }
+]

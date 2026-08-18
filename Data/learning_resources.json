@@ -1,0 +1,20 @@
+[
+  {
+    "skill": "SQL",
+    "resource": "SQL Fundamentals",
+    "duration": "7 days",
+    "action": "Learn SQL basics and practice simple queries"
+  },
+  {
+    "skill": "Machine Learning",
+    "resource": "Machine Learning Basics",
+    "duration": "14 days",
+    "action": "Learn supervised learning, regression and classification"
+  },
+  {
+    "skill": "Python",
+    "resource": "Python Programming",
+    "duration": "10 days",
+    "action": "Strengthen Python fundamentals through practice"
+  }
+]
