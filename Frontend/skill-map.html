@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoBeyond | Industry Skill Map</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Page-specific layout */
+
+        .skill-map-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 35px 5%;
+        }
+
+        .map-hero {
+            margin-bottom: 25px;
+        }
+
+        .map-hero h1 {
+            font-size: 36px;
+            margin: 8px 0;
+        }
+
+        .map-hero p {
+            color: #687084;
+            max-width: 700px;
+        }
+
+        .map-filters {
+            background: #ffffff;
+            border: 1px solid #e5e7ef;
+            border-radius: 18px;
+            padding: 20px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+
+            margin-bottom: 22px;
+        }
+
+        .map-filter label {
+            display: block;
+            font-size: 12px;
+            font-weight: 800;
+            margin-bottom: 7px;
+        }
+
+        .map-filter select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dfe2ea;
+            border-radius: 9px;
+            background: white;
+            font-size: 13px;
+        }
+
+        .skill-map-card {
+            background: #ffffff;
+            border: 1px solid #e5e7ef;
+            border-radius: 22px;
+            padding: 30px;
+
+            box-shadow: 0 8px 25px rgba(30, 35, 60, 0.04);
+        }
+
+        .map-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .map-heading h2 {
+            font-size: 20px;
+        }
+
+        .map-heading span {
+            font-size: 11px;
+            color: #777f91;
+        }
+
+        /* Skill map */
+
+        .skill-map {
+            position: relative;
+            min-height: 390px;
+            overflow: hidden;
+            background: #fafaff;
+            border: 1px solid #eceef5;
+            border-radius: 18px;
+        }
+
+        .skill-node {
+            position: absolute;
+
+            min-width: 125px;
+
+            padding: 13px 15px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            background: #ffffff;
+
+            box-shadow: 0 7px 18px rgba(30, 35, 60, 0.08);
+
+            z-index: 2;
+        }
+
+        .skill-node small {
+            display: block;
+            font-size: 9px;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* Node positions */
+
+        .node-python {
+            left: 8%;
+            top: 20%;
+        }
+
+        .node-git {
+            left: 10%;
+            top: 65%;
+        }
+
+        .node-data {
+            left: 37%;
+            top: 43%;
+        }
+
+        .node-ml {
+            right: 10%;
+            top: 18%;
+        }
+
+        .node-sql {
+            right: 11%;
+            top: 62%;
+        }
+
+        .node-statistics {
+            left: 42%;
+            bottom: 8%;
+        }
+
+        /* Status */
+
+        .skill-node.matched {
+            border: 2px solid #43a878;
+            color: #247a55;
+        }
+
+        .skill-node.developing {
+            border: 2px solid #e1a72b;
+            color: #996b08;
+        }
+
+        .skill-node.gap {
+            border: 2px solid #d85b5b;
+            color: #b13e3e;
+        }
+
+        /* Connecting lines */
+
+        .map-line {
+            position: absolute;
+            height: 2px;
+            background: #d8dbe6;
+
+            transform-origin: left center;
+
+            z-index: 1;
+        }
+
+        .line-one {
+            width: 240px;
+            left: 18%;
+            top: 31%;
+            transform: rotate(16deg);
+        }
+
+        .line-two {
+            width: 220px;
+            left: 18%;
+            top: 69%;
+            transform: rotate(-13deg);
+        }
+
+        .line-three {
+            width: 210px;
+            left: 49%;
+            top: 48%;
+            transform: rotate(-19deg);
+        }
+
+        .line-four {
+            width: 180px;
+            left: 50%;
+            top: 53%;
+            transform: rotate(19deg);
+        }
+
+        .line-five {
+            width: 100px;
+            left: 48%;
+            top: 65%;
+            transform: rotate(-4deg);
+        }
+
+        /* Legend */
+
+        .map-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+
+            margin-top: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+
+            font-size: 11px;
+            color: #687084;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .legend-matched {
+            background: #43a878;
+        }
+
+        .legend-developing {
+            background: #e1a72b;
+        }
+
+        .legend-gap {
+            background: #d85b5b;
+        }
+
+        /* Summary */
+
+        .map-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 22px;
+        }
+
+        .summary-box {
+            padding: 20px;
+
+            background: #ffffff;
+
+            border: 1px solid #e5e7ef;
+            border-radius: 16px;
+        }
+
+        .summary-box span {
+            display: block;
+            color: #777f91;
+            font-size: 11px;
+            margin-bottom: 5px;
+        }
+
+        .summary-box strong {
+            font-size: 25px;
+        }
+
+        .map-action {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 22px;
+        }
+
+        .map-action button {
+            border: none;
+            background: #635bff;
+            color: white;
+
+            padding: 13px 20px;
+
+            border-radius: 10px;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            cursor: pointer;
+        }
+
+        @media (max-width: 800px) {
+
+            .map-filters,
+            .map-summary {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-map {
+                min-height: 500px;
+            }
+
+            .skill-node {
+                min-width: 105px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>Go</span>Beyond
+        </div>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="skill-map.html">Skill Map</a>
+            <a href="#">Opportunities</a>
+            <a href="#">Roadmap</a>
+            <a href="#">Placement</a>
+            <a href="#">Profile</a>
+        </nav>
+
+    </header>
+
+
+    <main class="skill-map-page">
+
+        <!-- Hero -->
+
+        <section class="map-hero">
+
+            <p class="small-text">
+                INDUSTRY READINESS
+            </p>
+
+            <h1>
+                Industry Skill Map
+            </h1>
+
+            <p>
+                See how your current skills compare with the
+                skills required for your target career and
+                identify where you need to grow.
+            </p>
+
+        </section>
+
+
+        <!-- Filters -->
+
+        <section class="map-filters">
+
+            <div class="map-filter">
+
+                <label for="role">
+                    TARGET ROLE
+                </label>
+
+                <select id="role">
+
+                    <option>
+                        AI/ML Engineer
+                    </option>
+
+                    <option>
+                        Data Scientist
+                    </option>
+
+                    <option>
+                        Web Developer
+                    </option>
+
+                    <option>
+                        Cybersecurity Engineer
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="map-filter">
+
+                <label for="domain">
+                    DOMAIN
+                </label>
+
+                <select id="domain">
+
+                    <option>
+                        Artificial Intelligence
+                    </option>
+
+                    <option>
+                        Data Science
+                    </option>
+
+                    <option>
+                        Web Development
+                    </option>
+
+                    <option>
+                        Cybersecurity
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- Skill Map -->
+
+        <section class="skill-map-card">
+
+            <div class="map-heading">
+
+                <div>
+                    <p class="small-text">
+                        CURRENT VS REQUIRED
+                    </p>
+
+                    <h2>
+                        Your Industry Skill Network
+                    </h2>
+                </div>
+
+                <span>
+                    AI/ML Engineer
+                </span>
+
+            </div>
+
+
+            <div class="skill-map">
+
+                <!-- Connecting lines -->
+
+                <div class="map-line line-one"></div>
+                <div class="map-line line-two"></div>
+                <div class="map-line line-three"></div>
+                <div class="map-line line-four"></div>
+                <div class="map-line line-five"></div>
+
+
+                <!-- Skill nodes -->
+
+                <div id="skill-python" class="skill-node matched node-python">
+
+                    Python
+
+                    <small>
+                        Matched
+                    </small>
+
+                </div>
+
+
+                <div id="skill-git" class="skill-node matched node-git">
+
+                    Git
+
+                    <small>
+                        Matched
+                    </small>
+
+                </div>
+
+
+                <div id="skill-data" class="skill-node developing node-data">
+
+                    Data Science
+
+                    <small>
+                        Developing
+                    </small>
+
+                </div>
+
+
+                <div id="skill-ml" class="skill-node gap node-ml">
+
+                    Machine Learning
+
+                    <small>
+                        Skill Gap
+                    </small>
+
+                </div>
+
+
+                <div id="skill-sql" class="skill-node gap node-sql">
+
+                    SQL
+
+                    <small>
+                        Skill Gap
+                    </small>
+
+                </div>
+
+
+                <div id="skill-statistics" class="skill-node gap node-statistics">
+
+                    Statistics
+
+                    <small>
+                        Skill Gap
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Legend -->
+
+            <div class="map-legend">
+
+                <div class="legend-item">
+                    <span class="legend-dot legend-matched"></span>
+                    Matched
+                </div>
+
+                <div class="legend-item">
+                    <span class="legend-dot legend-developing"></span>
+                    Developing
+                </div>
+
+                <div class="legend-item">
+                    <span class="legend-dot legend-gap"></span>
+                    Skill Gap
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Summary -->
+
+        <section class="map-summary">
+
+            <div class="summary-box">
+
+                <span>
+                    MATCHED SKILLS
+                </span>
+
+                <strong id="matchedCount">5</strong>
+
+            </div>
+
+
+            <div class="summary-box">
+
+                <span>
+                    INDUSTRY REQUIRED
+                </span>
+
+             <strong id="requiredCount">8</strong>   
+
+            </div>
+
+
+            <div class="summary-box">
+
+                <span>
+                    SKILL GAPS
+                </span>
+
+              <strong id="gapCount">3</strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- Action -->
+
+        <div class="map-action">
+
+            <button
+                type="button"
+                onclick="window.location.href='skill-gap.html'"
+            >
+                View Skill Gap Analysis →
+            </button>
+
+        </div>
+
+    </main>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoBeyond | Build Your Industry Skill Profile</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           PAGE
+        ========================= */
+
+        .page {
+            min-height: 100vh;
+            padding: 35px 6%;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .topbar {
+            max-width: 1150px;
+            margin: 0 auto 35px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #635bff;
+        }
+
+        .page-count {
+            font-size: 12px;
+            font-weight: 700;
+            color: #777f91;
+        }
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .hero {
+            margin-bottom: 30px;
+        }
+
+        .small-label {
+            color: #635bff;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #687084;
+            max-width: 650px;
+            font-size: 15px;
+        }
+
+        /* =========================
+           STEP INDICATOR
+        ========================= */
+
+        .steps {
+            background: #ffffff;
+            border: 1px solid #e5e7ef;
+            border-radius: 18px;
+            padding: 20px 25px;
+            margin-bottom: 22px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #9298a7;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eef0f6;
+            color: #777f91;
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .step.active {
+            color: #635bff;
+        }
+
+        .step.active .step-number {
+            background: #635bff;
+            color: #ffffff;
+        }
+
+        .step-line {
+            flex: 1;
+            height: 1px;
+            background: #e1e3ea;
+            margin: 0 12px;
+        }
+
+        /* =========================
+           CARD
+        ========================= */
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e5e7ef;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+
+            box-shadow: 0 8px 25px rgba(30, 35, 60, 0.04);
+        }
+
+        .card-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .card-number {
+            width: 34px;
+            height: 34px;
+
+            border-radius: 10px;
+
+            background: #eeedff;
+            color: #635bff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .card-heading h2 {
+            font-size: 20px;
+        }
+
+        .card-heading p {
+            color: #858c9c;
+            font-size: 12px;
+        }
+
+        /* =========================
+           FORM GRID
+        ========================= */
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 2px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #dfe2ea;
+            border-radius: 10px;
+
+            background: #ffffff;
+            color: #172033;
+
+            font-size: 14px;
+            font-family: inherit;
+
+            outline: none;
+
+            transition: 0.2s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #635bff;
+            box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.10);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .helper {
+            color: #8b91a0;
+            font-size: 11px;
+            margin-top: 6px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skill-input-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .skill-input-row input {
+            flex: 1;
+        }
+
+        .add-btn {
+            border: none;
+            background: #635bff;
+            color: white;
+
+            padding: 0 20px;
+
+            border-radius: 10px;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            cursor: pointer;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            margin-top: 15px;
+        }
+
+        .skill-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            background: #f1f0ff;
+            color: #5149e8;
+
+            padding: 8px 11px;
+
+            border-radius: 9px;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .skill-chip select {
+            width: auto;
+            padding: 4px 7px;
+
+            border: none;
+            background: #ffffff;
+
+            font-size: 11px;
+        }
+
+        .remove-skill {
+            border: none;
+            background: transparent;
+
+            color: #9a9faf;
+
+            cursor: pointer;
+            font-weight: 800;
+        }
+
+        /* =========================
+           INTERESTS
+        ========================= */
+
+        .interest-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .interest-option {
+            position: relative;
+        }
+
+        .interest-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .interest-option label {
+            display: block;
+
+            padding: 9px 14px;
+
+            border: 1px solid #dfe2ea;
+            border-radius: 20px;
+
+            color: #687084;
+
+            cursor: pointer;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+        .interest-option input:checked + label {
+            background: #635bff;
+            border-color: #635bff;
+            color: white;
+        }
+
+        /* =========================
+           OPTIONAL SECTION
+        ========================= */
+
+        .optional-note {
+            background: #faf9ff;
+            border: 1px dashed #d9d6ff;
+
+            border-radius: 12px;
+
+            padding: 13px 15px;
+
+            color: #6f7484;
+            font-size: 12px;
+
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           ACTION
+        ========================= */
+
+        .action-area {
+            display: flex;
+            justify-content: flex-end;
+
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .save-btn {
+            border: none;
+
+            background: #635bff;
+            color: white;
+
+            padding: 15px 25px;
+
+            border-radius: 11px;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            box-shadow: 0 8px 20px rgba(99, 91, 255, 0.20);
+
+            transition: 0.2s;
+        }
+
+        .save-btn:hover {
+            background: #5149e8;
+            transform: translateY(-1px);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .page {
+                padding: 25px 4%;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .steps {
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+
+            .step {
+                white-space: nowrap;
+            }
+
+            .step-line {
+                min-width: 25px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .action-area {
+                justify-content: stretch;
+            }
+
+            .save-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .card {
+                padding: 22px;
+            }
+
+            .skill-input-row {
+                flex-direction: column;
+            }
+
+            .add-btn {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div class="logo">
+            <span>Go</span>Beyond
+        </div>
+
+        <div class="page-count">
+            STEP 1 OF YOUR JOURNEY
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <p class="small-label">
+                Student Onboarding
+            </p>
+
+            <h1>
+                Build Your Industry Skill Profile
+            </h1>
+
+            <p>
+                Tell GoBeyond about your background, skills, goals,
+                and interests so we can understand where you are
+                and personalize your career journey.
+            </p>
+
+        </section>
+
+
+        <!-- STEP INDICATOR -->
+
+        <section class="steps">
+
+            <div class="step active">
+                <div class="step-number">1</div>
+                Personal
+            </div>
+
+            <div class="step-line"></div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                Skills
+            </div>
+
+            <div class="step-line"></div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                Career Goal
+            </div>
+
+            <div class="step-line"></div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                Interests
+            </div>
+
+        </section>
+
+
+        <form id="profileForm">
+
+
+            <!-- =========================
+                 PERSONAL
+            ========================= -->
+
+            <section class="card">
+
+                <div class="card-heading">
+
+                    <div class="card-number">
+                        01
+                    </div>
+
+                    <div>
+                        <h2>Personal Information</h2>
+                        <p>Tell us about your academic background.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="college">
+                            College
+                        </label>
+
+                        <input
+                            type="text"
+                            id="college"
+                            placeholder="Enter your college name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="branch">
+                            Branch
+                        </label>
+
+                        <select id="branch" required>
+
+                            <option value="">
+                                Select your branch
+                            </option>
+
+                            <option value="Computer Science">
+                                Computer Science
+                            </option>
+
+                            <option value="Information Technology">
+                                Information Technology
+                            </option>
+
+                            <option value="Electronics">
+                                Electronics
+                            </option>
+
+                            <option value="Mechanical">
+                                Mechanical
+                            </option>
+
+                            <option value="Civil">
+                                Civil
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="year">
+                            Year
+                        </label>
+
+                        <select id="year" required>
+
+                            <option value="">
+                                Select your year
+                            </option>
+
+                            <option value="1st Year">
+                                1st Year
+                            </option>
+
+                            <option value="2nd Year">
+                                2nd Year
+                            </option>
+
+                            <option value="3rd Year">
+                                3rd Year
+                            </option>
+
+                            <option value="4th Year">
+                                4th Year
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 CAREER
+            ========================= -->
+
+            <section class="card">
+
+                <div class="card-heading">
+
+                    <div class="card-number">
+                        02
+                    </div>
+
+                    <div>
+                        <h2>Career Goal</h2>
+                        <p>Choose the role you want to work toward.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="careerGoal">
+                        Target Role / Career Goal
+                    </label>
+
+                    <select id="careerGoal" required>
+
+                        <option value="">
+                            Select your target role
+                        </option>
+
+                        <option value="AI/ML Engineer">
+                            AI/ML Engineer
+                        </option>
+
+                        <option value="Web Developer">
+                            Web Developer
+                        </option>
+
+                        <option value="Data Scientist">
+                            Data Scientist
+                        </option>
+
+                        <option value="Cybersecurity Engineer">
+                            Cybersecurity Engineer
+                        </option>
+
+                        <option value="Java Backend Developer">
+                            Java Backend Developer
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 SKILLS
+            ========================= -->
+
+            <section class="card">
+
+                <div class="card-heading">
+
+                    <div class="card-number">
+                        03
+                    </div>
+
+                    <div>
+                        <h2>Skills</h2>
+                        <p>Add your skills and indicate your proficiency.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Your Skills
+                    </label>
+
+                    <div class="skill-input-row">
+
+                        <input
+                            type="text"
+                            id="skillInput"
+                            placeholder="Example: Python"
+                        >
+
+                        <button
+                            type="button"
+                            class="add-btn"
+                            onclick="addSkill()"
+                        >
+                            + Add Skill
+                        </button>
+
+                    </div>
+
+                    <p class="helper">
+                        Add skills one at a time and select your proficiency.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="skills-list"
+                    id="skillsList"
+                ></div>
+
+            </section>
+
+
+            <!-- =========================
+                 INTERESTS
+            ========================= -->
+
+            <section class="card">
+
+                <div class="card-heading">
+
+                    <div class="card-number">
+                        04
+                    </div>
+
+                    <div>
+                        <h2>Interests</h2>
+                        <p>Select the areas you are interested in exploring.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="interest-grid">
+
+                    <div class="interest-option">
+                        <input type="checkbox" id="ai" value="Artificial Intelligence">
+                        <label for="ai">Artificial Intelligence</label>
+                    </div>
+
+                    <div class="interest-option">
+                        <input type="checkbox" id="ml" value="Machine Learning">
+                        <label for="ml">Machine Learning</label>
+                    </div>
+
+                    <div class="interest-option">
+                        <input type="checkbox" id="web" value="Web Development">
+                        <label for="web">Web Development</label>
+                    </div>
+
+                    <div class="interest-option">
+                        <input type="checkbox" id="data" value="Data Science">
+                        <label for="data">Data Science</label>
+                    </div>
+
+                    <div class="interest-option">
+                        <input type="checkbox" id="cyber" value="Cybersecurity">
+                        <label for="cyber">Cybersecurity</label>
+                    </div>
+
+                    <div class="interest-option">
+                        <input type="checkbox" id="cloud" value="Cloud Computing">
+                        <label for="cloud">Cloud Computing</label>
+                    </div>
+
+                    <div class="interest-option">
+                        <input type="checkbox" id="app" value="App Development">
+                        <label for="app">App Development</label>
+                    </div>
+
+                    <div class="interest-option">
+                        <input type="checkbox" id="design" value="UI/UX Design">
+                        <label for="design">UI/UX Design</label>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 OPTIONAL EVIDENCE
+            ========================= -->
+
+            <section class="card">
+
+                <div class="card-heading">
+
+                    <div class="card-number">
+                        +
+                    </div>
+
+                    <div>
+                        <h2>Industry Evidence</h2>
+                        <p>Optional — add what you have already built or completed.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="optional-note">
+                    Projects, certifications, and experience are optional at this stage.
+                    You can add them later from your profile.
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="projects">
+                            Projects
+                        </label>
+
+                        <textarea
+                            id="projects"
+                            placeholder="Example: Weather App, Bank Account System"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="certifications">
+                            Certifications
+                        </label>
+
+                        <textarea
+                            id="certifications"
+                            placeholder="Example: NPTEL Python, Microsoft Learn"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="experience">
+                            Experience
+                        </label>
+
+                        <textarea
+                            id="experience"
+                            placeholder="Internships, volunteering, club roles, etc."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 SAVE
+            ========================= -->
+
+            <div class="action-area">
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                >
+                    Save & Analyze My Profile →
+                </button>
+
+            </div>
+
+        </form>
+
+    </main>
+
+</div>
+
+
+<script>
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    const skills = [];
+
+    function addSkill() {
+
+        const input =
+            document.getElementById("skillInput");
+
+        const skill =
+            input.value.trim();
+
+        if (!skill) {
+            return;
+        }
+
+        const alreadyExists =
+            skills.some(
+                item =>
+                    item.name.toLowerCase() === skill.toLowerCase()
+            );
+
+        if (alreadyExists) {
+            input.value = "";
+            return;
+        }
+
+        skills.push({
+            name: skill,
+            proficiency: "Beginner"
+        });
+
+        input.value = "";
+
+        renderSkills();
+    }
+
+
+    function removeSkill(index) {
+
+        skills.splice(index, 1);
+
+        renderSkills();
+    }
+
+
+    function updateProficiency(index, value) {
+
+        skills[index].proficiency = value;
+    }
+
+
+    function renderSkills() {
+
+        const list =
+            document.getElementById("skillsList");
+
+        list.innerHTML = "";
+
+        skills.forEach((skill, index) => {
+
+            const chip =
+                document.createElement("div");
+
+            chip.className = "skill-chip";
+
+            chip.innerHTML = `
+                <span>${skill.name}</span>
+
+                <select
+                    onchange="updateProficiency(${index}, this.value)"
+                >
+                    <option value="Beginner"
+                        ${skill.proficiency === "Beginner" ? "selected" : ""}>
+                        Beginner
+                    </option>
+
+                    <option value="Intermediate"
+                        ${skill.proficiency === "Intermediate" ? "selected" : ""}>
+                        Intermediate
+                    </option>
+
+                    <option value="Advanced"
+                        ${skill.proficiency === "Advanced" ? "selected" : ""}>
+                        Advanced
+                    </option>
+                </select>
+
+                <button
+                    type="button"
+                    class="remove-skill"
+                    onclick="removeSkill(${index})"
+                >
+                    ×
+                </button>
+            `;
+
+            list.appendChild(chip);
+
+        });
+    }
+
+
+    /* =========================
+       SAVE PROFILE
+    ========================= */
+
+    document
+        .getElementById("profileForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const selectedInterests =
+                Array.from(
+                    document.querySelectorAll(
+                        ".interest-option input:checked"
+                    )
+                ).map(
+                    checkbox => checkbox.value
+                );
+
+
+            const profile = {
+
+                name:
+                    document.getElementById("name").value.trim(),
+
+                college:
+                    document.getElementById("college").value.trim(),
+
+                branch:
+                    document.getElementById("branch").value,
+
+                year:
+                    document.getElementById("year").value,
+
+                careerGoal:
+                    document.getElementById("careerGoal").value,
+
+                skills:
+                    skills,
+
+                interests:
+                    selectedInterests,
+
+                projects:
+                    document.getElementById("projects").value.trim(),
+
+                certifications:
+                    document.getElementById("certifications").value.trim(),
+
+                experience:
+                    document.getElementById("experience").value.trim()
+
+            };
+
+
+            localStorage.setItem(
+                "goBeyondProfile",
+                JSON.stringify(profile)
+            );
+
+
+            /*
+                TEMPORARY NEXT STEP
+
+                Later this will trigger the actual
+                skill/industry analysis flow.
+            */
+
+            window.location.href =
+                "dashboard.html";
+
+        });
+
+</script>
+
+</body>
+</html>

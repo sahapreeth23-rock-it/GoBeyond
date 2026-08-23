@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoBeyond | Smart Student Journey</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span>Go</span>Beyond
+        </div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#opportunities">Opportunities</a>
+            <a href="#journal">Journal</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#profile">Profile</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Main Dashboard -->
+    <main id="dashboard">
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+
+            <div>
+                <p class="small-text">YOUR PERSONALIZED STUDENT JOURNEY</p>
+
+                <h1>
+                    Good morning, <span id="welcomeName">Student</span> 👋
+                </h1>
+
+                <p class="subtitle">
+                    Here's what matters most for your journey today.
+                </p>
+            </div>
+
+            <div class="student-progress">
+
+    <div class="student-badge">
+        <strong>CSE</strong>
+        <span>3rd Year</span>
+    </div>
+
+    <div class="progress-stat">
+        <span class="progress-icon">⭐</span>
+        <div>
+            <strong id="starCount">0</strong>
+            <span>Stars</span>
+        </div>
+    </div>
+
+    <div class="progress-stat">
+        <span class="progress-icon">🔥</span>
+        <div>
+            <strong id="streakCount">0</strong>
+            <span>Day Streak</span>
+        </div>
+    </div>
+
+</div>
+
+        </section>
+        <!-- Profile -->
+        <section class="section profile-section" id="profile">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="small-text">START YOUR JOURNEY</p>
+
+                    <h2>Tell GoBeyond About You ✨</h2>
+
+                     <p class="section-description">
+                           Help us understand your goals, skills, interests, and aspirations
+                        so we can personalize your journey.
+                    </p>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <form id="profileForm">
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="studentName">Name</label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter your name"
+                        value="Ananya"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="branch">Branch</label>
+
+                    <select id="branch">
+
+                        <option value="Computer Science">
+                            Computer Science
+                        </option>
+
+                        <option value="Information Technology">
+                            Information Technology
+                        </option>
+
+                        <option value="Electronics">
+                            Electronics
+                        </option>
+
+                        <option value="Mechanical">
+                            Mechanical
+                        </option>
+
+                        <option value="Civil">
+                            Civil
+                        </option>
+
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="year">Year</label>
+
+                    <select id="year">
+
+                        <option value="1st Year">1st Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year" selected>3rd Year</option>
+                        <option value="4th Year">4th Year</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="careerGoal">
+                        Career Goal
+                    </label>
+
+                    <select id="careerGoal">
+
+                        <option value="AI/ML Engineer">
+                            AI/ML Engineer
+                        </option>
+
+                        <option value="Web Developer">
+                            Web Developer
+                        </option>
+
+                        <option value="Data Scientist">
+                            Data Scientist
+                        </option>
+
+                        <option value="Cybersecurity Engineer">
+                            Cybersecurity Engineer
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="skills">
+                    Your Skills
+                </label>
+
+                <input
+                    type="text"
+                    id="skills"
+                    placeholder="Example: Python, Git, HTML, CSS"
+                    value="Python, Git, HTML, CSS, JavaScript"
+                >
+
+                <small>
+                    Separate your skills using commas.
+                </small>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="interests">
+                    Your Interests
+                </label>
+
+                <input
+                    type="text"
+                    id="interests"
+                    placeholder="Example: AI, Web Development"
+                    value="Artificial Intelligence, Machine Learning"
+                >
+
+                <small>
+                    Separate your interests using commas.
+                </small>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="save-profile-btn"
+            >
+                Save My Profile →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+       <!-- Industry Readiness -->
+
+<section class="readiness-card">
+
+    <div class="readiness-content">
+
+        <p class="readiness-label">
+            INDUSTRY READINESS
+        </p>
+
+        <h2>
+            Your Industry Readiness Score
+        </h2>
+
+        <p>
+            Your score reflects how closely your current skills,
+            experience, and career preparation align with the
+            requirements of your target industry.
+        </p>
+
+    </div>
+
+    <div class="readiness-score">
+
+        <strong id="readinessScore">
+            72%
+        </strong>
+
+        <span>
+            READY
+        </span>
+
+    </div>
+
+</section>
+
+       <!-- Quick Stats -->
+<section class="stats">
+
+    <div class="stat-card">
+        <p>Skills Covered</p>
+        <h3 id="skillsCovered">5</h3>
+    </div>
+
+    <div class="stat-card">
+        <p>Critical Gaps</p>
+        <h3 id="criticalGaps">2</h3>
+    </div>
+
+    <div class="stat-card">
+        <p>Matched Opportunities</p>
+        <h3 id="matchedOpportunities">3</h3>
+    </div>
+
+    <div class="stat-card">
+        <p>Placement Readiness</p>
+        <h3 id="placementReadiness">72%</h3>
+    </div>
+
+</section> 
+        <!-- Industry Skill Coverage & Skill Gaps -->
+
+<section class="skill-readiness-grid">
+
+    <!-- Industry Skill Coverage -->
+    <div class="coverage-card">
+
+        <div class="section-heading">
+            <div>
+                <p class="small-text">INDUSTRY ALIGNMENT</p>
+                <h2>Your Industry Skill Coverage</h2>
+            </div>
+        </div>
+
+        <div class="coverage-summary">
+            <strong>5 / 8</strong>
+            <span>skills currently covered</span>
+        </div>
+
+        <div class="coverage-bar">
+            <div class="coverage-progress"></div>
+        </div>
+
+        <div class="skill-status-list">
+
+            <div class="skill-status matched">
+                <span>✓</span>
+                <strong>Python</strong>
+                <small>Matched</small>
+            </div>
+
+            <div class="skill-status matched">
+                <span>✓</span>
+                <strong>Git</strong>
+                <small>Matched</small>
+            </div>
+
+            <div class="skill-status matched">
+                <span>✓</span>
+                <strong>HTML / CSS</strong>
+                <small>Matched</small>
+            </div>
+
+            <div class="skill-status developing">
+                <span>◐</span>
+                <strong>SQL</strong>
+                <small>Developing</small>
+            </div>
+
+            <div class="skill-status missing">
+                <span>!</span>
+                <strong>Machine Learning</strong>
+                <small>Missing</small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Top Skill Gaps -->
+    <div class="gaps-card">
+
+        <div class="section-heading">
+            <div>
+                <p class="small-text">PRIORITY AREAS</p>
+                <h2>Top 3 Skill Gaps</h2>
+            </div>
+        </div>
+
+        <div class="gap-list">
+
+            <div class="gap-item">
+
+                <div class="gap-icon high">
+                    !
+                </div>
+
+                <div class="gap-content">
+
+                    <div class="gap-title">
+                        <strong>Machine Learning</strong>
+                        <span class="priority-high">HIGH</span>
+                    </div>
+
+                    <p>
+                        Beginner → Intermediate
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="gap-item">
+
+                <div class="gap-icon medium">
+                    !
+                </div>
+
+                <div class="gap-content">
+
+                    <div class="gap-title">
+                        <strong>SQL</strong>
+                        <span class="priority-medium">MEDIUM</span>
+                    </div>
+
+                    <p>
+                        Beginner → Intermediate
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="gap-item">
+
+                <div class="gap-icon medium">
+                    !
+                </div>
+
+                <div class="gap-content">
+
+                    <div class="gap-title">
+                        <strong>Statistics</strong>
+                        <span class="priority-medium">MEDIUM</span>
+                    </div>
+
+                    <p>
+                        Beginner → Intermediate
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+        <!-- Next Best Action -->
+
+<section class="next-action-card">
+
+    <div class="next-action-content">
+
+        <p class="small-text">
+            YOUR NEXT BEST ACTION
+        </p>
+
+        <h2>
+            Strengthen your SQL skills
+        </h2>
+
+        <p>
+            SQL is one of your highest-priority skill gaps
+            for your target role. Spend 30 minutes practicing
+            SQL queries today.
+        </p>
+
+    </div>
+
+    <div class="next-action-side">
+
+        <span class="action-tag">
+            HIGH PRIORITY
+        </span>
+
+        <button type="button">
+            Start Learning →
+        </button>
+
+    </div>
+
+</section>
+
+
+        <!-- Opportunities -->
+        <section class="section" id="opportunities">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="small-text">DISCOVER</p>
+                    <h2>Recommended Opportunities</h2>
+                </div>
+
+                <button class="view-all">
+                    View All
+                </button>
+
+            </div>
+
+
+            <div class="opportunity-grid" id="opportunityGrid">
+
+                <article class="opportunity-card">
+
+                    <div class="opportunity-header">
+                        <span class="tag blue">INTERNSHIP</span>
+
+                        <div class="match">
+                            75% Match
+                        </div>
+                    </div>
+
+                    <h3>AI/ML Internship</h3>
+
+                    <p class="organization">
+                        TechNova
+                    </p>
+
+                    <p>
+                        Build practical AI/ML experience
+                        through real-world projects.
+                    </p>
+
+                    <div class="deadline">
+                        ⏰ Deadline: Aug 25, 2026
+                    </div>
+
+                    <button>
+                        View Opportunity →
+                    </button>
+
+                </article>
+
+
+                <article class="opportunity-card">
+
+                    <div class="opportunity-header">
+                        <span class="tag purple">WORKSHOP</span>
+
+                        <div class="match">
+                            75% Match
+                        </div>
+                    </div>
+
+                    <h3>Python & AI Workshop</h3>
+
+                    <p class="organization">
+                        FutureTech
+                    </p>
+
+                    <p>
+                        Strengthen your Python and AI
+                        fundamentals.
+                    </p>
+
+                    <div class="deadline">
+                        ⏰ Deadline: Aug 22, 2026
+                    </div>
+
+                    <button>
+                        Explore Workshop →
+                    </button>
+
+                </article>
+
+
+                <article class="opportunity-card">
+
+                    <div class="opportunity-header">
+                        <span class="tag orange">HACKATHON</span>
+
+                        <div class="match">
+                            50% Match
+                        </div>
+                    </div>
+
+                    <h3>Web Development Hackathon</h3>
+
+                    <p class="organization">
+                        CodeSprint
+                    </p>
+
+                    <p>
+                        Build and present an innovative
+                        web development project.
+                    </p>
+
+                    <div class="deadline">
+                        ⏰ Deadline: Aug 28, 2026
+                    </div>
+
+                    <button>
+                        Explore Hackathon →
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+                </section>
+
+        <!-- Career Roadmap -->
+        <section class="section roadmap-section" id="roadmap">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="small-text">YOUR FUTURE</p>
+                    <h2 id="careerRoadmapTitle">AI/ML Career Roadmap</h2>
+                </div>
+
+            </div>
+
+
+            <div class="roadmap" id="careerRoadmap">
+
+                <div class="roadmap-step completed">
+                    <span>✓</span>
+                    <strong>Python</strong>
+                    <small>Completed</small>
+                </div>
+
+                <div class="roadmap-line"></div>
+
+                <div class="roadmap-step current">
+                    <span>2</span>
+                    <strong>SQL</strong>
+                    <small>Current Focus</small>
+                </div>
+
+                <div class="roadmap-line"></div>
+
+                <div class="roadmap-step">
+                    <span>3</span>
+                    <strong>Machine Learning</strong>
+                    <small>Next</small>
+                </div>
+
+                <div class="roadmap-line"></div>
+
+                <div class="roadmap-step">
+                    <span>4</span>
+                    <strong>AI/ML Projects</strong>
+                    <small>Upcoming</small>
+                </div>
+
+                <div class="roadmap-line"></div>
+
+                <div class="roadmap-step">
+                    <span>5</span>
+                    <strong>Internship</strong>
+                    <small>Goal</small>
+                </div>
+
+            </div>
+
+        </section>
+         <!-- Journal & Notes -->
+        <section class="section journal-section" id="journal">
+
+            <div class="section-heading">
+                <div>
+                    <p class="small-text">REFLECT & PLAN</p>
+                    <h2>“A Little Space for You” 💗</h2>
+                    <p class="section-description">
+                        Write down your thoughts, plans, ideas, or anything you want to remember.
+                    </p>
+                </div>
+            </div>
+
+            <div class="journal-card">
+
+                <div class="form-group">
+                    <label for="journalTitle">Entry Title</label>
+
+                    <input
+                        type="text"
+                        id="journalTitle"
+                        placeholder="Example: My goals for today"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="journalText">What's on your mind?</label>
+
+                    <textarea
+                        id="journalText"
+                        rows="7"
+                        placeholder="Write your thoughts, plans, ideas, learnings, or anything you want to remember..."
+                    ></textarea>
+                <!-- Daily Mood Check -->
+<div class="mood-check">
+
+    <p class="mood-question">
+        How are you feeling today? 🌷
+    </p>
+
+    <p class="mood-subtext">
+        There is no right or wrong answer. Just check in with yourself.
+    </p>
+
+    <div class="mood-options">
+
+        <button type="button" class="mood-option" data-mood="Amazing">
+            <span>🤩</span>
+            <small>Amazing</small>
+        </button>
+
+        <button type="button" class="mood-option" data-mood="Good">
+            <span>😊</span>
+            <small>Good</small>
+        </button>
+
+        <button type="button" class="mood-option" data-mood="Okay">
+            <span>😐</span>
+            <small>Okay</small>
+        </button>
+
+        <button type="button" class="mood-option" data-mood="Low">
+            <span>😔</span>
+            <small>Low</small>
+        </button>
+
+        <button type="button" class="mood-option" data-mood="Stressed">
+            <span>😫</span>
+            <small>Stressed</small>
+        </button>
+
+    </div>
+
+    <p id="selectedMood" class="selected-mood"></p>
+
+</div>
+<!-- Today's GoBeyond Action -->
+<div class="daily-action-card">
+
+    <div class="daily-action-header">
+
+        <div>
+            <p class="daily-action-label">TODAY'S GO-BEYOND ACTION</p>
+
+            <h3 id="dailyActionTitle">
+                Complete 30 minutes of SQL practice
+            </h3>
+        </div>
+
+        <span class="daily-action-icon">🎯</span>
+
+    </div>
+
+    <p id="dailyActionDescription">
+        SQL is your current focus. Spend 30 minutes
+        practicing SQL to strengthen this skill.
+    </p>
+
+    <div class="daily-action-footer">
+
+        <span id="dailyActionReason">
+            💡 Based on your current career roadmap
+        </span>
+
+        <button
+            type="button"
+            id="completeActionBtn"
+            class="complete-action-btn"
+        >
+            Mark as Complete ✓
+        </button>
+
+    </div>
+
+    <p
+        id="actionCompletionMessage"
+        class="action-completion-message"
+    ></p>
+    <!-- Learning Reflection -->
+<div class="learning-reflection">
+
+    <div class="reflection-heading">
+        <span class="reflection-icon">📝</span>
+
+        <div>
+            <h4>What did you learn?</h4>
+
+            <p>
+                Write a little about what you learned or accomplished.
+            </p>
+        </div>
+    </div>
+
+    <textarea
+        id="learningReflection"
+        placeholder="Today I learned..."
+        rows="4"
+    ></textarea>
+
+    <button
+        type="button"
+        id="completeLearningBtn"
+        class="complete-learning-btn"
+    >
+        Complete & Earn ⭐
+    </button>
+
+    <p
+        id="learningCompletionMessage"
+        class="learning-completion-message"
+    ></p>
+
+</div>
+
+</div>
+                </div>
+
+
+                <button
+                    type="button"
+                    class="save-journal-btn"
+                    id="saveJournalBtn"
+                >
+                    Save Entry →
+                </button>
+
+            </div>
+
+
+            <div class="journal-entries">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="small-text">YOUR THOUGHTS</p>
+                        <h3>Previous Entries</h3>
+                    </div>
+                </div>
+
+                <div id="journalEntriesList">
+                    <p class="empty-journal">
+                        Your saved entries will appear here.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>     
+</main>
+        
+<footer>
+        <p>
+            © 2026 GoBeyond — Connecting students to their future.
+        </p>
+
+    </footer>
+
+    <!-- Match Analysis Modal -->
+
+<div class="modal-overlay" id="matchModal">
+
+    <div class="match-modal">
+
+        <button class="close-modal" id="closeModal">
+            ×
+        </button>
+
+        <p class="small-text">GO-BEYOND MATCH</p>
+
+        <h2>AI/ML Internship</h2>
+
+        <p class="modal-organization">
+            TechNova
+        </p>
+
+        <div class="match-score">
+            <strong>75%</strong>
+            <span>Match</span>
+        </div>
+
+        <div class="modal-section">
+
+            <h3>Your Skills</h3>
+
+            <div class="skill-list">
+                <span class="skill matched">✓ Python</span>
+                <span class="skill matched">✓ Git</span>
+            </div>
+
+        </div>
+
+        <div class="modal-section">
+
+            <h3>Skill Gaps</h3>
+
+            <div class="skill-list">
+                <span class="skill missing">! Machine Learning</span>
+                <span class="skill missing">! SQL</span>
+            </div>
+
+        </div>
+
+        <div class="action-box">
+
+            <p>Recommended Action</p>
+
+            <strong>
+                Strengthen Machine Learning and SQL
+            </strong>
+
+            <button id="startLearning">
+                Start Learning →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+    <script src="script.js"></script>
+
+</body>
+</html>

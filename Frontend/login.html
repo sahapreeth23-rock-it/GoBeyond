@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoBeyond | Student Career Journey</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           PAGE
+        ========================= */
+
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background:
+                radial-gradient(circle at top left, #ecebff 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #fff3df 0%, transparent 35%),
+                #f5f7fb;
+        }
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .login-container {
+            width: 100%;
+            max-width: 1050px;
+            min-height: 620px;
+
+            background: #ffffff;
+            border-radius: 28px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            overflow: hidden;
+
+            box-shadow: 0 25px 70px rgba(30, 35, 60, 0.12);
+            border: 1px solid #e8eaf2;
+        }
+
+        /* =========================
+           LEFT SIDE
+        ========================= */
+
+        .login-intro {
+            padding: 60px;
+            background: linear-gradient(145deg, #635bff, #7b73ff);
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+        }
+
+        .logo span {
+            color: #ffd45c;
+        }
+
+        .intro-content {
+            margin-top: 40px;
+        }
+
+        .intro-label {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.85;
+            margin-bottom: 18px;
+        }
+
+        .intro-content h1 {
+            font-size: 44px;
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+
+        .intro-content h1 span {
+            color: #ffd45c;
+        }
+
+        .intro-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 430px;
+            opacity: 0.9;
+        }
+
+        .journey-points {
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .journey-point {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .point-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.15);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 14px;
+        }
+
+        .intro-footer {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        /* =========================
+           RIGHT SIDE
+        ========================= */
+
+        .login-section {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-heading {
+            margin-bottom: 30px;
+        }
+
+        .login-heading h2 {
+            font-size: 30px;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .login-heading p {
+            color: #687084;
+            font-size: 14px;
+        }
+
+        /* =========================
+           TOGGLE
+        ========================= */
+
+        .auth-toggle {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: #f1f2f7;
+            padding: 5px;
+
+            border-radius: 12px;
+            margin-bottom: 28px;
+        }
+
+        .toggle-btn {
+            border: none;
+            background: transparent;
+
+            padding: 11px;
+
+            border-radius: 9px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            color: #747b8c;
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .toggle-btn.active {
+            background: white;
+            color: #635bff;
+
+            box-shadow: 0 3px 10px rgba(30, 35, 60, 0.08);
+        }
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+
+            padding: 14px 15px;
+
+            border: 1px solid #dfe2ea;
+            border-radius: 10px;
+
+            font-size: 14px;
+            outline: none;
+
+            transition: 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: #635bff;
+
+            box-shadow:
+                0 0 0 3px rgba(99, 91, 255, 0.10);
+        }
+
+        /* =========================
+           REMEMBER / FORGOT
+        ========================= */
+
+        .form-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin: 4px 0 22px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+
+            font-size: 12px;
+            color: #687084;
+        }
+
+        .remember input {
+            accent-color: #635bff;
+        }
+
+        .forgot-link {
+            color: #635bff;
+            text-decoration: none;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           LOGIN BUTTON
+        ========================= */
+
+        .login-btn {
+            width: 100%;
+
+            border: none;
+            border-radius: 11px;
+
+            padding: 14px;
+
+            background: #635bff;
+            color: white;
+
+            font-size: 15px;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .login-btn:hover {
+            background: #5149e8;
+            transform: translateY(-1px);
+        }
+
+        /* =========================
+           CREATE PROFILE
+        ========================= */
+
+        .create-profile {
+            text-align: center;
+
+            margin-top: 25px;
+            padding-top: 22px;
+
+            border-top: 1px solid #eceef3;
+        }
+
+        .create-profile p {
+            font-size: 13px;
+            color: #687084;
+            margin-bottom: 9px;
+        }
+
+        .create-profile button {
+            border: none;
+            background: transparent;
+
+            color: #635bff;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            cursor: pointer;
+        }
+
+        .create-profile button:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           CREATE ACCOUNT MESSAGE
+        ========================= */
+
+        .account-message {
+            display: none;
+
+            padding: 12px;
+            margin-bottom: 18px;
+
+            background: #f3f2ff;
+            color: #5149e8;
+
+            border-radius: 9px;
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .login-container {
+                grid-template-columns: 1fr;
+            }
+
+            .login-intro {
+                padding: 40px;
+            }
+
+            .intro-content h1 {
+                font-size: 34px;
+            }
+
+            .intro-footer {
+                margin-top: 35px;
+            }
+
+            .login-section {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .login-page {
+                padding: 15px;
+            }
+
+            .login-intro,
+            .login-section {
+                padding: 30px;
+            }
+
+            .intro-content h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <div class="login-container">
+
+            <!-- =========================
+                 LEFT SIDE
+            ========================= -->
+
+            <section class="login-intro">
+
+                <div>
+
+                    <div class="logo">
+                        <span>Go</span>Beyond
+                    </div>
+
+                    <div class="intro-content">
+
+                        <p class="intro-label">
+                            Your Personalized Student Journey
+                        </p>
+
+                        <h1>
+                            Go beyond your
+                            <span>campus skills.</span>
+                        </h1>
+
+                        <p>
+                            Discover what industry needs, identify your
+                            skill gaps, and build a clear path toward
+                            your career goals.
+                        </p>
+
+                        <div class="journey-points">
+
+                            <div class="journey-point">
+                                <div class="point-icon">✓</div>
+                                <span>Understand your current skills</span>
+                            </div>
+
+                            <div class="journey-point">
+                                <div class="point-icon">✓</div>
+                                <span>Discover your industry skill gaps</span>
+                            </div>
+
+                            <div class="journey-point">
+                                <div class="point-icon">✓</div>
+                                <span>Build your personalized career path</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="intro-footer">
+                    SIH 26044 • GoBeyond
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 RIGHT SIDE
+            ========================= -->
+
+            <section class="login-section">
+
+                <div class="login-heading">
+
+                    <h2 id="authTitle">
+                        Welcome Back 👋
+                    </h2>
+
+                    <p id="authSubtitle">
+                        Login to continue your GoBeyond journey.
+                    </p>
+
+                </div>
+
+
+                <!-- LOGIN / CREATE TOGGLE -->
+
+                <div class="auth-toggle">
+
+                    <button
+                        type="button"
+                        class="toggle-btn active"
+                        id="loginToggle"
+                    >
+                        Login
+                    </button>
+
+                    <button
+                        type="button"
+                        class="toggle-btn"
+                        id="createToggle"
+                    >
+                        Create Account
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="account-message"
+                    id="accountMessage"
+                >
+                    Create your student profile to begin your
+                    personalized GoBeyond journey.
+                </div>
+
+
+                <!-- FORM -->
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="remember"
+                            >
+
+                            Remember me
+
+                        </label>
+
+                        <a
+                            href="#"
+                            class="forgot-link"
+                            onclick="return false;"
+                        >
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="login-btn"
+                        id="submitBtn"
+                    >
+                        Login →
+                    </button>
+
+                </form>
+
+
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        const loginToggle =
+            document.getElementById("loginToggle");
+
+        const createToggle =
+            document.getElementById("createToggle");
+
+        const authTitle =
+            document.getElementById("authTitle");
+
+        const authSubtitle =
+            document.getElementById("authSubtitle");
+
+        const submitBtn =
+            document.getElementById("submitBtn");
+
+        const accountMessage =
+            document.getElementById("accountMessage");
+
+
+        /* =========================
+           LOGIN MODE
+        ========================= */
+
+        loginToggle.addEventListener("click", () => {
+
+            loginToggle.classList.add("active");
+            createToggle.classList.remove("active");
+
+            authTitle.textContent =
+                "Welcome Back 👋";
+
+            authSubtitle.textContent =
+                "Login to continue your GoBeyond journey.";
+
+            submitBtn.textContent =
+                "Login →";
+
+            accountMessage.style.display =
+                "none";
+
+        });
+
+
+        /* =========================
+           CREATE ACCOUNT MODE
+        ========================= */
+
+        createToggle.addEventListener("click", () => {
+
+            createToggle.classList.add("active");
+            loginToggle.classList.remove("active");
+
+            authTitle.textContent =
+                "Start Your Journey 🚀";
+
+            authSubtitle.textContent =
+                "Create your account and build your personalized path.";
+
+            submitBtn.textContent =
+                "Create Account →";
+
+            accountMessage.style.display =
+                "block";
+
+        });
+
+
+        /* =========================
+   LOGIN → ONBOARDING
+========================= */
+
+document
+    .getElementById("loginForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const password =
+            document.getElementById("password").value.trim();
+
+        if (!email || !password) {
+            alert("Please enter your email and password.");
+            return;
+        }
+
+        // Demo login → onboarding
+        window.location.href = "onboarding.html";
+
+    });
+    </script>
+
+</body>
+</html>
