@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoBeyond | Opportunity Match</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            background: #f5f7fb;
+            color: #182238;
+            font-family: Arial, sans-serif;
+        }
+
+        .match-page {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 24px 60px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #5b4bff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .match-hero {
+            background: linear-gradient(135deg, #f7f5ff, #ffffff);
+            border: 1px solid #e4e1ff;
+            border-radius: 28px;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .match-type {
+            color: #5b4bff;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .match-hero h1 {
+            font-size: 42px;
+            margin: 12px 0 8px;
+        }
+
+        .organisation {
+            font-size: 18px;
+            color: #667085;
+            margin-bottom: 20px;
+        }
+
+        .match-score {
+            width: 180px;
+            height: 180px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: white;
+            border: 10px solid #635bff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 15px 35px rgba(91, 75, 255, 0.15);
+        }
+
+        .match-score strong {
+            font-size: 46px;
+            color: #5b4bff;
+        }
+
+        .match-score span {
+            color: #667085;
+            font-weight: 700;
+        }
+
+        .match-explanation {
+            margin-top: 15px;
+            color: #667085;
+            line-height: 1.6;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 24px;
+            margin-top: 28px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 22px;
+            padding: 28px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .skill-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #edf0f5;
+        }
+
+        .skill-row:last-child {
+            border-bottom: none;
+        }
+
+        .matched {
+            color: #16834b;
+            font-weight: 800;
+        }
+
+        .gap {
+            color: #d97706;
+            font-weight: 800;
+        }
+
+        .eligibility-item {
+            padding: 13px 0;
+            color: #475467;
+        }
+
+        .deadline {
+            margin-top: 20px;
+            padding: 18px;
+            background: #fff4e8;
+            border: 1px solid #ffd8b0;
+            border-radius: 16px;
+            color: #c65d00;
+        }
+
+        .deadline strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .why-box {
+            margin-top: 28px;
+            background: #f7f5ff;
+            border: 1px solid #e4e1ff;
+            border-radius: 22px;
+            padding: 28px;
+            line-height: 1.7;
+        }
+
+        .actions {
+            display: flex;
+            gap: 14px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .apply {
+            background: #5b4bff;
+            color: white;
+        }
+
+        .official {
+            background: white;
+            color: #5b4bff;
+            border: 2px solid #5b4bff;
+        }
+
+        @media (max-width: 800px) {
+            .match-hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .match-hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>Go</span>Beyond
+        </div>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="opportunity hub.html">Opportunities</a>
+            <a href="#">Journal</a>
+            <a href="#">Roadmap</a>
+            <a href="#">Profile</a>
+        </nav>
+
+    </header>
+
+
+    <main class="match-page">
+
+        <a href="opportunity hub.html" class="back-link">
+            ← Back to Opportunities
+        </a>
+
+
+        <section class="match-hero">
+
+            <div>
+
+                <div class="match-type">
+                    Internship
+                </div>
+
+                <h1>
+                    AI/ML Summer Internship
+                </h1>
+
+                <div class="organisation">
+                    Tech Research Labs
+                </div>
+
+                <p class="match-explanation">
+                    This opportunity is a strong match for your current
+                    skills, interests, and career goals.
+                </p>
+
+            </div>
+
+
+            <div class="match-score">
+                <strong>94%</strong>
+                <span>Match</span>
+            </div>
+
+        </section>
+
+
+        <div class="detail-grid">
+
+            <section class="card">
+
+                <h2>🧠 Your Skills vs Required Skills</h2>
+
+                <div class="skill-row">
+                    <span>Python</span>
+                    <span class="matched">✓ Matched</span>
+                </div>
+
+                <div class="skill-row">
+                    <span>Machine Learning</span>
+                    <span class="matched">✓ Matched</span>
+                </div>
+
+                <div class="skill-row">
+                    <span>Git</span>
+                    <span class="matched">✓ Matched</span>
+                </div>
+
+                <div class="skill-row">
+                    <span>Data Analysis</span>
+                    <span class="matched">✓ Matched</span>
+                </div>
+
+                <div class="skill-row">
+                    <span>TensorFlow</span>
+                    <span class="gap">○ Skill Gap</span>
+                </div>
+
+                <div class="skill-row">
+                    <span>Deep Learning</span>
+                    <span class="gap">○ Skill Gap</span>
+                </div>
+
+            </section>
+
+
+            <section class="card">
+
+                <h2>🎓 Eligibility</h2>
+
+                <div class="eligibility-item">
+                    🎓 2nd–4th year students
+                </div>
+
+                <div class="eligibility-item">
+                    💻 Computer Science or related branch
+                </div>
+
+                <div class="eligibility-item">
+                    🧠 Interest in AI / Machine Learning
+                </div>
+
+                <div class="deadline">
+                    <strong>⏰ Deadline</strong>
+                    5 days remaining
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <section class="why-box">
+
+            <h2>💡 Why GoBeyond recommends this</h2>
+
+            <p>
+                Your profile strongly matches this opportunity.
+                Your Python, Machine Learning, Git, and Data Analysis
+                skills cover most of the required skills.
+            </p>
+
+            <p>
+                Improving your TensorFlow and Deep Learning skills
+                could make your profile even stronger.
+            </p>
+
+        </section>
+
+
+        <div class="actions">
+
+            <a href="#" class="button apply">
+                Apply Now →
+            </a>
+
+            <a href="#" class="button official">
+                Open Official Link ↗
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
