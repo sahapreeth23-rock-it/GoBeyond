@@ -313,7 +313,7 @@
         </div>
 
         <div class="coverage-summary">
-            <strong>5 / 8</strong>
+            <strong id="coverageCount">0 / 0</strong>
             <span>skills currently covered</span>
         </div>
 
@@ -321,126 +321,59 @@
             <div class="coverage-progress"></div>
         </div>
 
-        <div class="skill-status-list">
+        <div class="skill-status-list" id="skillStatusList">
 
-            <div class="skill-status matched">
-                <span>✓</span>
-                <strong>Python</strong>
-                <small>Matched</small>
-            </div>
-
-            <div class="skill-status matched">
-                <span>✓</span>
-                <strong>Git</strong>
-                <small>Matched</small>
-            </div>
-
-            <div class="skill-status matched">
-                <span>✓</span>
-                <strong>HTML / CSS</strong>
-                <small>Matched</small>
-            </div>
-
-            <div class="skill-status developing">
-                <span>◐</span>
-                <strong>SQL</strong>
-                <small>Developing</small>
-            </div>
-
-            <div class="skill-status missing">
-                <span>!</span>
-                <strong>Machine Learning</strong>
-                <small>Missing</small>
-            </div>
+            <!-- Skills are rendered dynamically by script.js -->
 
         </div>
 
     </div>
 
+<!-- Top Skill Gaps -->
 
-    <!-- Top Skill Gaps -->
-    <div class="gaps-card">
+<div class="gaps-card">
 
-        <div class="section-heading">
-            <div>
-                <p class="small-text">PRIORITY AREAS</p>
-                <h2>Top 3 Skill Gaps</h2>
-            </div>
+    <div class="section-heading">
+        <div>
+            <p class="small-text">PRIORITY AREAS</p>
+            <h2>Top 3 Skill Gaps</h2>
+        </div>
+    </div>
+
+
+    <!-- Skill Gap Summary -->
+
+    <div class="skill-gap-summary">
+
+        <div class="gap-summary-item critical">
+            <strong id="criticalGapCount">2</strong>
+            <span>Critical</span>
         </div>
 
-        <div class="gap-list">
+        <div class="gap-summary-item medium">
+            <strong id="mediumGapCount">1</strong>
+            <span>Medium</span>
+        </div>
 
-            <div class="gap-item">
-
-                <div class="gap-icon high">
-                    !
-                </div>
-
-                <div class="gap-content">
-
-                    <div class="gap-title">
-                        <strong>Machine Learning</strong>
-                        <span class="priority-high">HIGH</span>
-                    </div>
-
-                    <p>
-                        Beginner → Intermediate
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="gap-item">
-
-                <div class="gap-icon medium">
-                    !
-                </div>
-
-                <div class="gap-content">
-
-                    <div class="gap-title">
-                        <strong>SQL</strong>
-                        <span class="priority-medium">MEDIUM</span>
-                    </div>
-
-                    <p>
-                        Beginner → Intermediate
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="gap-item">
-
-                <div class="gap-icon medium">
-                    !
-                </div>
-
-                <div class="gap-content">
-
-                    <div class="gap-title">
-                        <strong>Statistics</strong>
-                        <span class="priority-medium">MEDIUM</span>
-                    </div>
-
-                    <p>
-                        Beginner → Intermediate
-                    </p>
-
-                </div>
-
-            </div>
-
+        <div class="gap-summary-item low">
+            <strong id="lowGapCount">0</strong>
+            <span>Low</span>
         </div>
 
     </div>
 
+
+    <!-- Skill Gap 1 -->
+
+    <div class="gap-list" id="slide5GapList">
+
+        <!-- Top 3 skill gaps are rendered dynamically by script.js -->
+
+    </div>
+
+</div>
 </section>
-        <!-- Next Best Action -->
+       <!-- Next Best Action -->
 
 <section class="next-action-card">
 
@@ -450,28 +383,35 @@
             YOUR NEXT BEST ACTION
         </p>
 
-        <h2>
-            Strengthen your SQL skills
+        <h2 id="nextActionTitle">
+            Strengthen your Machine Learning skills
         </h2>
 
-        <p>
-            SQL is one of your highest-priority skill gaps
-            for your target role. Spend 30 minutes practicing
-            SQL queries today.
+        <p id="nextActionText">
+            Machine Learning is a core requirement
+            for your target role. Follow a focused
+            learning plan and build a practical project.
         </p>
 
     </div>
 
+
     <div class="next-action-side">
 
-        <span class="action-tag">
+        <span
+            class="action-tag"
+            id="nextActionTag"
+        >
             HIGH PRIORITY
         </span>
 
-        <button type="button">
-            Start Learning →
-        </button>
-
+        
+<button
+    type="button"
+    id="nextStartLearning"
+>
+    Start Learning →
+</button>
     </div>
 
 </section>
@@ -911,7 +851,181 @@
     </div>
 
 </div>
-    <script src="script.js"></script>
+    <!-- =====================================================
+     7-DAY PERSONALIZED LEARNING PLAN
+     ===================================================== -->
 
+<div class="learning-plan-overlay" id="learningPlanModal">
+
+    <div class="learning-plan-modal">
+
+        <button
+            type="button"
+            class="learning-plan-close"
+            id="closeLearningPlan"
+        >
+            ×
+        </button>
+
+        <div class="learning-plan-header">
+
+            <p class="small-text">
+                YOUR PERSONALIZED PLAN
+            </p>
+
+            <h2 id="learningPlanTitle">
+                7-Day Learning Plan
+            </h2>
+
+            <p id="learningPlanSubtitle">
+                Build your skills step by step.
+            </p>
+
+        </div>
+
+
+        <div class="learning-plan-progress">
+
+            <div class="learning-plan-progress-top">
+
+                <span>
+                    Your Progress
+                </span>
+
+                <strong id="learningPlanProgressText">
+                    0 / 7 days
+                </strong>
+
+            </div>
+
+            <div class="learning-plan-progress-bar">
+
+                <div
+                    id="learningPlanProgressFill"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="learning-plan-days"
+            id="learningPlanDays"
+        >
+            <!-- Days inserted by JavaScript -->
+        </div>
+
+        <div class="learning-plan-progress">
+
+    <div class="learning-plan-progress-header">
+
+        <span>YOUR PROGRESS</span>
+
+        <strong id="learningPlanProgressText">
+            0 / 7 days
+        </strong>
+
+    </div>
+
+
+    <div class="learning-plan-progress-bar">
+
+        <div
+            id="learningPlanProgressFill"
+            class="learning-plan-progress-fill"
+        ></div>
+
+    </div>
+
+
+    <p id="learningPlanMessage">
+        Complete each day to strengthen this skill.
+    </p>
+
+</div>
+
+        <div class="learning-plan-footer">
+
+            <span id="learningPlanMessage">
+                Complete each day to strengthen this skill.
+            </span>
+
+            <button
+                type="button"
+                id="closeLearningPlanBottom"
+            >
+                Continue Learning
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+    <script src="script.js"></script>
+<!-- =================================
+     7-DAY PERSONALIZED LEARNING PLAN
+================================= -->
+
+<div
+    class="learning-plan-overlay"
+    id="learningPlanOverModal"
+>
+
+    <div class="learning-plan-modal">
+
+        <button
+            class="learning-plan-close"
+            onclick="closeLearningPlan()"
+        >
+            ×
+        </button>
+
+
+        <p class="small-text">
+            PERSONALIZED LEARNING PLAN
+        </p>
+
+        <h2 id="learningPlanTitle">
+            7-Day Machine Learning Plan
+        </h2>
+
+        <p
+            class="learning-plan-subtitle"
+            id="learningPlanSubtitle"
+        >
+            A focused plan to strengthen your highest-priority skill gap.
+        </p>
+
+
+        <div
+            class="learning-plan-days"
+            id="learningPlanDays"
+        >
+
+            <!-- Days will be generated by JavaScript -->
+
+        </div>
+
+
+        <div class="learning-plan-footer">
+
+            <span>
+                🎯 Learn → Practice → Build → Reassess
+            </span>
+
+            <button
+                type="button"
+                onclick="closeLearningPlan()"
+            >
+                Start Day 1 →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>

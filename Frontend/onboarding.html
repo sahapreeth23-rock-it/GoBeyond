@@ -492,6 +492,48 @@
                 padding: 12px;
             }
         }
+     /* =========================
+   COLLEGE AUTOCOMPLETE
+   ========================= */
+
+.college-autocomplete {
+    position: relative;
+}
+
+.college-suggestions {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #dfe2ea;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(30, 35, 60, 0.12);
+    max-height: 220px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.college-suggestion {
+    padding: 11px 14px;
+    font-size: 13px;
+    color: #172033;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f1f5;
+}
+
+.college-suggestion:last-child {
+    border-bottom: none;
+}
+
+.college-suggestion:hover,
+.college-suggestion.active {
+    background: #f1f0ff;
+    color: #5149e8;
+}
+
+
     </style>
 </head>
 
@@ -613,18 +655,32 @@
 
                     <div class="form-group">
 
-                        <label for="college">
-                            College
-                        </label>
+    <label for="college">
+        College
+    </label>
 
-                        <input
-                            type="text"
-                            id="college"
-                            placeholder="Enter your college name"
-                            required
-                        >
+    <div class="college-autocomplete">
 
-                    </div>
+        <input
+            type="text"
+            id="college"
+            placeholder="Start typing your college name"
+            autocomplete="off"
+            required
+        >
+
+        <div
+            id="collegeSuggestions"
+            class="college-suggestions"
+        ></div>
+
+    </div>
+
+    <p class="helper">
+        Start typing to find your college from the list.
+    </p>
+
+</div>
 
 
                     <div class="form-group">
@@ -759,7 +815,7 @@
 
             </section>
 
-
+            
             <!-- =========================
                  SKILLS
             ========================= -->
@@ -984,6 +1040,159 @@
 
 <script>
 
+    /* =========================
+       COLLEGE AUTOCOMPLETE
+    ========================= */
+
+    const collegeList = [
+        "Osmania University",
+        "University of Hyderabad",
+        "Jawaharlal Nehru Technological University Hyderabad",
+        "International Institute of Information Technology Hyderabad",
+        "Indian Institute of Technology Hyderabad",
+        "NALSAR University of Law",
+        "BITS Pilani Hyderabad Campus",
+        "Vasavi College of Engineering",
+        "Chaitanya Bharathi Institute of Technology",
+        "Vardhaman College of Engineering",
+        "CVR College of Engineering",
+        "CMR College of Engineering & Technology",
+        "CMR Technical Campus",
+        "Malla Reddy College of Engineering and Technology",
+        "Malla Reddy Engineering College",
+        "Gokaraju Rangaraju Institute of Engineering and Technology",
+        "MLR Institute of Technology",
+        "Keshav Memorial Institute of Technology",
+        "VNR Vignana Jyothi Institute of Engineering and Technology",
+        "Anurag University",
+        "Sreenidhi Institute of Science and Technology",
+        "Mahindra University",
+        "Woxsen University",
+        "ICFAI Foundation for Higher Education",
+        "St. Martin's Engineering College",
+        "ACE Engineering College",
+        "Hyderabad Institute of Technology and Management",
+        "Muffakham Jah College of Engineering and Technology",
+        "Stanley College of Engineering and Technology for Women"
+    ];
+
+
+    const collegeInput =
+        document.getElementById("college");
+
+    const collegeSuggestions =
+        document.getElementById(
+            "collegeSuggestions"
+        );
+
+
+    function showCollegeSuggestions() {
+
+        const query =
+            collegeInput.value
+                .toLowerCase()
+                .trim();
+
+
+        collegeSuggestions.innerHTML = "";
+
+
+        if (!query) {
+
+            collegeSuggestions.style.display =
+                "none";
+
+            return;
+
+        }
+
+
+        const matches =
+            collegeList
+                .filter(college =>
+                    college
+                        .toLowerCase()
+                        .includes(query)
+                )
+                .slice(0, 6);
+
+
+        if (!matches.length) {
+
+            collegeSuggestions.style.display =
+                "none";
+
+            return;
+
+        }
+
+
+        matches.forEach(college => {
+
+            const option =
+                document.createElement("div");
+
+            option.className =
+                "college-suggestion";
+
+            option.textContent =
+                college;
+
+
+            option.addEventListener(
+                "mousedown",
+                function(event) {
+
+                    event.preventDefault();
+
+                    collegeInput.value =
+                        college;
+
+                    collegeSuggestions.style.display =
+                        "none";
+
+                }
+            );
+
+
+            collegeSuggestions.appendChild(
+                option
+            );
+
+        });
+
+
+        collegeSuggestions.style.display =
+            "block";
+
+    }
+
+
+    collegeInput.addEventListener(
+        "input",
+        showCollegeSuggestions
+    );
+
+
+    collegeInput.addEventListener(
+        "focus",
+        showCollegeSuggestions
+    );
+
+
+    collegeInput.addEventListener(
+        "blur",
+        function() {
+
+            setTimeout(() => {
+
+                collegeSuggestions.style.display =
+                    "none";
+
+            }, 200);
+
+        }
+    );
     /* =========================
        SKILLS
     ========================= */

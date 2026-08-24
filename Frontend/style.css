@@ -2478,3 +2478,573 @@ footer {
         width: 100%;
     }
 }
+
+/* =========================
+   SLIDE 5 - SKILL GAP ANALYSIS
+========================= */
+.skill-gap-subtitle {
+    color: #858c9c;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.gap-summary-row {
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin: 15px 0 5px;
+}
+
+.gap-summary-row span {
+    padding: 6px 9px;
+    border-radius: 7px;
+    background: #f7f8fb;
+    color: #687084;
+    font-size: 10px;
+}
+
+.gap-summary-row strong {
+    color: #172033;
+}
+
+.detailed-gap {
+    align-items: flex-start;
+}
+
+.detailed-gap .gap-content {
+    min-width: 0;
+}
+
+.gap-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+    color: #687084;
+    font-size: 10px;
+}
+
+.gap-meta b {
+    color: #172033;
+}
+
+.gap-why {
+    display: block;
+    margin-top: 7px;
+    color: #858c9c;
+    font-size: 10px;
+}
+
+.gap-path {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #635bff;
+}
+
+.gap-path b {
+    color: #a2a7b4;
+}
+
+.priority-low {
+    background: #eef7ff;
+    color: #3975a8;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 7px;
+    border-radius: 6px;
+}
+
+.skill-covered {
+    border-color: #d9eee3;
+    background: #fbfefc;
+}
+
+.gap-icon.low {
+    background: #eef7ff;
+    color: #3975a8;
+}
+
+@media (max-width: 600px) {
+    .gap-meta {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+/* =====================================================
+   7-DAY PERSONALIZED LEARNING PLAN
+   ===================================================== */
+
+.learning-plan-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 24, 45, 0.58);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 9999;
+}
+
+.learning-plan-overlay.active {
+    display: flex;
+}
+
+.learning-plan-modal {
+    width: min(720px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 24px 70px rgba(30, 35, 70, 0.25);
+}
+
+.learning-plan-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #f3f4f8;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.learning-plan-header {
+    padding-right: 45px;
+    margin-bottom: 24px;
+}
+
+.learning-plan-header h2 {
+    margin: 6px 0 8px;
+    font-size: 28px;
+}
+
+.learning-plan-header p:last-child {
+    margin: 0;
+    color: #737b91;
+}
+
+.learning-plan-progress {
+    background: #f7f7fb;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 22px;
+}
+
+.learning-plan-progress-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.learning-plan-progress-bar {
+    width: 100%;
+    height: 9px;
+    background: #e7e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#learningPlanProgressFill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #635bff,
+        #8b7cff
+    );
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+.learning-plan-days {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.learning-day {
+    border: 1px solid #e7e8ef;
+    border-radius: 16px;
+    padding: 17px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    transition: 0.2s ease;
+}
+
+.learning-day:hover {
+    border-color: #b8b3ff;
+    transform: translateY(-1px);
+}
+
+.learning-day.completed {
+    background: #f5fbf7;
+    border-color: #b7dfc2;
+}
+
+.learning-day-checkbox {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    accent-color: #635bff;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.learning-day-content {
+    flex: 1;
+}
+
+.learning-day-number {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #635bff;
+    text-transform: uppercase;
+}
+
+.learning-day-content h4 {
+    margin: 4px 0 5px;
+    font-size: 17px;
+}
+
+.learning-day-content p {
+    margin: 0;
+    color: #737b91;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.learning-day.completed h4 {
+    text-decoration: line-through;
+}
+
+.learning-plan-footer {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #ececf2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.learning-plan-footer span {
+    color: #737b91;
+    font-size: 13px;
+}
+
+.learning-plan-footer button {
+    border: none;
+    border-radius: 12px;
+    padding: 11px 17px;
+    background: #635bff;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .learning-plan-overlay {
+        padding: 12px;
+    }
+
+    .learning-plan-modal {
+        padding: 22px;
+        border-radius: 18px;
+    }
+
+    .learning-plan-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+}
+/* =========================================
+   SLIDE 5 — SKILL GAP ANALYSIS
+========================================= */
+
+
+/* Skill Gap Summary */
+
+.skill-gap-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 18px 0;
+}
+
+
+.gap-summary-item {
+    padding: 12px 10px;
+    border-radius: 11px;
+    text-align: center;
+    border: 1px solid #eceef3;
+}
+
+
+.gap-summary-item strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+.gap-summary-item span {
+    display: block;
+    margin-top: 3px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+.gap-summary-item.critical {
+    background: #fff5f5;
+    color: #d44b4b;
+}
+
+
+.gap-summary-item.medium {
+    background: #fff9ed;
+    color: #a56b00;
+}
+
+
+.gap-summary-item.low {
+    background: #f4f7ff;
+    color: #5867a8;
+}
+
+
+/* Expanded Skill Gap Cards */
+
+.skill-gap-card {
+    align-items: flex-start;
+    padding: 16px;
+    transition: 0.2s ease;
+}
+
+
+.skill-gap-card:hover {
+    border-color: #dcd9ff;
+    transform: translateY(-1px);
+}
+
+
+/* Skill Level */
+
+.skill-level {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 5px !important;
+    font-size: 11px !important;
+}
+
+
+.skill-gap-current {
+    font-weight: 700;
+    color: #7b8190;
+}
+
+
+.skill-gap-required {
+    font-weight: 800;
+    color: #5149e8;
+}
+
+
+/* Skill Gap Details */
+
+.skill-gap-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 11px;
+}
+
+
+.skill-gap-details div {
+    background: #f8f9fc;
+    border-radius: 8px;
+    padding: 8px 9px;
+}
+
+
+.skill-gap-details span {
+    display: block;
+    color: #8a91a0;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+
+.skill-gap-details strong {
+    display: block;
+    margin-top: 3px;
+    color: #343a4a;
+    font-size: 10px;
+}
+
+
+/* Why the gap matters */
+
+.skill-gap-reason {
+    color: #687084 !important;
+    font-size: 10px !important;
+    line-height: 1.5;
+    margin-top: 10px !important;
+}
+
+
+/* Recommended action */
+
+.skill-gap-action {
+    margin-top: 9px;
+    padding: 8px 10px;
+
+    background: #f5f4ff;
+    border-radius: 8px;
+
+    color: #5149e8;
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+
+/* LOW priority */
+
+.priority-low {
+    background: #f1f4ff;
+    color: #5867a8;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 7px;
+    border-radius: 6px;
+}
+
+
+/* Low priority icon */
+
+.gap-icon.low {
+    background: #f1f4ff;
+    color: #5867a8;
+}
+
+
+/* Better spacing inside the gaps card */
+
+.gaps-card .skill-gap-card + .skill-gap-card {
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   SLIDE 5 RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .skill-gap-summary {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6px;
+    }
+
+
+    .gap-summary-item {
+        padding: 10px 5px;
+    }
+
+
+    .gap-summary-item strong {
+        font-size: 17px;
+    }
+
+
+    .gap-summary-item span {
+        font-size: 9px;
+    }
+
+
+    .skill-gap-details {
+        grid-template-columns: 1fr;
+    }
+
+
+    .skill-gap-card {
+        padding: 13px;
+    }
+
+}
+/* =========================================
+   7-DAY LEARNING PLAN — PROGRESS
+========================================= */
+
+.learning-plan-progress {
+    margin-top: 18px;
+    padding: 14px;
+    background: #f8f9fc;
+    border: 1px solid #eceef3;
+    border-radius: 12px;
+}
+
+.learning-plan-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.learning-plan-progress-header span {
+    font-size: 9px;
+    font-weight: 800;
+    color: #858b99;
+    letter-spacing: 0.5px;
+}
+
+.learning-plan-progress-header strong {
+    font-size: 11px;
+    font-weight: 800;
+    color: #5149e8;
+}
+
+.learning-plan-progress-bar {
+    width: 100%;
+    height: 7px;
+    background: #e7e8ef;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.learning-plan-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #5149e8;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+.learning-plan-progress p {
+    margin: 8px 0 0;
+    font-size: 9px;
+    line-height: 1.4;
+    color: #747b8b;
+}

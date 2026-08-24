@@ -51,24 +51,466 @@ if (matchModal && closeModal) {
     });
 
 }
+// =====================================================
+// 7-DAY PERSONALIZED LEARNING PLAN
+// =====================================================
+
+const learningPlans = {
+
+    "Machine Learning": [
+        ["Day 1", "ML Fundamentals", "Learn supervised vs unsupervised learning."],
+        ["Day 2", "Data Preparation", "Clean, transform and explore a dataset."],
+        ["Day 3", "Regression", "Build a simple regression model."],
+        ["Day 4", "Classification", "Build a basic classification model."],
+        ["Day 5", "Model Evaluation", "Learn accuracy, precision, recall and F1-score."],
+        ["Day 6", "Mini Project", "Build a small ML prediction project."],
+        ["Day 7", "Reassess", "Test yourself and review what you learned."]
+    ],
+
+    "SQL": [
+        ["Day 1", "SQL Fundamentals", "Learn SELECT, WHERE, ORDER BY and LIMIT."],
+        ["Day 2", "Filtering & Functions", "Practice conditions and SQL functions."],
+        ["Day 3", "Joins", "Learn INNER, LEFT and RIGHT JOIN."],
+        ["Day 4", "Aggregation", "Practice GROUP BY, HAVING and aggregate functions."],
+        ["Day 5", "Subqueries", "Solve problems using nested queries."],
+        ["Day 6", "Mini Project", "Analyse a real dataset using SQL."],
+        ["Day 7", "Reassess", "Solve a short SQL challenge set."]
+    ],
+
+    "Statistics": [
+        ["Day 1", "Statistics Basics", "Review mean, median, mode and variance."],
+        ["Day 2", "Probability", "Practice basic probability concepts."],
+        ["Day 3", "Distributions", "Understand common probability distributions."],
+        ["Day 4", "Correlation", "Learn correlation and covariance."],
+        ["Day 5", "Data Interpretation", "Interpret statistics from a real dataset."],
+        ["Day 6", "Mini Project", "Perform statistical analysis on a dataset."],
+        ["Day 7", "Reassess", "Review concepts and test yourself."]
+    ],
+
+    "React": [
+        ["Day 1", "React Fundamentals", "Learn JSX, components and the React structure."],
+        ["Day 2", "Components & Props", "Build reusable components using props."],
+        ["Day 3", "State", "Learn useState and manage component state."],
+        ["Day 4", "Events & Forms", "Build interactive forms and event handlers."],
+        ["Day 5", "API Integration", "Fetch and display data from an API."],
+        ["Day 6", "Mini Project", "Build a small React application."],
+        ["Day 7", "Reassess", "Review React concepts and improve your project."]
+    ],
+
+    "JavaScript": [
+        ["Day 1", "JavaScript Basics", "Review variables, data types and operators."],
+        ["Day 2", "Functions", "Practice functions, parameters and return values."],
+        ["Day 3", "Arrays & Objects", "Work with common JavaScript data structures."],
+        ["Day 4", "DOM", "Manipulate HTML elements using JavaScript."],
+        ["Day 5", "Events & Async", "Practise events, promises and async functions."],
+        ["Day 6", "Mini Project", "Build an interactive JavaScript feature."],
+        ["Day 7", "Reassess", "Solve JavaScript challenges and review."]
+    ],
+
+    "Node.js": [
+        ["Day 1", "Node Fundamentals", "Understand Node.js and its runtime."],
+        ["Day 2", "Modules", "Learn modules, npm and package management."],
+        ["Day 3", "Express", "Create a basic Express server."],
+        ["Day 4", "REST APIs", "Build GET and POST API endpoints."],
+        ["Day 5", "Database", "Connect an application to a database."],
+        ["Day 6", "Mini Project", "Build a small REST API."],
+        ["Day 7", "Reassess", "Test your API and review backend concepts."]
+    ],
+
+    "Networking": [
+        ["Day 1", "Networking Basics", "Learn OSI and TCP/IP models."],
+        ["Day 2", "IP Addressing", "Understand IPv4, IPv6 and subnetting."],
+        ["Day 3", "Protocols", "Study HTTP, DNS, TCP and UDP."],
+        ["Day 4", "Network Security", "Understand common network attacks."],
+        ["Day 5", "Tools", "Practise basic networking diagnostic tools."],
+        ["Day 6", "Mini Project", "Analyse a small network scenario."],
+        ["Day 7", "Reassess", "Review networking fundamentals."]
+    ],
+
+    "Linux": [
+        ["Day 1", "Linux Basics", "Learn the terminal and basic commands."],
+        ["Day 2", "Files & Directories", "Practise navigation, permissions and file operations."],
+        ["Day 3", "Processes", "Learn processes and system monitoring."],
+        ["Day 4", "Users & Permissions", "Practise users, groups and permissions."],
+        ["Day 5", "Networking", "Use Linux networking commands."],
+        ["Day 6", "Mini Project", "Complete a basic Linux administration task."],
+        ["Day 7", "Reassess", "Review commands and practise independently."]
+    ],
+
+    "Cybersecurity": [
+        ["Day 1", "Security Fundamentals", "Learn CIA triad and common threats."],
+        ["Day 2", "Threats", "Study phishing, malware and social engineering."],
+        ["Day 3", "Authentication", "Understand passwords, MFA and access control."],
+        ["Day 4", "Network Security", "Learn firewalls and secure communication."],
+        ["Day 5", "Security Tools", "Explore basic defensive security tools."],
+        ["Day 6", "Mini Project", "Analyse a simple security scenario."],
+        ["Day 7", "Reassess", "Review concepts and test yourself."]
+    ]
+
+};
+// =====================================================
+// OPEN / CLOSE LEARNING PLAN
+// =====================================================
+
+const learningPlanModal =
+    document.getElementById(
+        "learningPlanModal"
+    );
+
+const learningPlanDays =
+    document.getElementById(
+        "learningPlanDays"
+    );
+
+const learningPlanTitle =
+    document.getElementById(
+        "learningPlanTitle"
+    );
+
+const learningPlanSubtitle =
+    document.getElementById(
+        "learningPlanSubtitle"
+    );
+
+const learningPlanProgressText =
+    document.getElementById(
+        "learningPlanProgressText"
+    );
+
+const learningPlanProgressFill =
+    document.getElementById(
+        "learningPlanProgressFill"
+    );
+
+const learningPlanMessage =
+    document.getElementById(
+        "learningPlanMessage"
+    );
 
 
-// Start Learning button
-const startLearning =
-    document.getElementById("startLearning");
+// Current selected learning skill
+let currentLearningSkill = "";
 
-if (startLearning) {
 
-    startLearning.addEventListener("click", () => {
+// Open the plan
+function openLearningPlan(skill, careerGoal) {
+
+    if (!learningPlanModal) return;
+
+    currentLearningSkill = skill;
+
+    const plan =
+        learningPlans[skill];
+
+    if (!plan) {
 
         alert(
-            "Your 7-day learning plan for SQL and Machine Learning will be created here."
+            `A personalized plan for ${skill} is coming soon.`
         );
 
-    });
+        return;
+    }
+
+
+    learningPlanTitle.textContent =
+        `7-Day ${skill} Learning Plan`;
+
+    learningPlanSubtitle.textContent =
+        `Personalized for your ${careerGoal} goal.`;
+
+
+    const storageKey =
+        `goBeyondLearning_${skill}`;
+
+    let completedDays = [];
+
+    try {
+
+        completedDays =
+            JSON.parse(
+                localStorage.getItem(
+                    storageKey
+                )
+            ) || [];
+
+    } catch (error) {
+
+        completedDays = [];
+
+    }
+
+
+    learningPlanDays.innerHTML =
+        plan.map(
+            (day, index) => {
+
+                const isCompleted =
+                    completedDays.includes(index);
+
+                return `
+
+                    <div
+                        class="learning-day ${
+                            isCompleted
+                                ? "completed"
+                                : ""
+                        }"
+                        data-day-index="${index}"
+                    >
+
+                        <input
+                            type="checkbox"
+                            class="learning-day-checkbox"
+                            data-day="${index}"
+                            ${
+                                isCompleted
+                                    ? "checked"
+                                    : ""
+                            }
+                        >
+
+                        <div class="learning-day-content">
+
+                            <span class="learning-day-number">
+                                ${day[0]}
+                            </span>
+
+                            <h4>
+                                ${day[1]}
+                            </h4>
+
+                            <p>
+                                ${day[2]}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }
+        ).join("");
+
+
+    updateLearningPlanProgress(
+        completedDays,
+        plan.length
+    );
+
+
+    learningPlanModal.classList.add(
+        "active"
+    );
+
+
+    // Add checkbox listeners
+    document
+        .querySelectorAll(
+            ".learning-day-checkbox"
+        )
+        .forEach(
+            checkbox => {
+
+                checkbox.addEventListener(
+                    "change",
+                    function () {
+
+                        const dayIndex =
+                            Number(
+                                this.dataset.day
+                            );
+
+                        let savedDays =
+                            JSON.parse(
+                                localStorage.getItem(
+                                    storageKey
+                                )
+                            ) || [];
+
+
+                        if (this.checked) {
+
+                            if (
+                                !savedDays.includes(
+                                    dayIndex
+                                )
+                            ) {
+
+                                savedDays.push(
+                                    dayIndex
+                                );
+
+                            }
+
+                        } else {
+
+                            savedDays =
+                                savedDays.filter(
+                                    day =>
+                                        day !==
+                                        dayIndex
+                                );
+
+                        }
+
+
+                        localStorage.setItem(
+                            storageKey,
+                            JSON.stringify(
+                                savedDays
+                            )
+                        );
+
+
+                        const dayCard =
+                            this.closest(
+                                ".learning-day"
+                            );
+
+                        if (dayCard) {
+
+                            dayCard.classList.toggle(
+                                "completed",
+                                this.checked
+                            );
+
+                        }
+
+
+                        updateLearningPlanProgress(
+                            savedDays,
+                            plan.length
+                        );
+
+                    }
+                );
+
+            }
+        );
 
 }
 
+
+// Update progress
+function updateLearningPlanProgress(
+    completedDays,
+    totalDays
+) {
+
+    const completed =
+        completedDays.length;
+
+    const percentage =
+        Math.round(
+            (completed / totalDays) * 100
+        );
+
+
+    if (learningPlanProgressText) {
+
+        learningPlanProgressText.textContent =
+            `${completed} / ${totalDays} days`;
+
+    }
+
+
+    if (learningPlanProgressFill) {
+
+        learningPlanProgressFill.style.width =
+            `${percentage}%`;
+
+    }
+
+
+    if (learningPlanMessage) {
+
+        if (completed === totalDays) {
+
+            learningPlanMessage.textContent =
+                "🎉 Plan completed! You're ready to reassess this skill.";
+
+        } else if (completed > 0) {
+
+            learningPlanMessage.textContent =
+                `${completed} day${completed > 1 ? "s" : ""} completed. Keep going!`;
+
+        } else {
+
+            learningPlanMessage.textContent =
+                "Complete each day to strengthen this skill.";
+
+        }
+
+    }
+
+}
+
+
+// Close buttons
+function closeLearningPlan() {
+
+    if (learningPlanModal) {
+
+        learningPlanModal.classList.remove(
+            "active"
+        );
+
+    }
+
+}
+
+
+const closeLearningPlanButton =
+    document.getElementById(
+        "closeLearningPlan"
+    );
+
+const closeLearningPlanBottom =
+    document.getElementById(
+        "closeLearningPlanBottom"
+    );
+
+
+if (closeLearningPlanButton) {
+
+    closeLearningPlanButton.addEventListener(
+        "click",
+        closeLearningPlan
+    );
+
+}
+
+
+if (closeLearningPlanBottom) {
+
+    closeLearningPlanBottom.addEventListener(
+        "click",
+        closeLearningPlan
+    );
+
+}
+
+
+if (learningPlanModal) {
+
+    learningPlanModal.addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target ===
+                learningPlanModal
+            ) {
+
+                closeLearningPlan();
+
+            }
+
+        }
+    );
+
+}
 
 // ================================
 // STUDENT PROFILE
@@ -223,12 +665,16 @@ function updateDashboard(profile) {
 
     }
 
+updateCareerRoadmap(
+    profile.careerGoal,
+    profile.skills || []
+);
 
-    updateCareerRoadmap(profile.careerGoal);
+updateSkillGapAnalysis(profile);
 
-    updatePriorities(profile.careerGoal);
+updatePriorities(profile.careerGoal);
 
-    updateOpportunities(profile.careerGoal);
+updateOpportunities(profile.careerGoal);
 
     console.log(
         "Opportunity update:",
@@ -491,6 +937,463 @@ function updatePriorities(careerGoal) {
     });
 
 }
+// ================================
+// DYNAMIC SKILL GAP ANALYSIS
+// SLIDE 5
+// ================================
+
+const skillGapData = {
+
+    "AI/ML Engineer": [
+
+        {
+            skill: "Machine Learning",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "HIGH",
+            priorityClass: "high",
+            demand: "Very High",
+            opportunities: 6,
+            reason:
+                "Machine Learning is a core requirement for AI/ML roles and many relevant opportunities.",
+            action:
+                "Start with supervised learning, model evaluation and practical ML projects."
+        },
+
+        {
+            skill: "SQL",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            priorityClass: "medium",
+            demand: "High",
+            opportunities: 4,
+            reason:
+                "SQL is frequently required for working with datasets and real-world AI applications.",
+            action:
+                "Practice SELECT, JOIN, GROUP BY and subqueries using real datasets."
+        },
+
+        {
+            skill: "Statistics",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            priorityClass: "medium",
+            demand: "High",
+            opportunities: 4,
+            reason:
+                "Statistics helps you understand datasets, evaluate models and interpret results.",
+            action:
+                "Learn probability, distributions, mean, variance and basic hypothesis testing."
+        }
+
+    ],
+
+
+    "Web Developer": [
+
+        {
+            skill: "React.js",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "HIGH",
+            priorityClass: "high",
+            demand: "Very High",
+            opportunities: 7,
+            reason:
+                "React is widely used for building modern frontend applications.",
+            action:
+                "Learn components, props, state, hooks and build a small React project."
+        },
+
+        {
+            skill: "JavaScript",
+            current: "Intermediate",
+            required: "Advanced",
+            priority: "HIGH",
+            priorityClass: "high",
+            demand: "Very High",
+            opportunities: 8,
+            reason:
+                "Strong JavaScript fundamentals are essential for modern web development.",
+            action:
+                "Practice DOM manipulation, APIs, asynchronous JavaScript and ES6+."
+        },
+
+        {
+            skill: "Node.js",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            priorityClass: "medium",
+            demand: "High",
+            opportunities: 5,
+            reason:
+                "Node.js allows you to build backend APIs and full-stack applications.",
+            action:
+                "Learn Node.js, Express.js and build a REST API."
+        }
+
+    ],
+
+
+    "Data Scientist": [
+
+        {
+            skill: "Statistics",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "HIGH",
+            priorityClass: "high",
+            demand: "Very High",
+            opportunities: 7,
+            reason:
+                "Statistics is fundamental for analysing data and interpreting results.",
+            action:
+                "Practice probability, distributions, hypothesis testing and statistical analysis."
+        },
+
+        {
+            skill: "SQL",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "HIGH",
+            priorityClass: "high",
+            demand: "High",
+            opportunities: 6,
+            reason:
+                "Data scientists regularly use SQL to retrieve and analyse data.",
+            action:
+                "Practice joins, aggregation, subqueries and analytical queries."
+        },
+
+        {
+            skill: "Machine Learning",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            priorityClass: "medium",
+            demand: "Very High",
+            opportunities: 6,
+            reason:
+                "Machine Learning is an important part of many modern Data Science roles.",
+            action:
+                "Learn regression, classification, model evaluation and feature engineering."
+        }
+
+    ],
+
+
+    "Cybersecurity Engineer": [
+
+        {
+            skill: "Networking",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "HIGH",
+            priorityClass: "high",
+            demand: "Very High",
+            opportunities: 6,
+            reason:
+                "Networking knowledge is essential for understanding attacks, traffic and security systems.",
+            action:
+                "Learn TCP/IP, HTTP, DNS, ports, protocols and network troubleshooting."
+        },
+
+        {
+            skill: "Linux",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            priorityClass: "medium",
+            demand: "High",
+            opportunities: 5,
+            reason:
+                "Linux is widely used in security environments and penetration testing.",
+            action:
+                "Practice Linux commands, permissions, processes and basic shell scripting."
+        },
+
+        {
+            skill: "Security Tools",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            priorityClass: "medium",
+            demand: "High",
+            opportunities: 4,
+            reason:
+                "Hands-on security tools help convert cybersecurity concepts into practical skills.",
+            action:
+                "Practice with tools such as Wireshark, Nmap and basic security labs."
+        }
+
+    ]
+
+};
+
+
+// ================================
+// UPDATE SKILL GAP ANALYSIS
+// ================================
+
+function updateSkillGapAnalysis(profile) {
+
+    const gaps =
+        skillGapData[profile.careerGoal] ||
+        skillGapData["AI/ML Engineer"];
+
+
+    const studentSkills =
+        profile.skills.map(skill =>
+            skill.toLowerCase().trim()
+        );
+
+
+    let criticalCount = 0;
+    let mediumCount = 0;
+    let lowCount = 0;
+
+
+    gaps.forEach(gap => {
+
+        if (gap.priority === "HIGH") {
+            criticalCount++;
+        }
+
+        else if (gap.priority === "MEDIUM") {
+            mediumCount++;
+        }
+
+        else {
+            lowCount++;
+        }
+
+    });
+
+
+    // Update gap counts if elements exist
+    const criticalElement =
+        document.getElementById("criticalGapCount");
+
+    const mediumElement =
+        document.getElementById("mediumGapCount");
+
+    const lowElement =
+        document.getElementById("lowGapCount");
+
+
+    if (criticalElement) {
+        criticalElement.textContent =
+            criticalCount;
+    }
+
+    if (mediumElement) {
+        mediumElement.textContent =
+            mediumCount;
+    }
+
+    if (lowElement) {
+        lowElement.textContent =
+            lowCount;
+    }
+
+
+    // Update individual skill gaps
+    gaps.forEach((gap, index) => {
+
+        const card =
+            document.querySelector(
+                `[data-skill-gap="${index}"]`
+            );
+
+
+        if (!card) return;
+
+
+        const title =
+            card.querySelector(".skill-gap-name");
+
+        const current =
+            card.querySelector(".skill-gap-current");
+
+        const required =
+            card.querySelector(".skill-gap-required");
+
+        const priority =
+            card.querySelector(".skill-gap-priority");
+
+        const demand =
+            card.querySelector(".skill-gap-demand");
+
+        const opportunities =
+            card.querySelector(".skill-gap-opportunities");
+
+        const reason =
+            card.querySelector(".skill-gap-reason");
+
+        const action =
+            card.querySelector(".skill-gap-action");
+
+
+        if (title) {
+            title.textContent =
+                gap.skill;
+        }
+
+
+        if (current) {
+            current.textContent =
+                gap.current;
+        }
+
+
+        if (required) {
+            required.textContent =
+                gap.required;
+        }
+
+
+        if (priority) {
+            priority.textContent =
+                gap.priority;
+
+            priority.className =
+                `skill-gap-priority ${gap.priorityClass}`;
+        }
+
+
+        if (demand) {
+            demand.textContent =
+                gap.demand;
+        }
+
+
+        if (opportunities) {
+            opportunities.textContent =
+                `${gap.opportunities} matched opportunities`;
+        }
+
+
+        if (reason) {
+            reason.textContent =
+                gap.reason;
+        }
+
+
+        if (action) {
+            action.textContent =
+                gap.action;
+        }
+
+    });
+
+
+    // ================================
+    // NEXT BEST ACTION
+    // ================================
+
+    const highestPriorityGap =
+        gaps.find(
+            gap => gap.priority === "HIGH"
+        ) || gaps[0];
+
+
+    const nextActionTitle =
+        document.getElementById(
+            "nextActionTitle"
+        );
+
+    const nextActionText =
+        document.getElementById(
+            "nextActionText"
+        );
+
+    const nextActionTag =
+        document.getElementById(
+            "nextActionTag"
+        );
+
+
+    if (nextActionTitle) {
+
+        nextActionTitle.textContent =
+            `Strengthen your ${highestPriorityGap.skill} skills`;
+
+    }
+
+
+    if (nextActionText) {
+
+        nextActionText.textContent =
+            highestPriorityGap.reason +
+            " Start by following a focused learning plan and building a practical project.";
+
+    }
+
+
+    if (nextActionTag) {
+
+        nextActionTag.textContent =
+            `${highestPriorityGap.priority} PRIORITY`;
+
+    }
+
+}
+// =========================================
+// START LEARNING BUTTON
+// Connects Next Best Action to 7-Day Plan
+// =========================================
+
+const nextStartLearning =
+    document.getElementById("nextStartLearning");
+
+if (nextStartLearning) {
+
+    nextStartLearning.addEventListener(
+        "click",
+        function () {
+
+            const savedProfile =
+                localStorage.getItem("goBeyondProfile");
+
+            if (!savedProfile) {
+                alert("Please save your profile first.");
+                return;
+            }
+
+            const profile =
+                JSON.parse(savedProfile);
+
+            const gaps =
+                skillGapData[profile.careerGoal] ||
+                skillGapData["AI/ML Engineer"];
+
+            const highestPriorityGap =
+                gaps.find(
+                    gap => gap.priority === "HIGH"
+                ) || gaps[0];
+
+            const learningSkillMap = {
+                "React.js": "React",
+                "Security Tools": "Cybersecurity"
+            };
+
+            const learningSkill =
+                learningSkillMap[
+                    highestPriorityGap.skill
+                ] || highestPriorityGap.skill;
+
+            openLearningPlan(
+                learningSkill,
+                profile.careerGoal
+            );
+
+        }
+    );
+
+}
 
 
 // ================================
@@ -549,15 +1452,12 @@ const careerPaths = {
 };
 
 
-function updateCareerRoadmap(careerGoal) {
+function updateCareerRoadmap(careerGoal, studentSkills = []) {
 
     const roadmap =
-        document.getElementById(
-            "careerRoadmap"
-        );
+        document.getElementById("careerRoadmap");
 
     if (!roadmap) return;
-
 
     const steps =
         careerPaths[careerGoal];
@@ -565,11 +1465,14 @@ function updateCareerRoadmap(careerGoal) {
     if (!steps) return;
 
 
+    // -----------------------------------------
+    // ROADMAP TITLE
+    // -----------------------------------------
+
     const roadmapTitle =
         document.getElementById(
             "careerRoadmapTitle"
         );
-
 
     if (roadmapTitle) {
 
@@ -592,12 +1495,116 @@ function updateCareerRoadmap(careerGoal) {
 
         };
 
-
         roadmapTitle.textContent =
             roadmapTitles[careerGoal] ||
             "Career Roadmap";
+    }
+
+
+    // -----------------------------------------
+    // NORMALIZE STUDENT SKILLS
+    // -----------------------------------------
+
+    const normalizedSkills =
+        studentSkills.map(skill =>
+            skill
+                .toLowerCase()
+                .trim()
+        );
+
+
+    // -----------------------------------------
+    // CHECK WHETHER A ROADMAP SKILL IS KNOWN
+    // -----------------------------------------
+
+    function hasSkill(step) {
+
+        const skillAliases = {
+
+            "HTML & CSS": [
+                "html",
+                "css",
+                "html & css"
+            ],
+
+            "JavaScript": [
+                "javascript",
+                "js"
+            ],
+
+            "React": [
+                "react",
+                "react.js",
+                "reactjs"
+            ],
+
+            "Python": [
+                "python"
+            ],
+
+            "SQL": [
+                "sql"
+            ],
+
+            "Machine Learning": [
+                "machine learning",
+                "ml"
+            ],
+
+            "Statistics": [
+                "statistics",
+                "statistics & probability"
+            ],
+
+            "Data Analysis": [
+                "data analysis",
+                "pandas",
+                "numpy"
+            ],
+
+            "Networking": [
+                "networking",
+                "computer networks"
+            ],
+
+            "Linux": [
+                "linux"
+            ],
+
+            "Cybersecurity Fundamentals": [
+                "cybersecurity",
+                "cybersecurity fundamentals"
+            ],
+
+            "Java": [
+                "java"
+            ],
+
+            "Spring Boot": [
+                "spring boot"
+            ]
+
+        };
+
+
+        const aliases =
+            skillAliases[step] || [
+                step.toLowerCase()
+            ];
+
+
+        return aliases.some(alias =>
+            normalizedSkills.includes(alias)
+        );
 
     }
+
+
+    // -----------------------------------------
+    // FIND CURRENT FOCUS
+    // -----------------------------------------
+
+    let currentFocusFound = false;
 
 
     roadmap.innerHTML = "";
@@ -605,53 +1612,19 @@ function updateCareerRoadmap(careerGoal) {
 
     steps.forEach((step, index) => {
 
-        const stepElement =
-            document.createElement("div");
-
-
-        stepElement.className =
-            "roadmap-step";
-
-
-        if (index === 0) {
-
-            stepElement.classList.add(
-                "completed"
-            );
-
-        }
-
-
-        if (index === 1) {
-
-            stepElement.classList.add(
-                "current"
-            );
-
-        }
+        const isCareerGoal =
+            index === steps.length - 1;
 
 
         let status =
             "Upcoming";
 
-
-        if (index === 0) {
-
-            status =
-                "Starting Point";
-
-        }
+        let statusClass =
+            "";
 
 
-        if (index === 1) {
-
-            status =
-                "Current Focus";
-
-        }
-
-
-        if (index === steps.length - 1) {
+        // Career goal
+        if (isCareerGoal) {
 
             status =
                 "Career Goal";
@@ -659,14 +1632,71 @@ function updateCareerRoadmap(careerGoal) {
         }
 
 
+        // Skill already known
+        else if (hasSkill(step)) {
+
+            status =
+                "Completed";
+
+            statusClass =
+                "completed";
+
+        }
+
+
+        // First missing skill
+        else if (!currentFocusFound) {
+
+            status =
+                "Current Focus";
+
+            statusClass =
+                "current";
+
+            currentFocusFound = true;
+
+        }
+
+
+        // Create roadmap step
+        const stepElement =
+            document.createElement("div");
+
+        stepElement.className =
+            "roadmap-step";
+
+
+        if (statusClass) {
+
+            stepElement.classList.add(
+                statusClass
+            );
+
+        }
+
+
+        let icon =
+            index + 1;
+
+
+        if (status === "Completed") {
+
+            icon = "✓";
+
+        }
+
+
+        if (status === "Career Goal") {
+
+            icon = "🎯";
+
+        }
+
+
         stepElement.innerHTML = `
 
             <span>
-                ${
-                    index === 0
-                    ? "✓"
-                    : index + 1
-                }
+                ${icon}
             </span>
 
             <strong>
@@ -685,16 +1715,19 @@ function updateCareerRoadmap(careerGoal) {
         );
 
 
-        // Add connecting line except after last step
-        if (index < steps.length - 1) {
+        // Connecting line
+        if (
+            index <
+            steps.length - 1
+        ) {
 
             const line =
-                document.createElement("div");
-
+                document.createElement(
+                    "div"
+                );
 
             line.className =
                 "roadmap-line";
-
 
             roadmap.appendChild(
                 line
@@ -2267,5 +3300,727 @@ if (skillMapPage) {
 
 
     updateSkillMap();
+
+}
+// =====================================================
+// GO BEYOND - SLIDE 5: DYNAMIC SKILL GAP ANALYSIS
+// =====================================================
+
+const slide5SkillGapData = {
+
+    "AI/ML Engineer": [
+        {
+            skill: "Machine Learning",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 6,
+            why: "Machine Learning is a core requirement for AI/ML roles.",
+            action: "Complete ML fundamentals and build one practical ML project."
+        },
+        {
+            skill: "SQL",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 4,
+            why: "SQL is commonly required for working with datasets and ML pipelines.",
+            action: "Practice SQL queries and work with a real dataset."
+        },
+        {
+            skill: "Statistics",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 4,
+            why: "Statistics helps you understand data, models and evaluation metrics.",
+            action: "Strengthen probability, statistics and model evaluation."
+        }
+    ],
+
+    "Web Developer": [
+        {
+            skill: "React",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 7,
+            why: "React is widely used for modern frontend development.",
+            action: "Learn React fundamentals and build a responsive application."
+        },
+        {
+            skill: "JavaScript",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 8,
+            why: "JavaScript is fundamental to modern web development.",
+            action: "Practice JavaScript and build interactive web features."
+        },
+        {
+            skill: "Node.js",
+            required: "Beginner",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 5,
+            why: "Node.js helps you move from frontend development toward full-stack development.",
+            action: "Learn Node.js and build a simple REST API."
+        }
+    ],
+
+    "Data Scientist": [
+        {
+            skill: "Statistics",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 6,
+            why: "Statistics is essential for analysing data and interpreting models.",
+            action: "Strengthen statistics and apply it to real datasets."
+        },
+        {
+            skill: "SQL",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 7,
+            why: "SQL is one of the most important skills for extracting and analysing data.",
+            action: "Practice SQL using real-world datasets."
+        },
+        {
+            skill: "Machine Learning",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 5,
+            why: "Machine Learning helps data scientists build predictive models.",
+            action: "Learn supervised learning and build a prediction project."
+        }
+    ],
+
+    "Cybersecurity Engineer": [
+        {
+            skill: "Networking",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 6,
+            why: "Networking fundamentals are essential for understanding security threats.",
+            action: "Learn networking fundamentals and practise with security scenarios."
+        },
+        {
+            skill: "Linux",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "High",
+            opportunities: 5,
+            why: "Linux is widely used in cybersecurity environments.",
+            action: "Practise Linux commands, permissions and system administration."
+        },
+        {
+            skill: "Cybersecurity",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 5,
+            why: "Security fundamentals are required to analyse and prevent attacks.",
+            action: "Study cybersecurity fundamentals and practise security tools."
+        }
+    ]
+};
+
+
+// =====================================================
+// NORMALIZE STUDENT SKILLS
+// =====================================================
+
+function getStudentSkillData(profile) {
+
+    const skillMap = {};
+
+    if (!profile || !Array.isArray(profile.skills)) {
+        return skillMap;
+    }
+
+    profile.skills.forEach(skill => {
+
+        if (typeof skill === "string") {
+
+            const name = skill
+                .trim()
+                .toLowerCase();
+
+            if (name) {
+                skillMap[name] = "Beginner";
+            }
+
+        } else if (typeof skill === "object" && skill !== null) {
+
+            const name = String(
+                skill.name || ""
+            )
+                .trim()
+                .toLowerCase();
+
+            const level =
+                skill.level ||
+                skill.proficiency ||
+                "Beginner";
+
+            if (name) {
+                skillMap[name] = level;
+            }
+        }
+    });
+
+    return skillMap;
+}
+
+
+// =====================================================
+// CHECK WHETHER STUDENT HAS A SKILL
+// =====================================================
+
+function findStudentSkill(skillMap, skillName) {
+
+    const target = skillName
+        .toLowerCase()
+        .trim();
+
+    const aliases = {
+
+        "machine learning": [
+            "machine learning",
+            "ml"
+        ],
+
+        "javascript": [
+            "javascript",
+            "js"
+        ],
+
+        "react": [
+            "react",
+            "react.js",
+            "reactjs"
+        ],
+
+        "node.js": [
+            "node.js",
+            "nodejs",
+            "node"
+        ],
+
+        "sql": [
+            "sql",
+            "mysql",
+            "postgresql"
+        ],
+
+        "statistics": [
+            "statistics",
+            "stat"
+        ],
+
+        "networking": [
+            "networking",
+            "computer networks"
+        ],
+
+        "linux": [
+            "linux"
+        ],
+
+        "cybersecurity": [
+            "cybersecurity",
+            "cyber security",
+            "security"
+        ]
+    };
+
+    const possibleNames =
+        aliases[target] || [target];
+
+    for (const name of possibleNames) {
+
+        if (skillMap[name]) {
+            return skillMap[name];
+        }
+    }
+
+    return null;
+}
+
+
+// =====================================================
+// RENDER SLIDE 5
+// =====================================================
+
+function renderSlide5SkillGaps(profile) {
+
+    if (!profile) return;
+
+    const careerGoal =
+        profile.careerGoal || "AI/ML Engineer";
+
+    const gaps =
+        slide5SkillGapData[careerGoal];
+
+    if (!gaps) return;
+
+    const studentSkills =
+        getStudentSkillData(profile);
+
+    const gapList =
+        document.querySelector(".gap-list");
+
+    if (!gapList) return;
+
+
+    // -----------------------------------------------
+    // UPDATE GAP CARDS
+    // -----------------------------------------------
+
+    gapList.innerHTML = gaps.map((gap, index) => {
+
+        const currentLevel =
+            findStudentSkill(
+                studentSkills,
+                gap.skill
+            ) || "Not Started";
+
+        const priorityClass =
+            gap.priority === "HIGH"
+            ? "high"
+            : gap.priority === "MEDIUM"
+            ? "medium"
+            : "low";
+
+        const priorityBadge =
+            gap.priority === "HIGH"
+            ? "priority-high"
+            : gap.priority === "MEDIUM"
+            ? "priority-medium"
+            : "priority-low";
+
+        return `
+
+            <div class="gap-item">
+
+                <div class="gap-icon ${priorityClass}">
+                    ${gap.priority === "HIGH" ? "!" : "•"}
+                </div>
+
+                <div class="gap-content">
+
+                    <div class="gap-title">
+
+                        <strong>
+                            ${gap.skill}
+                        </strong>
+
+                        <span class="${priorityBadge}">
+                            ${gap.priority}
+                        </span>
+
+                    </div>
+
+                    <p>
+                        ${currentLevel}
+                        →
+                        ${gap.required}
+                    </p>
+
+                    <div class="slide5-gap-details">
+
+                        <span>
+                            📈 Demand:
+                            <strong>${gap.demand}</strong>
+                        </span>
+
+                        <span>
+                            🎯
+                            ${gap.opportunities}
+                            matched opportunities
+                        </span>
+
+                    </div>
+
+                    <small class="slide5-gap-why">
+    ${gap.why}
+</small>
+
+<div class="gap-path">
+
+    <span>Learn</span>
+    <b>→</b>
+
+    <span>Practice</span>
+    <b>→</b>
+
+    <span>Build Project</span>
+    <b>→</b>
+
+    <span>Reassess</span>
+
+</div>
+
+<div class="slide5-gap-action">
+
+    <strong>
+        Next:
+    </strong>
+
+    ${gap.action}
+
+</div>
+
+                </div>
+
+            </div>
+        `;
+
+    }).join("");
+
+
+    // -----------------------------------------------
+    // UPDATE "NEXT BEST ACTION"
+    // -----------------------------------------------
+
+    const highestPriority =
+        gaps.find(
+            gap => gap.priority === "HIGH"
+        ) || gaps[0];
+
+
+    const nextAction =
+        document.querySelector(
+            ".next-action-card"
+        );
+
+    if (nextAction && highestPriority) {
+
+        const heading =
+            nextAction.querySelector(
+                ".next-action-content h2"
+            );
+
+        const description =
+            nextAction.querySelector(
+                ".next-action-content p"
+            );
+
+        const tag =
+            nextAction.querySelector(
+                ".action-tag"
+            );
+
+        const button =
+            nextAction.querySelector(
+                "button"
+            );
+
+
+        if (heading) {
+
+            heading.textContent =
+                `Strengthen your ${highestPriority.skill} skills`;
+
+        }
+
+
+        if (description) {
+
+            description.textContent =
+                `${highestPriority.skill} is one of your highest-priority skill gaps for the ${careerGoal} role. ${highestPriority.action}`;
+
+        }
+
+
+        if (tag) {
+
+            tag.textContent =
+                `${highestPriority.priority} PRIORITY`;
+
+        }
+
+
+        if (button) {
+
+            button.textContent =
+                `Start ${highestPriority.skill} Plan →`;
+
+            button.onclick = function () {
+
+                 openLearningPlan(
+                       highestPriority.skill,
+                       careerGoal
+              );
+
+          };
+
+        }
+    }
+
+// -----------------------------------------------
+// UPDATE SLIDE 5 SUMMARY COUNTS
+// -----------------------------------------------
+
+const criticalCount =
+    document.getElementById("criticalGapCount");
+
+const mediumCount =
+    document.getElementById("mediumGapCount");
+
+const lowCount =
+    document.getElementById("lowGapCount");
+
+if (criticalCount) {
+    criticalCount.textContent =
+        gaps.filter(
+            gap => gap.priority === "HIGH"
+        ).length;
+}
+
+if (mediumCount) {
+    mediumCount.textContent =
+        gaps.filter(
+            gap => gap.priority === "MEDIUM"
+        ).length;
+}
+
+if (lowCount) {
+    lowCount.textContent =
+        gaps.filter(
+            gap => gap.priority === "LOW"
+        ).length;
+}
+
+
+// Skills currently covered
+const skillsCovered =
+    document.getElementById("skillsCovered");
+
+if (skillsCovered) {
+
+    const covered =
+        gaps.filter(
+            gap =>
+                findStudentSkill(
+                    studentSkills,
+                    gap.skill
+                )
+        ).length;
+
+    skillsCovered.textContent =
+        covered;
+}
+} 
+    
+
+// =====================================================
+// CONNECT SLIDE 5 TO EXISTING DASHBOARD
+// =====================================================
+
+// Keep your existing updateDashboard()
+// and add Slide 5 behaviour to it.
+
+const originalGoBeyondUpdateDashboard =
+    updateDashboard;
+
+updateDashboard = function(profile) {
+
+    originalGoBeyondUpdateDashboard(profile);
+
+    renderSlide5SkillGaps(profile);
+
+};
+
+
+// Render immediately if a profile already exists.
+
+const slide5SavedProfile =
+    localStorage.getItem(
+        "goBeyondProfile"
+    );
+
+if (slide5SavedProfile) {
+
+    try {
+
+        const slide5Profile =
+            JSON.parse(
+                slide5SavedProfile
+            );
+
+        renderSlide5SkillGaps(
+            slide5Profile
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Slide 5 profile error:",
+            error
+        );
+
+    }
+}
+// =====================================================
+// LIVE PROFILE UPDATES
+// =====================================================
+
+const liveCareerGoal =
+    document.getElementById("careerGoal");
+
+const liveStudentName =
+    document.getElementById("studentName");
+
+const liveBranch =
+    document.getElementById("branch");
+
+const liveYear =
+    document.getElementById("year");
+
+const liveSkills =
+    document.getElementById("skills");
+
+const liveInterests =
+    document.getElementById("interests");
+
+
+// Create the current profile directly from the form
+function getLiveProfile() {
+
+    return {
+
+        name:
+            liveStudentName
+                ? liveStudentName.value.trim()
+                : "Student",
+
+        branch:
+            liveBranch
+                ? liveBranch.value
+                : "Computer Science",
+
+        year:
+            liveYear
+                ? liveYear.value
+                : "1st Year",
+
+        careerGoal:
+            liveCareerGoal
+                ? liveCareerGoal.value
+                : "AI/ML Engineer",
+
+        skills:
+            liveSkills
+                ? liveSkills.value
+                    .split(",")
+                    .map(skill => skill.trim())
+                    .filter(Boolean)
+                : [],
+
+        interests:
+            liveInterests
+                ? liveInterests.value
+                    .split(",")
+                    .map(interest => interest.trim())
+                    .filter(Boolean)
+                : []
+
+    };
+}
+
+
+// -----------------------------------------------------
+// CAREER GOAL CHANGE
+// -----------------------------------------------------
+
+if (liveCareerGoal) {
+
+    liveCareerGoal.addEventListener(
+        "change",
+        function () {
+
+            const profile =
+                getLiveProfile();
+
+            console.log(
+                "Career changed to:",
+                profile.careerGoal
+            );
+
+            updateDashboard(profile);
+
+        }
+    );
+
+}
+
+
+// -----------------------------------------------------
+// NAME CHANGE
+// -----------------------------------------------------
+
+if (liveStudentName) {
+
+    liveStudentName.addEventListener(
+        "input",
+        function () {
+
+            const welcomeName =
+                document.querySelector(
+                    ".welcome h1 span"
+                );
+
+            if (welcomeName) {
+
+                welcomeName.textContent =
+                    liveStudentName.value.trim()
+                    || "Student";
+
+            }
+
+        }
+    );
+
+}
+
+
+// -----------------------------------------------------
+// BRANCH / YEAR CHANGE
+// -----------------------------------------------------
+
+if (liveBranch) {
+
+    liveBranch.addEventListener(
+        "change",
+        function () {
+
+            const profile =
+                getLiveProfile();
+
+            updateDashboard(profile);
+
+        }
+    );
+
+}
+
+if (liveYear) {
+
+    liveYear.addEventListener(
+        "change",
+        function () {
+
+            const profile =
+                getLiveProfile();
+
+            updateDashboard(profile);
+
+        }
+    );
 
 }

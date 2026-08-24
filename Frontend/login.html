@@ -625,7 +625,7 @@
             document.getElementById("accountMessage");
 
 
-        /* =========================
+        /* ========================
            LOGIN MODE
         ========================= */
 
@@ -676,10 +676,9 @@
         /* =========================
    LOGIN → ONBOARDING
 ========================= */
-
 document
     .getElementById("loginForm")
-    .addEventListener("submit", function(event) {
+    .addEventListener("submit", async function(event) {
 
         event.preventDefault();
 
@@ -687,17 +686,117 @@ document
             document.getElementById("email").value.trim();
 
         const password =
-            document.getElementById("password").value.trim();
+            document.getElementById("password").value;
 
         if (!email || !password) {
             alert("Please enter your email and password.");
             return;
         }
 
-        // Demo login → onboarding
-        window.location.href = "onboarding.html";
+        const isCreateMode =
+            createToggle.classList.contains("active");
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Please wait...";
+
+        try {
+
+            const endpoint =
+                isCreateMode
+                    ? "http://127.0.0.1:5000/api/register"
+                    : "http://127.0.0.1:5000/api/login";
+
+            const response =
+                await fetch(endpoint, {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    credentials: "include",
+
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+
+                });
+
+
+            const result =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                alert(
+                    result.message ||
+                    "Something went wrong."
+                );
+
+                return;
+            }
+
+
+            // -------------------------------
+            // CREATE ACCOUNT SUCCESS
+            // -------------------------------
+
+            if (isCreateMode) {
+
+                alert(
+                    "Account created successfully! You can now log in."
+                );
+
+                loginToggle.click();
+
+                document
+                    .getElementById("password")
+                    .value = "";
+
+                return;
+            }
+
+
+            // -------------------------------
+            // LOGIN SUCCESS
+            // -------------------------------
+
+            alert(
+                "Login successful! Welcome to GoBeyond."
+            );
+
+            window.location.href =
+                "onboarding.html";
+
+
+        } catch (error) {
+
+            console.error(
+                "Authentication error:",
+                error
+            );
+
+            alert(
+                "Unable to connect to the GoBeyond server. Make sure the backend is running."
+            );
+
+        } finally {
+
+            submitBtn.disabled = false;
+
+            submitBtn.textContent =
+                isCreateMode
+                    ? "Create Account →"
+                    : "Login →";
+
+        }
 
     });
+
     </script>
 
 </body>
