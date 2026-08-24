@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoBeyond - Opportunities</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #14213d;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            height: 90px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            border-bottom: 1px solid #e5e7ef;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #635bff;
+        }
+
+        .navbar nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        .navbar nav a {
+            text-decoration: none;
+            color: #5d6678;
+            font-weight: 700;
+        }
+
+        .navbar nav a:hover {
+            color: #635bff;
+        }
+
+
+        /* MAIN */
+
+        .section {
+            width: 86%;
+            max-width: 1400px;
+            margin: auto;
+            padding: 70px 0;
+        }
+
+
+        /* HEADING */
+
+        .small-text {
+            color: #635bff;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 46px;
+            margin: 0 0 15px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #64708a;
+            margin-bottom: 35px;
+        }
+
+
+        /* FILTERS */
+
+        .opportunity-filters {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 45px;
+        }
+
+        .filter {
+            border: 1px solid #d8dce8;
+            background: white;
+            color: #657086;
+            padding: 11px 22px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .filter:hover {
+            border-color: #635bff;
+            color: #635bff;
+        }
+
+        .filter.active {
+            background: #635bff;
+            color: white;
+        }
+
+
+        /* CATEGORY */
+
+        .opportunity-category {
+            margin-top: 35px;
+            margin-bottom: 22px;
+        }
+
+        .opportunity-category h2 {
+            font-size: 25px;
+            margin-bottom: 7px;
+        }
+
+        .opportunity-category p {
+            color: #69758c;
+        }
+
+
+        /* GRID */
+
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 55px;
+        }
+
+
+        /* CARD */
+
+        .opportunity-card {
+            background: white;
+            border: 1px solid #e1e4ed;
+            border-radius: 22px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(30, 40, 70, 0.04);
+            transition: 0.2s;
+        }
+
+        .opportunity-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(30, 40, 70, 0.09);
+        }
+
+
+        /* CARD HEADER */
+
+        .opportunity-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+
+        /* TAGS */
+
+        .tag {
+            padding: 8px 13px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .green {
+            background: #dcf7e8;
+            color: #13834a;
+        }
+
+        .purple {
+            background: #eee1ff;
+            color: #8141c7;
+        }
+
+        .blue {
+            background: #e2e7ff;
+            color: #4c51c8;
+        }
+
+        .orange {
+            background: #fff0dc;
+            color: #c87919;
+        }
+
+
+        /* MATCH */
+
+        .match {
+            color: #13834a;
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+
+        /* TEXT */
+
+        .opportunity-card h3 {
+            font-size: 22px;
+            margin: 0 0 10px;
+        }
+
+        .organization {
+            color: #635bff;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .description {
+            color: #64708a;
+            line-height: 1.7;
+        }
+
+
+        /* SKILLS */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .skill {
+            padding: 7px 10px;
+            border-radius: 18px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .skill-matched {
+            background: #dcf7e8;
+            color: #16844b;
+        }
+
+        .skill-missing {
+            background: #ffe4e9;
+            color: #d93655;
+        }
+
+
+        /* DEADLINE */
+
+        .deadline {
+            color: #64708a;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+
+        /* VIEW BUTTON */
+
+        .view-btn {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 12px 20px;
+            background: #635bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .view-btn:hover {
+            background: #5048e5;
+        }
+
+
+        /* NO RESULTS */
+
+        .no-results {
+            display: none;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #e1e4ed;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: white;
+            border-top: 1px solid #e5e7ef;
+            text-align: center;
+            padding: 25px;
+            color: #69758c;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+
+            .opportunity-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .section {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .opportunity-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Go<span>Beyond</span>
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Dashboard
+            </a>
+
+            <a href="opportunities.html">
+                Opportunities
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main>
+
+        <section class="section">
+
+
+            <p class="small-text">
+                CAREER OPPORTUNITIES
+            </p>
+
+            <h1>
+                Opportunities Matched to You
+            </h1>
+
+            <p class="subtitle">
+                Find internships, hackathons and projects
+                based on your skills and career goals.
+            </p>
+
+
+
+            <!-- FILTERS -->
+
+            <div class="opportunity-filters">
+
+                <button class="filter active"
+                        data-filter="all">
+                    All
+                </button>
+
+                <button class="filter"
+                        data-filter="internship">
+                    Internship
+                </button>
+
+                <button class="filter"
+                        data-filter="hackathon">
+                    Hackathon
+                </button>
+
+                <button class="filter"
+                        data-filter="workshop">
+                    Workshop
+                </button>
+
+                <button class="filter"
+                        data-filter="project">
+                    Project
+                </button>
+
+                <button class="filter"
+                        data-filter="placement">
+                    Placement
+                </button>
+
+            </div>
+
+
+
+            <!-- BEST MATCHES -->
+
+            <div class="opportunity-category">
+
+                <h2>
+                    ⭐ Best Matches
+                </h2>
+
+                <p>
+                    Opportunities that closely match your current skills.
+                </p>
+
+            </div>
+
+
+
+            <div class="opportunity-grid">
+
+
+                <!-- INTERNSHIP -->
+
+                <div class="opportunity-card"
+                     data-type="internship">
+
+                    <div class="opportunity-header">
+
+                        <span class="tag green">
+                            INTERNSHIP
+                        </span>
+
+                        <span class="match">
+                            85% MATCH
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Java Backend Internship
+                    </h3>
+
+                    <p class="organization">
+                        Example Technologies
+                    </p>
+
+                    <p class="description">
+                        Internship opportunity for students
+                        interested in Java backend development.
+                    </p>
+
+                    <div class="skills">
+
+                        <span class="skill skill-matched">
+                            ✓ Java
+                        </span>
+
+                        <span class="skill skill-matched">
+                            ✓ SQL
+                        </span>
+
+                        <span class="skill skill-matched">
+                            ✓ Git
+                        </span>
+
+                        <span class="skill skill-missing">
+                            ⚠ Spring Boot
+                        </span>
+
+                    </div>
+
+                    <p class="deadline">
+                        Deadline: 15 September 2026
+                    </p>
+
+
+                    <!-- INTERNSHIP → MODULE 8 -->
+
+                    <a href="opportunity-detail.html?type=internship"
+                       class="view-btn">
+
+                        View Opportunity →
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- HACKATHON -->
+
+                <div class="opportunity-card"
+                     data-type="hackathon">
+
+                    <div class="opportunity-header">
+
+                        <span class="tag purple">
+                            HACKATHON
+                        </span>
+
+                        <span class="match">
+                            78% MATCH
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        AI Innovation Hackathon
+                    </h3>
+
+                    <p class="organization">
+                        Example Organization
+                    </p>
+
+                    <p class="description">
+                        Build an innovative solution using
+                        AI and emerging technologies.
+                    </p>
+
+                    <div class="skills">
+
+                        <span class="skill skill-matched">
+                            ✓ Python
+                        </span>
+
+                        <span class="skill skill-matched">
+                            ✓ Git
+                        </span>
+
+                        <span class="skill skill-missing">
+                            ⚠ Machine Learning
+                        </span>
+
+                    </div>
+
+                    <p class="deadline">
+                        Deadline: 20 September 2026
+                    </p>
+
+
+                    <!-- HACKATHON → MODULE 8 -->
+
+                    <a href="opportunity-detail.html?type=hackathon"
+                       class="view-btn">
+
+                        View Opportunity →
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- PROJECT -->
+
+                <div class="opportunity-card"
+                     data-type="project">
+
+                    <div class="opportunity-header">
+
+                        <span class="tag blue">
+                            PROJECT
+                        </span>
+
+                        <span class="match">
+                            72% MATCH
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Student Open Source Project
+                    </h3>
+
+                    <p class="organization">
+                        Example Community
+                    </p>
+
+                    <p class="description">
+                        Gain practical experience by contributing
+                        to a real-world project.
+                    </p>
+
+                    <div class="skills">
+
+                        <span class="skill skill-matched">
+                            ✓ HTML
+                        </span>
+
+                        <span class="skill skill-matched">
+                            ✓ CSS
+                        </span>
+
+                        <span class="skill skill-missing">
+                            ⚠ JavaScript
+                        </span>
+
+                    </div>
+
+                    <p class="deadline">
+                        Deadline: Open
+                    </p>
+
+
+                    <!-- PROJECT → MODULE 8 -->
+
+                    <a href="opportunity-detail.html?type=project"
+                       class="view-btn">
+
+                        View Opportunity →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DEADLINE SOON -->
+
+            <div class="opportunity-category">
+
+                <h2>
+                    ⏰ Deadline Soon
+                </h2>
+
+                <p>
+                    Opportunities that need your attention soon.
+                </p>
+
+            </div>
+
+
+
+            <div class="opportunity-grid">
+
+
+                <!-- WORKSHOP -->
+
+                <div class="opportunity-card"
+                     data-type="workshop">
+
+                    <div class="opportunity-header">
+
+                        <span class="tag orange">
+                            WORKSHOP
+                        </span>
+
+                        <span class="match">
+                            70% MATCH
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Full Stack Development Workshop
+                    </h3>
+
+                    <p class="organization">
+                        Example Learning Hub
+                    </p>
+
+                    <p class="description">
+                        Learn modern web development and
+                        build a complete web application.
+                    </p>
+
+                    <div class="skills">
+
+                        <span class="skill skill-matched">
+                            ✓ HTML
+                        </span>
+
+                        <span class="skill skill-matched">
+                            ✓ CSS
+                        </span>
+
+                        <span class="skill skill-missing">
+                            ⚠ JavaScript
+                        </span>
+
+                    </div>
+
+                    <p class="deadline">
+                        Deadline: 10 September 2026
+                    </p>
+
+
+                    <!-- WORKSHOP → MODULE 8 -->
+
+                    <a href="opportunity-detail.html?type=workshop"
+                       class="view-btn">
+
+                        View Opportunity →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="no-results"
+                 id="noResults">
+
+                <h3>
+                    No opportunities found
+                </h3>
+
+                <p>
+                    There are currently no opportunities in this category.
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+        GoBeyond © 2026
+    </footer>
+
+
+
+    <!-- FILTER JAVASCRIPT -->
+
+    <script>
+
+        const filterButtons =
+            document.querySelectorAll(".filter");
+
+        const opportunityCards =
+            document.querySelectorAll(".opportunity-card");
+
+        const noResults =
+            document.getElementById("noResults");
+
+
+        filterButtons.forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+                const selectedFilter =
+                    this.getAttribute("data-filter");
+
+
+                filterButtons.forEach(function(btn) {
+                    btn.classList.remove("active");
+                });
+
+
+                this.classList.add("active");
+
+
+                let visibleCards = 0;
+
+
+                opportunityCards.forEach(function(card) {
+
+                    const cardType =
+                        card.getAttribute("data-type");
+
+
+                    if (
+                        selectedFilter === "all" ||
+                        cardType === selectedFilter
+                    ) {
+
+                        card.style.display = "";
+
+                        visibleCards++;
+
+                    } else {
+
+                        card.style.display = "none";
+
+                    }
+
+                });
+
+
+                if (visibleCards === 0) {
+
+                    noResults.style.display = "block";
+
+                } else {
+
+                    noResults.style.display = "none";
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

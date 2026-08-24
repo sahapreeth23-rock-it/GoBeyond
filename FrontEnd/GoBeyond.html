@@ -1,0 +1,4149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoBeyond | Smart Student Journey</title>
+
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e6e9f0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #635bff;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #687084;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.navbar nav a:hover {
+    color: #635bff;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 86%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome {
+    margin-top: 45px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(135deg, #ffffff, #f3f2ff);
+
+    padding: 38px;
+
+    border-radius: 24px;
+    border: 1px solid #e7e8f2;
+}
+
+.small-text {
+    color: #635bff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 7px;
+}
+
+.welcome h1 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.welcome h1 span {
+    color: #635bff;
+}
+
+.subtitle {
+    color: #687084;
+}
+
+.student-badge {
+    background: #ffffff;
+    border: 1px solid #e3e5ef;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 10px 25px rgba(30, 35, 60, 0.08);
+}
+
+.student-badge strong {
+    font-size: 22px;
+    color: #635bff;
+}
+
+.student-badge span {
+    font-size: 11px;
+    color: #777f91;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+
+    margin-top: 22px;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 22px;
+
+    border: 1px solid #e7e9f0;
+    border-radius: 16px;
+
+    transition: 0.25s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(30, 35, 60, 0.08);
+}
+
+.stat-card p {
+    color: #7b8292;
+    font-size: 13px;
+}
+
+.stat-card h3 {
+    margin-top: 6px;
+    font-size: 19px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    margin-top: 60px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-size: 26px;
+}
+
+
+/* =========================
+   PRIORITIES
+========================= */
+
+.priority-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.priority-card {
+    background: #ffffff;
+    border: 1px solid #e4e7ef;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    transition: 0.25s;
+}
+
+.priority-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(30, 35, 60, 0.08);
+}
+
+.priority-card.urgent {
+    border-left: 4px solid #ff5c77;
+}
+
+.priority-top,
+.opportunity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priority-card h3 {
+    margin: 18px 0 10px;
+    font-size: 19px;
+}
+
+.priority-card p {
+    color: #697185;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.priority-card button,
+.opportunity-card button {
+    border: none;
+    background: #635bff;
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.priority-card button:hover,
+.opportunity-card button:hover {
+    background: #5048e5;
+}
+
+
+/* =========================
+   TAGS
+========================= */
+
+.tag {
+    padding: 5px 9px;
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.red {
+    background: #ffe5ea;
+    color: #d93555;
+}
+
+.yellow {
+    background: #fff4cc;
+    color: #a77700;
+}
+
+.green {
+    background: #dff8e9;
+    color: #16844b;
+}
+
+.blue {
+    background: #e5e8ff;
+    color: #4d48c8;
+}
+
+.purple {
+    background: #f0e5ff;
+    color: #7a43bd;
+}
+
+.orange {
+    background: #ffe9d7;
+    color: #b95d12;
+}
+
+
+/* =========================
+   OPPORTUNITIES
+========================= */
+
+.opportunity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.opportunity-card {
+    background: #ffffff;
+
+    padding: 25px;
+
+    border-radius: 18px;
+    border: 1px solid #e4e7ef;
+
+    transition: 0.25s;
+}
+
+.opportunity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(30, 35, 60, 0.08);
+}
+
+.match {
+    color: #16844b;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.opportunity-card h3 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.organization {
+    color: #635bff;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.opportunity-card > p:not(.organization) {
+    color: #697185;
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+.deadline {
+    font-size: 12px;
+    color: #777f91;
+
+    margin-bottom: 18px;
+}
+
+.view-all {
+    background: transparent;
+    border: 1px solid #d8dbe5;
+
+    padding: 9px 15px;
+    border-radius: 9px;
+
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* =========================
+   ROADMAP
+========================= */
+
+.roadmap-section {
+    background: #ffffff;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    border: 1px solid #e4e7ef;
+}
+
+.roadmap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 35px;
+}
+
+.roadmap-step {
+    min-width: 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.roadmap-step span {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #eef0f6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 800;
+    color: #697185;
+
+    margin-bottom: 10px;
+}
+
+.roadmap-step.completed span {
+    background: #dff8e9;
+    color: #16844b;
+}
+
+.roadmap-step.current span {
+    background: #635bff;
+    color: white;
+
+    box-shadow: 0 0 0 6px #e9e8ff;
+}
+
+.roadmap-step strong {
+    font-size: 13px;
+}
+
+.roadmap-step small {
+    color: #8a91a0;
+    font-size: 11px;
+}
+
+.roadmap-line {
+    height: 2px;
+    flex: 1;
+    background: #dfe2ea;
+    margin: 0 8px;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-card {
+    background: #ffffff;
+
+    border: 1px solid #e4e7ef;
+    border-radius: 20px;
+
+    padding: 30px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-bottom: 28px;
+}
+
+.avatar {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #635bff;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.profile-info p {
+    color: #777f91;
+    font-size: 13px;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.profile-details div {
+    background: #f7f8fb;
+    padding: 18px;
+    border-radius: 12px;
+}
+
+.profile-details span {
+    color: #7d8494;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.profile-details p {
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 70px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #8a91a0;
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .priority-grid,
+    .opportunity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-details {
+        grid-template-columns: 1fr;
+    }
+
+    .roadmap {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 15px;
+    }
+
+    .roadmap-step {
+        min-width: 130px;
+    }
+
+    .roadmap-line {
+        min-width: 40px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    main {
+        width: 92%;
+    }
+
+    .welcome {
+        padding: 25px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+    .welcome h1 {
+        font-size: 28px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        margin-top: 40px;
+    }
+
+    .section-heading h2 {
+        font-size: 22px;
+    }
+
+    .roadmap-section {
+        padding: 22px;
+    }
+}
+/* =========================
+   MATCH ANALYSIS MODAL
+========================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(15, 18, 35, 0.55);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.match-modal {
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+
+    padding: 32px;
+
+    box-shadow: 0 25px 70px rgba(20, 25, 50, 0.25);
+
+    animation: modalOpen 0.25s ease;
+}
+
+@keyframes modalOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+.close-modal {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    width: 34px;
+    height: 34px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f1f2f7;
+
+    color: #555c6d;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+.modal-organization {
+    color: #635bff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+.match-score {
+    text-align: center;
+
+    padding: 20px;
+
+    background: #f3f2ff;
+
+    border-radius: 18px;
+
+    margin-bottom: 22px;
+}
+
+.match-score strong {
+    display: block;
+
+    font-size: 42px;
+
+    color: #635bff;
+}
+
+.match-score span {
+    font-size: 12px;
+
+    color: #707789;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.modal-section {
+    margin-top: 20px;
+}
+
+.modal-section h3 {
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+.skill-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.skill {
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.skill.matched {
+    background: #dff8e9;
+
+    color: #16844b;
+}
+
+.skill.missing {
+    background: #ffe5ea;
+
+    color: #d93555;
+}
+
+.action-box {
+    margin-top: 25px;
+
+    padding: 18px;
+
+    background: #f7f8fb;
+
+    border-radius: 16px;
+}
+
+.action-box p {
+    font-size: 11px;
+
+    color: #7d8494;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+.action-box strong {
+    display: block;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.action-box button {
+    border: none;
+
+    background: #635bff;
+
+    color: #ffffff;
+
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.action-box button:hover {
+    background: #5048e5;
+}
+/* =========================
+   PROFILE FORM
+========================= */
+
+#profileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #303749;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #dfe2ea;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #303749;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #635bff;
+
+    box-shadow: 0 0 0 3px #e9e8ff;
+}
+
+.form-group input::placeholder {
+    color: #9aa0ae;
+}
+
+.form-group small {
+    color: #8a91a0;
+    font-size: 11px;
+}
+
+.save-profile-btn {
+    align-self: flex-start;
+
+    border: none;
+
+    background: #635bff;
+    color: #ffffff;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.save-profile-btn:hover {
+    background: #5048e5;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(99, 91, 255, 0.2);
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .save-profile-btn {
+        width: 100%;
+    }
+
+}
+/* =========================================
+   🌸 A LITTLE SPACE FOR YOU — JOURNAL
+   ========================================= */
+
+.journal-section {
+    position: relative;
+    margin-top: 30px;
+    padding: 45px;
+    border-radius: 28px;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #fff1f6 0%,
+        #fff7fb 45%,
+        #f8f2ff 100%
+    );
+
+    border: 1px solid rgba(236, 183, 211, 0.45);
+    box-shadow: 0 15px 40px rgba(190, 120, 160, 0.12);
+}
+
+
+/* Decorative flowers and sparkles */
+
+.journal-section::before {
+    content: "🌸";
+    position: absolute;
+    top: 18px;
+    right: 35px;
+    font-size: 34px;
+    opacity: 0.7;
+    transform: rotate(12deg);
+}
+
+.journal-section::after {
+    content: "✦  ♡  ✿";
+    position: absolute;
+    bottom: 18px;
+    left: 30px;
+    font-size: 20px;
+    letter-spacing: 10px;
+    opacity: 0.35;
+}
+
+
+/* Heading */
+
+.journal-section .section-heading {
+    position: relative;
+    z-index: 2;
+}
+
+.journal-section .small-text {
+    color: #c45b8c;
+    letter-spacing: 2px;
+}
+
+.journal-section h2 {
+    color: #7d3f63;
+    font-size: 32px;
+    margin-top: 6px;
+}
+
+.section-description {
+    color: #8b7180;
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+
+/* Main journal writing card */
+
+.journal-card {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 28px;
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(177, 105, 145, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+
+/* Labels */
+
+.journal-card label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #7d3f63;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+/* Title input */
+
+.journal-card input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid #edc8da;
+    border-radius: 12px;
+
+    background: #fffafd;
+    color: #593d4d;
+
+    font-size: 15px;
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+.journal-card input::placeholder {
+    color: #b89aa9;
+}
+
+.journal-card input:focus {
+    border-color: #d98caf;
+    box-shadow: 0 0 0 4px rgba(217, 140, 175, 0.12);
+}
+
+
+/* Writing area */
+
+.journal-card textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    min-height: 180px;
+    resize: vertical;
+
+    padding: 18px;
+
+    border: 1px solid #edc8da;
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            rgba(255, 250, 253, 0.95),
+            rgba(255, 250, 253, 0.95)
+        );
+
+    color: #593d4d;
+
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.7;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+.journal-card textarea::placeholder {
+    color: #b89aa9;
+}
+
+.journal-card textarea:focus {
+    border-color: #d98caf;
+
+    box-shadow:
+        0 0 0 4px rgba(217, 140, 175, 0.12),
+        0 8px 20px rgba(190, 120, 160, 0.08);
+}
+
+
+/* Give some space between fields */
+
+.journal-card .form-group {
+    margin-bottom: 20px;
+}
+
+
+/* Save button */
+
+.save-journal-btn {
+    border: none;
+    border-radius: 12px;
+
+    padding: 13px 23px;
+
+    background: linear-gradient(
+        135deg,
+        #d979a4,
+        #b9689a
+    );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 7px 18px rgba(185, 104, 154, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.save-journal-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(185, 104, 154, 0.32);
+}
+
+.save-journal-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   Previous Journal Entries
+   ========================================= */
+
+.journal-entries {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 38px;
+}
+
+.journal-entries h3 {
+    color: #7d3f63;
+    font-size: 22px;
+}
+
+
+/* Individual diary entry */
+
+.journal-entry {
+    position: relative;
+
+    margin-top: 18px;
+    padding: 22px 24px;
+
+    background: #fffdfd;
+
+    border-radius: 16px;
+
+    border-left: 4px solid #e7a5c2;
+
+    box-shadow: 0 8px 22px rgba(177, 105, 145, 0.09);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.journal-entry:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 26px rgba(177, 105, 145, 0.14);
+}
+
+
+/* Entry heading */
+
+.journal-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.journal-entry h4 {
+    margin: 0 0 5px;
+
+    color: #70435c;
+    font-size: 17px;
+}
+
+.journal-entry small {
+    color: #aa8a99;
+    font-size: 12px;
+}
+
+
+/* Entry text */
+
+.journal-entry p {
+    margin-top: 14px;
+
+    color: #594552;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+}
+
+
+/* Delete button */
+
+.delete-journal-btn {
+    border: none;
+    background: transparent;
+
+    color: #c47b9d;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.delete-journal-btn:hover {
+    color: #a94e78;
+}
+
+
+/* Empty journal message */
+
+.empty-journal {
+    padding: 18px 0;
+
+    color: #a98c9a;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   📱 MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .journal-section {
+        padding: 28px 18px;
+        border-radius: 22px;
+    }
+
+    .journal-section h2 {
+        font-size: 26px;
+    }
+
+    .journal-card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .journal-card textarea {
+        min-height: 150px;
+    }
+
+    .journal-entry-header {
+        flex-direction: column;
+    }
+
+    .delete-journal-btn {
+        align-self: flex-start;
+    }
+
+}
+/* =========================================
+   🌷 DAILY MOOD CHECK
+   ========================================= */
+
+.mood-check {
+    margin-top: 25px;
+    padding: 22px;
+
+    background: rgba(255, 242, 248, 0.75);
+
+    border: 1px solid rgba(225, 170, 198, 0.45);
+    border-radius: 18px;
+}
+
+.mood-question {
+    margin: 0;
+
+    color: #7d3f63;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.mood-subtext {
+    margin: 6px 0 18px;
+
+    color: #9b7d8c;
+    font-size: 13px;
+}
+
+
+/* Mood buttons */
+
+.mood-options {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.mood-option {
+    flex: 1;
+    min-width: 90px;
+
+    padding: 14px 10px;
+
+    border: 1px solid #edc8da;
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.mood-option span {
+    display: block;
+
+    font-size: 28px;
+
+    margin-bottom: 6px;
+}
+
+.mood-option small {
+    color: #765568;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Hover */
+
+.mood-option:hover {
+    transform: translateY(-3px);
+
+    border-color: #d98caf;
+
+    background: #fff7fb;
+
+    box-shadow:
+        0 7px 15px rgba(190, 120, 160, 0.12);
+}
+
+
+/* Selected mood */
+
+.mood-option.selected {
+    transform: translateY(-3px);
+
+    border-color: #d477a1;
+
+    background: linear-gradient(
+        135deg,
+        #ffe3ef,
+        #f8e8ff
+    );
+
+    box-shadow:
+        0 8px 18px rgba(190, 120, 160, 0.18);
+}
+
+.mood-option.selected small {
+    color: #7d3f63;
+}
+
+
+/* Selected message */
+
+.selected-mood {
+    display: none;
+
+    margin: 16px 0 0;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    color: #7d3f63;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .mood-options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mood-option {
+        min-width: unset;
+    }
+
+}
+/* =========================================
+   ✨ START YOUR JOURNEY - PROFILE
+   ========================================= */
+
+.profile-section {
+    position: relative;
+}
+
+.profile-section .section-heading {
+    margin-bottom: 25px;
+}
+
+.profile-section .section-description {
+    max-width: 650px;
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #7b7280;
+}
+
+
+/* Profile form card */
+
+.profile-card {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #fff9fc
+    );
+
+    border: 1px solid rgba(230, 190, 210, 0.45);
+
+    box-shadow:
+        0 10px 30px rgba(150, 100, 130, 0.08);
+
+    transition: box-shadow 0.25s ease;
+}
+
+.profile-card:hover {
+    box-shadow:
+        0 14px 35px rgba(150, 100, 130, 0.12);
+}
+
+
+/* Small decorative element */
+
+.profile-card::after {
+    content: "✦";
+    position: absolute;
+    right: 25px;
+    top: 18px;
+
+    font-size: 22px;
+    opacity: 0.25;
+}
+/* =========================================
+   ⭐🔥 GO-BEYOND PROGRESS
+   Stars + Streak
+   ========================================= */
+
+.student-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Student badge */
+
+.student-progress .student-badge {
+    margin-right: 4px;
+}
+
+
+/* Progress cards */
+
+.progress-stat {
+    min-width: 105px;
+    padding: 12px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(245, 158, 11, 0.35);
+
+    background: linear-gradient(
+        135deg,
+        #fff8dc,
+        #fff1b8
+    );
+
+    box-shadow:
+        0 7px 18px rgba(245, 158, 11, 0.14);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Streak card */
+
+.progress-stat:last-child {
+    border-color: rgba(239, 68, 68, 0.30);
+
+    background: linear-gradient(
+        135deg,
+        #fff1d6,
+        #ffe1dc
+    );
+
+    box-shadow:
+        0 7px 18px rgba(239, 68, 68, 0.12);
+}
+
+
+/* Hover */
+
+.progress-stat:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px rgba(245, 158, 11, 0.20);
+}
+
+
+/* Icons */
+
+.progress-icon {
+    font-size: 26px;
+    line-height: 1;
+}
+
+
+/* Numbers */
+
+.progress-stat strong {
+    display: block;
+
+    color: #9a5b00;
+
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+
+/* Labels */
+
+.progress-stat span:not(.progress-icon) {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #8a6a35;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* Streak number */
+
+.progress-stat:last-child strong {
+    color: #c2410c;
+}
+
+.progress-stat:last-child span:not(.progress-icon) {
+    color: #9f4b2f;
+}
+
+
+/* =========================================
+   📱 MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .student-progress {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .progress-stat {
+        min-width: 100px;
+    }
+
+}
+/* =========================================
+   ⭐ GO BEYOND DAILY ACTION
+   ========================================= */
+
+.go-beyond-action {
+    margin-top: 24px;
+    padding: 22px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #fff8d9,
+        #fff0c2
+    );
+
+    border: 1px solid rgba(245, 158, 11, 0.35);
+
+    box-shadow:
+        0 8px 22px rgba(245, 158, 11, 0.10);
+}
+
+
+/* Content */
+
+.go-beyond-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.go-beyond-icon {
+    font-size: 30px;
+    line-height: 1;
+}
+
+.go-beyond-content h3 {
+    margin: 0;
+
+    color: #92400e;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.go-beyond-content p {
+    margin: 6px 0 0;
+
+    color: #8a5a20;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* Button */
+
+.go-beyond-btn {
+    margin-top: 18px;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #f59e0b,
+        #ea580c
+    );
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 16px rgba(234, 88, 12, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.go-beyond-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(234, 88, 12, 0.30);
+}
+
+.go-beyond-btn:active {
+    transform: translateY(0);
+}
+
+
+/* Success state */
+
+.go-beyond-btn.completed {
+    background: linear-gradient(
+        135deg,
+        #eab308,
+        #f59e0b
+    );
+
+    cursor: default;
+}
+
+
+/* Message */
+
+.go-beyond-message {
+    margin: 12px 0 0;
+
+    color: #92400e;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+/* Mobile */
+@media (max-width: 768px) {
+    .go-beyond-action {
+        padding: 18px;
+    }
+    .go-beyond-content {
+        gap: 10px;
+    }
+    .go-beyond-btn {
+        width: 100%;
+    }
+}
+/* =========================================
+   🎯 TODAY'S GO-BEYOND ACTION
+   ========================================= */
+
+.daily-action-card {
+    margin-top: 24px;
+    padding: 24px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #fff9db,
+        #fff0c7
+    );
+
+    border: 1px solid rgba(245, 158, 11, 0.38);
+
+    box-shadow:
+        0 9px 24px rgba(245, 158, 11, 0.12);
+}
+
+
+/* Header */
+
+.daily-action-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.daily-action-label {
+    margin: 0 0 6px;
+
+    color: #c2410c;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.daily-action-header h3 {
+    margin: 0;
+
+    color: #78350f;
+
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.daily-action-icon {
+    font-size: 32px;
+    line-height: 1;
+}
+
+
+/* Description */
+
+#dailyActionDescription {
+    margin: 12px 0 18px;
+
+    max-width: 700px;
+
+    color: #8a5a20;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* Footer */
+
+.daily-action-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+#dailyActionReason {
+    color: #9a6b2f;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Complete button */
+
+.complete-action-btn {
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #f59e0b,
+        #ea580c
+    );
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(234, 88, 12, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.complete-action-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 19px rgba(234, 88, 12, 0.28);
+}
+
+
+/* Completed state */
+
+.complete-action-btn.completed {
+    background: linear-gradient(
+        135deg,
+        #eab308,
+        #f59e0b
+    );
+
+    cursor: default;
+}
+
+
+/* Completion message */
+
+.action-completion-message {
+    margin: 12px 0 0;
+
+    color: #92400e;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .daily-action-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .complete-action-btn {
+        width: 100%;
+    }
+
+    .daily-action-header h3 {
+        font-size: 17px;
+    }
+
+}
+/* =========================================
+   ❤️ LEARNING REFLECTION
+   Complete & Earn
+   ========================================= */
+
+.learning-reflection {
+    margin-top: 20px;
+    padding: 22px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #fff1f1,
+        #ffe3e3
+    );
+
+    border: 1px solid rgba(220, 38, 38, 0.28);
+
+    box-shadow:
+        0 8px 22px rgba(220, 38, 38, 0.10);
+}
+
+
+/* Heading */
+
+.reflection-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.reflection-icon {
+    font-size: 27px;
+}
+
+.reflection-heading h4 {
+    margin: 0;
+
+    color: #991b1b;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.reflection-heading p {
+    margin: 5px 0 0;
+
+    color: #9f4b4b;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* Reflection textarea */
+
+#learningReflection {
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-top: 16px;
+    padding: 14px;
+
+    min-height: 100px;
+    resize: vertical;
+
+    border: 1px solid #f0aaaa;
+    border-radius: 12px;
+
+    background: #fffafa;
+
+    color: #5f2020;
+
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.6;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#learningReflection::placeholder {
+    color: #c98f8f;
+}
+
+#learningReflection:focus {
+    border-color: #dc2626;
+
+    box-shadow:
+        0 0 0 4px rgba(220, 38, 38, 0.10);
+}
+
+
+/* Complete button */
+
+.complete-learning-btn {
+    margin-top: 14px;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #dc2626,
+        #b91c1c
+    );
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 16px rgba(185, 28, 28, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.complete-learning-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(185, 28, 28, 0.30);
+}
+
+
+/* Completion message */
+
+.learning-completion-message {
+    margin: 12px 0 0;
+
+    color: #991b1b;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .learning-reflection {
+        padding: 18px;
+    }
+
+    .complete-learning-btn {
+        width: 100%;
+    }
+
+}
+.complete-learning-btn.completed {
+    background: linear-gradient(
+        135deg,
+        #f59e0b,
+        #ca8a04
+    );
+
+    cursor: default;
+    opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span>Go</span>Beyond
+        </div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#opportunities">Opportunities</a>
+            <a href="#journal">Journal</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#profile">Profile</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Main Dashboard -->
+    <main id="dashboard">
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+
+            <div>
+                <p class="small-text">YOUR PERSONALIZED STUDENT JOURNEY</p>
+
+                <h1>
+                    Good morning, <span>Ananya</span> 👋
+                </h1>
+
+                <p class="subtitle">
+                    Here's what matters most for your journey today.
+                </p>
+            </div>
+
+            <div class="student-progress">
+
+    <div class="student-badge">
+        <strong>CSE</strong>
+        <span>3rd Year</span>
+    </div>
+
+    <div class="progress-stat">
+        <span class="progress-icon">⭐</span>
+        <div>
+            <strong id="starCount">0</strong>
+            <span>Stars</span>
+        </div>
+    </div>
+
+    <div class="progress-stat">
+        <span class="progress-icon">🔥</span>
+        <div>
+            <strong id="streakCount">0</strong>
+            <span>Day Streak</span>
+        </div>
+    </div>
+
+</div>
+
+        </section>
+        <!-- Profile -->
+        <section class="section profile-section" id="profile">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="small-text">START YOUR JOURNEY</p>
+
+                    <h2>Tell GoBeyond About You ✨</h2>
+
+                     <p class="section-description">
+                           Help us understand your goals, skills, interests, and aspirations
+                        so we can personalize your journey.
+                    </p>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <form id="profileForm">
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="studentName">Name</label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter your name"
+                        value="Ananya"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="branch">Branch</label>
+
+                    <select id="branch">
+
+                        <option value="Computer Science">
+                            Computer Science
+                        </option>
+
+                        <option value="Information Technology">
+                            Information Technology
+                        </option>
+
+                        <option value="Electronics">
+                            Electronics
+                        </option>
+
+                        <option value="Mechanical">
+                            Mechanical
+                        </option>
+
+                        <option value="Civil">
+                            Civil
+                        </option>
+
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="year">Year</label>
+
+                    <select id="year">
+
+                        <option value="1st Year">1st Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year" selected>3rd Year</option>
+                        <option value="4th Year">4th Year</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="careerGoal">
+                        Career Goal
+                    </label>
+
+                    <select id="careerGoal">
+
+                        <option value="AI/ML Engineer">
+                            AI/ML Engineer
+                        </option>
+
+                        <option value="Web Developer">
+                            Web Developer
+                        </option>
+
+                        <option value="Data Scientist">
+                            Data Scientist
+                        </option>
+
+                        <option value="Cybersecurity Engineer">
+                            Cybersecurity Engineer
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="skills">
+                    Your Skills
+                </label>
+
+                <input
+                    type="text"
+                    id="skills"
+                    placeholder="Example: Python, Git, HTML, CSS"
+                    value="Python, Git, HTML, CSS, JavaScript"
+                >
+
+                <small>
+                    Separate your skills using commas.
+                </small>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="interests">
+                    Your Interests
+                </label>
+
+                <input
+                    type="text"
+                    id="interests"
+                    placeholder="Example: AI, Web Development"
+                    value="Artificial Intelligence, Machine Learning"
+                >
+
+                <small>
+                    Separate your interests using commas.
+                </small>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="save-profile-btn"
+            >
+                Save My Profile →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+        <!-- Quick Stats -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <p>Career Goal</p>
+                <h3>AI/ML Engineer</h3>
+            </div>
+
+            <div class="stat-card">
+                <p>Skills</p>
+                <h3>5</h3>
+            </div>
+
+            <div class="stat-card">
+                <p>Opportunities</p>
+                <h3>3</h3>
+            </div>
+
+            <div class="stat-card">
+                <p>Skill Gaps</p>
+                <h3>2</h3>
+            </div>
+
+        </section>
+
+
+        <!-- Priorities -->
+        <section class="section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="small-text">PERSONALIZED FOR YOU</p>
+                    <h2>Your Priorities</h2>
+                </div>
+            </div>
+
+
+            <div class="priority-grid">
+
+                <div class="priority-card urgent" id="priority1">
+
+                    <div class="priority-top">
+                        <span class="tag red">Deadline Soon</span>
+                        <span>🔴</span>
+                    </div>
+
+                    <h3>AI/ML Internship</h3>
+
+                    <p>
+                        You have a <strong>75% match</strong>.
+                        Improve your SQL and Machine Learning skills.
+                    </p>
+
+                    <button>
+                        View Match →
+                    </button>
+
+                </div>
+
+
+                <div class="priority-card" id="priority2">
+
+                    <div class="priority-top">
+                        <span class="tag yellow">Skill Gap</span>
+                        <span>🧠</span>
+                    </div>
+
+                    <h3>Learn SQL</h3>
+
+                    <p>
+                        SQL is required for your recommended
+                        AI/ML opportunities.
+                    </p>
+
+                    <button>
+                        Start 7-Day Plan →
+                    </button>
+
+                </div>
+
+
+                <div class="priority-card" id="priority3">
+
+                    <div class="priority-top">
+                        <span class="tag green">Recommended</span>
+                        <span>⭐</span>
+                    </div>
+
+                    <h3>Python & AI Workshop</h3>
+
+                    <p>
+                        This workshop matches your interests
+                        in Artificial Intelligence.
+                    </p>
+
+                    <button>
+                        Explore →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Opportunities -->
+        <section class="section" id="opportunities">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="small-text">DISCOVER</p>
+                    <h2>Recommended Opportunities</h2>
+                </div>
+
+                <button class="view-all">
+                    View All
+                </button>
+
+            </div>
+
+
+            <div class="opportunity-grid" id="opportunityGrid">
+
+                <article class="opportunity-card">
+
+                    <div class="opportunity-header">
+                        <span class="tag blue">INTERNSHIP</span>
+
+                        <div class="match">
+                            75% Match
+                        </div>
+                    </div>
+
+                    <h3>AI/ML Internship</h3>
+
+                    <p class="organization">
+                        TechNova
+                    </p>
+
+                    <p>
+                        Build practical AI/ML experience
+                        through real-world projects.
+                    </p>
+
+                    <div class="deadline">
+                        ⏰ Deadline: Aug 25, 2026
+                    </div>
+
+                    <button>
+                        View Opportunity →
+                    </button>
+
+                </article>
+
+
+                <article class="opportunity-card">
+
+                    <div class="opportunity-header">
+                        <span class="tag purple">WORKSHOP</span>
+
+                        <div class="match">
+                            75% Match
+                        </div>
+                    </div>
+
+                    <h3>Python & AI Workshop</h3>
+
+                    <p class="organization">
+                        FutureTech
+                    </p>
+
+                    <p>
+                        Strengthen your Python and AI
+                        fundamentals.
+                    </p>
+
+                    <div class="deadline">
+                        ⏰ Deadline: Aug 22, 2026
+                    </div>
+
+                    <button>
+                        Explore Workshop →
+                    </button>
+
+                </article>
+
+
+                <article class="opportunity-card">
+
+                    <div class="opportunity-header">
+                        <span class="tag orange">HACKATHON</span>
+
+                        <div class="match">
+                            50% Match
+                        </div>
+                    </div>
+
+                    <h3>Web Development Hackathon</h3>
+
+                    <p class="organization">
+                        CodeSprint
+                    </p>
+
+                    <p>
+                        Build and present an innovative
+                        web development project.
+                    </p>
+
+                    <div class="deadline">
+                        ⏰ Deadline: Aug 28, 2026
+                    </div>
+
+                    <button>
+                        Explore Hackathon →
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+                </section>
+
+
+       
+
+        <!-- Career Roadmap -->
+        <section class="section roadmap-section" id="roadmap">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="small-text">YOUR FUTURE</p>
+                    <h2 id="careerRoadmapTitle">AI/ML Career Roadmap</h2>
+                </div>
+
+            </div>
+
+
+            <div class="roadmap" id="careerRoadmap">
+
+                <div class="roadmap-step completed">
+                    <span>✓</span>
+                    <strong>Python</strong>
+                    <small>Completed</small>
+                </div>
+
+                <div class="roadmap-line"></div>
+
+                <div class="roadmap-step current">
+                    <span>2</span>
+                    <strong>SQL</strong>
+                    <small>Current Focus</small>
+                </div>
+
+                <div class="roadmap-line"></div>
+
+                <div class="roadmap-step">
+                    <span>3</span>
+                    <strong>Machine Learning</strong>
+                    <small>Next</small>
+                </div>
+
+                <div class="roadmap-line"></div>
+
+                <div class="roadmap-step">
+                    <span>4</span>
+                    <strong>AI/ML Projects</strong>
+                    <small>Upcoming</small>
+                </div>
+
+                <div class="roadmap-line"></div>
+
+                <div class="roadmap-step">
+                    <span>5</span>
+                    <strong>Internship</strong>
+                    <small>Goal</small>
+                </div>
+
+            </div>
+
+        </section>
+         <!-- Journal & Notes -->
+        <section class="section journal-section" id="journal">
+
+            <div class="section-heading">
+                <div>
+                    <p class="small-text">REFLECT & PLAN</p>
+                    <h2>“A Little Space for You” 💗</h2>
+                    <p class="section-description">
+                        Write down your thoughts, plans, ideas, or anything you want to remember.
+                    </p>
+                </div>
+            </div>
+
+            <div class="journal-card">
+
+                <div class="form-group">
+                    <label for="journalTitle">Entry Title</label>
+
+                    <input
+                        type="text"
+                        id="journalTitle"
+                        placeholder="Example: My goals for today"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="journalText">What's on your mind?</label>
+
+                    <textarea
+                        id="journalText"
+                        rows="7"
+                        placeholder="Write your thoughts, plans, ideas, learnings, or anything you want to remember..."
+                    ></textarea>
+                <!-- Daily Mood Check -->
+<div class="mood-check">
+
+    <p class="mood-question">
+        How are you feeling today? 🌷
+    </p>
+
+    <p class="mood-subtext">
+        There is no right or wrong answer. Just check in with yourself.
+    </p>
+
+    <div class="mood-options">
+
+        <button type="button" class="mood-option" data-mood="Amazing">
+            <span>🤩</span>
+            <small>Amazing</small>
+        </button>
+
+        <button type="button" class="mood-option" data-mood="Good">
+            <span>😊</span>
+            <small>Good</small>
+        </button>
+
+        <button type="button" class="mood-option" data-mood="Okay">
+            <span>😐</span>
+            <small>Okay</small>
+        </button>
+
+        <button type="button" class="mood-option" data-mood="Low">
+            <span>😔</span>
+            <small>Low</small>
+        </button>
+
+        <button type="button" class="mood-option" data-mood="Stressed">
+            <span>😫</span>
+            <small>Stressed</small>
+        </button>
+
+    </div>
+
+    <p id="selectedMood" class="selected-mood"></p>
+
+</div>
+<!-- Today's GoBeyond Action -->
+<div class="daily-action-card">
+
+    <div class="daily-action-header">
+
+        <div>
+            <p class="daily-action-label">TODAY'S GO-BEYOND ACTION</p>
+
+            <h3 id="dailyActionTitle">
+                Complete 30 minutes of SQL practice
+            </h3>
+        </div>
+
+        <span class="daily-action-icon">🎯</span>
+
+    </div>
+
+    <p id="dailyActionDescription">
+        SQL is your current focus. Spend 30 minutes
+        practicing SQL to strengthen this skill.
+    </p>
+
+    <div class="daily-action-footer">
+
+        <span id="dailyActionReason">
+            💡 Based on your current career roadmap
+        </span>
+
+        <button
+            type="button"
+            id="completeActionBtn"
+            class="complete-action-btn"
+        >
+            Mark as Complete ✓
+        </button>
+
+    </div>
+
+    <p
+        id="actionCompletionMessage"
+        class="action-completion-message"
+    ></p>
+    <!-- Learning Reflection -->
+<div class="learning-reflection">
+
+    <div class="reflection-heading">
+        <span class="reflection-icon">📝</span>
+
+        <div>
+            <h4>What did you learn?</h4>
+
+            <p>
+                Write a little about what you learned or accomplished.
+            </p>
+        </div>
+    </div>
+
+    <textarea
+        id="learningReflection"
+        placeholder="Today I learned..."
+        rows="4"
+    ></textarea>
+
+    <button
+        type="button"
+        id="completeLearningBtn"
+        class="complete-learning-btn"
+    >
+        Complete & Earn ⭐
+    </button>
+
+    <p
+        id="learningCompletionMessage"
+        class="learning-completion-message"
+    ></p>
+
+</div>
+
+</div>
+                </div>
+
+
+                <button
+                    type="button"
+                    class="save-journal-btn"
+                    id="saveJournalBtn"
+                >
+                    Save Entry →
+                </button>
+
+            </div>
+
+
+            <div class="journal-entries">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="small-text">YOUR THOUGHTS</p>
+                        <h3>Previous Entries</h3>
+                    </div>
+                </div>
+
+                <div id="journalEntriesList">
+                    <p class="empty-journal">
+                        Your saved entries will appear here.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>     
+</main>
+        
+<footer>
+        <p>
+            © 2026 GoBeyond — Connecting students to their future.
+        </p>
+
+    </footer>
+
+    <!-- Match Analysis Modal -->
+
+<div class="modal-overlay" id="matchModal">
+
+    <div class="match-modal">
+
+        <button class="close-modal" id="closeModal">
+            ×
+        </button>
+
+        <p class="small-text">GO-BEYOND MATCH</p>
+
+        <h2>AI/ML Internship</h2>
+
+        <p class="modal-organization">
+            TechNova
+        </p>
+
+        <div class="match-score">
+            <strong>75%</strong>
+            <span>Match</span>
+        </div>
+
+        <div class="modal-section">
+
+            <h3>Your Skills</h3>
+
+            <div class="skill-list">
+                <span class="skill matched">✓ Python</span>
+                <span class="skill matched">✓ Git</span>
+            </div>
+
+        </div>
+
+        <div class="modal-section">
+
+            <h3>Skill Gaps</h3>
+
+            <div class="skill-list">
+                <span class="skill missing">! Machine Learning</span>
+                <span class="skill missing">! SQL</span>
+            </div>
+
+        </div>
+
+        <div class="action-box">
+
+            <p>Recommended Action</p>
+
+            <strong>
+                Strengthen Machine Learning and SQL
+            </strong>
+
+            <button id="startLearning">
+                Start Learning →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+    <script>
+// ================================
+// GO BEYOND - MATCH MODAL
+// ================================
+
+const matchModal = document.getElementById("matchModal");
+const closeModal = document.getElementById("closeModal");
+
+const viewMatchButtons = document.querySelectorAll(
+    ".priority-card button"
+);
+
+viewMatchButtons.forEach((button) => {
+
+    if (button.textContent.includes("View Match")) {
+
+        button.addEventListener("click", () => {
+
+            matchModal.classList.add("active");
+
+        });
+
+    }
+
+});
+
+
+// Close using X button
+
+closeModal.addEventListener("click", () => {
+
+    matchModal.classList.remove("active");
+
+});
+
+
+// Close when clicking outside the popup
+
+matchModal.addEventListener("click", (event) => {
+
+    if (event.target === matchModal) {
+
+        matchModal.classList.remove("active");
+
+    }
+
+});
+
+
+// Start Learning button
+
+const startLearning =
+    document.getElementById("startLearning");
+
+startLearning.addEventListener("click", () => {
+
+    alert(
+        "Your 7-day learning plan for SQL and Machine Learning will be created here."
+    );
+
+});
+// ================================
+// STUDENT PROFILE
+// ================================
+
+const profileForm = document.getElementById("profileForm");
+
+profileForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    const studentProfile = {
+        name: document.getElementById("studentName").value,
+        branch: document.getElementById("branch").value,
+        year: document.getElementById("year").value,
+        careerGoal: document.getElementById("careerGoal").value,
+
+        skills: document
+            .getElementById("skills")
+            .value
+            .split(",")
+            .map(skill => skill.trim())
+            .filter(skill => skill !== ""),
+
+        interests: document
+            .getElementById("interests")
+            .value
+            .split(",")
+            .map(interest => interest.trim())
+            .filter(interest => interest !== "")
+    };
+    fetch("http://127.0.0.1:5000/api/student", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(studentProfile)
+    })
+    .then(response => response.json())
+    .then(data => {
+    console.log("Student profile sent to backend:", data);
+    })
+    .catch(error => {
+    console.error("Backend profile upload failed:", error);
+    });
+
+    // Save profile in browser
+    localStorage.setItem(
+        "goBeyondProfile",
+        JSON.stringify(studentProfile)
+    );
+
+    // Update dashboard immediately with the new profile
+    updateDashboard(studentProfile);
+
+    alert(
+        "Profile saved successfully! 🎉\n\n" +
+        "Career Goal: " +
+        studentProfile.careerGoal
+    );
+
+});
+// ================================
+// UPDATE DASHBOARD FROM PROFILE
+// ================================
+
+ function updateDashboard(profile) {
+
+    // Update student name
+    const welcomeName = document.querySelector(".welcome h1 span");
+
+    if (welcomeName) {
+        welcomeName.textContent = profile.name;
+    }
+
+
+    // Update branch and year
+    const studentBadge = document.querySelector(".student-badge");
+
+    if (studentBadge) {
+
+        studentBadge.innerHTML = `
+            <strong>${profile.branch === "Computer Science" ? "CSE" : profile.branch.substring(0, 3).toUpperCase()}</strong>
+            <span>${profile.year}</span>
+        `;
+
+    }
+
+
+    // Update career goal stat
+    const statCards = document.querySelectorAll(".stat-card");
+
+    if (statCards.length > 0) {
+
+        const careerGoalHeading =
+            statCards[0].querySelector("h3");
+
+        if (careerGoalHeading) {
+            careerGoalHeading.textContent =
+                profile.careerGoal;
+        }
+
+    }
+    updateCareerRoadmap(profile.careerGoal);
+    updatePriorities(profile.careerGoal);
+    updateOpportunities(profile.careerGoal);
+    console.log("Opportunity update:", profile.careerGoal);
+
+}
+
+// ================================
+// DYNAMIC PRIORITIES
+// ================================
+
+const priorityData = {
+
+    "AI/ML Engineer": {
+        priority1: {
+            tag: "Deadline Soon",
+            icon: "🔴",
+            title: "AI/ML Internship",
+            description: "You have a 75% match. Improve your SQL and Machine Learning skills."
+        },
+        priority2: {
+            tag: "Skill Gap",
+            icon: "🧠",
+            title: "Learn SQL",
+            description: "SQL is required for your recommended AI/ML opportunities."
+        },
+        priority3: {
+            tag: "Recommended",
+            icon: "⭐",
+            title: "Python & AI Workshop",
+            description: "This workshop matches your interests in Artificial Intelligence."
+        }
+    },
+
+    "Web Developer": {
+        priority1: {
+            tag: "Deadline Soon",
+            icon: "🔴",
+            title: "Web Development Internship",
+            description: "You have a strong match. Strengthen your JavaScript and React skills."
+        },
+        priority2: {
+            tag: "Skill Gap",
+            icon: "🧠",
+            title: "Learn React",
+            description: "React is an important skill for your recommended web development opportunities."
+        },
+        priority3: {
+            tag: "Recommended",
+            icon: "⭐",
+            title: "Web Development Hackathon",
+            description: "This hackathon matches your interest in building web applications."
+        }
+    },
+
+    "Data Scientist": {
+        priority1: {
+            tag: "Deadline Soon",
+            icon: "🔴",
+            title: "Data Science Internship",
+            description: "You have a strong match. Improve your Statistics and Data Analysis skills."
+        },
+        priority2: {
+            tag: "Skill Gap",
+            icon: "🧠",
+            title: "Learn Statistics",
+            description: "Statistics is required for your recommended Data Science opportunities."
+        },
+        priority3: {
+            tag: "Recommended",
+            icon: "⭐",
+            title: "Data Science Workshop",
+            description: "This workshop matches your interest in Data Science and Machine Learning."
+        }
+    },
+
+    "Cybersecurity Engineer": {
+        priority1: {
+            tag: "Deadline Soon",
+            icon: "🔴",
+            title: "Cybersecurity Internship",
+            description: "You have a strong match. Strengthen your Networking and Linux skills."
+        },
+        priority2: {
+            tag: "Skill Gap",
+            icon: "🧠",
+            title: "Learn Networking",
+            description: "Networking is an important skill for your recommended cybersecurity opportunities."
+        },
+        priority3: {
+            tag: "Recommended",
+            icon: "⭐",
+            title: "Cybersecurity Workshop",
+            description: "This workshop matches your interest in cybersecurity and security tools."
+        }
+    }
+};
+
+
+function updatePriorities(careerGoal) {
+
+    const priorities = priorityData[careerGoal];
+
+    if (!priorities) return;
+
+    Object.keys(priorities).forEach(priorityId => {
+
+        const card = document.getElementById(priorityId);
+
+        if (!card) return;
+
+        const data = priorities[priorityId];
+
+        const tag = card.querySelector(".tag");
+        const icon = card.querySelector(".priority-top span:last-child");
+        const title = card.querySelector("h3");
+        const description = card.querySelector("p");
+
+        if (tag) {
+            tag.textContent = data.tag;
+        }
+
+        if (icon) {
+            icon.textContent = data.icon;
+        }
+
+        if (title) {
+            title.textContent = data.title;
+        }
+
+        if (description) {
+            description.textContent = data.description;
+        }
+    });
+}
+// ==================function updateDashboard(profile)==============
+// DYNAMIC CAREER ROADMAP
+// ================================
+
+const careerPaths = {
+
+    "AI/ML Engineer": [
+        "Python",
+        "SQL",
+        "Machine Learning",
+        "AI/ML Projects",
+        "Internship",
+        "AI/ML Engineer"
+    ],
+
+    "Web Developer": [
+        "HTML & CSS",
+        "JavaScript",
+        "React",
+        "Frontend Projects",
+        "Internship",
+        "Web Developer"
+    ],
+
+    "Data Scientist": [
+        "Python",
+        "Statistics",
+        "SQL",
+        "Data Analysis",
+        "Machine Learning",
+        "Data Scientist"
+    ],
+
+    "Cybersecurity Engineer": [
+        "Networking",
+        "Linux",
+        "Cybersecurity Fundamentals",
+        "Security Tools",
+        "Security Projects",
+        "Cybersecurity Engineer"
+    ]
+
+};
+
+
+function updateCareerRoadmap(careerGoal) {
+
+    const roadmap =
+        document.getElementById("careerRoadmap");
+
+    if (!roadmap) return;
+
+    const steps = careerPaths[careerGoal];
+
+    if (!steps) return;
+    const roadmapTitle = document.getElementById("careerRoadmapTitle");
+
+if (roadmapTitle) {
+    const roadmapTitles = {
+        "AI/ML Engineer": "AI/ML Career Roadmap",
+        "Web Developer": "Web Development Career Roadmap",
+        "Data Scientist": "Data Science Career Roadmap",
+        "Cybersecurity Engineer": "Cybersecurity Career Roadmap",
+        "Java Backend Developer": "Java Backend Development Career Roadmap"
+    };
+
+    roadmapTitle.textContent =
+        roadmapTitles[careerGoal] || "Career Roadmap";
+}
+
+    roadmap.innerHTML = "";
+
+    steps.forEach((step, index) => {
+
+        const stepElement =
+            document.createElement("div");
+
+        stepElement.className = "roadmap-step";
+
+        if (index === 0) {
+            stepElement.classList.add("completed");
+        }
+
+        if (index === 1) {
+            stepElement.classList.add("current");
+        }
+
+        let status = "Upcoming";
+
+        if (index === 0) {
+            status = "Starting Point";
+        }
+
+        if (index === 1) {
+            status = "Current Focus";
+        }
+
+        if (index === steps.length - 1) {
+            status = "Career Goal";
+        }
+
+        stepElement.innerHTML = `
+            <span>
+                ${index === 0 ? "✓" : index + 1}
+            </span>
+
+            <strong>${step}</strong>
+
+            <small>${status}</small>
+        `;
+
+        roadmap.appendChild(stepElement);
+
+
+        // Add connecting line except after last step
+
+        if (index < steps.length - 1) {
+
+            const line =
+                document.createElement("div");
+
+            line.className = "roadmap-line";
+
+            roadmap.appendChild(line);
+
+        }
+
+    });
+
+}
+
+// ================================
+// CAREER-SPECIFIC OPPORTUNITIES
+// ================================
+const careerOpportunities = {
+    "AI/ML Engineer": [
+        {
+            title: "AI/ML Internship",
+            organization: "TechNova",
+            type: "Internship",
+            match: 75,
+            deadline: "Closes in 5 days",
+            requiredSkills: [
+                "Python",
+                "Machine Learning",
+                "SQL"
+            ]
+        },
+        {
+            title: "Generative AI Workshop",
+            organization: "AI Innovation Club",
+            type: "Workshop",
+            match: 88,
+            deadline: "This Saturday",
+            requiredSkills: [
+                "Python",
+                "AI"
+            ]
+        },
+        {
+            title: "AI Hackathon 2026",
+            organization: "Tech Community",
+            type: "Hackathon",
+            match: 82,
+            deadline: "Closes in 8 days",
+            requiredSkills: [
+                "Python",
+                "Machine Learning"
+            ]
+        }
+    ],
+
+
+    "Web Developer": [
+        {
+            title: "Frontend Development Internship",
+            organization: "WebWorks",
+            type: "Internship",
+            match: 90,
+            deadline: "Closes in 4 days",
+            requiredSkills: [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ]
+        },
+        {
+            title: "React Development Workshop",
+            organization: "Developer Community",
+            type: "Workshop",
+            match: 85,
+            deadline: "This Friday",
+            requiredSkills: [
+                "JavaScript",
+                "React"
+            ]
+        },
+        {
+            title: "Frontend Hackathon",
+            organization: "CodeFest",
+            type: "Hackathon",
+            match: 78,
+            deadline: "Closes in 7 days",
+            requiredSkills: [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ]
+        }
+    ],
+
+
+    "Data Scientist": [
+        {
+            title: "Data Science Internship",
+            organization: "DataLabs",
+            type: "Internship",
+            match: 84,
+            deadline: "Closes in 6 days",
+            requiredSkills: [
+                "Python",
+                "SQL",
+                "Statistics"
+            ]
+        },
+        {
+            title: "Data Analytics Workshop",
+            organization: "Analytics Club",
+            type: "Workshop",
+            match: 80,
+            deadline: "This Saturday",
+            requiredSkills: [
+                "Python",
+                "Data Analysis"
+            ]
+        },
+        {
+            title: "Data Science Challenge",
+            organization: "Tech Community",
+            type: "Hackathon",
+            match: 76,
+            deadline: "Closes in 10 days",
+            requiredSkills: [
+                "Python",
+                "Statistics"
+            ]
+        }
+    ],
+
+
+    "Cybersecurity Engineer": [
+        {
+            title: "Cybersecurity Internship",
+            organization: "SecureNet",
+            type: "Internship",
+            match: 81,
+            deadline: "Closes in 5 days",
+            requiredSkills: [
+                "Networking",
+                "Linux",
+                "Cybersecurity"
+            ]
+        },
+        {
+            title: "Ethical Hacking Workshop",
+            organization: "Cyber Club",
+            type: "Workshop",
+            match: 87,
+            deadline: "This Friday",
+            requiredSkills: [
+                "Linux",
+                "Cybersecurity"
+            ]
+        },
+        {
+            title: "Cybersecurity Hackathon",
+            organization: "Security Community",
+            type: "Hackathon",
+            match: 79,
+            deadline: "Closes in 9 days",
+            requiredSkills: [
+                "Networking",
+                "Linux"
+            ]
+        }
+    ],
+    "Java Backend Developer": [
+    {
+        title: "Java Backend Internship",
+        organization: "CodeForge",
+        type: "Internship",
+        match: 89,
+        deadline: "Closes in 7 days",
+        requiredSkills: ["Java", "SQL", "Spring Boot"]
+    },
+    {
+        title: "Backend Development Hackathon",
+        organization: "DevCommunity",
+        type: "Hackathon",
+        match: 86,
+        deadline: "Registration closes in 5 days",
+        requiredSkills: ["Java", "APIs", "SQL"]
+    }
+],
+
+};
+// ================================
+// UPDATE OPPORTUNITIES
+// ================================
+async function updateOpportunities(careerGoal) {
+
+    const opportunityGrid = document.getElementById("opportunityGrid");
+
+    if (!opportunityGrid) return;
+
+    try {
+
+    const response = await fetch(
+    `http://127.0.0.1:5000/api/personalized-opportunities/${encodeURIComponent(careerGoal)}`
+);
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch personalized opportunities");
+        }
+
+        const data = await response.json();
+
+        const opportunities = data.opportunities || [];
+
+        const savedProfile = JSON.parse(
+            localStorage.getItem("goBeyondProfile")
+        );
+
+        const studentSkills = savedProfile
+            ? savedProfile.skills
+            : [];
+
+        opportunityGrid.innerHTML = "";
+
+        opportunities.forEach((opportunity) => {
+
+            const calculatedMatch = calculateSkillMatch(
+                studentSkills,
+                opportunity.requiredSkills
+            );
+
+            const skillGaps = findSkillGaps(
+                studentSkills,
+                opportunity.requiredSkills
+            );
+
+            const learningRecommendations = skillGaps
+                .map(skill => getLearningRecommendation(skill))
+                .join(", ");
+
+            const card = document.createElement("div");
+
+            card.className = "opportunity-card";
+
+            card.innerHTML = `
+                <div class="opportunity-header">
+
+                    <span class="tag blue">
+                        ${opportunity.type}
+                    </span>
+
+                    <span class="match">
+                        ${calculatedMatch}% Match
+                    </span>
+
+                </div>
+
+                ${
+                    skillGaps.length > 0
+                    ? `
+                    <div class="skill-gap">
+                        <strong>Skill Gap:</strong>
+                        ${learningRecommendations}
+                    </div>
+                    `
+                    : `
+                    <div class="skill-gap">
+                        <strong>✅ Skills Matched!</strong>
+                    </div>
+                    `
+                }
+
+                <h3>${opportunity.title}</h3>
+
+                <p class="organization">
+                    ${opportunity.organization}
+                </p>
+
+                <p>
+                    Recommended for your
+                    ${careerGoal} journey.
+                </p>
+
+                <p class="deadline">
+                    ⏰ ${opportunity.deadline}
+                </p>
+
+                <button class="opportunity-action">
+                    View Opportunity →
+                </button>
+            `;
+
+            opportunityGrid.appendChild(card);
+
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Error loading personalized opportunities:",
+            error
+        );
+
+    }
+}
+// ================================
+// PERSONALIZED SKILL MATCH
+// ================================
+
+function calculateSkillMatch(studentSkills, requiredSkills) {
+
+    if (!requiredSkills || requiredSkills.length === 0) {
+        return 0;
+    }
+
+    const normalizedStudentSkills =
+        studentSkills.map(skill => skill.toLowerCase().trim());
+
+    const matchedSkills =
+        requiredSkills.filter(skill =>
+            normalizedStudentSkills.includes(
+                skill.toLowerCase().trim()
+            )
+        );
+
+    return Math.round(
+        (matchedSkills.length / requiredSkills.length) * 100
+    );
+}
+// ================================
+// SKILL GAP DETECTION
+// ================================
+function findSkillGaps(studentSkills, requiredSkills) {
+
+    const normalizedStudentSkills = studentSkills.map(skill =>
+        skill.toLowerCase().trim()
+    );
+
+    const safeRequiredSkills = requiredSkills || [];
+
+    return safeRequiredSkills.filter(skill =>
+        !normalizedStudentSkills.includes(
+            skill.toLowerCase().trim()
+        )
+    );
+}
+// ================================
+// LEARNING RECOMMENDATION
+// ================================
+
+function getLearningRecommendation(skill) {
+
+    const recommendations = {
+        "HTML": "Learn HTML fundamentals",
+        "CSS": "Practice CSS and responsive design",
+        "JavaScript": "Learn JavaScript fundamentals",
+        "React": "Learn React fundamentals",
+        "Python": "Strengthen Python programming",
+        "SQL": "Practice SQL and database queries",
+        "Statistics": "Study statistics for data science",
+        "Java": "Strengthen Java programming",
+        "Spring Boot": "Learn Spring Boot fundamentals",
+        "Networking": "Learn computer networking fundamentals",
+        "Linux": "Practice Linux fundamentals",
+        "Cybersecurity": "Study cybersecurity fundamentals"
+    };
+
+    return recommendations[skill] ||
+           `Learn ${skill} fundamentals`;
+}
+// Load saved profile when website opens
+
+const savedProfile =
+    localStorage.getItem("goBeyondProfile");
+
+if (savedProfile) {
+
+    const profile =
+        JSON.parse(savedProfile);
+
+    updateDashboard(profile);
+
+}
+// ================================
+// BACKEND CONNECTION TEST
+// ================================
+
+fetch("http://127.0.0.1:5000/api/health")
+    .then(response => response.json())
+    .then(data => {
+        console.log("Backend connected:", data);
+    })
+    .catch(error => {
+        console.error("Backend connection failed:", error);
+    });
+    // ===============================
+// JOURNAL & NOTES
+// ===============================
+
+const journalTitle = document.getElementById("journalTitle");
+const journalText = document.getElementById("journalText");
+const saveJournalBtn = document.getElementById("saveJournalBtn");
+const journalEntriesList = document.getElementById("journalEntriesList");
+
+// Get saved journal entries
+let journalEntries = JSON.parse(
+    localStorage.getItem("goBeyondJournal")
+) || [];
+
+
+// Save a new journal entry
+saveJournalBtn.addEventListener("click", function () {
+
+    const title = journalTitle.value.trim();
+    const text = journalText.value.trim();
+
+    // Prevent empty entries
+    if (title === "" || text === "") {
+        alert("Please enter a title and your thoughts before saving.");
+        return;
+    }
+
+    const entry = {
+        id: Date.now(),
+        title: title,
+        text: text,
+        date: new Date().toLocaleDateString("en-IN", {
+            day: "numeric",
+            month: "short",
+            year: "numeric"
+        })
+    };
+
+    journalEntries.unshift(entry);
+
+    // Save to localStorage
+    localStorage.setItem(
+        "goBeyondJournal",
+        JSON.stringify(journalEntries)
+    );
+
+    // Clear input fields
+    journalTitle.value = "";
+    journalText.value = "";
+
+    // Display entries
+    displayJournalEntries();
+
+    alert("Journal entry saved successfully! 📝");
+});
+
+
+// Display saved journal entries
+function displayJournalEntries() {
+
+    if (journalEntries.length === 0) {
+        journalEntriesList.innerHTML = `
+            <p class="empty-journal">
+                Your saved entries will appear here.
+            </p>
+        `;
+        return;
+    }
+
+    journalEntriesList.innerHTML = "";
+
+    journalEntries.forEach(function (entry) {
+
+        const entryCard = document.createElement("div");
+
+        entryCard.className = "journal-entry";
+
+        entryCard.innerHTML = `
+            <div class="journal-entry-header">
+                <div>
+                    <h4>${entry.title}</h4>
+                    <small>${entry.date}</small>
+                </div>
+
+                <button
+                    class="delete-journal-btn"
+                    onclick="deleteJournalEntry(${entry.id})"
+                >
+                    Delete
+                </button>
+            </div>
+
+            <p>${entry.text}</p>
+        `;
+
+        journalEntriesList.appendChild(entryCard);
+    });
+}
+
+
+// Delete a journal entry
+function deleteJournalEntry(id) {
+
+    journalEntries = journalEntries.filter(function (entry) {
+        return entry.id !== id;
+    });
+
+    localStorage.setItem(
+        "goBeyondJournal",
+        JSON.stringify(journalEntries)
+    );
+
+    displayJournalEntries();
+}
+
+
+// Load entries when the page opens
+displayJournalEntries();
+// ===============================
+// DAILY MOOD CHECK
+// ===============================
+
+const moodOptions = document.querySelectorAll(".mood-option");
+const selectedMood = document.getElementById("selectedMood");
+
+let currentMood = localStorage.getItem("goBeyondMood");
+
+
+// Select a mood
+moodOptions.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        const mood = button.dataset.mood;
+
+        // Remove previous selection
+        moodOptions.forEach(function (option) {
+            option.classList.remove("selected");
+        });
+
+        // Highlight selected mood
+        button.classList.add("selected");
+
+        // Save mood
+        currentMood = mood;
+
+        localStorage.setItem(
+            "goBeyondMood",
+            mood
+        );
+
+        // Show confirmation
+        selectedMood.textContent =
+            `You're feeling "${mood}" today 💗`;
+
+        selectedMood.style.display = "block";
+    });
+
+});
+
+
+// Restore saved mood when page loads
+if (currentMood) {
+
+    moodOptions.forEach(function (button) {
+
+        if (button.dataset.mood === currentMood) {
+
+            button.classList.add("selected");
+
+            selectedMood.textContent =
+                `You're feeling "${currentMood}" today 💗`;
+
+            selectedMood.style.display = "block";
+        }
+
+    });
+
+}
+// ===============================
+// ⭐🔥 GO-BEYOND PROGRESS
+// Stars & Streak
+// ===============================
+
+const starCountElement = document.getElementById("starCount");
+const streakCountElement = document.getElementById("streakCount");
+
+// Get saved progress
+let goBeyondStars = parseInt(
+    localStorage.getItem("goBeyondStars")
+) || 0;
+
+let goBeyondStreak = parseInt(
+    localStorage.getItem("goBeyondStreak")
+) || 0;
+
+
+// Display saved progress
+function updateProgressDisplay() {
+
+    if (starCountElement) {
+        starCountElement.textContent = goBeyondStars;
+    }
+
+    if (streakCountElement) {
+        streakCountElement.textContent = goBeyondStreak;
+    }
+}
+
+
+// Load progress when page opens
+updateProgressDisplay();
+// =========================================
+// 🎯 DAILY GO-BEYOND ACTION
+// Career-based personalization
+// =========================================
+
+const dailyActionTitle =
+    document.getElementById("dailyActionTitle");
+
+const dailyActionDescription =
+    document.getElementById("dailyActionDescription");
+
+const dailyActionReason =
+    document.getElementById("dailyActionReason");
+
+
+const dailyActions = {
+
+    "AI/ML Engineer": {
+        title: "Complete 30 minutes of SQL practice",
+        description:
+            "Practice SQL for 30 minutes to strengthen an important skill for your AI/ML journey.",
+        reason:
+            "💡 Based on your AI/ML career roadmap"
+    },
+
+    "Web Developer": {
+        title: "Build a small responsive webpage",
+        description:
+            "Spend 30 minutes improving your HTML, CSS, or JavaScript skills by building something practical.",
+        reason:
+            "💡 Based on your Web Development career roadmap"
+    },
+
+    "Data Scientist": {
+        title: "Practice Python data analysis",
+        description:
+            "Spend 30 minutes working with Python and exploring a small dataset.",
+        reason:
+            "💡 Based on your Data Science career roadmap"
+    },
+
+    "Cybersecurity Engineer": {
+        title: "Learn one cybersecurity concept",
+        description:
+            "Spend 30 minutes learning and taking notes on a cybersecurity concept such as networking, threats, or security fundamentals.",
+        reason:
+            "💡 Based on your Cybersecurity career roadmap"
+    }
+
+};
+
+
+function updateDailyAction() {
+
+    const careerGoal =
+        document.getElementById("careerGoal")?.value;
+
+    const action =
+        dailyActions[careerGoal];
+
+    if (!action) return;
+
+    if (dailyActionTitle) {
+        dailyActionTitle.textContent =
+            action.title;
+    }
+
+    if (dailyActionDescription) {
+        dailyActionDescription.textContent =
+            action.description;
+    }
+
+    if (dailyActionReason) {
+        dailyActionReason.textContent =
+            action.reason;
+    }
+}
+
+
+// Update when the page loads
+updateDailyAction();
+
+
+// Update when career goal changes
+const careerGoalSelect =
+    document.getElementById("careerGoal");
+
+if (careerGoalSelect) {
+
+    careerGoalSelect.addEventListener(
+        "change",
+        updateDailyAction
+    );
+
+}
+// =========================================
+// 📝 LEARNING REFLECTION + ⭐ REWARD
+// =========================================
+
+const learningReflection =
+    document.getElementById("learningReflection");
+
+const completeLearningBtn =
+    document.getElementById("completeLearningBtn");
+
+const learningCompletionMessage =
+    document.getElementById("learningCompletionMessage");
+
+
+completeLearningBtn.addEventListener("click", function () {
+
+    const reflection =
+        learningReflection.value.trim();
+
+    // Don't allow empty reflection
+    if (reflection === "") {
+
+        learningCompletionMessage.textContent =
+            "Write a little about what you learned first. 💭";
+
+        learningReflection.focus();
+
+        return;
+    }
+
+
+    // Check today's completion
+    const today =
+        new Date().toISOString().split("T")[0];
+
+    const completedToday =
+        localStorage.getItem("learningCompletedDate");
+
+
+    // Prevent duplicate reward
+    if (completedToday === today) {
+
+        learningCompletionMessage.textContent =
+            "You've already earned today's star! ⭐";
+
+        return;
+    }
+
+
+    // Award one star
+    goBeyondStars += 1;
+
+    localStorage.setItem(
+        "goBeyondStars",
+        goBeyondStars
+    );
+
+
+    // Update streak
+    const previousDate =
+        localStorage.getItem("learningCompletedDate");
+
+    const yesterdayDate = new Date();
+
+    yesterdayDate.setDate(
+        yesterdayDate.getDate() - 1
+    );
+
+    const yesterday =
+        yesterdayDate.toISOString().split("T")[0];
+
+
+    if (previousDate === yesterday) {
+
+        goBeyondStreak += 1;
+
+    } else {
+
+        goBeyondStreak = 1;
+
+    }
+
+
+    localStorage.setItem(
+        "goBeyondStreak",
+        goBeyondStreak
+    );
+
+
+    // Save completion date
+    localStorage.setItem(
+        "learningCompletedDate",
+        today
+    );
+
+
+    // Save reflection
+    localStorage.setItem(
+        "learningReflection",
+        reflection
+    );
+
+
+    // Update top counters
+    updateProgressDisplay();
+
+
+    // Update button
+    completeLearningBtn.textContent =
+        "Completed! ⭐";
+
+    completeLearningBtn.classList.add(
+        "completed"
+    );
+
+    completeLearningBtn.disabled = true;
+
+
+    // Success message
+    learningCompletionMessage.textContent =
+        "Beautiful! You reflected on your learning and earned +1 ⭐";
+
+
+});
+</script>
+
+</body>
+</html>
