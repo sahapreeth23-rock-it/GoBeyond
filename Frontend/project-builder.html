@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project & Experience Builder | GoBeyond</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #1f2937;
+        }
+
+        /* ---------- HEADER ---------- */
+
+        .header {
+            height: 72px;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 35px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: #4f46e5;
+        }
+
+        .logo span {
+            color: #111827;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .notification {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e0e7ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #4338ca;
+        }
+
+        /* ---------- LAYOUT ---------- */
+
+        .layout {
+            display: flex;
+            min-height: calc(100vh - 72px);
+        }
+
+        /* ---------- SIDEBAR ---------- */
+
+        .sidebar {
+            width: 230px;
+            background: white;
+            border-right: 1px solid #e5e7eb;
+            padding: 25px 15px;
+        }
+
+        .nav-title {
+            font-size: 12px;
+            color: #9ca3af;
+            margin: 10px 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 13px 15px;
+            margin-bottom: 5px;
+            border-radius: 10px;
+            color: #4b5563;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-item:hover {
+            background: #f3f4f6;
+            color: #4f46e5;
+        }
+
+        .nav-item.active {
+            background: #eef2ff;
+            color: #4f46e5;
+            font-weight: 600;
+        }
+
+        .nav-icon {
+            width: 22px;
+            text-align: center;
+        }
+
+        /* ---------- MAIN ---------- */
+
+        .main {
+            flex: 1;
+            padding: 35px;
+            max-width: 1400px;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .page-header h1 {
+            font-size: 30px;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            color: #6b7280;
+            font-size: 15px;
+        }
+
+        .readiness-box {
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            padding: 18px 22px;
+            border-radius: 14px;
+            min-width: 230px;
+        }
+
+        .readiness-box small {
+            opacity: 0.85;
+        }
+
+        .readiness-score {
+            font-size: 28px;
+            font-weight: 800;
+            margin-top: 4px;
+        }
+
+        /* ---------- SECTION ---------- */
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .section-title h2 {
+            font-size: 20px;
+            color: #111827;
+        }
+
+        .section-title p {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        /* ---------- PROJECT GRID ---------- */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 22px;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+
+        .project-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 11px;
+            background: #eef2ff;
+            color: #4f46e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 21px;
+        }
+
+        .status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .status.completed {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .status.progress {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .project-description {
+            color: #6b7280;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 5px 9px;
+            border-radius: 6px;
+            font-size: 11px;
+        }
+
+        .project-info {
+            border-top: 1px solid #f0f0f0;
+            padding-top: 13px;
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .project-info strong {
+            color: #374151;
+        }
+
+        /* ---------- GAP CONNECTION ---------- */
+
+        .gap-card {
+            background: #eef2ff;
+            border: 1px solid #c7d2fe;
+            border-radius: 15px;
+            padding: 22px;
+        }
+
+        .gap-content {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .gap-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: #4f46e5;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            flex-shrink: 0;
+        }
+
+        .gap-card h3 {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .gap-card p {
+            color: #5b6472;
+            font-size: 13px;
+        }
+
+        .skills {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .skill {
+            background: white;
+            color: #4338ca;
+            border: 1px solid #c7d2fe;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* ---------- EXPERIENCE ---------- */
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .experience-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .experience-icon {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .experience-card h3 {
+            font-size: 16px;
+            margin-bottom: 7px;
+        }
+
+        .experience-card p {
+            color: #6b7280;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* ---------- CTA ---------- */
+
+        .cta-section {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 22px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            border: none;
+            padding: 11px 18px;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: #4f46e5;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #4338ca;
+        }
+
+        .btn-secondary {
+            background: #eef2ff;
+            color: #4338ca;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e7ff;
+        }
+
+        .btn-outline {
+            background: white;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+
+        .btn-outline:hover {
+            background: #f9fafb;
+        }
+
+        /* ---------- MODAL ---------- */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(17, 24, 39, 0.55);
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: white;
+            width: 480px;
+            max-width: 90%;
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .modal-box h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            outline: none;
+            font-size: 13px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #6366f1;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+
+        @media (max-width: 1000px) {
+            .project-grid,
+            .experience-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 750px) {
+            .sidebar {
+                display: none;
+            }
+
+            .main {
+                padding: 20px;
+            }
+
+            .page-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .project-grid,
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .readiness-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            Go<span>Beyond</span>
+        </div>
+
+        <div class="header-right">
+            <div class="notification">🔔</div>
+            <div class="profile">NK</div>
+        </div>
+    </header>
+
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="nav-title">Main</div>
+
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                Dashboard
+            </a>
+
+            <a href="opportunity-hub.html" class="nav-item">
+                <span class="nav-icon">🎯</span>
+                Opportunities
+            </a>
+
+            <a href="opportunity-match.html" class="nav-item">
+                <span class="nav-icon">✨</span>
+                Opportunity Match
+            </a>
+
+            <a href="placement.html" class="nav-item">
+                <span class="nav-icon">💼</span>
+                Placement
+            </a>
+
+            <div class="nav-title">Build</div>
+
+            <a href="project-builder.html" class="nav-item active">
+                <span class="nav-icon">🚀</span>
+                Projects & Experience
+            </a>
+
+            <a href="skill-map.html" class="nav-item">
+                <span class="nav-icon">🧩</span>
+                Skill Map
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+
+            <!-- PAGE HEADER -->
+            <div class="page-header">
+
+                <div>
+                    <h1>Build Your Industry Evidence</h1>
+
+                    <p>
+                        Turn your projects, internships and certifications
+                        into proof of your career readiness.
+                    </p>
+                </div>
+
+                <div class="readiness-box">
+                    <small>Placement Readiness</small>
+                    <div class="readiness-score">
+                        <span id="readinessScore">68</span>%
+                    </div>
+                    <small>Good progress — keep building!</small>
+                </div>
+
+            </div>
+
+
+            <!-- PROJECTS -->
+            <section class="section">
+
+                <div class="section-title">
+                    <div>
+                        <h2>My Projects</h2>
+                        <p>Build evidence that demonstrates your technical skills.</p>
+                    </div>
+                </div>
+
+
+                <div class="project-grid" id="projectGrid">
+
+                    <!-- PROJECT 1 -->
+                    <div class="card project-card">
+
+                        <div class="project-top">
+
+                            <div class="project-icon">
+                                💻
+                            </div>
+
+                            <span class="status completed">
+                                Completed
+                            </span>
+
+                        </div>
+
+                        <h3 class="project-title">
+                            Student Career Platform
+                        </h3>
+
+                        <p class="project-description">
+                            A student-focused platform connecting learners
+                            with opportunities, skills and career pathways.
+                        </p>
+
+                        <div class="tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+
+                        <div class="project-info">
+                            <strong>Role:</strong> Frontend Developer
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROJECT 2 -->
+                    <div class="card project-card">
+
+                        <div class="project-top">
+
+                            <div class="project-icon">
+                                🤖
+                            </div>
+
+                            <span class="status progress">
+                                In Progress
+                            </span>
+
+                        </div>
+
+                        <h3 class="project-title">
+                            Machine Learning Predictor
+                        </h3>
+
+                        <p class="project-description">
+                            A machine learning project that analyzes data
+                            and predicts outcomes using trained models.
+                        </p>
+
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">ML</span>
+                        </div>
+
+                        <div class="project-info">
+                            <strong>Role:</strong> ML Developer
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROJECT 3 -->
+                    <div class="card project-card">
+
+                        <div class="project-top">
+
+                            <div class="project-icon">
+                                🗄️
+                            </div>
+
+                            <span class="status completed">
+                                Completed
+                            </span>
+
+                        </div>
+
+                        <h3 class="project-title">
+                            Student Database System
+                        </h3>
+
+                        <p class="project-description">
+                            A database system designed to manage student
+                            records and academic information.
+                        </p>
+
+                        <div class="tags">
+                            <span class="tag">SQL</span>
+                            <span class="tag">DBMS</span>
+                            <span class="tag">Java</span>
+                        </div>
+
+                        <div class="project-info">
+                            <strong>Role:</strong> Backend Developer
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- GAP CONNECTION -->
+            <section class="section">
+
+                <div class="section-title">
+                    <div>
+                        <h2>Skill Gap Connection</h2>
+                        <p>See how your projects help close your current skill gaps.</p>
+                    </div>
+                </div>
+
+                <div class="gap-card">
+
+                    <div class="gap-content">
+
+                        <div class="gap-icon">
+                            🎯
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Your projects are closing important skill gaps
+                            </h3>
+
+                            <p>
+                                Your completed evidence is helping strengthen
+                                the skills needed for your target career path.
+                            </p>
+
+                            <div class="skills">
+                                <span class="skill">Machine Learning</span>
+                                <span class="skill">SQL</span>
+                                <span class="skill">JavaScript</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- EXPERIENCE -->
+            <section class="section">
+
+                <div class="section-title">
+                    <div>
+                        <h2>Experience & Certifications</h2>
+                        <p>Add evidence beyond academic coursework.</p>
+                    </div>
+                </div>
+
+
+                <div class="experience-grid">
+
+                    <div class="experience-card">
+
+                        <div class="experience-icon">
+                            🏢
+                        </div>
+
+                        <h3>Internship Experience</h3>
+
+                        <p>
+                            Add internships and describe the skills,
+                            responsibilities and technologies you used.
+                        </p>
+
+                    </div>
+
+
+                    <div class="experience-card">
+
+                        <div class="experience-icon">
+                            📜
+                        </div>
+
+                        <h3>Certifications</h3>
+
+                        <p>
+                            Add relevant certifications that demonstrate
+                            your knowledge and technical abilities.
+                        </p>
+
+                    </div>
+
+
+                    <div class="experience-card">
+
+                        <div class="experience-icon">
+                            🏆
+                        </div>
+
+                        <h3>Achievements</h3>
+
+                        <p>
+                            Add hackathons, competitions, awards and other
+                            evidence of your practical skills.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CTA -->
+            <section class="section">
+
+                <div class="section-title">
+                    <div>
+                        <h2>Add New Evidence</h2>
+                        <p>Keep your career profile updated.</p>
+                    </div>
+                </div>
+
+
+                <div class="cta-section">
+
+                    <div class="cta-buttons">
+
+                        <button
+                            class="btn btn-primary"
+                            onclick="openModal('project')">
+                            + Add Project
+                        </button>
+
+                        <button
+                            class="btn btn-secondary"
+                            onclick="openModal('certification')">
+                            + Add Certification
+                        </button>
+
+                        <button
+                            class="btn btn-outline"
+                            onclick="openModal('experience')">
+                            + Add Experience
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+
+        <div class="modal-box">
+
+            <h2 id="modalTitle">
+                Add Project
+            </h2>
+
+            <form id="evidenceForm">
+
+                <div class="form-group">
+
+                    <label>
+                        Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="titleInput"
+                        placeholder="Enter title"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Technologies / Skills
+                    </label>
+
+                    <input
+                        type="text"
+                        id="skillsInput"
+                        placeholder="HTML, CSS, JavaScript">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select id="statusInput">
+
+                        <option value="Completed">
+                            Completed
+                        </option>
+
+                        <option value="In Progress">
+                            In Progress
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                        id="descriptionInput"
+                        placeholder="Describe your work..."></textarea>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-outline"
+                        onclick="closeModal()">
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+                        Add Evidence
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        let currentType = "project";
+
+        /* OPEN MODAL */
+
+        function openModal(type) {
+
+            currentType = type;
+
+            const modal = document.getElementById("modal");
+            const title = document.getElementById("modalTitle");
+
+            if (type === "project") {
+
+                title.textContent = "Add Project";
+
+            } else if (type === "certification") {
+
+                title.textContent = "Add Certification";
+
+            } else {
+
+                title.textContent = "Add Experience";
+
+            }
+
+            modal.classList.add("active");
+        }
+
+
+        /* CLOSE MODAL */
+
+        function closeModal() {
+
+            document
+                .getElementById("modal")
+                .classList.remove("active");
+
+            document
+                .getElementById("evidenceForm")
+                .reset();
+        }
+
+
+        /* ADD EVIDENCE */
+
+        document
+            .getElementById("evidenceForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const title =
+                    document.getElementById("titleInput").value;
+
+                const skills =
+                    document.getElementById("skillsInput").value;
+
+                const status =
+                    document.getElementById("statusInput").value;
+
+                const description =
+                    document.getElementById("descriptionInput").value;
+
+
+                if (currentType === "project") {
+
+                    const grid =
+                        document.getElementById("projectGrid");
+
+                    const skillTags =
+                        skills
+                            .split(",")
+                            .map(skill =>
+                                `<span class="tag">${skill.trim()}</span>`
+                            )
+                            .join("");
+
+
+                    const statusClass =
+                        status === "Completed"
+                            ? "completed"
+                            : "progress";
+
+
+                    const card = document.createElement("div");
+
+                    card.className = "card project-card";
+
+                    card.innerHTML = `
+
+                        <div class="project-top">
+
+                            <div class="project-icon">
+                                🚀
+                            </div>
+
+                            <span class="status ${statusClass}">
+                                ${status}
+                            </span>
+
+                        </div>
+
+                        <h3 class="project-title">
+                            ${title}
+                        </h3>
+
+                        <p class="project-description">
+                            ${description || "New project added to your career evidence."}
+                        </p>
+
+                        <div class="tags">
+                            ${skillTags}
+                        </div>
+
+                        <div class="project-info">
+                            <strong>Role:</strong>
+                            Project Contributor
+                        </div>
+
+                    `;
+
+                    grid.appendChild(card);
+
+                    /* Increase readiness */
+
+                    const score =
+                        document.getElementById("readinessScore");
+
+                    let currentScore =
+                        parseInt(score.textContent);
+
+                    currentScore =
+                        Math.min(currentScore + 4, 100);
+
+                    score.textContent =
+                        currentScore;
+                }
+
+
+                closeModal();
+
+                alert(
+                    currentType.charAt(0).toUpperCase() +
+                    currentType.slice(1) +
+                    " added successfully!"
+                );
+
+            });
+
+
+        /* CLOSE WHEN CLICKING OUTSIDE */
+
+        document
+            .getElementById("modal")
+            .addEventListener("click", function(event) {
+
+                if (event.target === this) {
+                    closeModal();
+                }
+
+            });
+
+    </script>
+
+</body>
+</html>
