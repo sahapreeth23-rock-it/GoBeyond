@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoBeyond | Placement Readiness</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .navbar {
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #e6e9f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #172033;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #635bff;
+        }
+
+        .navbar nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .navbar nav a {
+            text-decoration: none;
+            color: #687084;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .navbar nav a:hover,
+        .navbar nav a.active {
+            color: #635bff;
+        }
+
+        /* =========================
+           PAGE
+        ========================= */
+
+        .page {
+            width: 86%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 55px 0 80px;
+        }
+
+        .page-header {
+            margin-bottom: 30px;
+        }
+
+        .eyebrow {
+            color: #635bff;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+
+        h1 {
+            font-size: 40px;
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #687084;
+            max-width: 720px;
+            font-size: 16px;
+        }
+
+        /* =========================
+           HERO SCORE
+        ========================= */
+
+        .score-card {
+            background: linear-gradient(135deg, #635bff, #786dff);
+            color: white;
+            border-radius: 24px;
+            padding: 34px;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 35px;
+            align-items: center;
+            box-shadow: 0 18px 40px rgba(99, 91, 255, 0.18);
+            margin-bottom: 28px;
+        }
+
+        .score-circle {
+            width: 175px;
+            height: 175px;
+            border-radius: 50%;
+            border: 12px solid rgba(255,255,255,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            position: relative;
+        }
+
+        .score-circle::after {
+            content: "";
+            position: absolute;
+            inset: -12px;
+            border-radius: 50%;
+            border: 12px solid transparent;
+            border-top-color: white;
+            border-right-color: white;
+            transform: rotate(35deg);
+        }
+
+        .score-number {
+            font-size: 43px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .score-label {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        .score-content h2 {
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+        .score-content p {
+            opacity: 0.9;
+            max-width: 650px;
+            margin-bottom: 20px;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 11px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 72%;
+            background: white;
+            border-radius: 20px;
+            transition: width 0.4s ease;
+        }
+
+        .progress-text {
+            margin-top: 8px;
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section-title {
+            margin: 38px 0 17px;
+        }
+
+        .section-title h2 {
+            font-size: 24px;
+        }
+
+        .section-title p {
+            color: #7b8395;
+            font-size: 14px;
+        }
+
+        /* =========================
+           BREAKDOWN
+        ========================= */
+
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 17px;
+        }
+
+        .skill-card {
+            background: white;
+            border: 1px solid #e6e9f0;
+            border-radius: 17px;
+            padding: 21px;
+            box-shadow: 0 7px 22px rgba(25, 35, 60, 0.04);
+        }
+
+        .skill-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .skill-name {
+            font-weight: 700;
+        }
+
+        .skill-score {
+            color: #635bff;
+            font-weight: 800;
+        }
+
+        .skill-track {
+            height: 8px;
+            background: #eceef6;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: #635bff;
+            border-radius: 20px;
+        }
+
+        /* =========================
+           TWO COLUMN AREA
+        ========================= */
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin-top: 28px;
+        }
+
+        .panel {
+            background: white;
+            border: 1px solid #e6e9f0;
+            border-radius: 20px;
+            padding: 25px;
+        }
+
+        .panel h3 {
+            font-size: 20px;
+            margin-bottom: 17px;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .list-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 13px;
+            background: #f8f8fc;
+            border-radius: 13px;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            flex: 0 0 30px;
+            border-radius: 9px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            background: #eceaff;
+        }
+
+        .list-item strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .list-item span {
+            color: #737b8d;
+            font-size: 13px;
+        }
+
+        /* =========================
+           ACTION PLAN
+        ========================= */
+
+        .action-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .action {
+            border: 1px solid #e7e9f0;
+            border-radius: 15px;
+            padding: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .action-left {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+        }
+
+        .priority {
+            font-size: 10px;
+            font-weight: 800;
+            padding: 5px 8px;
+            border-radius: 7px;
+            background: #eeeaff;
+            color: #635bff;
+            white-space: nowrap;
+        }
+
+        .priority.medium {
+            background: #fff4df;
+            color: #b56a00;
+        }
+
+        .action h4 {
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+
+        .action p {
+            color: #7b8395;
+            font-size: 12px;
+        }
+
+        .complete-btn {
+            border: none;
+            background: #635bff;
+            color: white;
+            padding: 9px 14px;
+            border-radius: 9px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+
+        .complete-btn:hover {
+            transform: translateY(-1px);
+            background: #5048e8;
+        }
+
+        .complete-btn.done {
+            background: #20a464;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: 55px;
+            padding-top: 25px;
+            border-top: 1px solid #e6e9f0;
+            color: #8a91a2;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+            .score-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .score-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .breakdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar nav {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                padding: 16px 5%;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .navbar nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page {
+                width: 90%;
+                padding-top: 35px;
+            }
+
+            h1 {
+                font-size: 31px;
+            }
+
+            .breakdown-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="navbar">
+        <a href="GoBeyond(3).html" class="logo">
+            Go<span>Beyond</span>
+        </a>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="GoBeyond(3).html">Home</a>
+            <a href="GoBeyond(3).html#opportunities">Opportunities</a>
+            <a href="GoBeyond(3).html#skills">Skills</a>
+            <a href="placement.html" class="active">Placement</a>
+            <a href="GoBeyond(3).html#journal">Journal</a>
+        </nav>
+    </header>
+
+
+    <main class="page">
+
+        <!-- HEADER -->
+
+        <section class="page-header">
+            <div class="eyebrow">09 — Placement Readiness</div>
+            <h1>Placement Readiness</h1>
+            <p class="subtitle">
+                Understand where you stand today, what is holding you back,
+                and the next actions that can improve your placement readiness.
+            </p>
+        </section>
+
+
+        <!-- OVERALL SCORE -->
+
+        <section class="score-card">
+
+            <div>
+                <div class="score-circle">
+                    <div>
+                        <div class="score-number" id="scoreNumber">72%</div>
+                        <div class="score-label">Readiness</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="score-content">
+                <h2>Overall Readiness Score</h2>
+
+                <p>
+                    Your profile shows a good foundation. Focus on the
+                    highest-priority blockers to move closer to placement-ready.
+                </p>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="mainProgress"></div>
+                </div>
+
+                <div class="progress-text">
+                    Current readiness: <strong id="progressText">72%</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- BREAKDOWN -->
+
+        <div class="section-title">
+            <h2>Readiness Breakdown</h2>
+            <p>Your current strength across important placement areas.</p>
+        </div>
+
+        <section class="breakdown-grid">
+
+            <div class="skill-card">
+                <div class="skill-top">
+                    <span class="skill-name">Technical Skills</span>
+                    <span class="skill-score">78%</span>
+                </div>
+                <div class="skill-track">
+                    <div class="skill-fill" style="width:78%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-top">
+                    <span class="skill-name">Projects</span>
+                    <span class="skill-score">65%</span>
+                </div>
+                <div class="skill-track">
+                    <div class="skill-fill" style="width:65%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-top">
+                    <span class="skill-name">Certifications</span>
+                    <span class="skill-score">70%</span>
+                </div>
+                <div class="skill-track">
+                    <div class="skill-fill" style="width:70%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-top">
+                    <span class="skill-name">Internship</span>
+                    <span class="skill-score">50%</span>
+                </div>
+                <div class="skill-track">
+                    <div class="skill-fill" style="width:50%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-top">
+                    <span class="skill-name">Resume</span>
+                    <span class="skill-score">80%</span>
+                </div>
+                <div class="skill-track">
+                    <div class="skill-fill" style="width:80%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-top">
+                    <span class="skill-name">Industry Skills</span>
+                    <span class="skill-score">68%</span>
+                </div>
+                <div class="skill-track">
+                    <div class="skill-fill" style="width:68%"></div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- STRENGTHS + BLOCKERS -->
+
+        <section class="two-column">
+
+            <div class="panel">
+                <h3>💪 Strengths</h3>
+
+                <div class="list">
+
+                    <div class="list-item">
+                        <div class="icon">✓</div>
+                        <div>
+                            <strong>Programming Fundamentals</strong>
+                            <span>Good foundation in core programming concepts.</span>
+                        </div>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="icon">✓</div>
+                        <div>
+                            <strong>Git & GitHub</strong>
+                            <span>Comfortable working with version control.</span>
+                        </div>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="icon">✓</div>
+                        <div>
+                            <strong>Problem Solving</strong>
+                            <span>Strong willingness to practise and improve.</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="panel">
+                <h3>🚧 Top Blockers</h3>
+
+                <div class="list">
+
+                    <div class="list-item">
+                        <div class="icon">1</div>
+                        <div>
+                            <strong>Machine Learning Skills</strong>
+                            <span>Build practical ML fundamentals for industry roles.</span>
+                        </div>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="icon">2</div>
+                        <div>
+                            <strong>Project Experience</strong>
+                            <span>Add stronger real-world projects to your portfolio.</span>
+                        </div>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="icon">3</div>
+                        <div>
+                            <strong>Internship Experience</strong>
+                            <span>Gain practical exposure through relevant internships.</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ACTION PLAN -->
+
+        <div class="section-title">
+            <h2>🎯 Action Plan</h2>
+            <p>Complete the highest-impact actions first.</p>
+        </div>
+
+        <section class="panel">
+
+            <div class="action-list">
+
+                <div class="action">
+                    <div class="action-left">
+                        <span class="priority">HIGH</span>
+                        <div>
+                            <h4>Complete Machine Learning Fundamentals</h4>
+                            <p>Strengthen one of your biggest current skill gaps.</p>
+                        </div>
+                    </div>
+
+                    <button class="complete-btn" data-points="3">
+                        Complete
+                    </button>
+                </div>
+
+
+                <div class="action">
+                    <div class="action-left">
+                        <span class="priority">HIGH</span>
+                        <div>
+                            <h4>Build One Industry Project</h4>
+                            <p>Create a project that demonstrates practical skills.</p>
+                        </div>
+                    </div>
+
+                    <button class="complete-btn" data-points="5">
+                        Complete
+                    </button>
+                </div>
+
+
+                <div class="action">
+                    <div class="action-left">
+                        <span class="priority medium">MEDIUM</span>
+                        <div>
+                            <h4>Apply for Relevant Internships</h4>
+                            <p>Start building practical industry experience.</p>
+                        </div>
+                    </div>
+
+                    <button class="complete-btn" data-points="4">
+                        Complete
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROGRESS -->
+
+        <div class="section-title">
+            <h2>📈 Progress</h2>
+            <p>Your score improves as you complete the recommended actions.</p>
+        </div>
+
+        <section class="panel">
+            <div class="list-item">
+                <div class="icon">↗</div>
+                <div>
+                    <strong>Keep improving</strong>
+                    <span>
+                        Current score is <b id="bottomScore">72%</b>.
+                        Complete the action plan above to increase your readiness.
+                    </span>
+                </div>
+            </div>
+        </section>
+
+
+        <footer>
+            GoBeyond • Smart Student Journey
+        </footer>
+
+    </main>
+
+
+    <script>
+        const buttons = document.querySelectorAll(".complete-btn");
+        const scoreNumber = document.getElementById("scoreNumber");
+        const progressText = document.getElementById("progressText");
+        const mainProgress = document.getElementById("mainProgress");
+        const bottomScore = document.getElementById("bottomScore");
+
+        let score = Number(localStorage.getItem("placementReadinessScore")) || 72;
+
+        function updateScore() {
+            score = Math.min(score, 100);
+
+            scoreNumber.textContent = score + "%";
+            progressText.textContent = score + "%";
+            bottomScore.textContent = score + "%";
+            mainProgress.style.width = score + "%";
+        }
+
+        buttons.forEach((button, index) => {
+
+            const saved = localStorage.getItem("placementAction" + index);
+
+            if (saved === "done") {
+                button.textContent = "✓ Completed";
+                button.classList.add("done");
+                button.disabled = true;
+            }
+
+            button.addEventListener("click", function () {
+
+                if (button.disabled) return;
+
+                const points = Number(button.dataset.points);
+
+                score += points;
+
+                localStorage.setItem("placementReadinessScore", score);
+                localStorage.setItem("placementAction" + index, "done");
+
+                button.textContent = "✓ Completed";
+                button.classList.add("done");
+                button.disabled = true;
+
+                updateScore();
+            });
+        });
+
+        updateScore();
+    </script>
+
+</body>
+</html>
