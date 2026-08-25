@@ -7,6 +7,25 @@
     <title>GoBeyond | Smart Student Journey</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Smooth, live-feeling transitions when skills/interests change */
+        #readinessScore,
+        #skillsCovered,
+        #criticalGaps,
+        #placementReadiness,
+        #coverageCount {
+            transition: color 0.2s ease;
+        }
+
+        .coverage-progress {
+            transition: width 0.4s ease;
+        }
+
+        .skill-status-item {
+            transition: background-color 0.2s ease;
+        }
+    </style>
 </head>
 
 <body>
@@ -266,7 +285,7 @@
             72%
         </strong>
 
-        <span>
+        <span id="readinessLabel">
             READY
         </span>
 

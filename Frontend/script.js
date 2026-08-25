@@ -3319,6 +3319,15 @@ const slide5SkillGapData = {
             action: "Complete ML fundamentals and build one practical ML project."
         },
         {
+            skill: "Python",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 7,
+            why: "Python is the primary language used to build and deploy AI/ML systems.",
+            action: "Sharpen Python fundamentals and the core data/ML libraries."
+        },
+        {
             skill: "SQL",
             required: "Intermediate",
             priority: "MEDIUM",
@@ -3335,6 +3344,24 @@ const slide5SkillGapData = {
             opportunities: 4,
             why: "Statistics helps you understand data, models and evaluation metrics.",
             action: "Strengthen probability, statistics and model evaluation."
+        },
+        {
+            skill: "Deep Learning",
+            required: "Beginner",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 3,
+            why: "Deep Learning powers many modern AI applications and is increasingly expected.",
+            action: "Learn neural network basics and build one small deep learning demo."
+        },
+        {
+            skill: "Git",
+            required: "Beginner",
+            priority: "LOW",
+            demand: "Moderate",
+            opportunities: 3,
+            why: "Version control is expected for collaborating on any real engineering project.",
+            action: "Practice Git workflows: commits, branches and pull requests."
         }
     ],
 
@@ -3365,6 +3392,33 @@ const slide5SkillGapData = {
             opportunities: 5,
             why: "Node.js helps you move from frontend development toward full-stack development.",
             action: "Learn Node.js and build a simple REST API."
+        },
+        {
+            skill: "CSS",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 4,
+            why: "Solid CSS skills are needed to build clean, responsive interfaces.",
+            action: "Practice layout systems like Flexbox and Grid on a real page."
+        },
+        {
+            skill: "HTML",
+            required: "Beginner",
+            priority: "LOW",
+            demand: "Moderate",
+            opportunities: 3,
+            why: "Semantic HTML is the foundation every web application is built on.",
+            action: "Review semantic HTML and accessibility basics."
+        },
+        {
+            skill: "Git",
+            required: "Beginner",
+            priority: "LOW",
+            demand: "Moderate",
+            opportunities: 3,
+            why: "Version control is expected for collaborating on any real engineering project.",
+            action: "Practice Git workflows: commits, branches and pull requests."
         }
     ],
 
@@ -3388,6 +3442,15 @@ const slide5SkillGapData = {
             action: "Practice SQL using real-world datasets."
         },
         {
+            skill: "Python",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            demand: "Very High",
+            opportunities: 6,
+            why: "Python is the standard language for data analysis and modelling.",
+            action: "Practice data manipulation and analysis using Python."
+        },
+        {
             skill: "Machine Learning",
             required: "Intermediate",
             priority: "MEDIUM",
@@ -3395,6 +3458,24 @@ const slide5SkillGapData = {
             opportunities: 5,
             why: "Machine Learning helps data scientists build predictive models.",
             action: "Learn supervised learning and build a prediction project."
+        },
+        {
+            skill: "Data Visualization",
+            required: "Beginner",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 4,
+            why: "Communicating insights clearly through visuals is a core data science skill.",
+            action: "Build a dashboard or chart set that tells a clear data story."
+        },
+        {
+            skill: "Excel",
+            required: "Beginner",
+            priority: "LOW",
+            demand: "Moderate",
+            opportunities: 2,
+            why: "Excel remains a common tool for quick data exploration in many teams.",
+            action: "Practice pivot tables, formulas and quick data summaries."
         }
     ],
 
@@ -3425,6 +3506,33 @@ const slide5SkillGapData = {
             opportunities: 5,
             why: "Security fundamentals are required to analyse and prevent attacks.",
             action: "Study cybersecurity fundamentals and practise security tools."
+        },
+        {
+            skill: "Security Tools",
+            required: "Beginner",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 4,
+            why: "Hands-on tools turn security concepts into practical, employable skills.",
+            action: "Get hands-on with tools such as Wireshark and Nmap."
+        },
+        {
+            skill: "Python",
+            required: "Beginner",
+            priority: "LOW",
+            demand: "Moderate",
+            opportunities: 3,
+            why: "Scripting helps automate scans, log analysis and repetitive security tasks.",
+            action: "Learn basic Python scripting for security automation."
+        },
+        {
+            skill: "Cryptography",
+            required: "Beginner",
+            priority: "LOW",
+            demand: "Moderate",
+            opportunities: 2,
+            why: "Understanding encryption is important for securing data and communications.",
+            action: "Review core cryptography concepts: hashing, encryption and keys."
         }
     ]
 };
@@ -3535,6 +3643,58 @@ function findStudentSkill(skillMap, skillName) {
             "cybersecurity",
             "cyber security",
             "security"
+        ],
+
+        "python": [
+            "python",
+            "python3"
+        ],
+
+        "git": [
+            "git",
+            "github",
+            "version control"
+        ],
+
+        "deep learning": [
+            "deep learning",
+            "dl",
+            "neural networks"
+        ],
+
+        "html": [
+            "html",
+            "html5"
+        ],
+
+        "css": [
+            "css",
+            "css3"
+        ],
+
+        "data visualization": [
+            "data visualization",
+            "data viz",
+            "tableau",
+            "power bi"
+        ],
+
+        "excel": [
+            "excel",
+            "ms excel",
+            "spreadsheets"
+        ],
+
+        "security tools": [
+            "security tools",
+            "wireshark",
+            "nmap"
+        ],
+
+        "cryptography": [
+            "cryptography",
+            "crypto",
+            "encryption"
         ]
     };
 
@@ -3553,152 +3713,401 @@ function findStudentSkill(skillMap, skillName) {
 
 
 // =====================================================
-// RENDER SLIDE 5
+// INDUSTRY SKILL CATALOG ANALYSIS
+// Single source of truth for Industry Readiness Score,
+// Industry Skill Coverage and Top Skill Gaps. Recomputed
+// any time skills, interests or career goal change.
+// =====================================================
+
+const priorityWeight = {
+    HIGH: 3,
+    MEDIUM: 2,
+    LOW: 1
+};
+
+const careerInterestKeywords = {
+
+    "AI/ML Engineer": [
+        "ai", "artificial intelligence", "machine learning",
+        "ml", "deep learning", "data science", "robotics", "neural"
+    ],
+
+    "Web Developer": [
+        "web", "frontend", "front-end", "backend", "back-end",
+        "full stack", "fullstack", "ui", "ux", "design"
+    ],
+
+    "Data Scientist": [
+        "data", "analytics", "statistics", "visualization",
+        "ai", "machine learning"
+    ],
+
+    "Cybersecurity Engineer": [
+        "security", "cyber", "privacy", "networking",
+        "hacking", "infosec"
+    ]
+
+};
+
+
+// Work out which industry skills are covered/missing,
+// and calculate a weighted readiness score (with a small
+// bonus for interests that align with the career goal).
+function analyzeIndustrySkills(profile) {
+
+    const careerGoal =
+        (profile && profile.careerGoal) || "AI/ML Engineer";
+
+    const catalog =
+        slide5SkillGapData[careerGoal] ||
+        slide5SkillGapData["AI/ML Engineer"];
+
+    const studentSkills =
+        getStudentSkillData(profile);
+
+    const analyzed = catalog.map(item => ({
+        ...item,
+        covered: !!findStudentSkill(studentSkills, item.skill)
+    }));
+
+    const missing = analyzed
+        .filter(item => !item.covered)
+        .sort((a, b) =>
+            (priorityWeight[b.priority] || 0) -
+            (priorityWeight[a.priority] || 0)
+        );
+
+    const coveredCount =
+        analyzed.length - missing.length;
+
+    const totalCount =
+        analyzed.length;
+
+    const totalWeight = catalog.reduce(
+        (sum, item) => sum + (priorityWeight[item.priority] || 1),
+        0
+    );
+
+    const coveredWeight = analyzed
+        .filter(item => item.covered)
+        .reduce(
+            (sum, item) => sum + (priorityWeight[item.priority] || 1),
+            0
+        );
+
+    const baseScore =
+        totalWeight
+            ? (coveredWeight / totalWeight) * 100
+            : 0;
+
+    const interestKeywords =
+        careerInterestKeywords[careerGoal] || [];
+
+    const interests =
+        (profile && profile.interests) || [];
+
+    const interestMatches = interests.filter(interest =>
+        interestKeywords.some(keyword =>
+            interest.toLowerCase().includes(keyword)
+        )
+    ).length;
+
+    // Up to +10 for having interests that align with the career goal
+    const interestBonus =
+        Math.min(interestMatches * 3, 10);
+
+    const readinessScore = Math.max(
+        0,
+        Math.min(100, Math.round(baseScore + interestBonus))
+    );
+
+    return {
+        careerGoal,
+        catalog,
+        analyzed,
+        missing,
+        coveredCount,
+        totalCount,
+        readinessScore,
+        interestBonus
+    };
+
+}
+
+
+function getReadinessLabel(score) {
+
+    if (score >= 80) return "READY";
+    if (score >= 50) return "BUILDING";
+    return "GETTING STARTED";
+
+}
+
+
+// =====================================================
+// UPDATE INDUSTRY READINESS SCORE + SKILL COVERAGE
+// =====================================================
+
+function updateIndustryReadiness(profile) {
+
+    const analysis =
+        analyzeIndustrySkills(profile);
+
+    // ---- Industry Readiness Score card ----
+    const readinessScoreEl =
+        document.getElementById("readinessScore");
+
+    const readinessLabelEl =
+        document.getElementById("readinessLabel") ||
+        document.querySelector(".readiness-score span");
+
+    if (readinessScoreEl) {
+        readinessScoreEl.textContent =
+            `${analysis.readinessScore}%`;
+    }
+
+    if (readinessLabelEl) {
+        readinessLabelEl.textContent =
+            getReadinessLabel(analysis.readinessScore);
+    }
+
+
+    // ---- Quick Stats ----
+    const skillsCoveredEl =
+        document.getElementById("skillsCovered");
+
+    const criticalGapsEl =
+        document.getElementById("criticalGaps");
+
+    const placementReadinessEl =
+        document.getElementById("placementReadiness");
+
+    if (skillsCoveredEl) {
+        skillsCoveredEl.textContent =
+            analysis.coveredCount;
+    }
+
+    if (criticalGapsEl) {
+        criticalGapsEl.textContent =
+            analysis.missing.filter(
+                item => item.priority === "HIGH"
+            ).length;
+    }
+
+    if (placementReadinessEl) {
+        placementReadinessEl.textContent =
+            `${analysis.readinessScore}%`;
+    }
+
+
+    // ---- Industry Skill Coverage card ----
+    const coverageCountEl =
+        document.getElementById("coverageCount");
+
+    const coverageProgressEl =
+        document.querySelector(".coverage-progress");
+
+    const skillStatusListEl =
+        document.getElementById("skillStatusList");
+
+    if (coverageCountEl) {
+        coverageCountEl.textContent =
+            `${analysis.coveredCount} / ${analysis.totalCount}`;
+    }
+
+    if (coverageProgressEl) {
+
+        const coveragePercent =
+            analysis.totalCount
+                ? Math.round(
+                    (analysis.coveredCount / analysis.totalCount) * 100
+                )
+                : 0;
+
+        coverageProgressEl.style.width =
+            `${coveragePercent}%`;
+
+    }
+
+    if (skillStatusListEl) {
+
+        skillStatusListEl.innerHTML = analysis.analyzed.map(item => `
+            <div class="skill-status-item ${item.covered ? "covered" : "not-covered"}"
+                style="display:flex;align-items:center;justify-content:space-between;
+                padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.08);">
+                <span>${item.covered ? "✅" : "⭕"} ${item.skill}</span>
+                <span style="font-size:12px;font-weight:600;
+                    color:${item.covered ? "#16a34a" : "#dc2626"};">
+                    ${item.covered ? "Covered" : `${item.priority} priority`}
+                </span>
+            </div>
+        `).join("");
+
+    }
+
+    return analysis;
+
+}
+
+
+// =====================================================
+// RENDER SLIDE 5 (Top 3 Skill Gaps + Next Best Action)
 // =====================================================
 
 function renderSlide5SkillGaps(profile) {
 
     if (!profile) return;
 
+    // Recompute readiness score + skill coverage first,
+    // then reuse the same analysis for the top gaps below.
+    const analysis =
+        updateIndustryReadiness(profile);
+
     const careerGoal =
-        profile.careerGoal || "AI/ML Engineer";
+        analysis.careerGoal;
 
     const gaps =
-        slide5SkillGapData[careerGoal];
-
-    if (!gaps) return;
-
-    const studentSkills =
-        getStudentSkillData(profile);
+        analysis.missing.slice(0, 3);
 
     const gapList =
         document.querySelector(".gap-list");
 
-    if (!gapList) return;
-
 
     // -----------------------------------------------
-    // UPDATE GAP CARDS
+    // UPDATE TOP 3 GAP CARDS
     // -----------------------------------------------
 
-    gapList.innerHTML = gaps.map((gap, index) => {
+    if (gapList) {
 
-        const currentLevel =
-            findStudentSkill(
-                studentSkills,
-                gap.skill
-            ) || "Not Started";
+        if (gaps.length === 0) {
 
-        const priorityClass =
-            gap.priority === "HIGH"
-            ? "high"
-            : gap.priority === "MEDIUM"
-            ? "medium"
-            : "low";
-
-        const priorityBadge =
-            gap.priority === "HIGH"
-            ? "priority-high"
-            : gap.priority === "MEDIUM"
-            ? "priority-medium"
-            : "priority-low";
-
-        return `
-
-            <div class="gap-item">
-
-                <div class="gap-icon ${priorityClass}">
-                    ${gap.priority === "HIGH" ? "!" : "•"}
+            gapList.innerHTML = `
+                <div class="gap-item">
+                    <div class="gap-content">
+                        <strong>🎉 You're covering all core skills for ${careerGoal}!</strong>
+                        <p>Keep sharpening these skills and explore advanced or stretch topics to stay ahead.</p>
+                    </div>
                 </div>
+            `;
 
-                <div class="gap-content">
+        } else {
 
-                    <div class="gap-title">
+            gapList.innerHTML = gaps.map((gap) => {
 
-                        <strong>
-                            ${gap.skill}
-                        </strong>
+                const currentLevel =
+                    findStudentSkill(
+                        getStudentSkillData(profile),
+                        gap.skill
+                    ) || "Not Started";
 
-                        <span class="${priorityBadge}">
-                            ${gap.priority}
-                        </span>
+                const priorityClass =
+                    gap.priority === "HIGH"
+                    ? "high"
+                    : gap.priority === "MEDIUM"
+                    ? "medium"
+                    : "low";
+
+                const priorityBadge =
+                    gap.priority === "HIGH"
+                    ? "priority-high"
+                    : gap.priority === "MEDIUM"
+                    ? "priority-medium"
+                    : "priority-low";
+
+                return `
+
+                    <div class="gap-item">
+
+                        <div class="gap-icon ${priorityClass}">
+                            ${gap.priority === "HIGH" ? "!" : "•"}
+                        </div>
+
+                        <div class="gap-content">
+
+                            <div class="gap-title">
+
+                                <strong>
+                                    ${gap.skill}
+                                </strong>
+
+                                <span class="${priorityBadge}">
+                                    ${gap.priority}
+                                </span>
+
+                            </div>
+
+                            <p>
+                                ${currentLevel}
+                                →
+                                ${gap.required}
+                            </p>
+
+                            <div class="slide5-gap-details">
+
+                                <span>
+                                    📈 Demand:
+                                    <strong>${gap.demand}</strong>
+                                </span>
+
+                                <span>
+                                    🎯
+                                    ${gap.opportunities}
+                                    matched opportunities
+                                </span>
+
+                            </div>
+
+                            <small class="slide5-gap-why">
+                                ${gap.why}
+                            </small>
+
+                            <div class="gap-path">
+
+                                <span>Learn</span>
+                                <b>→</b>
+
+                                <span>Practice</span>
+                                <b>→</b>
+
+                                <span>Build Project</span>
+                                <b>→</b>
+
+                                <span>Reassess</span>
+
+                            </div>
+
+                            <div class="slide5-gap-action">
+
+                                <strong>
+                                    Next:
+                                </strong>
+
+                                ${gap.action}
+
+                            </div>
+
+                        </div>
 
                     </div>
+                `;
 
-                    <p>
-                        ${currentLevel}
-                        →
-                        ${gap.required}
-                    </p>
+            }).join("");
 
-                    <div class="slide5-gap-details">
+        }
 
-                        <span>
-                            📈 Demand:
-                            <strong>${gap.demand}</strong>
-                        </span>
-
-                        <span>
-                            🎯
-                            ${gap.opportunities}
-                            matched opportunities
-                        </span>
-
-                    </div>
-
-                    <small class="slide5-gap-why">
-    ${gap.why}
-</small>
-
-<div class="gap-path">
-
-    <span>Learn</span>
-    <b>→</b>
-
-    <span>Practice</span>
-    <b>→</b>
-
-    <span>Build Project</span>
-    <b>→</b>
-
-    <span>Reassess</span>
-
-</div>
-
-<div class="slide5-gap-action">
-
-    <strong>
-        Next:
-    </strong>
-
-    ${gap.action}
-
-</div>
-
-                </div>
-
-            </div>
-        `;
-
-    }).join("");
+    }
 
 
     // -----------------------------------------------
     // UPDATE "NEXT BEST ACTION"
     // -----------------------------------------------
 
-    const highestPriority =
-        gaps.find(
-            gap => gap.priority === "HIGH"
-        ) || gaps[0];
-
-
     const nextAction =
         document.querySelector(
             ".next-action-card"
         );
 
-    if (nextAction && highestPriority) {
+    if (nextAction) {
 
         const heading =
             nextAction.querySelector(
@@ -3720,102 +4129,115 @@ function renderSlide5SkillGaps(profile) {
                 "button"
             );
 
+        if (gaps.length === 0) {
 
-        if (heading) {
+            if (heading) {
+                heading.textContent =
+                    `Great work — keep building on ${careerGoal}!`;
+            }
 
-            heading.textContent =
-                `Strengthen your ${highestPriority.skill} skills`;
+            if (description) {
+                description.textContent =
+                    `You're covering all core industry skills for ${careerGoal}. Deepen your expertise with an advanced project or explore a new stretch skill.`;
+            }
+
+            if (tag) {
+                tag.textContent =
+                    "ON TRACK";
+            }
+
+            if (button) {
+
+                button.textContent =
+                    "Explore Advanced Topics →";
+
+                button.onclick = function () {
+
+                    alert(
+                        "Nice work! Check the Opportunities and Roadmap sections for advanced next steps."
+                    );
+
+                };
+
+            }
+
+        } else {
+
+            const highestPriority =
+                gaps[0];
+
+            if (heading) {
+                heading.textContent =
+                    `Strengthen your ${highestPriority.skill} skills`;
+            }
+
+            if (description) {
+                description.textContent =
+                    `${highestPriority.skill} is one of your highest-priority skill gaps for the ${careerGoal} role. ${highestPriority.action}`;
+            }
+
+            if (tag) {
+                tag.textContent =
+                    `${highestPriority.priority} PRIORITY`;
+            }
+
+            if (button) {
+
+                button.textContent =
+                    `Start ${highestPriority.skill} Plan →`;
+
+                button.onclick = function () {
+
+                    openLearningPlan(
+                        highestPriority.skill,
+                        careerGoal
+                    );
+
+                };
+
+            }
 
         }
 
-
-        if (description) {
-
-            description.textContent =
-                `${highestPriority.skill} is one of your highest-priority skill gaps for the ${careerGoal} role. ${highestPriority.action}`;
-
-        }
-
-
-        if (tag) {
-
-            tag.textContent =
-                `${highestPriority.priority} PRIORITY`;
-
-        }
-
-
-        if (button) {
-
-            button.textContent =
-                `Start ${highestPriority.skill} Plan →`;
-
-            button.onclick = function () {
-
-                 openLearningPlan(
-                       highestPriority.skill,
-                       careerGoal
-              );
-
-          };
-
-        }
     }
 
-// -----------------------------------------------
-// UPDATE SLIDE 5 SUMMARY COUNTS
-// -----------------------------------------------
 
-const criticalCount =
-    document.getElementById("criticalGapCount");
+    // -----------------------------------------------
+    // UPDATE SLIDE 5 SUMMARY COUNTS
+    // -----------------------------------------------
 
-const mediumCount =
-    document.getElementById("mediumGapCount");
+    const criticalCount =
+        document.getElementById("criticalGapCount");
 
-const lowCount =
-    document.getElementById("lowGapCount");
+    const mediumCount =
+        document.getElementById("mediumGapCount");
 
-if (criticalCount) {
-    criticalCount.textContent =
-        gaps.filter(
-            gap => gap.priority === "HIGH"
-        ).length;
+    const lowCount =
+        document.getElementById("lowGapCount");
+
+    if (criticalCount) {
+        criticalCount.textContent =
+            analysis.missing.filter(
+                gap => gap.priority === "HIGH"
+            ).length;
+    }
+
+    if (mediumCount) {
+        mediumCount.textContent =
+            analysis.missing.filter(
+                gap => gap.priority === "MEDIUM"
+            ).length;
+    }
+
+    if (lowCount) {
+        lowCount.textContent =
+            analysis.missing.filter(
+                gap => gap.priority === "LOW"
+            ).length;
+    }
+
 }
 
-if (mediumCount) {
-    mediumCount.textContent =
-        gaps.filter(
-            gap => gap.priority === "MEDIUM"
-        ).length;
-}
-
-if (lowCount) {
-    lowCount.textContent =
-        gaps.filter(
-            gap => gap.priority === "LOW"
-        ).length;
-}
-
-
-// Skills currently covered
-const skillsCovered =
-    document.getElementById("skillsCovered");
-
-if (skillsCovered) {
-
-    const covered =
-        gaps.filter(
-            gap =>
-                findStudentSkill(
-                    studentSkills,
-                    gap.skill
-                )
-        ).length;
-
-    skillsCovered.textContent =
-        covered;
-}
-} 
     
 
 // =====================================================
@@ -4021,6 +4443,57 @@ if (liveYear) {
             updateDashboard(profile);
 
         }
+    );
+
+}
+
+
+// -----------------------------------------------------
+// SKILLS / INTERESTS CHANGE
+// (live update: Industry Readiness Score, Industry Skill
+// Coverage and Top 3 Skill Gaps update as you type)
+// -----------------------------------------------------
+
+function debounce(fn, delay) {
+
+    let timer;
+
+    return function (...args) {
+
+        clearTimeout(timer);
+
+        timer = setTimeout(
+            () => fn.apply(this, args),
+            delay
+        );
+
+    };
+
+}
+
+const liveSkillsInterestsUpdate = debounce(function () {
+
+    const profile =
+        getLiveProfile();
+
+    updateDashboard(profile);
+
+}, 400);
+
+if (liveSkills) {
+
+    liveSkills.addEventListener(
+        "input",
+        liveSkillsInterestsUpdate
+    );
+
+}
+
+if (liveInterests) {
+
+    liveInterests.addEventListener(
+        "input",
+        liveSkillsInterestsUpdate
     );
 
 }
