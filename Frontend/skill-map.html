@@ -4889,9 +4889,19 @@ function updateSkillGapAnalysis(profile) {
 
 
     const studentSkills =
-        profile.skills.map(skill =>
-            skill.toLowerCase().trim()
-        );
+    profile.skills
+        .map(skill => {
+            if (typeof skill === "string") {
+                return skill.toLowerCase().trim();
+            }
+
+            if (skill && typeof skill === "object") {
+                return String(skill.name || skill.skill || "").toLowerCase().trim();
+            }
+
+            return "";
+        })
+        .filter(Boolean);
 
 
     let criticalCount = 0;
