@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "DATASCIENCE WITH GEN AI",
+    "type": "Workshop",
+    "organization": "SRM INSTITUTE OF SCIENCE AND TECHNOLOGY",
+    "domain": "Data Science",
+    "deadline": "2026-09-07",
+    "fee": "₹100",
+    "registration_link": "https://internshala.com/competitions/data-science-with-gen-ai-workshop-2026/",
+    "required_skills": [
+      "Data Science",
+      "Generative AI"
+    ],
+    "interests": [
+      "Data Science",
+      "Artificial Intelligence"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "CYBERSECURITY WORKSHOP",
+    "type": "Workshop",
+    "organization": "SNSCT",
+    "domain": "Cyber Security",
+    "deadline": "Not publicly specified",
+    "fee": "₹200",
+    "registration_link": "https://stayhappening.com/e/cybersecurity-workshop-E10IF7BG20Q",
+    "required_skills": [
+      "Cyber Security",
+      "Cybersecurity"
+    ],
+    "interests": [
+      "Cyber Security"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "AWS STUDENT BUILDER EVENT",
+    "type": "Workshop",
+    "organization": "IES UNIVERSITY",
+    "domain": "Cloud Computing",
+    "deadline": "Upcoming",
+    "fee": "FREE",
+    "registration_link": "https://unstop.com/workshops-webinars/aws-student-builder-event-unlock-free-aws-certification-exam-opportunities-ies-university-bhopal-1720954",
+    "required_skills": [
+      "AWS",
+      "Cloud Computing"
+    ],
+    "interests": [
+      "Cloud Computing",
+      "AWS"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "PARAVARTHAN - AGENTIC AI WORKSHOP",
+    "type": "Workshop",
+    "organization": "SRMIST",
+    "domain": "Generative AI / LLM",
+    "deadline": "2026-09-07",
+    "fee": "₹100",
+    "registration_link": "https://unstop.com/workshops-webinars/pravartan-agentic-ai-workshop-srm-institute-of-science-and-technology-kattankulathur-chennai-1729867",
+    "required_skills": [
+      "Generative AI",
+      "LLM",
+      "Artificial Intelligence"
+    ],
+    "interests": [
+      "Artificial Intelligence",
+      "Generative AI"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "ALOTOPIA : FUTURE WITH IoT",
+    "type": "Workshop",
+    "organization": "VIT VELLORE",
+    "domain": "IoT",
+    "deadline": "Upcoming",
+    "fee": "₹110",
+    "registration_link": "https://unstop.com/workshops-webinars/aiotopia-future-with-iot-gravitas26-vit-vellore-1736013",
+    "required_skills": [
+      "IoT",
+      "Internet of Things"
+    ],
+    "interests": [
+      "IoT",
+      "Technology"
+    ]
+  }
+]

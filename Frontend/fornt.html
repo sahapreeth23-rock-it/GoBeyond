@@ -1,0 +1,2812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GoBeyond | Smart Student Journey</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f7f8ff;
+    color:#18213d;
+    overflow-x:hidden;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+
+    width:94%;
+    margin:18px auto 0;
+
+    min-height:78px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:12px 28px;
+
+    background:rgba(255,255,255,.96);
+
+    border:1px solid #ecebfa;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 8px 30px rgba(55,45,120,.07);
+
+    position:relative;
+
+    z-index:100;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-width:250px;
+}
+
+
+.logo{
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6650ff,
+            #2377e8
+        );
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 7px 18px rgba(91,70,240,.25);
+}
+
+
+.logo::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:75px;
+    height:18px;
+
+    background:
+        rgba(255,255,255,.15);
+
+    transform:rotate(-35deg);
+}
+
+
+.rocket{
+
+    font-size:31px;
+
+    transform:rotate(-45deg);
+
+    z-index:2;
+
+    animation:
+        rocketFloat 3s ease-in-out infinite;
+}
+
+
+.logo-text{
+
+    font-size:28px;
+
+    font-weight:800;
+
+    letter-spacing:-1px;
+}
+
+
+.logo-text span{
+
+    color:#6650ff;
+}
+
+
+.logo-subtitle{
+
+    font-size:12px;
+
+    color:#64708e;
+
+    margin-top:2px;
+}
+
+
+/* =====================================================
+   NAV LINKS
+===================================================== */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+}
+
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#303b5c;
+
+    font-weight:600;
+
+    font-size:14px;
+
+    transition:.25s;
+
+    white-space:nowrap;
+}
+
+
+.nav-links a:hover{
+
+    color:#5c4ce6;
+
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    width:94%;
+
+    max-width:1450px;
+
+    margin:65px auto 0;
+
+    min-height:580px;
+
+    display:grid;
+
+    grid-template-columns:45% 55%;
+
+    align-items:center;
+
+    position:relative;
+}
+
+
+/* background glow */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    right:0;
+    top:-100px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(118,96,255,.18),
+            rgba(118,96,255,0) 68%
+        );
+
+    z-index:-1;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content{
+
+    padding-left:35px;
+
+    z-index:5;
+}
+
+
+.hero-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:9px 17px;
+
+    border-radius:12px;
+
+    background:#f0edff;
+
+    color:#5544e7;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    margin-bottom:22px;
+
+    animation:
+        fadeUp .8s ease;
+}
+
+
+.hero h1{
+
+    font-size:64px;
+
+    line-height:1.04;
+
+    letter-spacing:-2px;
+
+    max-width:680px;
+
+    animation:
+        fadeUp 1s ease;
+}
+
+
+.hero h1 .gradient{
+
+    background:
+        linear-gradient(
+            90deg,
+            #5644e8,
+            #7460ff,
+            #2878e8
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+}
+
+
+.hero-description{
+
+    margin-top:25px;
+
+    font-size:19px;
+
+    line-height:1.6;
+
+    color:#596681;
+
+    max-width:600px;
+
+    animation:
+        fadeUp 1.2s ease;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:32px;
+
+    animation:
+        fadeUp 1.4s ease;
+}
+
+
+.btn{
+
+    padding:16px 28px;
+
+    border-radius:13px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    text-decoration:none;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+
+.btn-primary{
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5d4ae9,
+            #7155f5
+        );
+
+    box-shadow:
+        0 12px 25px
+        rgba(91,70,240,.25);
+}
+
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 18px 30px
+        rgba(91,70,240,.32);
+}
+
+
+.btn-outline{
+
+    color:#5747df;
+
+    background:white;
+
+    border:
+        1.5px solid #6858ef;
+}
+
+
+.btn-outline:hover{
+
+    background:#f3f1ff;
+
+    transform:translateY(-4px);
+}
+
+
+/* =====================================================
+   HERO ART
+===================================================== */
+
+.hero-art{
+
+    height:560px;
+
+    position:relative;
+}
+
+
+/* =====================================================
+   BIG CIRCLE
+===================================================== */
+
+.hero-circle{
+
+    position:absolute;
+
+    width:510px;
+    height:510px;
+
+    border-radius:50%;
+
+    right:60px;
+    top:20px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(133,113,255,.22),
+            rgba(150,130,255,.08) 50%,
+            rgba(255,255,255,0) 72%
+        );
+
+    animation:
+        pulseGlow 4s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   CLOUDS
+===================================================== */
+
+.cloud{
+
+    position:absolute;
+
+    width:100px;
+    height:35px;
+
+    background:#fff;
+
+    border-radius:40px;
+
+    opacity:.8;
+
+    box-shadow:
+        0 5px 15px
+        rgba(110,100,200,.05);
+}
+
+
+.cloud::before,
+.cloud::after{
+
+    content:"";
+
+    position:absolute;
+
+    background:#fff;
+
+    border-radius:50%;
+}
+
+
+.cloud::before{
+
+    width:45px;
+    height:45px;
+
+    left:18px;
+    top:-20px;
+}
+
+
+.cloud::after{
+
+    width:55px;
+    height:55px;
+
+    right:12px;
+    top:-28px;
+}
+
+
+.cloud1{
+
+    top:100px;
+    left:40px;
+}
+
+
+.cloud2{
+
+    top:130px;
+    right:10px;
+
+    transform:scale(.7);
+}
+
+
+.cloud3{
+
+    bottom:130px;
+    left:30px;
+
+    transform:scale(.55);
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.star{
+
+    position:absolute;
+
+    color:#7663ed;
+
+    font-size:25px;
+
+    animation:
+        floatStar 3s ease-in-out infinite;
+}
+
+
+.star1{
+
+    top:80px;
+    left:130px;
+}
+
+
+.star2{
+
+    top:170px;
+    right:150px;
+
+    animation-delay:1s;
+}
+
+
+.star3{
+
+    top:250px;
+    left:100px;
+
+    animation-delay:1.5s;
+}
+
+
+.star4{
+
+    top:30px;
+    right:230px;
+
+    animation-delay:.5s;
+}
+
+
+/* =====================================================
+   PAPER PLANE
+===================================================== */
+
+.plane{
+
+    position:absolute;
+
+    right:65px;
+
+    top:55px;
+
+    font-size:60px;
+
+    transform:rotate(-25deg);
+
+    animation:
+        planeFly 5s ease-in-out infinite;
+
+    z-index:10;
+}
+
+
+/* =====================================================
+   GROWTH ARROW
+===================================================== */
+
+.growth-arrow{
+
+    position:absolute;
+
+    width:570px;
+
+    height:250px;
+
+    left:20px;
+
+    bottom:75px;
+
+    overflow:visible;
+
+    z-index:4;
+}
+
+
+.arrow-path{
+
+    fill:none;
+
+    stroke:#5745e8;
+
+    stroke-width:8;
+
+    stroke-linecap:round;
+
+    stroke-dasharray:700;
+
+    stroke-dashoffset:700;
+
+    animation:
+        drawArrow 2.5s ease forwards;
+}
+
+
+.arrow-head{
+
+    fill:#5745e8;
+
+    animation:
+        arrowBounce 2s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   STEPS
+===================================================== */
+
+.steps{
+
+    position:absolute;
+
+    bottom:55px;
+
+    left:40px;
+
+    width:600px;
+
+    height:250px;
+
+    z-index:3;
+}
+
+
+.step{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:75px;
+
+    border-radius:
+        9px 9px 2px 2px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #7462f5,
+            #5544dc
+        );
+
+    box-shadow:
+        0 12px 22px
+        rgba(82,68,215,.2);
+
+    transform-origin:bottom;
+
+    animation:
+        stepAppear .8s ease both;
+}
+
+
+.step:nth-child(1){
+
+    left:20px;
+    height:35px;
+}
+
+
+.step:nth-child(2){
+
+    left:105px;
+    height:65px;
+
+    animation-delay:.1s;
+}
+
+
+.step:nth-child(3){
+
+    left:190px;
+    height:95px;
+
+    animation-delay:.2s;
+}
+
+
+.step:nth-child(4){
+
+    left:275px;
+    height:125px;
+
+    animation-delay:.3s;
+}
+
+
+.step:nth-child(5){
+
+    left:360px;
+    height:155px;
+
+    animation-delay:.4s;
+}
+
+
+.step:nth-child(6){
+
+    left:445px;
+    height:190px;
+
+    animation-delay:.5s;
+}
+
+
+.step:nth-child(7){
+
+    left:530px;
+    height:225px;
+
+    animation-delay:.6s;
+}
+
+
+/* =====================================================
+   REALISTIC CLIMBING STUDENT
+===================================================== */
+
+.climbing-student{
+
+    position:absolute;
+
+    left:65px;
+
+    bottom:80px;
+
+    width:90px;
+
+    height:150px;
+
+    z-index:20;
+
+    animation:
+        realisticClimb 8s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   PERSON
+===================================================== */
+
+.person{
+
+    position:absolute;
+
+    width:75px;
+
+    height:145px;
+
+    left:0;
+
+    bottom:0;
+
+    transform-origin:
+        50% 100%;
+
+    animation:
+        bodyClimb .8s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   HEAD
+===================================================== */
+
+.head{
+
+    position:absolute;
+
+    width:29px;
+
+    height:29px;
+
+    left:28px;
+
+    top:2px;
+
+    background:#f1b27c;
+
+    border-radius:50%;
+
+    z-index:8;
+
+    box-shadow:
+        inset -4px -3px 0
+        rgba(120,65,40,.08);
+}
+
+
+/* hair */
+
+.hair{
+
+    position:absolute;
+
+    width:31px;
+
+    height:17px;
+
+    left:-1px;
+
+    top:-4px;
+
+    background:#20243a;
+
+    border-radius:
+        18px 18px 8px 8px;
+
+    transform:rotate(-8deg);
+}
+
+
+/* ear */
+
+.ear{
+
+    position:absolute;
+
+    width:6px;
+
+    height:9px;
+
+    right:-4px;
+
+    top:11px;
+
+    background:#e5a16f;
+
+    border-radius:50%;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.body{
+
+    position:absolute;
+
+    width:43px;
+
+    height:55px;
+
+    left:21px;
+
+    top:29px;
+
+    border-radius:
+        14px 14px 10px 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #755af0,
+            #4935bc
+        );
+
+    transform:rotate(-8deg);
+
+    z-index:5;
+}
+
+
+.body::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:7px;
+
+    height:30px;
+
+    left:8px;
+
+    top:8px;
+
+    border-radius:8px;
+
+    background:
+        rgba(255,255,255,.12);
+}
+
+
+/* =====================================================
+   BACKPACK
+===================================================== */
+
+.backpack{
+
+    position:absolute;
+
+    width:29px;
+
+    height:51px;
+
+    left:4px;
+
+    top:32px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #252c63,
+            #171d4c
+        );
+
+    border-radius:
+        9px 8px 10px 10px;
+
+    transform:rotate(8deg);
+
+    z-index:3;
+
+    box-shadow:
+        2px 5px 8px
+        rgba(20,20,60,.2);
+
+    animation:
+        backpackMove .8s ease-in-out infinite;
+}
+
+
+.bag-pocket{
+
+    position:absolute;
+
+    width:17px;
+
+    height:13px;
+
+    left:6px;
+
+    bottom:7px;
+
+    border-radius:4px;
+
+    background:#343b7c;
+}
+
+
+/* =====================================================
+   ARMS
+===================================================== */
+
+.arm{
+
+    position:absolute;
+
+    width:11px;
+
+    height:43px;
+
+    top:35px;
+
+    background:#efb078;
+
+    border-radius:10px;
+
+    transform-origin:
+        50% 5px;
+
+    z-index:4;
+}
+
+
+.back-arm{
+
+    left:19px;
+
+    transform:
+        rotate(38deg);
+
+    animation:
+        backArmWalk .8s ease-in-out infinite;
+}
+
+
+.front-arm{
+
+    left:55px;
+
+    transform:
+        rotate(-58deg);
+
+    animation:
+        frontArmWalk .8s ease-in-out infinite;
+}
+
+
+.hand{
+
+    position:absolute;
+
+    width:12px;
+
+    height:12px;
+
+    left:-1px;
+
+    bottom:-4px;
+
+    background:#efb078;
+
+    border-radius:50%;
+}
+
+
+/* =====================================================
+   LEGS
+===================================================== */
+
+.leg{
+
+    position:absolute;
+
+    width:14px;
+
+    height:54px;
+
+    top:76px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #202953,
+            #293363
+        );
+
+    border-radius:10px;
+
+    transform-origin:
+        50% 5px;
+
+    z-index:2;
+}
+
+
+.back-leg{
+
+    left:30px;
+
+    transform:
+        rotate(25deg);
+
+    animation:
+        backLegClimb .8s ease-in-out infinite;
+}
+
+
+.front-leg{
+
+    left:48px;
+
+    transform:
+        rotate(-35deg);
+
+    animation:
+        frontLegClimb .8s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   SHOES
+===================================================== */
+
+.shoe{
+
+    position:absolute;
+
+    width:29px;
+
+    height:12px;
+
+    bottom:-5px;
+
+    left:-5px;
+
+    background:#171c32;
+
+    border-radius:
+        12px 9px 5px 5px;
+
+    transform:rotate(-4deg);
+
+    box-shadow:
+        0 3px 3px
+        rgba(0,0,0,.15);
+}
+
+
+/* =====================================================
+   REALISTIC CLIMB MOVEMENT
+===================================================== */
+
+@keyframes realisticClimb{
+
+    /* START */
+
+    0%{
+
+        left:55px;
+
+        bottom:78px;
+
+        transform:
+            rotate(-2deg)
+            scale(1);
+    }
+
+
+    /* BEND */
+
+    8%{
+
+        left:55px;
+
+        bottom:78px;
+
+        transform:
+            rotate(-8deg)
+            scale(1);
+    }
+
+
+    /* STEP 2 */
+
+    17%{
+
+        left:140px;
+
+        bottom:108px;
+
+        transform:
+            rotate(-5deg)
+            scale(1);
+    }
+
+
+    25%{
+
+        left:140px;
+
+        bottom:108px;
+
+        transform:
+            rotate(-8deg)
+            scale(1);
+    }
+
+
+    /* STEP 3 */
+
+    34%{
+
+        left:225px;
+
+        bottom:138px;
+
+        transform:
+            rotate(-4deg)
+            scale(1);
+    }
+
+
+    42%{
+
+        left:225px;
+
+        bottom:138px;
+
+        transform:
+            rotate(-7deg)
+            scale(1);
+    }
+
+
+    /* STEP 4 */
+
+    51%{
+
+        left:310px;
+
+        bottom:168px;
+
+        transform:
+            rotate(-4deg)
+            scale(1);
+    }
+
+
+    59%{
+
+        left:310px;
+
+        bottom:168px;
+
+        transform:
+            rotate(-7deg)
+            scale(1);
+    }
+
+
+    /* STEP 5 */
+
+    68%{
+
+        left:395px;
+
+        bottom:198px;
+
+        transform:
+            rotate(-4deg)
+            scale(1);
+    }
+
+
+    76%{
+
+        left:395px;
+
+        bottom:198px;
+
+        transform:
+            rotate(-7deg)
+            scale(1);
+    }
+
+
+    /* STEP 6 */
+
+    85%{
+
+        left:480px;
+
+        bottom:228px;
+
+        transform:
+            rotate(-4deg)
+            scale(1);
+    }
+
+
+    /* TOP */
+
+    94%{
+
+        left:510px;
+
+        bottom:250px;
+
+        transform:
+            rotate(-3deg)
+            scale(1);
+    }
+
+
+    100%{
+
+        left:510px;
+
+        bottom:250px;
+
+        transform:
+            rotate(-3deg)
+            scale(1);
+    }
+
+}
+
+
+/* =====================================================
+   BODY BOB
+===================================================== */
+
+@keyframes bodyClimb{
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+
+    25%{
+
+        transform:
+            translateY(-4px)
+            rotate(-7deg);
+    }
+
+
+    50%{
+
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+
+    75%{
+
+        transform:
+            translateY(-3px)
+            rotate(-8deg);
+    }
+
+
+    100%{
+
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+}
+
+
+/* =====================================================
+   FRONT LEG
+===================================================== */
+
+@keyframes frontLegClimb{
+
+    0%{
+
+        transform:
+            rotate(-35deg);
+    }
+
+
+    20%{
+
+        transform:
+            rotate(-55deg);
+    }
+
+
+    45%{
+
+        transform:
+            rotate(-5deg);
+    }
+
+
+    65%{
+
+        transform:
+            rotate(15deg);
+    }
+
+
+    100%{
+
+        transform:
+            rotate(-35deg);
+    }
+
+}
+
+
+/* =====================================================
+   BACK LEG
+===================================================== */
+
+@keyframes backLegClimb{
+
+    0%{
+
+        transform:
+            rotate(25deg);
+    }
+
+
+    20%{
+
+        transform:
+            rotate(5deg);
+    }
+
+
+    45%{
+
+        transform:
+            rotate(45deg);
+    }
+
+
+    65%{
+
+        transform:
+            rotate(15deg);
+    }
+
+
+    100%{
+
+        transform:
+            rotate(25deg);
+    }
+
+}
+
+
+/* =====================================================
+   FRONT ARM
+===================================================== */
+
+@keyframes frontArmWalk{
+
+    0%{
+
+        transform:
+            rotate(-58deg);
+    }
+
+
+    25%{
+
+        transform:
+            rotate(-80deg);
+    }
+
+
+    50%{
+
+        transform:
+            rotate(-40deg);
+    }
+
+
+    75%{
+
+        transform:
+            rotate(-65deg);
+    }
+
+
+    100%{
+
+        transform:
+            rotate(-58deg);
+    }
+
+}
+
+
+/* =====================================================
+   BACK ARM
+===================================================== */
+
+@keyframes backArmWalk{
+
+    0%{
+
+        transform:
+            rotate(38deg);
+    }
+
+
+    25%{
+
+        transform:
+            rotate(65deg);
+    }
+
+
+    50%{
+
+        transform:
+            rotate(25deg);
+    }
+
+
+    75%{
+
+        transform:
+            rotate(50deg);
+    }
+
+
+    100%{
+
+        transform:
+            rotate(38deg);
+    }
+
+}
+
+
+/* =====================================================
+   BACKPACK MOVEMENT
+===================================================== */
+
+@keyframes backpackMove{
+
+    0%{
+
+        transform:
+            rotate(8deg)
+            translateY(0);
+    }
+
+
+    50%{
+
+        transform:
+            rotate(13deg)
+            translateY(-3px);
+    }
+
+
+    100%{
+
+        transform:
+            rotate(8deg)
+            translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.features{
+
+    width:94%;
+
+    max-width:1350px;
+
+    margin:30px auto 80px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:22px;
+}
+
+
+.feature-card{
+
+    background:white;
+
+    border:
+        1px solid #ededf8;
+
+    border-radius:22px;
+
+    padding:30px 25px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(48,40,120,.05);
+
+    transition:.3s;
+}
+
+
+.feature-card:hover{
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 18px 35px
+        rgba(48,40,120,.1);
+}
+
+
+.feature-icon{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:25px;
+
+    background:#efedff;
+
+    margin-bottom:20px;
+}
+
+
+.feature-card:nth-child(2)
+.feature-icon{
+
+    background:#e9f4ff;
+}
+
+
+.feature-card:nth-child(3)
+.feature-icon{
+
+    background:#e8f8ef;
+}
+
+
+.feature-card:nth-child(4)
+.feature-icon{
+
+    background:#fff3df;
+}
+
+
+.feature-card h3{
+
+    font-size:19px;
+
+    margin-bottom:12px;
+}
+
+
+.feature-card p{
+
+    color:#65708a;
+
+    line-height:1.5;
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats{
+
+    width:88%;
+
+    max-width:1250px;
+
+    margin:0 auto 80px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #f1edff,
+            #faf9ff
+        );
+
+    border:
+        1px solid #e4dfff;
+
+    border-radius:25px;
+
+    padding:25px 35px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    text-align:center;
+}
+
+
+.stat{
+
+    border-right:
+        1px solid #ded9f8;
+}
+
+
+.stat:last-child{
+
+    border-right:none;
+}
+
+
+.stat strong{
+
+    display:block;
+
+    font-size:29px;
+
+    color:#1d2b58;
+}
+
+
+.stat span{
+
+    color:#69738e;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   GENERAL ANIMATIONS
+===================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes pulseGlow{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        opacity:.8;
+    }
+
+
+    50%{
+
+        transform:scale(1.05);
+
+        opacity:1;
+    }
+
+}
+
+
+@keyframes stepAppear{
+
+    from{
+
+        transform:
+            scaleY(0);
+
+        opacity:0;
+    }
+
+
+    to{
+
+        transform:
+            scaleY(1);
+
+        opacity:1;
+    }
+
+}
+
+
+@keyframes drawArrow{
+
+    to{
+
+        stroke-dashoffset:0;
+    }
+
+}
+
+
+@keyframes arrowBounce{
+
+    0%,100%{
+
+        transform:
+            translate(0,0);
+    }
+
+
+    50%{
+
+        transform:
+            translate(8px,-8px);
+    }
+
+}
+
+
+@keyframes planeFly{
+
+    0%{
+
+        transform:
+            translate(0,0)
+            rotate(-25deg);
+    }
+
+
+    50%{
+
+        transform:
+            translate(-45px,35px)
+            rotate(-15deg);
+    }
+
+
+    100%{
+
+        transform:
+            translate(0,0)
+            rotate(-25deg);
+    }
+
+}
+
+
+@keyframes floatStar{
+
+    0%,100%{
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        opacity:.6;
+    }
+
+
+    50%{
+
+        transform:
+            translateY(-15px)
+            scale(1.15);
+
+        opacity:1;
+    }
+
+}
+
+
+@keyframes rocketFloat{
+
+    0%,100%{
+
+        transform:
+            rotate(-45deg)
+            translate(0,0);
+    }
+
+
+    50%{
+
+        transform:
+            rotate(-45deg)
+            translate(3px,-4px);
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1200px){
+
+    .nav-links{
+
+        gap:15px;
+    }
+
+
+    .nav-links a{
+
+        font-size:13px;
+    }
+
+
+    .hero h1{
+
+        font-size:52px;
+    }
+
+}
+
+
+@media(max-width:1000px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        padding:18px;
+    }
+
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+    }
+
+
+    .hero-content{
+
+        padding-left:0;
+    }
+
+
+    .hero-description{
+
+        margin-left:auto;
+
+        margin-right:auto;
+    }
+
+
+    .hero-buttons{
+
+        justify-content:center;
+    }
+
+
+    .hero-art{
+
+        margin-top:20px;
+    }
+
+
+    .features{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .navbar{
+
+        width:96%;
+    }
+
+
+    .logo-area{
+
+        min-width:auto;
+    }
+
+
+    .nav-links{
+
+        gap:12px;
+    }
+
+
+    .nav-links a{
+
+        font-size:12px;
+    }
+
+
+    .hero{
+
+        width:96%;
+
+        margin-top:40px;
+    }
+
+
+    .hero h1{
+
+        font-size:39px;
+
+        letter-spacing:-1px;
+    }
+
+
+    .hero-description{
+
+        font-size:16px;
+    }
+
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+
+    .hero-art{
+
+        transform:
+            scale(.68);
+
+        transform-origin:
+            top center;
+
+        height:400px;
+
+        margin-bottom:-80px;
+    }
+
+
+    .features{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .stats{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:25px;
+    }
+
+
+    .stat{
+
+        border-right:none;
+    }
+
+}
+
+
+@media(max-width:450px){
+
+    .logo-text{
+
+        font-size:23px;
+    }
+
+
+    .hero h1{
+
+        font-size:33px;
+    }
+
+
+    .hero-art{
+
+        transform:
+            scale(.55);
+
+        height:330px;
+    }
+
+
+    .stats{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+
+    <div class="logo-area">
+
+
+        <div class="logo">
+
+            <div class="rocket">
+                🚀
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="logo-text">
+
+                <span>Go</span>Beyond
+
+            </div>
+
+
+            <div class="logo-subtitle">
+
+                Smart Student Journey
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <nav class="nav-links">
+
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+
+        <a href="opportunities.html">
+            Opportunities
+        </a>
+
+
+        <a href="placement.html">
+            Placement
+        </a>
+
+
+        <a href="projects.html">
+            Projects & Experience
+        </a>
+
+
+        <a href="learning.html">
+            📚 Learning / Daily Action
+        </a>
+
+
+        <a href="journal.html">
+            Journal
+        </a>
+
+
+        <a href="roadmap.html">
+            Roadmap
+        </a>
+
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+
+    <!-- LEFT CONTENT -->
+
+    <div class="hero-content">
+
+
+        <div class="hero-tag">
+
+            ✦ YOUR JOURNEY, YOUR FUTURE
+
+        </div>
+
+
+
+        <h1>
+
+            Plan Today.
+
+            <span class="gradient">
+
+                Progress Every Day.
+
+            </span>
+
+            Succeed Tomorrow.
+
+        </h1>
+
+
+
+        <p class="hero-description">
+
+            GoBeyond is your personalized companion
+            to explore opportunities, build skills,
+            and achieve your dreams.
+
+        </p>
+
+
+
+        <div class="hero-buttons">
+
+
+            <a
+                href="dashboard.html"
+                class="btn btn-primary"
+            >
+
+                Start Your Journey →
+
+            </a>
+
+
+
+            <a
+                href="opportunities.html"
+                class="btn btn-outline"
+            >
+
+                💼 Explore Opportunities
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         RIGHT HERO ART
+    ================================================= -->
+
+    <div class="hero-art">
+
+
+        <!-- BIG BACKGROUND CIRCLE -->
+
+        <div class="hero-circle"></div>
+
+
+
+        <!-- CLOUDS -->
+
+        <div class="cloud cloud1"></div>
+
+        <div class="cloud cloud2"></div>
+
+        <div class="cloud cloud3"></div>
+
+
+
+        <!-- STARS -->
+
+        <div class="star star1">
+            ✦
+        </div>
+
+        <div class="star star2">
+            ✦
+        </div>
+
+        <div class="star star3">
+            ✦
+        </div>
+
+        <div class="star star4">
+            ✦
+        </div>
+
+
+
+        <!-- PAPER PLANE -->
+
+        <div class="plane">
+
+            ✈
+
+        </div>
+
+
+
+        <!-- =================================================
+             GROWTH ARROW
+        ================================================= -->
+
+        <svg
+            class="growth-arrow"
+            viewBox="0 0 600 260"
+        >
+
+            <path
+                class="arrow-path"
+                d="
+                    M30 235
+
+                    C150 225,
+                    200 190,
+                    280 175
+
+                    C370 155,
+                    450 110,
+                    555 30
+                "
+            />
+
+
+            <polygon
+                class="arrow-head"
+                points="
+                    555,30
+                    535,45
+                    550,55
+                    575,30
+                "
+            />
+
+        </svg>
+
+
+
+        <!-- =================================================
+             STEPS
+        ================================================= -->
+
+        <div class="steps">
+
+
+            <div class="step"></div>
+
+
+            <div class="step"></div>
+
+
+            <div class="step"></div>
+
+
+            <div class="step"></div>
+
+
+            <div class="step"></div>
+
+
+            <div class="step"></div>
+
+
+            <div class="step"></div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             CLIMBING STUDENT
+        ================================================= -->
+
+        <div class="climbing-student">
+
+
+            <div class="person">
+
+
+                <!-- BACKPACK -->
+
+                <div class="backpack">
+
+                    <div class="bag-pocket"></div>
+
+                </div>
+
+
+
+                <!-- HEAD -->
+
+                <div class="head">
+
+                    <div class="hair"></div>
+
+                    <div class="ear"></div>
+
+                </div>
+
+
+
+                <!-- BODY -->
+
+                <div class="body"></div>
+
+
+
+                <!-- BACK ARM -->
+
+                <div class="arm back-arm">
+
+                    <div class="hand"></div>
+
+                </div>
+
+
+
+                <!-- FRONT ARM -->
+
+                <div class="arm front-arm">
+
+                    <div class="hand"></div>
+
+                </div>
+
+
+
+                <!-- BACK LEG -->
+
+                <div class="leg back-leg">
+
+                    <div class="shoe"></div>
+
+                </div>
+
+
+
+                <!-- FRONT LEG -->
+
+                <div class="leg front-leg">
+
+                    <div class="shoe"></div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FEATURE CARDS
+===================================================== -->
+
+<section class="features">
+
+
+    <div class="feature-card">
+
+
+        <div class="feature-icon">
+
+            🎯
+
+        </div>
+
+
+        <h3>
+
+            Personalized Journey
+
+        </h3>
+
+
+        <p>
+
+            We understand you and create a
+            journey that's unique to your goals.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="feature-card">
+
+
+        <div class="feature-icon">
+
+            💼
+
+        </div>
+
+
+        <h3>
+
+            Find Opportunities
+
+        </h3>
+
+
+        <p>
+
+            Discover internships, jobs, and
+            opportunities that fit you best.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="feature-card">
+
+
+        <div class="feature-icon">
+
+            📈
+
+        </div>
+
+
+        <h3>
+
+            Track & Grow
+
+        </h3>
+
+
+        <p>
+
+            Track your progress, build skills,
+            and grow every day.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="feature-card">
+
+
+        <div class="feature-icon">
+
+            📖
+
+        </div>
+
+
+        <h3>
+
+            Learn & Achieve
+
+        </h3>
+
+
+        <p>
+
+            Learn, take action, and achieve
+            more than you imagined.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+
+    <div class="stat">
+
+
+        <strong>
+            2.5K+
+        </strong>
+
+
+        <span>
+            Students on Board
+        </span>
+
+
+    </div>
+
+
+
+    <div class="stat">
+
+
+        <strong>
+            1.2K+
+        </strong>
+
+
+        <span>
+            Opportunities Listed
+        </span>
+
+
+    </div>
+
+
+
+    <div class="stat">
+
+
+        <strong>
+            95%
+        </strong>
+
+
+        <span>
+            Progress Rate
+        </span>
+
+
+    </div>
+
+
+
+    <div class="stat">
+
+
+        <strong>
+            4.8/5
+        </strong>
+
+
+        <span>
+            Student Rating
+        </span>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   BUTTON INTERACTION
+===================================================== */
+
+const buttons =
+    document.querySelectorAll(".btn");
+
+
+buttons.forEach(button => {
+
+
+    button.addEventListener(
+        "mouseenter",
+        () => {
+
+            button.style.letterSpacing =
+                "0.3px";
+
+        }
+    );
+
+
+    button.addEventListener(
+        "mouseleave",
+        () => {
+
+            button.style.letterSpacing =
+                "normal";
+
+        }
+    );
+
+
+});
+
+
+
+/* =====================================================
+   RESTART CLIMB AFTER PAGE LOAD
+===================================================== */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        const student =
+            document.querySelector(
+                ".climbing-student"
+            );
+
+
+        student.style.animation =
+            "realisticClimb 8s ease-in-out infinite";
+
+    }
+);
+
+
+</script>
+
+
+</body>
+
+</html>

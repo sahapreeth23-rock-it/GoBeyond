@@ -37,6 +37,14 @@ OPPORTUNITIES_FILE = os.path.join(
     DATA_DIR,
     "opportunities.json"
 )
+INTERNSHIPS_FILE = os.path.join(
+    DATA_DIR,
+    "internships.json"
+)
+WORKSHOPS_FILE = os.path.join(
+    DATA_DIR,
+    "workshops.json"
+)
 
 USERS_FILE = os.path.join(
     DATA_DIR,
@@ -55,6 +63,30 @@ with open(
 ) as file:
 
     opportunities = json.load(file)
+# -----------------------------
+# LOAD INTERNSHIPS
+# -----------------------------
+
+with open(
+    INTERNSHIPS_FILE,
+    "r",
+    encoding="utf-8"
+) as file:
+
+    internships = json.load(file)
+
+# -----------------------------
+# LOAD WORKSHOPS
+# -----------------------------
+
+with open(
+    WORKSHOPS_FILE,
+    "r",
+    encoding="utf-8"
+) as file:
+
+    workshops = json.load(file)
+
 
 
 # --------------------------------------------------
@@ -425,6 +457,20 @@ def health():
 def get_opportunities():
 
     return opportunities
+
+@app.route(
+    "/api/internships"
+)
+def get_internships():
+
+    return internships
+
+@app.route(
+    "/api/workshops"
+)
+def get_workshops():
+
+    return workshops
 
 
 @app.route(

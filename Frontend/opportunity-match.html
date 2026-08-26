@@ -212,7 +212,7 @@
 
         <nav>
             <a href="dashboard.html">Dashboard</a>
-            <a href="opportunity hub.html">Opportunities</a>
+            <a href="opportunity-hub.html">Opportunities</a>
             <a href="#">Journal</a>
             <a href="#">Roadmap</a>
             <a href="#">Profile</a>
@@ -223,7 +223,7 @@
 
     <main class="match-page">
 
-        <a href="opportunity hub.html" class="back-link">
+        <a href="opportunity-hub.html" class="back-link">
             ← Back to Opportunities
         </a>
 
@@ -356,6 +356,237 @@
         </div>
 
     </main>
+    <script>
+const params = new URLSearchParams(window.location.search);
+const opportunityId = Number(params.get("id"));
+
+if (!opportunityId) {
+    alert("Opportunity not found.");
+} else {
+
+    fetch("http://127.0.0.1:5000/api/opportunities")
+        .then(response => response.json())
+        .then(opportunities => {
+
+            const opportunity = opportunities.find(
+                op => Number(op.id) === opportunityId
+            );
+
+            if (!opportunity) {
+                alert("Opportunity not found.");
+                return;
+            }
+
+            // -----------------------------
+            // BASIC DETAILS
+            // -----------------------------
+
+            document.querySelector(".match-type").textContent =
+                opportunity.type;
+
+            document.querySelector(".match-hero h1").textContent =
+                opportunity.title;
+
+            document.querySelector(".organisation").textContent =
+                opportunity.organization;
+
+
+            // -----------------------------
+            // DESCRIPTION
+            // -----------------------------
+
+            document.querySelector(".match-explanation").textContent =
+                `Explore this ${opportunity.type.toLowerCase()} opportunity from ${opportunity.organization}.`;
+
+
+            // -----------------------------
+// MATCH SCORE
+// -----------------------------
+
+const mySkills = [
+    "python",
+    "sql",
+    "git",
+    "html",
+    "css",
+    "javascript",
+    "machine learning"
+];
+
+const requiredSkills = opportunity.required_skills || [];
+
+const matchedSkills = requiredSkills.filter(skill =>
+    mySkills.includes(skill.toLowerCase())
+);
+
+let matchScore = 0;
+
+if (requiredSkills.length > 0) {
+    matchScore = Math.round(
+        (matchedSkills.length / requiredSkills.length) * 100
+    );
+}
+
+document.querySelector(".match-score strong").textContent =
+    matchScore + "%";
+
+document.querySelector(".match-score span").textContent =
+    "Match";
+
+
+            // -----------------------------
+            // SKILLS
+            // -----------------------------
+
+            const skillsCard = document.querySelector(".detail-grid .card:first-child");
+
+            skillsCard.innerHTML = `
+                <h2>🧠 Required Skills</h2>
+
+                ${
+                    opportunity.required_skills &&
+                    opportunity.required_skills.length > 0
+                    ?
+                    opportunity.required_skills.map(skill => `
+                        <div class="skill-row">
+                            <span>${skill}</span>
+                            <span class="matched">✓ Required</span>
+                        </div>
+                    `).join("")
+                    :
+                    `<p>No specific skills listed.</p>`
+                }
+            `;
+
+
+            // -----------------------------
+            // ELIGIBILITY / OPPORTUNITY INFO
+            // -----------------------------
+
+            const infoCard = document.querySelector(".detail-grid .card:nth-child(2)");
+
+            infoCard.innerHTML = `
+                <h2>📋 Opportunity Details</h2>
+
+                <div class="eligibility-item">
+                    🏷️ Type: ${opportunity.type}
+                </div>
+
+                <div class="eligibility-item">
+                    🏢 Organization: ${opportunity.organization}
+                </div>
+
+                <div class="eligibility-item">
+                    🎯 Interests:
+                    ${
+                        opportunity.interests
+                        ? opportunity.interests.join(", ")
+                        : "Not specified"
+                    }
+                </div>
+
+                ${
+                    opportunity.prizepool
+                    ?
+                    `
+                    <div class="eligibility-item">
+                        🏆 Prize Pool: ${opportunity.prizepool}
+                    </div>
+                    `
+                    :
+                    ""
+                }
+
+                <div class="deadline">
+                    <strong>⏰ Deadline</strong>
+                    ${opportunity.deadline}
+                </div>
+            `;
+
+
+            // -----------------------------
+            // WHY GOBEYOND RECOMMENDS
+            // -----------------------------
+
+            document.querySelector(".why-box").innerHTML = `
+                <h2>💡 About this opportunity</h2>
+
+                <p>
+                    <strong>${opportunity.title}</strong>
+                    is offered by
+                    <strong>${opportunity.organization}</strong>.
+                </p>
+
+                <p>
+                    This opportunity is related to
+                    ${
+                        opportunity.interests
+                        ? opportunity.interests.join(", ")
+                        : "the listed technical skills"
+                    }.
+                </p>
+            `;
+
+
+            // -----------------------------
+            // BUTTONS
+            // -----------------------------
+
+            const buttons = document.querySelectorAll(".actions .button");
+
+            const registerButton = buttons[0];
+            const officialButton = buttons[1];
+
+            if (opportunity.registration_link) {
+
+                registerButton.href =
+                    opportunity.registration_link;
+
+                registerButton.target = "_blank";
+
+                registerButton.rel =
+                    "noopener noreferrer";
+
+                registerButton.textContent =
+                    "Register Now →";
+
+                officialButton.href =
+                    opportunity.registration_link;
+
+                officialButton.target = "_blank";
+
+                officialButton.rel =
+                    "noopener noreferrer";
+
+            } else {
+
+                registerButton.style.display = "none";
+
+                officialButton.style.display = "none";
+            }
+
+
+            // -----------------------------
+            // PAGE TITLE
+            // -----------------------------
+
+            document.title =
+                `GoBeyond | ${opportunity.title}`;
+
+        })
+        .catch(error => {
+
+            console.error(
+                "Error loading opportunity:",
+                error
+            );
+
+            alert(
+                "Unable to load opportunity details."
+            );
+        });
+}
+</script>
 
 </body>
 </html>

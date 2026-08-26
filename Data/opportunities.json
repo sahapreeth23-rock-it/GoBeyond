@@ -1,94 +1,210 @@
 [
   {
-    "id": 1,
-    "title": "AI/ML Internship",
-    "type": "Internship",
-    "organization": "TechNova",
-    "required_skills": [
-      "Python",
-      "Machine Learning",
-      "SQL",
-      "Git"
-    ],
-    "interests": [
-      "Artificial Intelligence",
-      "Machine Learning"
-    ],
-    "deadline": "2026-08-25"
-  },
-  {
-    "id": 2,
-    "title": "Web Development Hackathon",
+    "id": 7,
+    "title": "Data forge 2026",
     "type": "Hackathon",
-    "organization": "CodeSprint",
+    "organization": "kharaghpur data analytics group (KDAG), IIT kharaghpur",
     "required_skills": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Git"
+        "Python",
+        "SQL",
+        "Data Science"
     ],
     "interests": [
-      "Web Development"
+        "Data Science"
     ],
-    "deadline": "2026-08-28"
-  },
-  {
-    "id": 3,
-    "title": "Python & AI Workshop",
-    "type": "Workshop",
-    "organization": "FutureTech",
-    "required_skills": [
-      "Python",
-      "Machine Learning"
-    ],
-    "interests": [
-      "Artificial Intelligence",
-      "Machine Learning"
-    ],
-    "deadline": "2026-08-22"
-  }
-    ,
-  {
-    "id": 4,
-    "title": "Cybersecurity Internship",
-    "type": "Internship",
-    "organization": "SecureNet",
-    "required_skills": [
-      "Networking",
-      "Linux",
-      "Cybersecurity"
-    ],
-    "interests": [
-      "Cybersecurity"
-    ],
-    "deadline": "2026-08-27"
-  },
-  {
-    "id": 5,
-    "title": "Ethical Hacking Workshop",
-    "type": "Workshop",
-    "organization": "Cyber Club",
-    "required_skills": [
-      "Linux",
-      "Cybersecurity"
-    ],
-    "interests": [
-      "Cybersecurity"
-    ],
-    "deadline": "2026-08-29"
-  },
-  {
-    "id": 6,
-    "title": "Cybersecurity Hackathon",
+    "deadline": "2026-08-28",
+    "prizepool": "3,00,000+",
+    "registration_link": "https://kdagiitkgp.com/register-hackathon"
+},
+{
+    "id": 8,
+    "title": "SAS Hackaton 2026",
     "type": "Hackathon",
-    "organization": "Security Community",
+    "organization": "SAS",
     "required_skills": [
-      "Networking",
-      "Linux"
+        "Python",
+        "Data Science",
+        "Machine Learning"
     ],
     "interests": [
-      "Cybersecurity"
+        "Data Science"
     ],
-    "deadline": "2026-08-30"
-  }
+    "deadline": "2026-09-12",
+    "prizepool": "",
+    "registration_link": "https://www.sas.com/sas/events/hackathon/register.html"
+},
+{
+    "id": 9,
+    "title": "terrier cyber quest 2026",
+    "type": "Hackathon",
+    "organization": "indian army+cyberpeace",
+    "required_skills": [
+        "Cybersecurity",
+        "Networking",
+        "Linux"
+    ],
+    "interests": [
+        "Cybersecurity"
+    ],
+    "deadline": "2026-08-31",
+    "prizepool": "40 lakh prize pool",
+    "registration_link": "https://www.cyberchallenge.in/tcq2026"
+},
+{
+    "id": 10,
+    "title": "hacl AI challenge @RACEx360",
+    "type": "Hackathon",
+    "organization": "EC-Council/RACEx360",
+    "required_skills": [
+        "Cybersecurity",
+        "Artificial Intelligence"
+    ],
+    "interests": [
+        "Cybersecurity",
+        "Artificial Intelligence"
+    ],
+    "deadline": "2026-09-10",
+    "prizepool": "1.75 lakh",
+    "registration_link": "https://race.reva.edu.in/hackai-challenge-racex360/"
+},
+{
+    "id": 11,
+    "title": "techsurge 2k26",
+    "type": "Hackathon",
+    "organization": "cding brigade,BVRIT",
+    "required_skills": [
+        "Cloud Computing",
+        "Programming"
+    ],
+    "interests": [
+        "Cloud Computing"
+    ],
+    "deadline": "2026-09-10",
+    "prizepool": "1,00,000+",
+    "registration_link": "https://hackindia.org/2026/techsurge-2k26"
+},
+{
+    "id": 12,
+    "title": "all things agentic hackaton",
+    "type": "Hackathon",
+    "organization": "google cloud+devpost",
+    "required_skills": [
+        "Cloud Computing",
+        "Artificial Intelligence"
+    ],
+    "interests": [
+        "Cloud Computing",
+        "Artificial Intelligence"
+    ],
+    "deadline": "2026-08-31",
+    "prizepool": "$50,000 in cash",
+    "registration_link": "https://allthingsagentichackathon.devpost.com/"
+},
+{
+    "id": 13,
+    "title": "Banana Hacks 2026",
+    "type": "Hackathon",
+    "organization": "banana hacks team",
+    "required_skills": [
+        "Generative AI",
+        "Large Language Models"
+    ],
+    "interests": [
+        "Generative AI",
+        "LLM"
+    ],
+    "deadline": "2026-10-07",
+    "prizepool": "10000",
+    "registration_link": "https://www.bananahacks.tech"
+},
+{
+    "id": 14,
+    "title": "Prompt Wars 2026",
+    "type": "Hackathon",
+    "organization": "AbhiyantiX.",
+    "required_skills": [
+        "Generative AI",
+        "Large Language Models",
+        "Prompt Engineering"
+    ],
+    "interests": [
+        "Generative AI",
+        "LLM"
+    ],
+    "deadline": "2026-08-29",
+    "prizepool": "30000",
+    "registration_link": "https://prompt-wars-2026.devpost.com"
+},
+{
+    "id": 15,
+    "title": "HTH INDIA 2.0 - Hack hardware india",
+    "type": "Hackathon",
+    "organization": "SCET, Nagpur-DEPT of ETC engineering",
+    "required_skills": [
+        "IoT",
+        "Hardware",
+        "Embedded Systems"
+    ],
+    "interests": [
+        "IoT",
+        "Hardware"
+    ],
+    "deadline": "2026-09-06",
+    "prizepool": "50000",
+    "registration_link": "https://hackthehardware.scetngp.com/"
+},
+{
+    "id": 16,
+    "title": "supernova 2026- beyond the cosmos",
+    "type": "Hackathon",
+    "organization": "UMEK space observatory",
+    "required_skills": [
+        "IoT",
+        "Space Technology"
+    ],
+    "interests": [
+        "IoT",
+        "Space Technology"
+    ],
+    "deadline": "2026-09-11",
+    "prizepool": "40000",
+    "registration_link": "https://www.super-nova.tech/"
+},
+{
+    "id": 17,
+    "title": "stackcraft by willovate",
+    "type": "Hackathon",
+    "organization": "willovatw",
+    "required_skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Web Development"
+    ],
+    "interests": [
+        "Web Development"
+    ],
+    "deadline": "2026-09-10",
+    "prizepool": "20000",
+    "registration_link": "https://labs.willovate.in/hackathons/stackcraft-2026/register"
+},
+{
+    "id": 18,
+    "title": "techsurge 2k26",
+    "type": "Hackathon",
+    "organization": "CBB(BVRIT)",
+    "required_skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Cloud Computing"
+    ],
+    "interests": [
+        "Web Development",
+        "Cloud Computing"
+    ],
+    "deadline": "2026-09-10",
+    "prizepool": "1,00,000",
+    "registration_link": "https://hackindia.org/2026/techsurge-2k26"
+}
 ]
