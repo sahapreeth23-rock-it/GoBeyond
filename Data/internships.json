@@ -1,0 +1,1894 @@
+[
+  {
+    "id": 1,
+    "title": "Full Stack Developer",
+    "type": "Internship",
+    "organization": "DeepThought CultureTech Ventures Private Limited",
+    "required_skills": [
+      "Claude",
+      "English Proficiency (Spoken)",
+      "MongoDB",
+      "Next.js",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "interests": [],
+    "deadline": "10 sept'26",
+    "duration": "6 months",
+    "stipend": "5000-8000 per month",
+    "registration_link": "https://internshala.com/internship/detail/full-stack-development-internship-in-hyderabad-at-deepthought-culturetech-ventures-private-limited1786438980"
+  },
+  {
+    "id": 2,
+    "title": "Full Stack Developer",
+    "type": "Internship",
+    "organization": "IndentixWeb",
+    "required_skills": [
+      "Debugging Skills",
+      "HTML & CSSProblem-Solving Skills",
+      "Basic Web Development",
+      "Database Basics (MySQL)API Understanding",
+      "JavaScript Fundamentals",
+      "Logical Thinking",
+      "Client-Server Architecture"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "1 year",
+    "stipend": "-",
+    "registration_link": "https://identixweb.keka.com/careers/jobdetails/85126"
+  },
+  {
+    "id": 3,
+    "title": "Full Stack Developer",
+    "type": "Internship",
+    "organization": "TechPranee (SpearHub)",
+    "required_skills": [
+      "CSS",
+      "GitHub",
+      "HTML",
+      "JavaScript",
+      "Node.js",
+      "NoSQL",
+      "Postman",
+      "Python",
+      "React",
+      "REST API",
+      "Software Development Life Cycle (SDLC)",
+      "SQL",
+      "VS CodeWeb Design"
+    ],
+    "interests": [],
+    "deadline": "19th sept'26",
+    "duration": "6 months",
+    "stipend": "10,000-15000 per month",
+    "registration_link": "https://internshala.com/internship/detail/full-stack-development-internship-in-hyderabad-at-techpranee-spearhub1787215748?referral=similar_post_detail_page"
+  },
+  {
+    "id": 4,
+    "title": "Ml Engineer",
+    "type": "Internship",
+    "organization": "Boltzmann Labs Pvt Ltd",
+    "required_skills": [
+      "Python",
+      "Chemistry",
+      "ML",
+      "Deep Learning"
+    ],
+    "interests": [],
+    "deadline": "9th sept'26",
+    "duration": "6 months",
+    "stipend": "₹15,000–20,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/artificial-intelligence-ai-internship-in-hyderabad-at-boltzmann-labs-private-limited1784542312"
+  },
+  {
+    "id": 5,
+    "title": "Ml Engineer",
+    "type": "Internship",
+    "organization": "DeepThought CultureTech Ventures (Secunderabad)",
+    "required_skills": [
+      "Problem Solving",
+      "English Proficiency",
+      "Claude"
+    ],
+    "interests": [],
+    "deadline": "28th aug'26",
+    "duration": "6 months",
+    "stipend": "₹5,000–8,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/artificial-intelligence-ai-internship-in-secunderabad-at-deepthought-culturetech-ventures-private-limited1785322766"
+  },
+  {
+    "id": 6,
+    "title": "Ml Engineer",
+    "type": "Internship",
+    "organization": "Microsoft",
+    "required_skills": [
+      "Python",
+      "ML",
+      "Data Science",
+      "Research & Analytics"
+    ],
+    "interests": [],
+    "deadline": "8th sept'26",
+    "duration": "3 months",
+    "stipend": "Competitive stipend",
+    "registration_link": "https://internshala.com/internship/detail/phd-research-sciences-intern-internship-in-multiple-locations-at-microsoft1780914124"
+  },
+  {
+    "id": 7,
+    "title": "Llm Developer",
+    "type": "Internship",
+    "organization": "DeepThought CultureTech Ventures (AI Engineering)",
+    "required_skills": [
+      "LangChain",
+      "Claude",
+      "MongoDB",
+      "PostgreSQL",
+      "Next.js",
+      "Redis"
+    ],
+    "interests": [],
+    "deadline": "16 sept'26",
+    "duration": "6 months, part-time",
+    "stipend": "₹5000–8,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/part-time-ai-engineering-internship-in-multiple-locations-at-deepthought-culturetech-ventures-private-limited1786943023"
+  },
+  {
+    "id": 8,
+    "title": "Llm Developer",
+    "type": "Internship",
+    "organization": "Boltzmann Labs Pvt Ltd",
+    "required_skills": [
+      "Python",
+      "ML",
+      "Deep Learning"
+    ],
+    "interests": [],
+    "deadline": "9th sept'26",
+    "duration": "6 months",
+    "stipend": "₹15,000–20,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/artificial-intelligence-ai-internship-in-hyderabad-at-boltzmann-labs-private-limited1784542312"
+  },
+  {
+    "id": 9,
+    "title": "Llm Developer",
+    "type": "Internship",
+    "organization": "Microsoft",
+    "required_skills": [
+      "Python",
+      "ML",
+      "Data Science",
+      "Research & Analytics"
+    ],
+    "interests": [],
+    "deadline": "8th sept'26",
+    "duration": "3 months",
+    "stipend": "-",
+    "registration_link": "https://internshala.com/internship/detail/phd-research-sciences-intern-internship-in-multiple-locations-at-microsoft1780914124"
+  },
+  {
+    "id": 10,
+    "title": "Ai Ops Engineer",
+    "type": "Internship",
+    "organization": "MLOps Intern — EduRankAI",
+    "required_skills": [
+      "Python",
+      "Linux",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Cloud",
+      "ML deployment",
+      "monitoring"
+    ],
+    "interests": [],
+    "deadline": "2026-08-31 00:00:00",
+    "duration": "3 months",
+    "stipend": "Unpaid",
+    "registration_link": "https://internship.aicte-india.org/internship-details.php?uid=SU5URVJOU0hJUF8xNzg1NTAxMzEwNmE2Yzk2N2VhMmJlZQ==&utm_source=chatgpt.com"
+  },
+  {
+    "id": 11,
+    "title": "Ai Ops Engineer",
+    "type": "Internship",
+    "organization": "EduRankAI",
+    "required_skills": [
+      "ML pipelines",
+      "CI/CD",
+      "Docker",
+      "Kubernetes",
+      "model monitoring",
+      "cloud infrastructure"
+    ],
+    "interests": [],
+    "deadline": "2026-11-30 00:00:00",
+    "duration": "3 months",
+    "stipend": "unpaid",
+    "registration_link": "https://internship.aicte-india.org/internship-details.php?uid=SU5URVJOU0hJUF8xNzg1NDEyMzI0NmE2YjNhZTQ1ODc0ZA==&utm_source=chatgpt.com"
+  },
+  {
+    "id": 12,
+    "title": "Ai Ops Engineer",
+    "type": "Internship",
+    "organization": "Composio",
+    "required_skills": [
+      "AI agents",
+      "automation",
+      "workflows",
+      "process optimization",
+      "AI tools"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "3 months",
+    "stipend": "-",
+    "registration_link": "https://myinternships.in/internships/composio-is-hiring-product-ops-intern-bengaluru-1d3f05?utm_source=chatgpt.com"
+  },
+  {
+    "id": 13,
+    "title": "Ai Solutions Architect",
+    "type": "Internship",
+    "organization": "PGAGI",
+    "required_skills": [
+      "Python",
+      "AI/ML",
+      "PyTorch/TensorFlow",
+      "LLMs",
+      "RAG",
+      "system architecture",
+      "Draw.io"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 montha",
+    "stipend": "10,000-20000",
+    "registration_link": "https://cutshort.io/company/pgagi-20-psB7yc3A?utm_source=chatgpt.com"
+  },
+  {
+    "id": 14,
+    "title": "Ai Solutions Architect",
+    "type": "Internship",
+    "organization": "Sarvam AI",
+    "required_skills": [
+      "AWS/Azure/GCP",
+      "IAM",
+      "Terraform",
+      "networking",
+      "VPC",
+      "cloud architecture"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "39,000/mon",
+    "registration_link": "https://myinternships.in/job/sarvam-ai-cloud-solutions-architect-intern-chandigarh-d0155f?utm_source=chatgpt.com"
+  },
+  {
+    "id": 15,
+    "title": "Ai Solutions Architect",
+    "type": "Internship",
+    "organization": "YuvaIntern",
+    "required_skills": [
+      "AI architecture",
+      "system design",
+      "AI/ML",
+      "architecture diagrams",
+      "scalability"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "5 weeks",
+    "stipend": "-",
+    "registration_link": "https://yuvaintern.com/internship/ai-solutions-architect-67e53680d817c?utm_source=chatgpt.com"
+  },
+  {
+    "id": 16,
+    "title": "Data Engineer",
+    "type": "Internship",
+    "organization": "TSTEPS Private Limited",
+    "required_skills": [
+      "Microsoft Azure",
+      "GCP",
+      "AWS CloudFormation"
+    ],
+    "interests": [],
+    "deadline": "17th sept'26",
+    "duration": "6 months",
+    "stipend": "₹10,000–15,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/solutions-architect-internship-in-multiple-locations-at-tsteps-private-limited1787045789"
+  },
+  {
+    "id": 17,
+    "title": "Data Engineer",
+    "type": "Internship",
+    "organization": "Emoolar Technology Pvt Ltd",
+    "required_skills": [
+      "AWS",
+      "Azure/GCP basics",
+      "VMs",
+      "cloud storage",
+      "Linux",
+      "CI/CD"
+    ],
+    "interests": [],
+    "deadline": "8th sept'26",
+    "duration": "6 months",
+    "stipend": "₹5,500–8,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/work-from-home-cloud-computing-internship-at-emoolar-technology-private-limited1786216269"
+  },
+  {
+    "id": 18,
+    "title": "Data Engineer",
+    "type": "Internship",
+    "organization": "Sankar Group",
+    "required_skills": [
+      "AWS CloudFormation",
+      "Lambda",
+      "CloudFront",
+      "CloudWatch"
+    ],
+    "interests": [],
+    "deadline": "28th aug'26",
+    "duration": "6 months",
+    "stipend": "₹3,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/work-from-home-aws-devops-engineer-internship-at-sankar-group1784958243"
+  },
+  {
+    "id": 19,
+    "title": "Cloud Engineer",
+    "type": "Internship",
+    "organization": "AICines INC",
+    "required_skills": [
+      "AWS CloudFormation",
+      "Lambda",
+      "CloudFront",
+      "CloudWatch"
+    ],
+    "interests": [],
+    "deadline": "20 sept'26",
+    "duration": "3 months",
+    "stipend": "₹ 35,000 - 1,00,000 /mon",
+    "registration_link": "https://internshala.com/internship/detail/work-from-home-aws-devops-engineer-internship-at-aicines-inc1787314869"
+  },
+  {
+    "id": 20,
+    "title": "Cloud Engineer",
+    "type": "Internship",
+    "organization": "Megaminds IT Services",
+    "required_skills": [
+      "AWS IoT Core",
+      "cloud apps",
+      "cybersecurity basics"
+    ],
+    "interests": [],
+    "deadline": "31 aug'26",
+    "duration": "6 months",
+    "stipend": "₹ 3,000 - 8,000 /mon",
+    "registration_link": "https://internshala.com/internship/detail/work-from-home-iot-cloud-computing-research-associate-internship-at-megaminds-it-services1785568983"
+  },
+  {
+    "id": 21,
+    "title": "Cloud Engineer",
+    "type": "Internship",
+    "organization": "Emoolar Technology Pvt Ltd",
+    "required_skills": [
+      "AWS",
+      "Azure/GCP basics",
+      "VMs",
+      "cloud storage",
+      "Linux",
+      "CI/CD"
+    ],
+    "interests": [],
+    "deadline": "8th sept'26",
+    "duration": "6 months",
+    "stipend": "₹5,500–8,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/work-from-home-cloud-computing-internship-at-emoolar-technology-private-limited1786216269"
+  },
+  {
+    "id": 22,
+    "title": "Embedded Firmware Engineer(Iot)",
+    "type": "Internship",
+    "organization": "Schbang",
+    "required_skills": [
+      "C/C++",
+      "RTOS",
+      "ARM/ESP32",
+      "I²C",
+      "SPI",
+      "UART",
+      "firmware debugging",
+      "Git"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "3 months",
+    "stipend": "16,000/mon",
+    "registration_link": "https://myinternships.in/job/schbang-embedded-systems-engineer-intern-guntur-260f5d?utm_source=chatgpt.com"
+  },
+  {
+    "id": 23,
+    "title": "Embedded Firmware Engineer(Iot)",
+    "type": "Internship",
+    "organization": "Novixpert",
+    "required_skills": [
+      "C/C++",
+      "STM32",
+      "ESP32",
+      "UART",
+      "SPI",
+      "I²C",
+      "CAN",
+      "FreeRTOS/Zephyr"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "3 months",
+    "stipend": "10,000-12000/mon",
+    "registration_link": "https://secure.indeed.com/auth;jsessionid=node0150y7bt0nf1hoxvf6v9s7qc3825783923.node0?hl=en_US&service=my&co=US&continue=https%3A%2F%2Fwww.indeed.com%2F&continue2=https%3A%2F%2Fin.indeed.com%2Fviewjob%3Fjk%3Df88566f3be212488%26utm_source%3Dchatgpt.com&from=bot-detection-anonymous"
+  },
+  {
+    "id": 24,
+    "title": "Embedded Firmware Engineer(Iot)",
+    "type": "Internship",
+    "organization": "ADHVX Industries",
+    "required_skills": [
+      "C/C++",
+      "STM32",
+      "ESP32",
+      "FreeRTOS",
+      "ESP-IDF",
+      "UART",
+      "SPI",
+      "I²C",
+      "CAN"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "3 months",
+    "stipend": "-",
+    "registration_link": "https://wellfound.com/jobs/3703553-embedded-firmware-engineer-intern?utm_source=chatgpt.com"
+  },
+  {
+    "id": 25,
+    "title": "Iot Cloud/Platform Engineer",
+    "type": "Internship",
+    "organization": "Mactores",
+    "required_skills": [
+      "AWS",
+      "Azure",
+      "GCP",
+      "Linux",
+      "cloud infrastructure",
+      "monitoring",
+      "automation"
+    ],
+    "interests": [],
+    "deadline": "20th oct'26",
+    "duration": "-",
+    "stipend": "3,000-5000/mon",
+    "registration_link": "https://himalayas.app/companies/mactores/jobs/cloud-engineer-intern-8260293304?utm_source=chatgpt.com"
+  },
+  {
+    "id": 26,
+    "title": "Iot Cloud/Platform Engineer",
+    "type": "Internship",
+    "organization": "Red Balloon Aerospace",
+    "required_skills": [
+      "AWS/Azure IoT",
+      "MQTT",
+      "HTTP",
+      "LoRaWAN",
+      "ESP32",
+      "Raspberry Pi",
+      "C/C++",
+      "Python"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "-",
+    "stipend": "5,000-,8,000/mon",
+    "registration_link": "https://in.linkedin.com/jobs/view/intern%E2%80%9A-iot-at-red-balloon-aerospace-4431989783?utm_source=chatgpt.com"
+  },
+  {
+    "id": 27,
+    "title": "Iot Cloud/Platform Engineer",
+    "type": "Internship",
+    "organization": "Intugine Technologies",
+    "required_skills": [
+      "IoT devices",
+      "troubleshooting",
+      "RCA",
+      "device testing",
+      "electronics",
+      "IoT concepts"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "-",
+    "stipend": "10,000-12,000/mon",
+    "registration_link": "https://intugine.freshteam.com/jobs/L3G26ITLjyWJ/iot-intern?ft_medium=5000621488&ft_source=5000695584&utm_source=chatgpt.com"
+  },
+  {
+    "id": 28,
+    "title": "Security Analyst(Soc) (Cybersecurity*)",
+    "type": "Internship",
+    "organization": "Irdeto",
+    "required_skills": [
+      "AWS",
+      "Linux",
+      "networking",
+      "Python/Bash",
+      "monitoring",
+      "incident response"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "-",
+    "registration_link": "https://careers.irdeto.com/job/Noida-SOC-Intern/1420428200/?utm_source=chatgpt.com"
+  },
+  {
+    "id": 29,
+    "title": "Security Analyst(Soc) (Cybersecurity*)",
+    "type": "Internship",
+    "organization": "Accenture",
+    "required_skills": [
+      "Network Security",
+      "Linux",
+      "SIEM",
+      "vulnerability assessment",
+      "Python",
+      "incident response"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "20,000/mon",
+    "registration_link": "https://myinternships.in/internships/accenture-cyber-security-intern-hyderabad-4122db?utm_source=chatgpt.com"
+  },
+  {
+    "id": 30,
+    "title": "Security Analyst(Soc) (Cybersecurity*)",
+    "type": "Internship",
+    "organization": "IBM",
+    "required_skills": [
+      "Network Security",
+      "Linux",
+      "SIEM",
+      "Python",
+      "vulnerability assessment",
+      "ethical hacking"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "5 months",
+    "stipend": "20,000/mon",
+    "registration_link": "https://myinternships.in/internships/ibm-cyber-security-intern-bengaluru-8445f2?utm_source=chatgpt.com"
+  },
+  {
+    "id": 31,
+    "title": "Iam Engineer",
+    "type": "Internship",
+    "organization": "IAM Interns, KPMG",
+    "required_skills": [
+      "IAM",
+      "Python",
+      "Bash",
+      "networking",
+      "firewalls",
+      "IDS/IPS",
+      "vulnerability assessment"
+    ],
+    "interests": [],
+    "deadline": "27th aug'26",
+    "duration": "-",
+    "stipend": "10,000/mon",
+    "registration_link": "https://www.jobleads.com/in/job/cyber-iam-managed-service-iam-interns--india--eec552af389119bc7df9a67b6e5e224a2?utm_source=chatgpt.com"
+  },
+  {
+    "id": 32,
+    "title": "Iam Engineer",
+    "type": "Internship",
+    "organization": "IAM Interns, KPMG Global Services",
+    "required_skills": [
+      "IAM",
+      "cybersecurity",
+      "networking",
+      "Python/Bash",
+      "incident response"
+    ],
+    "interests": [],
+    "deadline": "25 sept'26",
+    "duration": "-",
+    "stipend": "10,000-12,000/mon",
+    "registration_link": "https://bebee.com/in/jobs/cyber-iam-managed-service-iam-interns-kpmg-global-services-bangalore-karnataka-india--t7xk-777947431?utm_source=chatgpt.com"
+  },
+  {
+    "id": 33,
+    "title": "Iam Engineer",
+    "type": "Internship",
+    "organization": "SailPoint ISC Analyst, KPMG",
+    "required_skills": [
+      "SailPoint ISC",
+      "IAM",
+      "access management",
+      "Bash",
+      "Beanshell",
+      "cybersecurity"
+    ],
+    "interests": [],
+    "deadline": "24 sept'26",
+    "duration": "-",
+    "stipend": "12,000/mon",
+    "registration_link": "https://apna.co/job/bengaluru/cyber-iam-managed-service-sailpoint-isc-analyst-in-1618568623?utm_source=chatgpt.com"
+  },
+  {
+    "id": 34,
+    "title": "Software Developer",
+    "type": "Internship",
+    "organization": "Avendia",
+    "required_skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "backend development",
+      "databases",
+      "Git"
+    ],
+    "interests": [],
+    "deadline": "31st aug'26",
+    "duration": "2 months",
+    "stipend": "Unpaid",
+    "registration_link": "https://internship.aicte-india.org/internship-details.php?uid=SU5URVJOU0hJUF8xNzg3NTY4MDg2NmE4YzFmZDY4ZTY2Yw=="
+  },
+  {
+    "id": 35,
+    "title": "Software Developer",
+    "type": "Internship",
+    "organization": "MINDSEEKERS TECHNOLOGIES PRIVATE LIMITED",
+    "required_skills": [
+      "Python",
+      "OOP",
+      "APIs",
+      "databases",
+      "Git",
+      "problem solving"
+    ],
+    "interests": [],
+    "deadline": "21 sept'26",
+    "duration": "2 months",
+    "stipend": "Unpaid",
+    "registration_link": "https://internship.aicte-india.org/internship-details.php?uid=SU5URVJOU0hJUF8xNzg2OTcwMTk1NmE4MzAwNTNiYTM4Yw=="
+  },
+  {
+    "id": 36,
+    "title": "Software Developer",
+    "type": "Internship",
+    "organization": "Panacea IT Services",
+    "required_skills": [
+      "Programming",
+      "Git",
+      "Linux",
+      "CI/CD",
+      "cloud/DevOps fundamentals"
+    ],
+    "interests": [],
+    "deadline": "20th oct'26",
+    "duration": "3 months",
+    "stipend": "Unpaid",
+    "registration_link": "https://internship.aicte-india.org/internship-details.php?uid=SU5URVJOU0hJUF8xNzg3NTA5OTcwNmE4YjNjZDIzZGQ1Yw=="
+  },
+  {
+    "id": 37,
+    "title": "Web Developer",
+    "type": "Internship",
+    "organization": "Avaintern Edutech",
+    "required_skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "responsive design",
+      "web development"
+    ],
+    "interests": [],
+    "deadline": "30th aug'26",
+    "duration": "8 weeks",
+    "stipend": "5000/mon",
+    "registration_link": "https://internship.aicte-india.org/internship-details.php?uid=SU5URVJOU0hJUF8xNzg3MDYyNTU1NmE4NDY5MWJkZjQ0MQ=="
+  },
+  {
+    "id": 38,
+    "title": "Web Developer",
+    "type": "Internship",
+    "organization": "Web Developer Intern",
+    "required_skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "frontend development",
+      "debugging"
+    ],
+    "interests": [],
+    "deadline": "20th sept'26",
+    "duration": "3 months",
+    "stipend": "unpaid",
+    "registration_link": "https://internship.aicte-india.org/internships.php?future=intern&utm_source=chatgpt.com"
+  },
+  {
+    "id": 39,
+    "title": "Web Developer",
+    "type": "Internship",
+    "organization": "Web Development Internship — Patna",
+    "required_skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "responsive websites",
+      "web development"
+    ],
+    "interests": [],
+    "deadline": "30th sept'26",
+    "duration": "6 weeks",
+    "stipend": "5000/mon",
+    "registration_link": "https://internship.aicte-india.org/internships.php?future=intern&utm_source=chatgpt.com"
+  },
+  {
+    "id": 40,
+    "title": "Iot Cloud/Platform Engineer",
+    "type": "Internship",
+    "organization": "Mactores",
+    "required_skills": [
+      "AWS",
+      "Azure",
+      "GCP",
+      "Linux",
+      "cloud infrastructure",
+      "monitoring",
+      "automation"
+    ],
+    "interests": [],
+    "deadline": "20th oct'26",
+    "duration": "-",
+    "stipend": "3,000-5000/mon",
+    "registration_link": "https://himalayas.app/companies/mactores/jobs/cloud-engineer-intern-8260293304?utm_source=chatgpt.com"
+  },
+  {
+    "id": 41,
+    "title": "Iot Cloud/Platform Engineer",
+    "type": "Internship",
+    "organization": "Red Balloon Aerospace",
+    "required_skills": [
+      "AWS/Azure IoT",
+      "MQTT",
+      "HTTP",
+      "LoRaWAN",
+      "ESP32",
+      "Raspberry Pi",
+      "C/C++",
+      "Python"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "-",
+    "stipend": "5,000-,8,000/mon",
+    "registration_link": "https://in.linkedin.com/jobs/view/intern%E2%80%9A-iot-at-red-balloon-aerospace-4431989783?utm_source=chatgpt.com"
+  },
+  {
+    "id": 42,
+    "title": "Iot Cloud/Platform Engineer",
+    "type": "Internship",
+    "organization": "Intugine Technologies",
+    "required_skills": [
+      "IoT devices",
+      "troubleshooting",
+      "RCA",
+      "device testing",
+      "electronics",
+      "IoT concepts"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "-",
+    "stipend": "10,000-12,000/mon",
+    "registration_link": "https://intugine.freshteam.com/jobs/L3G26ITLjyWJ/iot-intern?ft_medium=5000621488&ft_source=5000695584&utm_source=chatgpt.com"
+  },
+  {
+    "id": 43,
+    "title": "Full-Stack Developer",
+    "type": "Internship",
+    "organization": "DeepThought CultureTech Ventures Private Limited",
+    "required_skills": [
+      "Claude",
+      "English Proficiency (Spoken)",
+      "MongoDB",
+      "Next.js",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "interests": [],
+    "deadline": "10 sept'26",
+    "duration": "6 months",
+    "stipend": "5000-8000 per month",
+    "registration_link": "https://internshala.com/internship/detail/full-stack-development-internship-in-hyderabad-at-deepthought-culturetech-ventures-private-limited1786438980"
+  },
+  {
+    "id": 44,
+    "title": "Full-Stack Developer",
+    "type": "Internship",
+    "organization": "IndentixWeb",
+    "required_skills": [
+      "Debugging Skills",
+      "HTML & CSSProblem-Solving Skills",
+      "Basic Web Development",
+      "Database Basics (MySQL)API Understanding",
+      "JavaScript Fundamentals",
+      "Logical Thinking",
+      "Client-Server Architecture"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "1 year",
+    "stipend": "-",
+    "registration_link": "https://identixweb.keka.com/careers/jobdetails/85126"
+  },
+  {
+    "id": 45,
+    "title": "Full-Stack Developer",
+    "type": "Internship",
+    "organization": "TechPranee (SpearHub)",
+    "required_skills": [
+      "CSS",
+      "GitHub",
+      "HTML",
+      "JavaScript",
+      "Node.js",
+      "NoSQL",
+      "Postman",
+      "Python",
+      "React",
+      "REST API",
+      "Software Development Life Cycle (SDLC)",
+      "SQL",
+      "VS CodeWeb Design"
+    ],
+    "interests": [],
+    "deadline": "19th sept'26",
+    "duration": "6 months",
+    "stipend": "10,000-15000 per month",
+    "registration_link": "https://internshala.com/internship/detail/full-stack-development-internship-in-hyderabad-at-techpranee-spearhub1787215748?referral=similar_post_detail_page"
+  },
+  {
+    "id": 46,
+    "title": "Data Analyst",
+    "type": "Internship",
+    "organization": "TSTEPS Private Limited",
+    "required_skills": [
+      "Microsoft Azure",
+      "GCP",
+      "AWS CloudFormation"
+    ],
+    "interests": [],
+    "deadline": "17th sept'26",
+    "duration": "6 months",
+    "stipend": "₹10,000–15,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/solutions-architect-internship-in-multiple-locations-at-tsteps-private-limited1787045789"
+  },
+  {
+    "id": 47,
+    "title": "Data Analyst",
+    "type": "Internship",
+    "organization": "Emoolar Technology Pvt Ltd",
+    "required_skills": [
+      "AWS",
+      "Azure/GCP basics",
+      "VMs",
+      "cloud storage",
+      "Linux",
+      "CI/CD"
+    ],
+    "interests": [],
+    "deadline": "8th sept'26",
+    "duration": "6 months",
+    "stipend": "₹5,500–8,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/work-from-home-cloud-computing-internship-at-emoolar-technology-private-limited1786216269"
+  },
+  {
+    "id": 48,
+    "title": "Data Analyst",
+    "type": "Internship",
+    "organization": "Sankar Group",
+    "required_skills": [
+      "AWS CloudFormation",
+      "Lambda",
+      "CloudFront",
+      "CloudWatch"
+    ],
+    "interests": [],
+    "deadline": "28th aug'26",
+    "duration": "6 months",
+    "stipend": "₹3,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/work-from-home-aws-devops-engineer-internship-at-sankar-group1784958243"
+  },
+  {
+    "id": 49,
+    "title": "Data Scientist",
+    "type": "Internship",
+    "organization": "TSTEPS Private Limited",
+    "required_skills": [
+      "Microsoft Azure",
+      "GCP",
+      "AWS CloudFormation"
+    ],
+    "interests": [],
+    "deadline": "17th sept'26",
+    "duration": "6 months",
+    "stipend": "₹10,000–15,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/solutions-architect-internship-in-multiple-locations-at-tsteps-private-limited1787045789"
+  },
+  {
+    "id": 50,
+    "title": "Data Scientist",
+    "type": "Internship",
+    "organization": "Emoolar Technology Pvt Ltd",
+    "required_skills": [
+      "AWS",
+      "Azure/GCP basics",
+      "VMs",
+      "cloud storage",
+      "Linux",
+      "CI/CD"
+    ],
+    "interests": [],
+    "deadline": "8th sept'26",
+    "duration": "6 months",
+    "stipend": "₹5,500–8,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/work-from-home-cloud-computing-internship-at-emoolar-technology-private-limited1786216269"
+  },
+  {
+    "id": 51,
+    "title": "Data Scientist",
+    "type": "Internship",
+    "organization": "Sankar Group",
+    "required_skills": [
+      "AWS CloudFormation",
+      "Lambda",
+      "CloudFront",
+      "CloudWatch"
+    ],
+    "interests": [],
+    "deadline": "28th aug'26",
+    "duration": "6 months",
+    "stipend": "₹3,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/work-from-home-aws-devops-engineer-internship-at-sankar-group1784958243"
+  },
+  {
+    "id": 52,
+    "title": "Cybersecurity Specialist",
+    "type": "Internship",
+    "organization": "Irdeto",
+    "required_skills": [
+      "AWS",
+      "Linux",
+      "networking",
+      "Python/Bash",
+      "monitoring",
+      "incident response"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "-",
+    "registration_link": "https://careers.irdeto.com/job/Noida-SOC-Intern/1420428200/?utm_source=chatgpt.com"
+  },
+  {
+    "id": 53,
+    "title": "Cybersecurity Specialist",
+    "type": "Internship",
+    "organization": "Accenture",
+    "required_skills": [
+      "Network Security",
+      "Linux",
+      "SIEM",
+      "vulnerability assessment",
+      "Python",
+      "incident response"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "20,000/mon",
+    "registration_link": "https://myinternships.in/internships/accenture-cyber-security-intern-hyderabad-4122db?utm_source=chatgpt.com"
+  },
+  {
+    "id": 54,
+    "title": "Cybersecurity Specialist",
+    "type": "Internship",
+    "organization": "IBM",
+    "required_skills": [
+      "Network Security",
+      "Linux",
+      "SIEM",
+      "Python",
+      "vulnerability assessment",
+      "ethical hacking"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "5 months",
+    "stipend": "20,000/mon",
+    "registration_link": "https://myinternships.in/internships/ibm-cyber-security-intern-bengaluru-8445f2?utm_source=chatgpt.com"
+  },
+  {
+    "id": 55,
+    "title": "Cloud Engineer",
+    "type": "Internship",
+    "organization": "Mactores",
+    "required_skills": [
+      "AWS",
+      "Azure",
+      "GCP",
+      "Linux",
+      "cloud infrastructure",
+      "monitoring",
+      "automation"
+    ],
+    "interests": [],
+    "deadline": "20th oct'26",
+    "duration": "-",
+    "stipend": "3,000-5000/mon",
+    "registration_link": "https://himalayas.app/companies/mactores/jobs/cloud-engineer-intern-8260293304?utm_source=chatgpt.com"
+  },
+  {
+    "id": 56,
+    "title": "Cloud Engineer",
+    "type": "Internship",
+    "organization": "Red Balloon Aerospace",
+    "required_skills": [
+      "AWS/Azure IoT",
+      "MQTT",
+      "HTTP",
+      "LoRaWAN",
+      "ESP32",
+      "Raspberry Pi",
+      "C/C++",
+      "Python"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "-",
+    "stipend": "5,000-,8,000/mon",
+    "registration_link": "https://in.linkedin.com/jobs/view/intern%E2%80%9A-iot-at-red-balloon-aerospace-4431989783?utm_source=chatgpt.com"
+  },
+  {
+    "id": 57,
+    "title": "Cloud Engineer",
+    "type": "Internship",
+    "organization": "Intugine Technologies",
+    "required_skills": [
+      "IoT devices",
+      "troubleshooting",
+      "RCA",
+      "device testing",
+      "electronics",
+      "IoT concepts"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "-",
+    "stipend": "10,000-12,000/mon",
+    "registration_link": "https://intugine.freshteam.com/jobs/L3G26ITLjyWJ/iot-intern?ft_medium=5000621488&ft_source=5000695584&utm_source=chatgpt.com"
+  },
+  {
+    "id": 58,
+    "title": "Network Administrator",
+    "type": "Internship",
+    "organization": "IAM Interns, KPMG",
+    "required_skills": [
+      "IAM",
+      "Python",
+      "Bash",
+      "networking",
+      "firewalls",
+      "IDS/IPS",
+      "vulnerability assessment"
+    ],
+    "interests": [],
+    "deadline": "27th aug'26",
+    "duration": "-",
+    "stipend": "10,000/mon",
+    "registration_link": "https://www.jobleads.com/in/job/cyber-iam-managed-service-iam-interns--india--eec552af389119bc7df9a67b6e5e224a2?utm_source=chatgpt.com"
+  },
+  {
+    "id": 59,
+    "title": "Network Administrator",
+    "type": "Internship",
+    "organization": "IAM Interns, KPMG Global Services",
+    "required_skills": [
+      "IAM",
+      "cybersecurity",
+      "networking",
+      "Python/Bash",
+      "incident response"
+    ],
+    "interests": [],
+    "deadline": "25 sept'26",
+    "duration": "-",
+    "stipend": "10,000-12,000/mon",
+    "registration_link": "https://bebee.com/in/jobs/cyber-iam-managed-service-iam-interns-kpmg-global-services-bangalore-karnataka-india--t7xk-777947431?utm_source=chatgpt.com"
+  },
+  {
+    "id": 60,
+    "title": "Network Administrator",
+    "type": "Internship",
+    "organization": "SailPoint ISC Analyst, KPMG",
+    "required_skills": [
+      "SailPoint ISC",
+      "IAM",
+      "access management",
+      "Bash",
+      "Beanshell",
+      "cybersecurity"
+    ],
+    "interests": [],
+    "deadline": "24 sept'26",
+    "duration": "-",
+    "stipend": "12,000/mon",
+    "registration_link": "https://apna.co/job/bengaluru/cyber-iam-managed-service-sailpoint-isc-analyst-in-1618568623?utm_source=chatgpt.com"
+  },
+  {
+    "id": 61,
+    "title": "Ml Engineer",
+    "type": "Internship",
+    "organization": "Boltzmann Labs Pvt Ltd",
+    "required_skills": [
+      "Python",
+      "Chemistry",
+      "ML",
+      "Deep Learning"
+    ],
+    "interests": [],
+    "deadline": "9th sept'26",
+    "duration": "6 months",
+    "stipend": "₹15,000–20,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/artificial-intelligence-ai-internship-in-hyderabad-at-boltzmann-labs-private-limited1784542312"
+  },
+  {
+    "id": 62,
+    "title": "Ml Engineer",
+    "type": "Internship",
+    "organization": "DeepThought CultureTech Ventures (Secunderabad)",
+    "required_skills": [
+      "Problem Solving",
+      "English Proficiency",
+      "Claude"
+    ],
+    "interests": [],
+    "deadline": "28th aug'26",
+    "duration": "6 months",
+    "stipend": "₹5,000–8,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/artificial-intelligence-ai-internship-in-secunderabad-at-deepthought-culturetech-ventures-private-limited1785322766"
+  },
+  {
+    "id": 63,
+    "title": "Ml Engineer",
+    "type": "Internship",
+    "organization": "Microsoft",
+    "required_skills": [
+      "Python",
+      "ML",
+      "Data Science",
+      "Research & Analytics"
+    ],
+    "interests": [],
+    "deadline": "8th sept'26",
+    "duration": "3 months",
+    "stipend": "Competitive stipend",
+    "registration_link": "https://internshala.com/internship/detail/phd-research-sciences-intern-internship-in-multiple-locations-at-microsoft1780914124"
+  },
+  {
+    "id": 64,
+    "title": "Deep Learning Engineer",
+    "type": "Internship",
+    "organization": "DeepThought CultureTech Ventures (Secunderabad)",
+    "required_skills": [
+      "Problem Solving",
+      "English Proficiency",
+      "Claude"
+    ],
+    "interests": [],
+    "deadline": "28th aug'26",
+    "duration": "6 months",
+    "stipend": "₹5,000–8,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/artificial-intelligence-ai-internship-in-secunderabad-at-deepthought-culturetech-ventures-private-limited1785322766"
+  },
+  {
+    "id": 65,
+    "title": "Deep Learning Engineer",
+    "type": "Internship",
+    "organization": "Microsoft",
+    "required_skills": [
+      "Python",
+      "ML",
+      "Data Science",
+      "Research & Analytics"
+    ],
+    "interests": [],
+    "deadline": "8th sept'26",
+    "duration": "3 months",
+    "stipend": "Competitive stipend",
+    "registration_link": "https://internshala.com/internship/detail/phd-research-sciences-intern-internship-in-multiple-locations-at-microsoft1780914124"
+  },
+  {
+    "id": 66,
+    "title": "Deep Learning Engineer",
+    "type": "Internship",
+    "organization": "DeepThought CultureTech Ventures (AI Engineering)",
+    "required_skills": [
+      "LangChain",
+      "Claude",
+      "MongoDB",
+      "PostgreSQL",
+      "Next.js",
+      "Redis"
+    ],
+    "interests": [],
+    "deadline": "16 sept'26",
+    "duration": "6 months, part-time",
+    "stipend": "₹5000–8,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/part-time-ai-engineering-internship-in-multiple-locations-at-deepthought-culturetech-ventures-private-limited1786943023"
+  },
+  {
+    "id": 67,
+    "title": "Ai Research Scientist",
+    "type": "Internship",
+    "organization": "MLOps Intern — EduRankAI",
+    "required_skills": [
+      "Python",
+      "Linux",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Cloud",
+      "ML deployment",
+      "monitoring"
+    ],
+    "interests": [],
+    "deadline": "2026-08-31 00:00:00",
+    "duration": "3 months",
+    "stipend": "Unpaid",
+    "registration_link": "https://internship.aicte-india.org/internship-details.php?uid=SU5URVJOU0hJUF8xNzg1NTAxMzEwNmE2Yzk2N2VhMmJlZQ==&utm_source=chatgpt.com"
+  },
+  {
+    "id": 68,
+    "title": "Ai Research Scientist",
+    "type": "Internship",
+    "organization": "EduRankAI",
+    "required_skills": [
+      "ML pipelines",
+      "CI/CD",
+      "Docker",
+      "Kubernetes",
+      "model monitoring",
+      "cloud infrastructure"
+    ],
+    "interests": [],
+    "deadline": "2026-11-30 00:00:00",
+    "duration": "3 months",
+    "stipend": "unpaid",
+    "registration_link": "https://internship.aicte-india.org/internship-details.php?uid=SU5URVJOU0hJUF8xNzg1NDEyMzI0NmE2YjNhZTQ1ODc0ZA==&utm_source=chatgpt.com"
+  },
+  {
+    "id": 69,
+    "title": "Ai Research Scientist",
+    "type": "Internship",
+    "organization": "Composio",
+    "required_skills": [
+      "AI agents",
+      "automation",
+      "workflows",
+      "process optimization",
+      "AI tools"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "3 months",
+    "stipend": "-",
+    "registration_link": "https://myinternships.in/internships/composio-is-hiring-product-ops-intern-bengaluru-1d3f05?utm_source=chatgpt.com"
+  },
+  {
+    "id": 70,
+    "title": "Data Engineer",
+    "type": "Internship",
+    "organization": "TSTEPS Private Limited",
+    "required_skills": [
+      "Microsoft Azure",
+      "GCP",
+      "AWS CloudFormation"
+    ],
+    "interests": [],
+    "deadline": "17th sept'26",
+    "duration": "6 months",
+    "stipend": "₹10,000–15,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/solutions-architect-internship-in-multiple-locations-at-tsteps-private-limited1787045789"
+  },
+  {
+    "id": 71,
+    "title": "Data Engineer",
+    "type": "Internship",
+    "organization": "Emoolar Technology Pvt Ltd",
+    "required_skills": [
+      "AWS",
+      "Azure/GCP basics",
+      "VMs",
+      "cloud storage",
+      "Linux",
+      "CI/CD"
+    ],
+    "interests": [],
+    "deadline": "8th sept'26",
+    "duration": "6 months",
+    "stipend": "₹5,500–8,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/work-from-home-cloud-computing-internship-at-emoolar-technology-private-limited1786216269"
+  },
+  {
+    "id": 72,
+    "title": "Data Engineer",
+    "type": "Internship",
+    "organization": "Sankar Group",
+    "required_skills": [
+      "AWS CloudFormation",
+      "Lambda",
+      "CloudFront",
+      "CloudWatch"
+    ],
+    "interests": [],
+    "deadline": "28th aug'26",
+    "duration": "6 months",
+    "stipend": "₹3,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/work-from-home-aws-devops-engineer-internship-at-sankar-group1784958243"
+  },
+  {
+    "id": 73,
+    "title": "Ai/Ml Architect",
+    "type": "Internship",
+    "organization": "PGAGI",
+    "required_skills": [
+      "Python",
+      "AI/ML",
+      "PyTorch/TensorFlow",
+      "LLMs",
+      "RAG",
+      "system architecture",
+      "Draw.io"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 montha",
+    "stipend": "10,000-20000",
+    "registration_link": "https://cutshort.io/company/pgagi-20-psB7yc3A?utm_source=chatgpt.com"
+  },
+  {
+    "id": 74,
+    "title": "Ai/Ml Architect",
+    "type": "Internship",
+    "organization": "Sarvam AI",
+    "required_skills": [
+      "AWS/Azure/GCP",
+      "IAM",
+      "Terraform",
+      "networking",
+      "VPC",
+      "cloud architecture"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "39,000/mon",
+    "registration_link": "https://myinternships.in/job/sarvam-ai-cloud-solutions-architect-intern-chandigarh-d0155f?utm_source=chatgpt.com"
+  },
+  {
+    "id": 75,
+    "title": "Ai/Ml Architect",
+    "type": "Internship",
+    "organization": "YuvaIntern",
+    "required_skills": [
+      "AI architecture",
+      "system design",
+      "AI/ML",
+      "architecture diagrams",
+      "scalability"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "5 weeks",
+    "stipend": "-",
+    "registration_link": "https://yuvaintern.com/internship/ai-solutions-architect-67e53680d817c?utm_source=chatgpt.com"
+  },
+  {
+    "id": 76,
+    "title": "Ai Product Manager",
+    "type": "Internship",
+    "organization": "EduRankAI",
+    "required_skills": [
+      "AI product management",
+      "AI evaluation literacy",
+      "Specification writing",
+      "Documentation",
+      "Cross-team collaboration"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "12 weeks",
+    "stipend": "Unpaid",
+    "registration_link": "https://www.edurankai.in/careers/ai-product-management-intern?utm_source=chatgpt.com"
+  },
+  {
+    "id": 77,
+    "title": "Ai Product Manager",
+    "type": "Internship",
+    "organization": "EduRankAI",
+    "required_skills": [
+      "Python",
+      "Linux",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Cloud",
+      "ML deployment",
+      "monitoring"
+    ],
+    "interests": [],
+    "deadline": "2026-08-31 00:00:00",
+    "duration": "3 months",
+    "stipend": "Unpaid",
+    "registration_link": "https://internship.aicte-india.org/internship-details.php?uid=SU5URVJOU0hJUF8xNzg1NTAxMzEwNmE2Yzk2N2VhMmJlZQ==&utm_source=chatgpt.com"
+  },
+  {
+    "id": 78,
+    "title": "Ai Product Manager",
+    "type": "Internship",
+    "organization": "Sarvam AI",
+    "required_skills": [
+      "AWS/Azure/GCP",
+      "IAM",
+      "Terraform",
+      "networking",
+      "VPC",
+      "cloud architecture"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "39,000/mon",
+    "registration_link": "https://myinternships.in/job/sarvam-ai-cloud-solutions-architect-intern-chandigarh-d0155f?utm_source=chatgpt.com"
+  },
+  {
+    "id": 79,
+    "title": "Ai Ethics Consultant",
+    "type": "Internship",
+    "organization": "Composio",
+    "required_skills": [
+      "AI agents",
+      "automation",
+      "workflows",
+      "process optimization",
+      "AI tools"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "3 months",
+    "stipend": "-",
+    "registration_link": "https://myinternships.in/internships/composio-is-hiring-product-ops-intern-bengaluru-1d3f05?utm_source=chatgpt.com"
+  },
+  {
+    "id": 80,
+    "title": "Ai Ethics Consultant",
+    "type": "Internship",
+    "organization": "TSTEPS Private Limited",
+    "required_skills": [
+      "Microsoft Azure",
+      "GCP",
+      "AWS CloudFormation"
+    ],
+    "interests": [],
+    "deadline": "17th sept'26",
+    "duration": "6 months",
+    "stipend": "₹10,000–15,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/solutions-architect-internship-in-multiple-locations-at-tsteps-private-limited1787045789"
+  },
+  {
+    "id": 81,
+    "title": "Ai Ethics Consultant",
+    "type": "Internship",
+    "organization": "Emoolar Technology Pvt Ltd",
+    "required_skills": [
+      "AWS",
+      "Azure/GCP basics",
+      "VMs",
+      "cloud storage",
+      "Linux",
+      "CI/CD"
+    ],
+    "interests": [],
+    "deadline": "8th sept'26",
+    "duration": "6 months",
+    "stipend": "₹5,500–8,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/work-from-home-cloud-computing-internship-at-emoolar-technology-private-limited1786216269"
+  },
+  {
+    "id": 82,
+    "title": "Llm Developer",
+    "type": "Internship",
+    "organization": "DeepThought CultureTech Ventures (AI Engineering)",
+    "required_skills": [
+      "LangChain",
+      "Claude",
+      "MongoDB",
+      "PostgreSQL",
+      "Next.js",
+      "Redis"
+    ],
+    "interests": [],
+    "deadline": "16 sept'26",
+    "duration": "6 months, part-time",
+    "stipend": "₹5000–8,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/part-time-ai-engineering-internship-in-multiple-locations-at-deepthought-culturetech-ventures-private-limited1786943023"
+  },
+  {
+    "id": 83,
+    "title": "Llm Developer",
+    "type": "Internship",
+    "organization": "Boltzmann Labs Pvt Ltd",
+    "required_skills": [
+      "Python",
+      "ML",
+      "Deep Learning"
+    ],
+    "interests": [],
+    "deadline": "9th sept'26",
+    "duration": "6 months",
+    "stipend": "₹15,000–20,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/artificial-intelligence-ai-internship-in-hyderabad-at-boltzmann-labs-private-limited1784542312"
+  },
+  {
+    "id": 84,
+    "title": "Llm Developer",
+    "type": "Internship",
+    "organization": "Microsoft",
+    "required_skills": [
+      "Python",
+      "ML",
+      "Data Science",
+      "Research & Analytics"
+    ],
+    "interests": [],
+    "deadline": "8th sept'26",
+    "duration": "3 months",
+    "stipend": "-",
+    "registration_link": "https://internshala.com/internship/detail/phd-research-sciences-intern-internship-in-multiple-locations-at-microsoft1780914124"
+  },
+  {
+    "id": 85,
+    "title": "Vsli Design Engineer:",
+    "type": "Internship",
+    "organization": "Emoolar Technology Pvt Ltd",
+    "required_skills": [
+      "VLSI circuit design",
+      "simulation",
+      "verification"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "₹4,000–5,000/mon",
+    "registration_link": "https://internshala.com/internship/detail/work-from-home-vlsi-internship-at-emoolar-technology-private-limited1786216071"
+  },
+  {
+    "id": 86,
+    "title": "Vsli Design Engineer:",
+    "type": "Internship",
+    "organization": "Identium Tech Solutions",
+    "required_skills": [
+      "Circuit design",
+      "system design",
+      "microcontroller programming"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "₹12,000–15,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/electronics-engineering-internship-in-delhi-at-identium-tech-solutions1785825130"
+  },
+  {
+    "id": 87,
+    "title": "Vsli Design Engineer:",
+    "type": "Internship",
+    "organization": "Toyart DIY Enterprises",
+    "required_skills": [
+      "EDA tools (Altium",
+      "Eagle",
+      "KiCad)",
+      "SPICE simulation",
+      "DRC"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "₹2,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/electronics-engineering-internship-in-bhopal-at-toyart-diy-enterprises1786534521"
+  },
+  {
+    "id": 88,
+    "title": "Embedded Systems Engineer",
+    "type": "Internship",
+    "organization": "MKU Limited",
+    "required_skills": [
+      "Embedded Systems",
+      "C",
+      "C++",
+      "ARM Microcontroller"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "₹15,000–20,000/mon",
+    "registration_link": "https://internshala.com/internship/detail/embedded-systems-internship-in-gurgaon-at-mku-limited1786537543"
+  },
+  {
+    "id": 89,
+    "title": "Embedded Systems Engineer",
+    "type": "Internship",
+    "organization": "XiLiR Technologies LLP,",
+    "required_skills": [
+      "Raspberry Pi",
+      "Arduino",
+      "IoT",
+      "MATLAB"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "₹6,000–12,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/embedded-systems-internship-in-delhi-at-xilir-technologies-llp1786700500"
+  },
+  {
+    "id": 90,
+    "title": "Embedded Systems Engineer",
+    "type": "Internship",
+    "organization": "Talentive Global",
+    "required_skills": [
+      "ARM Microcontroller",
+      "Embedded C",
+      "RTOS",
+      "UART",
+      "I2C"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "3 months",
+    "stipend": "₹10,000–15,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/embedded-systems-internship-in-pune-at-talentive-global1786702526"
+  },
+  {
+    "id": 91,
+    "title": "Electronics Design Engineer",
+    "type": "Internship",
+    "organization": "Galanto Innovations",
+    "required_skills": [
+      "ARM Microcontroller",
+      "Raspberry Pi",
+      "Arduino",
+      "PCB Design"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "₹15,000–20,000/mon",
+    "registration_link": "https://internshala.com/internship/detail/electronics-engineering-internship-in-gandhinagar-at-galanto-innovations-private-limited1786699154"
+  },
+  {
+    "id": 92,
+    "title": "Electronics Design Engineer",
+    "type": "Internship",
+    "organization": "Identium Tech Solutions",
+    "required_skills": [
+      "Circuit design",
+      "system design",
+      "microcontroller programming"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "₹12,000–15,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/electronics-engineering-internship-in-delhi-at-identium-tech-solutions1785825130"
+  },
+  {
+    "id": 93,
+    "title": "Electronics Design Engineer",
+    "type": "Internship",
+    "organization": "Toyart DIY Enterprises",
+    "required_skills": [
+      "EDA tools (Altium",
+      "Eagle",
+      "KiCad)",
+      "SPICE simulation",
+      "DRC"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "₹2,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/electronics-engineering-internship-in-bhopal-at-toyart-diy-enterprises1786534521"
+  },
+  {
+    "id": 94,
+    "title": "Iot Developer",
+    "type": "Internship",
+    "organization": "Mactores",
+    "required_skills": [
+      "AWS",
+      "Azure",
+      "GCP",
+      "Linux",
+      "cloud infrastructure",
+      "monitoring",
+      "automation"
+    ],
+    "interests": [],
+    "deadline": "20th oct'26",
+    "duration": "-",
+    "stipend": "3,000-5000/mon",
+    "registration_link": "https://himalayas.app/companies/mactores/jobs/cloud-engineer-intern-8260293304?utm_source=chatgpt.com"
+  },
+  {
+    "id": 95,
+    "title": "Iot Developer",
+    "type": "Internship",
+    "organization": "Red Balloon Aerospace",
+    "required_skills": [
+      "AWS/Azure IoT",
+      "MQTT",
+      "HTTP",
+      "LoRaWAN",
+      "ESP32",
+      "Raspberry Pi",
+      "C/C++",
+      "Python"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "-",
+    "stipend": "5,000-,8,000/mon",
+    "registration_link": "https://in.linkedin.com/jobs/view/intern%E2%80%9A-iot-at-red-balloon-aerospace-4431989783?utm_source=chatgpt.com"
+  },
+  {
+    "id": 96,
+    "title": "Iot Developer",
+    "type": "Internship",
+    "organization": "Intugine Technologies",
+    "required_skills": [
+      "IoT devices",
+      "troubleshooting",
+      "RCA",
+      "device testing",
+      "electronics",
+      "IoT concepts"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "-",
+    "stipend": "10,000-12,000/mon",
+    "registration_link": "https://intugine.freshteam.com/jobs/L3G26ITLjyWJ/iot-intern?ft_medium=5000621488&ft_source=5000695584&utm_source=chatgpt.com"
+  },
+  {
+    "id": 97,
+    "title": "Software Developer",
+    "type": "Internship",
+    "organization": "Avendia",
+    "required_skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "backend development",
+      "databases",
+      "Git"
+    ],
+    "interests": [],
+    "deadline": "31st aug'26",
+    "duration": "2 months",
+    "stipend": "Unpaid",
+    "registration_link": "https://internship.aicte-india.org/internship-details.php?uid=SU5URVJOU0hJUF8xNzg3NTY4MDg2NmE4YzFmZDY4ZTY2Yw=="
+  },
+  {
+    "id": 98,
+    "title": "Software Developer",
+    "type": "Internship",
+    "organization": "MINDSEEKERS TECHNOLOGIES PRIVATE LIMITED",
+    "required_skills": [
+      "Python",
+      "OOP",
+      "APIs",
+      "databases",
+      "Git",
+      "problem solving"
+    ],
+    "interests": [],
+    "deadline": "21 sept'26",
+    "duration": "2 months",
+    "stipend": "Unpaid",
+    "registration_link": "https://internship.aicte-india.org/internship-details.php?uid=SU5URVJOU0hJUF8xNzg2OTcwMTk1NmE4MzAwNTNiYTM4Yw=="
+  },
+  {
+    "id": 99,
+    "title": "Software Developer",
+    "type": "Internship",
+    "organization": "Panacea IT Services",
+    "required_skills": [
+      "Programming",
+      "Git",
+      "Linux",
+      "CI/CD",
+      "cloud/DevOps fundamentals"
+    ],
+    "interests": [],
+    "deadline": "20th oct'26",
+    "duration": "3 months",
+    "stipend": "Unpaid",
+    "registration_link": "https://internship.aicte-india.org/internship-details.php?uid=SU5URVJOU0hJUF8xNzg3NTA5OTcwNmE4YjNjZDIzZGQ1Yw=="
+  },
+  {
+    "id": 100,
+    "title": "Test And Validation Engineeer",
+    "type": "Internship",
+    "organization": "Wildly Tech Pvt Ltd",
+    "required_skills": [
+      "C++ Programming",
+      "C Programming",
+      "Embedded Systems",
+      "Linux",
+      "Python"
+    ],
+    "interests": [],
+    "deadline": "27th aug'26",
+    "duration": "3 months",
+    "stipend": "₹15,000–25,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/embedded-engineering-internship-in-bangalore-at-wildly-tech-private-limited1785234852"
+  },
+  {
+    "id": 101,
+    "title": "Test And Validation Engineeer",
+    "type": "Internship",
+    "organization": "MKU Limited",
+    "required_skills": [
+      "Embedded Systems",
+      "C",
+      "C++",
+      "ARM Microcontroller"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "₹15,000–20,000/mon",
+    "registration_link": "https://internshala.com/internship/detail/embedded-systems-internship-in-gurgaon-at-mku-limited1786537543"
+  },
+  {
+    "id": 102,
+    "title": "Test And Validation Engineeer",
+    "type": "Internship",
+    "organization": "XiLiR Technologies LLP,",
+    "required_skills": [
+      "Raspberry Pi",
+      "Arduino",
+      "IoT",
+      "MATLAB"
+    ],
+    "interests": [],
+    "deadline": "rolling",
+    "duration": "6 months",
+    "stipend": "₹6,000–12,000/mo",
+    "registration_link": "https://internshala.com/internship/detail/embedded-systems-internship-in-delhi-at-xilir-technologies-llp1786700500"
+  }
+]
