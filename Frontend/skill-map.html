@@ -6,7 +6,3058 @@
 
     <title>GoBeyond | Industry Skill Map</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e6e9f0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #635bff;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #687084;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.navbar nav a:hover {
+    color: #635bff;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 86%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome {
+    margin-top: 45px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(135deg, #ffffff, #f3f2ff);
+
+    padding: 38px;
+
+    border-radius: 24px;
+    border: 1px solid #e7e8f2;
+}
+
+.small-text {
+    color: #635bff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 7px;
+}
+
+.welcome h1 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.welcome h1 span {
+    color: #635bff;
+}
+
+.subtitle {
+    color: #687084;
+}
+
+.student-badge {
+    background: #ffffff;
+    border: 1px solid #e3e5ef;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 10px 25px rgba(30, 35, 60, 0.08);
+}
+
+.student-badge strong {
+    font-size: 22px;
+    color: #635bff;
+}
+
+.student-badge span {
+    font-size: 11px;
+    color: #777f91;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+
+    margin-top: 22px;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 22px;
+
+    border: 1px solid #e7e9f0;
+    border-radius: 16px;
+
+    transition: 0.25s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(30, 35, 60, 0.08);
+}
+
+.stat-card p {
+    color: #7b8292;
+    font-size: 13px;
+}
+
+.stat-card h3 {
+    margin-top: 6px;
+    font-size: 19px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    margin-top: 60px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-size: 26px;
+}
+
+
+/* =========================
+   PRIORITIES
+========================= */
+
+.priority-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.priority-card {
+    background: #ffffff;
+    border: 1px solid #e4e7ef;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    transition: 0.25s;
+}
+
+.priority-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(30, 35, 60, 0.08);
+}
+
+.priority-card.urgent {
+    border-left: 4px solid #ff5c77;
+}
+
+.priority-top,
+.opportunity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priority-card h3 {
+    margin: 18px 0 10px;
+    font-size: 19px;
+}
+
+.priority-card p {
+    color: #697185;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.priority-card button,
+.opportunity-card button {
+    border: none;
+    background: #635bff;
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.priority-card button:hover,
+.opportunity-card button:hover {
+    background: #5048e5;
+}
+
+
+/* =========================
+   TAGS
+========================= */
+
+.tag {
+    padding: 5px 9px;
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.red {
+    background: #ffe5ea;
+    color: #d93555;
+}
+
+.yellow {
+    background: #fff4cc;
+    color: #a77700;
+}
+
+.green {
+    background: #dff8e9;
+    color: #16844b;
+}
+
+.blue {
+    background: #e5e8ff;
+    color: #4d48c8;
+}
+
+.purple {
+    background: #f0e5ff;
+    color: #7a43bd;
+}
+
+.orange {
+    background: #ffe9d7;
+    color: #b95d12;
+}
+
+
+/* =========================
+   OPPORTUNITIES
+========================= */
+
+.opportunity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.opportunity-card {
+    background: #ffffff;
+
+    padding: 25px;
+
+    border-radius: 18px;
+    border: 1px solid #e4e7ef;
+
+    transition: 0.25s;
+}
+
+.opportunity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(30, 35, 60, 0.08);
+}
+
+.match {
+    color: #16844b;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.opportunity-card h3 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.organization {
+    color: #635bff;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.opportunity-card > p:not(.organization) {
+    color: #697185;
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+.deadline {
+    font-size: 12px;
+    color: #777f91;
+
+    margin-bottom: 18px;
+}
+
+.view-all {
+    background: transparent;
+    border: 1px solid #d8dbe5;
+
+    padding: 9px 15px;
+    border-radius: 9px;
+
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* =========================
+   ROADMAP
+========================= */
+
+.roadmap-section {
+    background: #ffffff;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    border: 1px solid #e4e7ef;
+}
+
+.roadmap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 35px;
+}
+
+.roadmap-step {
+    min-width: 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.roadmap-step span {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #eef0f6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 800;
+    color: #697185;
+
+    margin-bottom: 10px;
+}
+
+.roadmap-step.completed span {
+    background: #dff8e9;
+    color: #16844b;
+}
+
+.roadmap-step.current span {
+    background: #635bff;
+    color: white;
+
+    box-shadow: 0 0 0 6px #e9e8ff;
+}
+
+.roadmap-step strong {
+    font-size: 13px;
+}
+
+.roadmap-step small {
+    color: #8a91a0;
+    font-size: 11px;
+}
+
+.roadmap-line {
+    height: 2px;
+    flex: 1;
+    background: #dfe2ea;
+    margin: 0 8px;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-card {
+    background: #ffffff;
+
+    border: 1px solid #e4e7ef;
+    border-radius: 20px;
+
+    padding: 30px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-bottom: 28px;
+}
+
+.avatar {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #635bff;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.profile-info p {
+    color: #777f91;
+    font-size: 13px;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.profile-details div {
+    background: #f7f8fb;
+    padding: 18px;
+    border-radius: 12px;
+}
+
+.profile-details span {
+    color: #7d8494;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.profile-details p {
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 70px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #8a91a0;
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .priority-grid,
+    .opportunity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-details {
+        grid-template-columns: 1fr;
+    }
+
+    .roadmap {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 15px;
+    }
+
+    .roadmap-step {
+        min-width: 130px;
+    }
+
+    .roadmap-line {
+        min-width: 40px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    main {
+        width: 92%;
+    }
+
+    .welcome {
+        padding: 25px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+    .welcome h1 {
+        font-size: 28px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        margin-top: 40px;
+    }
+
+    .section-heading h2 {
+        font-size: 22px;
+    }
+
+    .roadmap-section {
+        padding: 22px;
+    }
+}
+/* =========================
+   MATCH ANALYSIS MODAL
+========================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(15, 18, 35, 0.55);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.match-modal {
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+
+    padding: 32px;
+
+    box-shadow: 0 25px 70px rgba(20, 25, 50, 0.25);
+
+    animation: modalOpen 0.25s ease;
+}
+
+@keyframes modalOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+.close-modal {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    width: 34px;
+    height: 34px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f1f2f7;
+
+    color: #555c6d;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+.modal-organization {
+    color: #635bff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+.match-score {
+    text-align: center;
+
+    padding: 20px;
+
+    background: #f3f2ff;
+
+    border-radius: 18px;
+
+    margin-bottom: 22px;
+}
+
+.match-score strong {
+    display: block;
+
+    font-size: 42px;
+
+    color: #635bff;
+}
+
+.match-score span {
+    font-size: 12px;
+
+    color: #707789;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.modal-section {
+    margin-top: 20px;
+}
+
+.modal-section h3 {
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+.skill-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.skill {
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.skill.matched {
+    background: #dff8e9;
+
+    color: #16844b;
+}
+
+.skill.missing {
+    background: #ffe5ea;
+
+    color: #d93555;
+}
+
+.action-box {
+    margin-top: 25px;
+
+    padding: 18px;
+
+    background: #f7f8fb;
+
+    border-radius: 16px;
+}
+
+.action-box p {
+    font-size: 11px;
+
+    color: #7d8494;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+.action-box strong {
+    display: block;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.action-box button {
+    border: none;
+
+    background: #635bff;
+
+    color: #ffffff;
+
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.action-box button:hover {
+    background: #5048e5;
+}
+/* =========================
+   PROFILE FORM
+========================= */
+
+#profileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #303749;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #dfe2ea;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #303749;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #635bff;
+
+    box-shadow: 0 0 0 3px #e9e8ff;
+}
+
+.form-group input::placeholder {
+    color: #9aa0ae;
+}
+
+.form-group small {
+    color: #8a91a0;
+    font-size: 11px;
+}
+
+.save-profile-btn {
+    align-self: flex-start;
+
+    border: none;
+
+    background: #635bff;
+    color: #ffffff;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.save-profile-btn:hover {
+    background: #5048e5;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(99, 91, 255, 0.2);
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .save-profile-btn {
+        width: 100%;
+    }
+
+}
+/* =========================================
+   🌸 A LITTLE SPACE FOR YOU — JOURNAL
+   ========================================= */
+
+.journal-section {
+    position: relative;
+    margin-top: 30px;
+    padding: 45px;
+    border-radius: 28px;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #fff1f6 0%,
+        #fff7fb 45%,
+        #f8f2ff 100%
+    );
+
+    border: 1px solid rgba(236, 183, 211, 0.45);
+    box-shadow: 0 15px 40px rgba(190, 120, 160, 0.12);
+}
+
+
+/* Decorative flowers and sparkles */
+
+.journal-section::before {
+    content: "🌸";
+    position: absolute;
+    top: 18px;
+    right: 35px;
+    font-size: 34px;
+    opacity: 0.7;
+    transform: rotate(12deg);
+}
+
+.journal-section::after {
+    content: "✦  ♡  ✿";
+    position: absolute;
+    bottom: 18px;
+    left: 30px;
+    font-size: 20px;
+    letter-spacing: 10px;
+    opacity: 0.35;
+}
+
+
+/* Heading */
+
+.journal-section .section-heading {
+    position: relative;
+    z-index: 2;
+}
+
+.journal-section .small-text {
+    color: #c45b8c;
+    letter-spacing: 2px;
+}
+
+.journal-section h2 {
+    color: #7d3f63;
+    font-size: 32px;
+    margin-top: 6px;
+}
+
+.section-description {
+    color: #8b7180;
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+
+/* Main journal writing card */
+
+.journal-card {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 28px;
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(177, 105, 145, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+
+/* Labels */
+
+.journal-card label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #7d3f63;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+/* Title input */
+
+.journal-card input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid #edc8da;
+    border-radius: 12px;
+
+    background: #fffafd;
+    color: #593d4d;
+
+    font-size: 15px;
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+.journal-card input::placeholder {
+    color: #b89aa9;
+}
+
+.journal-card input:focus {
+    border-color: #d98caf;
+    box-shadow: 0 0 0 4px rgba(217, 140, 175, 0.12);
+}
+
+
+/* Writing area */
+
+.journal-card textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    min-height: 180px;
+    resize: vertical;
+
+    padding: 18px;
+
+    border: 1px solid #edc8da;
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            rgba(255, 250, 253, 0.95),
+            rgba(255, 250, 253, 0.95)
+        );
+
+    color: #593d4d;
+
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.7;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+.journal-card textarea::placeholder {
+    color: #b89aa9;
+}
+
+.journal-card textarea:focus {
+    border-color: #d98caf;
+
+    box-shadow:
+        0 0 0 4px rgba(217, 140, 175, 0.12),
+        0 8px 20px rgba(190, 120, 160, 0.08);
+}
+
+
+/* Give some space between fields */
+
+.journal-card .form-group {
+    margin-bottom: 20px;
+}
+
+
+/* Save button */
+
+.save-journal-btn {
+    border: none;
+    border-radius: 12px;
+
+    padding: 13px 23px;
+
+    background: linear-gradient(
+        135deg,
+        #d979a4,
+        #b9689a
+    );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 7px 18px rgba(185, 104, 154, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.save-journal-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(185, 104, 154, 0.32);
+}
+
+.save-journal-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   Previous Journal Entries
+   ========================================= */
+
+.journal-entries {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 38px;
+}
+
+.journal-entries h3 {
+    color: #7d3f63;
+    font-size: 22px;
+}
+
+
+/* Individual diary entry */
+
+.journal-entry {
+    position: relative;
+
+    margin-top: 18px;
+    padding: 22px 24px;
+
+    background: #fffdfd;
+
+    border-radius: 16px;
+
+    border-left: 4px solid #e7a5c2;
+
+    box-shadow: 0 8px 22px rgba(177, 105, 145, 0.09);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.journal-entry:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 26px rgba(177, 105, 145, 0.14);
+}
+
+
+/* Entry heading */
+
+.journal-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.journal-entry h4 {
+    margin: 0 0 5px;
+
+    color: #70435c;
+    font-size: 17px;
+}
+
+.journal-entry small {
+    color: #aa8a99;
+    font-size: 12px;
+}
+
+
+/* Entry text */
+
+.journal-entry p {
+    margin-top: 14px;
+
+    color: #594552;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+}
+
+
+/* Delete button */
+
+.delete-journal-btn {
+    border: none;
+    background: transparent;
+
+    color: #c47b9d;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.delete-journal-btn:hover {
+    color: #a94e78;
+}
+
+
+/* Empty journal message */
+
+.empty-journal {
+    padding: 18px 0;
+
+    color: #a98c9a;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   📱 MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .journal-section {
+        padding: 28px 18px;
+        border-radius: 22px;
+    }
+
+    .journal-section h2 {
+        font-size: 26px;
+    }
+
+    .journal-card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .journal-card textarea {
+        min-height: 150px;
+    }
+
+    .journal-entry-header {
+        flex-direction: column;
+    }
+
+    .delete-journal-btn {
+        align-self: flex-start;
+    }
+
+}
+/* =========================================
+   🌷 DAILY MOOD CHECK
+   ========================================= */
+
+.mood-check {
+    margin-top: 25px;
+    padding: 22px;
+
+    background: rgba(255, 242, 248, 0.75);
+
+    border: 1px solid rgba(225, 170, 198, 0.45);
+    border-radius: 18px;
+}
+
+.mood-question {
+    margin: 0;
+
+    color: #7d3f63;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.mood-subtext {
+    margin: 6px 0 18px;
+
+    color: #9b7d8c;
+    font-size: 13px;
+}
+
+
+/* Mood buttons */
+
+.mood-options {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.mood-option {
+    flex: 1;
+    min-width: 90px;
+
+    padding: 14px 10px;
+
+    border: 1px solid #edc8da;
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.mood-option span {
+    display: block;
+
+    font-size: 28px;
+
+    margin-bottom: 6px;
+}
+
+.mood-option small {
+    color: #765568;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Hover */
+
+.mood-option:hover {
+    transform: translateY(-3px);
+
+    border-color: #d98caf;
+
+    background: #fff7fb;
+
+    box-shadow:
+        0 7px 15px rgba(190, 120, 160, 0.12);
+}
+
+
+/* Selected mood */
+
+.mood-option.selected {
+    transform: translateY(-3px);
+
+    border-color: #d477a1;
+
+    background: linear-gradient(
+        135deg,
+        #ffe3ef,
+        #f8e8ff
+    );
+
+    box-shadow:
+        0 8px 18px rgba(190, 120, 160, 0.18);
+}
+
+.mood-option.selected small {
+    color: #7d3f63;
+}
+
+
+/* Selected message */
+
+.selected-mood {
+    display: none;
+
+    margin: 16px 0 0;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    color: #7d3f63;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .mood-options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mood-option {
+        min-width: unset;
+    }
+
+}
+/* =========================================
+   ✨ START YOUR JOURNEY - PROFILE
+   ========================================= */
+
+.profile-section {
+    position: relative;
+}
+
+.profile-section .section-heading {
+    margin-bottom: 25px;
+}
+
+.profile-section .section-description {
+    max-width: 650px;
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #7b7280;
+}
+
+
+/* Profile form card */
+
+.profile-card {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #fff9fc
+    );
+
+    border: 1px solid rgba(230, 190, 210, 0.45);
+
+    box-shadow:
+        0 10px 30px rgba(150, 100, 130, 0.08);
+
+    transition: box-shadow 0.25s ease;
+}
+
+.profile-card:hover {
+    box-shadow:
+        0 14px 35px rgba(150, 100, 130, 0.12);
+}
+
+
+/* Small decorative element */
+
+.profile-card::after {
+    content: "✦";
+    position: absolute;
+    right: 25px;
+    top: 18px;
+
+    font-size: 22px;
+    opacity: 0.25;
+}
+/* =========================================
+   ⭐🔥 GO-BEYOND PROGRESS
+   Stars + Streak
+   ========================================= */
+
+.student-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Student badge */
+
+.student-progress .student-badge {
+    margin-right: 4px;
+}
+
+
+/* Progress cards */
+
+.progress-stat {
+    min-width: 105px;
+    padding: 12px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(245, 158, 11, 0.35);
+
+    background: linear-gradient(
+        135deg,
+        #fff8dc,
+        #fff1b8
+    );
+
+    box-shadow:
+        0 7px 18px rgba(245, 158, 11, 0.14);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Streak card */
+
+.progress-stat:last-child {
+    border-color: rgba(239, 68, 68, 0.30);
+
+    background: linear-gradient(
+        135deg,
+        #fff1d6,
+        #ffe1dc
+    );
+
+    box-shadow:
+        0 7px 18px rgba(239, 68, 68, 0.12);
+}
+
+
+/* Hover */
+
+.progress-stat:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px rgba(245, 158, 11, 0.20);
+}
+
+
+/* Icons */
+
+.progress-icon {
+    font-size: 26px;
+    line-height: 1;
+}
+
+
+/* Numbers */
+
+.progress-stat strong {
+    display: block;
+
+    color: #9a5b00;
+
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+
+/* Labels */
+
+.progress-stat span:not(.progress-icon) {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #8a6a35;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* Streak number */
+
+.progress-stat:last-child strong {
+    color: #c2410c;
+}
+
+.progress-stat:last-child span:not(.progress-icon) {
+    color: #9f4b2f;
+}
+
+
+/* =========================================
+   📱 MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .student-progress {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .progress-stat {
+        min-width: 100px;
+    }
+
+}
+/* =========================================
+   ⭐ GO BEYOND DAILY ACTION
+   ========================================= */
+
+.go-beyond-action {
+    margin-top: 24px;
+    padding: 22px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #fff8d9,
+        #fff0c2
+    );
+
+    border: 1px solid rgba(245, 158, 11, 0.35);
+
+    box-shadow:
+        0 8px 22px rgba(245, 158, 11, 0.10);
+}
+
+
+/* Content */
+
+.go-beyond-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.go-beyond-icon {
+    font-size: 30px;
+    line-height: 1;
+}
+
+.go-beyond-content h3 {
+    margin: 0;
+
+    color: #92400e;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.go-beyond-content p {
+    margin: 6px 0 0;
+
+    color: #8a5a20;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* Button */
+
+.go-beyond-btn {
+    margin-top: 18px;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #f59e0b,
+        #ea580c
+    );
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 16px rgba(234, 88, 12, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.go-beyond-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(234, 88, 12, 0.30);
+}
+
+.go-beyond-btn:active {
+    transform: translateY(0);
+}
+
+
+/* Success state */
+
+.go-beyond-btn.completed {
+    background: linear-gradient(
+        135deg,
+        #eab308,
+        #f59e0b
+    );
+
+    cursor: default;
+}
+
+
+/* Message */
+
+.go-beyond-message {
+    margin: 12px 0 0;
+
+    color: #92400e;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+/* Mobile */
+@media (max-width: 768px) {
+    .go-beyond-action {
+        padding: 18px;
+    }
+    .go-beyond-content {
+        gap: 10px;
+    }
+    .go-beyond-btn {
+        width: 100%;
+    }
+}
+/* =========================================
+   🎯 TODAY'S GO-BEYOND ACTION
+   ========================================= */
+
+.daily-action-card {
+    margin-top: 24px;
+    padding: 24px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #fff9db,
+        #fff0c7
+    );
+
+    border: 1px solid rgba(245, 158, 11, 0.38);
+
+    box-shadow:
+        0 9px 24px rgba(245, 158, 11, 0.12);
+}
+
+
+/* Header */
+
+.daily-action-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.daily-action-label {
+    margin: 0 0 6px;
+
+    color: #c2410c;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.daily-action-header h3 {
+    margin: 0;
+
+    color: #78350f;
+
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.daily-action-icon {
+    font-size: 32px;
+    line-height: 1;
+}
+
+
+/* Description */
+
+#dailyActionDescription {
+    margin: 12px 0 18px;
+
+    max-width: 700px;
+
+    color: #8a5a20;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* Footer */
+
+.daily-action-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+#dailyActionReason {
+    color: #9a6b2f;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Complete button */
+
+.complete-action-btn {
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #f59e0b,
+        #ea580c
+    );
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(234, 88, 12, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.complete-action-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 19px rgba(234, 88, 12, 0.28);
+}
+
+
+/* Completed state */
+
+.complete-action-btn.completed {
+    background: linear-gradient(
+        135deg,
+        #eab308,
+        #f59e0b
+    );
+
+    cursor: default;
+}
+
+
+/* Completion message */
+
+.action-completion-message {
+    margin: 12px 0 0;
+
+    color: #92400e;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .daily-action-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .complete-action-btn {
+        width: 100%;
+    }
+
+    .daily-action-header h3 {
+        font-size: 17px;
+    }
+
+}
+/* =========================================
+   ❤️ LEARNING REFLECTION
+   Complete & Earn
+   ========================================= */
+
+.learning-reflection {
+    margin-top: 20px;
+    padding: 22px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #fff1f1,
+        #ffe3e3
+    );
+
+    border: 1px solid rgba(220, 38, 38, 0.28);
+
+    box-shadow:
+        0 8px 22px rgba(220, 38, 38, 0.10);
+}
+
+
+/* Heading */
+
+.reflection-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.reflection-icon {
+    font-size: 27px;
+}
+
+.reflection-heading h4 {
+    margin: 0;
+
+    color: #991b1b;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.reflection-heading p {
+    margin: 5px 0 0;
+
+    color: #9f4b4b;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* Reflection textarea */
+
+#learningReflection {
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-top: 16px;
+    padding: 14px;
+
+    min-height: 100px;
+    resize: vertical;
+
+    border: 1px solid #f0aaaa;
+    border-radius: 12px;
+
+    background: #fffafa;
+
+    color: #5f2020;
+
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.6;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#learningReflection::placeholder {
+    color: #c98f8f;
+}
+
+#learningReflection:focus {
+    border-color: #dc2626;
+
+    box-shadow:
+        0 0 0 4px rgba(220, 38, 38, 0.10);
+}
+
+
+/* Complete button */
+
+.complete-learning-btn {
+    margin-top: 14px;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #dc2626,
+        #b91c1c
+    );
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 16px rgba(185, 28, 28, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.complete-learning-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(185, 28, 28, 0.30);
+}
+
+
+/* Completion message */
+
+.learning-completion-message {
+    margin: 12px 0 0;
+
+    color: #991b1b;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .learning-reflection {
+        padding: 18px;
+    }
+
+    .complete-learning-btn {
+        width: 100%;
+    }
+
+}
+.complete-learning-btn.completed {
+    background: linear-gradient(
+        135deg,
+        #f59e0b,
+        #ca8a04
+    );
+
+    cursor: default;
+    opacity: 0.9;
+}
+/* =========================
+   INDUSTRY READINESS
+========================= */
+
+.readiness-card {
+    margin-top: 22px;
+    padding: 32px;
+
+    background: linear-gradient(135deg, #635bff, #766eff);
+    color: #ffffff;
+
+    border-radius: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    box-shadow: 0 15px 35px rgba(99, 91, 255, 0.18);
+}
+
+.readiness-content {
+    flex: 1;
+}
+
+.readiness-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 8px;
+}
+
+.readiness-content h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.readiness-content p {
+    max-width: 650px;
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.readiness-score {
+    width: 125px;
+    height: 125px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    border: 8px solid rgba(255, 255, 255, 0.3);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.readiness-score strong {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.readiness-score span {
+    font-size: 10px;
+    margin-top: 5px;
+    opacity: 0.85;
+}
+
+@media (max-width: 700px) {
+
+    .readiness-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .readiness-score {
+        align-self: center;
+    }
+}
+/* =========================
+   INDUSTRY SKILL COVERAGE
+   + TOP SKILL GAPS
+========================= */
+
+.skill-readiness-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+    margin-top: 22px;
+}
+
+.coverage-card,
+.gaps-card {
+    background: #ffffff;
+    border: 1px solid #e5e7ef;
+    border-radius: 20px;
+    padding: 28px;
+}
+
+.coverage-summary {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 18px 0 10px;
+}
+
+.coverage-summary strong {
+    font-size: 28px;
+    color: #635bff;
+}
+
+.coverage-summary span {
+    font-size: 12px;
+    color: #777f91;
+}
+
+.coverage-bar {
+    width: 100%;
+    height: 9px;
+    background: #eceef5;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 22px;
+}
+
+.coverage-progress {
+    width: 62.5%;
+    height: 100%;
+    background: #635bff;
+    border-radius: 20px;
+}
+
+.skill-status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skill-status {
+    display: grid;
+    grid-template-columns: 25px 1fr auto;
+    align-items: center;
+    gap: 8px;
+
+    padding: 11px 12px;
+    border-radius: 10px;
+
+    font-size: 12px;
+}
+
+.skill-status span {
+    font-weight: 800;
+}
+
+.skill-status small {
+    font-size: 11px;
+}
+
+.skill-status.matched {
+    background: #f0faf5;
+    color: #23845a;
+}
+
+.skill-status.developing {
+    background: #fff8e8;
+    color: #a56b00;
+}
+
+.skill-status.missing {
+    background: #fff0f0;
+    color: #c54848;
+}
+
+.gap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.gap-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 14px;
+
+    border: 1px solid #eceef3;
+    border-radius: 12px;
+}
+
+.gap-icon {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+}
+
+.gap-icon.high {
+    background: #fff0f0;
+    color: #d44b4b;
+}
+
+.gap-icon.medium {
+    background: #fff8e8;
+    color: #a56b00;
+}
+
+.gap-content {
+    flex: 1;
+}
+
+.gap-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.gap-title strong {
+    font-size: 13px;
+}
+
+.gap-content p {
+    color: #858c9c;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+.priority-high,
+.priority-medium {
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 7px;
+    border-radius: 6px;
+}
+
+.priority-high {
+    background: #fff0f0;
+    color: #d44b4b;
+}
+
+.priority-medium {
+    background: #fff8e8;
+    color: #a56b00;
+}
+
+@media (max-width: 850px) {
+
+    .skill-readiness-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   NEXT BEST ACTION
+========================= */
+
+.next-action-card {
+    margin-top: 22px;
+    padding: 26px 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7ef;
+    border-left: 5px solid #635bff;
+
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.next-action-content {
+    flex: 1;
+}
+
+.next-action-content h2 {
+    font-size: 21px;
+    margin: 5px 0 7px;
+}
+
+.next-action-content > p:last-child {
+    color: #687084;
+    font-size: 13px;
+    max-width: 700px;
+}
+
+.next-action-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.action-tag {
+    background: #fff0f0;
+    color: #d44b4b;
+
+    padding: 5px 8px;
+
+    border-radius: 6px;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.next-action-side button {
+    border: none;
+
+    background: #635bff;
+    color: white;
+
+    padding: 11px 17px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.next-action-side button:hover {
+    background: #5149e8;
+}
+
+@media (max-width: 700px) {
+
+    .next-action-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .next-action-side {
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .next-action-side button {
+        width: 100%;
+    }
+}
+
+/* =========================
+   SLIDE 5 - SKILL GAP ANALYSIS
+========================= */
+.skill-gap-subtitle {
+    color: #858c9c;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.gap-summary-row {
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin: 15px 0 5px;
+}
+
+.gap-summary-row span {
+    padding: 6px 9px;
+    border-radius: 7px;
+    background: #f7f8fb;
+    color: #687084;
+    font-size: 10px;
+}
+
+.gap-summary-row strong {
+    color: #172033;
+}
+
+.detailed-gap {
+    align-items: flex-start;
+}
+
+.detailed-gap .gap-content {
+    min-width: 0;
+}
+
+.gap-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+    color: #687084;
+    font-size: 10px;
+}
+
+.gap-meta b {
+    color: #172033;
+}
+
+.gap-why {
+    display: block;
+    margin-top: 7px;
+    color: #858c9c;
+    font-size: 10px;
+}
+
+.gap-path {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #635bff;
+}
+
+.gap-path b {
+    color: #a2a7b4;
+}
+
+.priority-low {
+    background: #eef7ff;
+    color: #3975a8;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 7px;
+    border-radius: 6px;
+}
+
+.skill-covered {
+    border-color: #d9eee3;
+    background: #fbfefc;
+}
+
+.gap-icon.low {
+    background: #eef7ff;
+    color: #3975a8;
+}
+
+@media (max-width: 600px) {
+    .gap-meta {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+/* =====================================================
+   7-DAY PERSONALIZED LEARNING PLAN
+   ===================================================== */
+
+.learning-plan-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 24, 45, 0.58);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 9999;
+}
+
+.learning-plan-overlay.active {
+    display: flex;
+}
+
+.learning-plan-modal {
+    width: min(720px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 24px 70px rgba(30, 35, 70, 0.25);
+}
+
+.learning-plan-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #f3f4f8;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.learning-plan-header {
+    padding-right: 45px;
+    margin-bottom: 24px;
+}
+
+.learning-plan-header h2 {
+    margin: 6px 0 8px;
+    font-size: 28px;
+}
+
+.learning-plan-header p:last-child {
+    margin: 0;
+    color: #737b91;
+}
+
+.learning-plan-progress {
+    background: #f7f7fb;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 22px;
+}
+
+.learning-plan-progress-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.learning-plan-progress-bar {
+    width: 100%;
+    height: 9px;
+    background: #e7e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#learningPlanProgressFill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #635bff,
+        #8b7cff
+    );
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+.learning-plan-days {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.learning-day {
+    border: 1px solid #e7e8ef;
+    border-radius: 16px;
+    padding: 17px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    transition: 0.2s ease;
+}
+
+.learning-day:hover {
+    border-color: #b8b3ff;
+    transform: translateY(-1px);
+}
+
+.learning-day.completed {
+    background: #f5fbf7;
+    border-color: #b7dfc2;
+}
+
+.learning-day-checkbox {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    accent-color: #635bff;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.learning-day-content {
+    flex: 1;
+}
+
+.learning-day-number {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #635bff;
+    text-transform: uppercase;
+}
+
+.learning-day-content h4 {
+    margin: 4px 0 5px;
+    font-size: 17px;
+}
+
+.learning-day-content p {
+    margin: 0;
+    color: #737b91;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.learning-day.completed h4 {
+    text-decoration: line-through;
+}
+
+.learning-plan-footer {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #ececf2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.learning-plan-footer span {
+    color: #737b91;
+    font-size: 13px;
+}
+
+.learning-plan-footer button {
+    border: none;
+    border-radius: 12px;
+    padding: 11px 17px;
+    background: #635bff;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .learning-plan-overlay {
+        padding: 12px;
+    }
+
+    .learning-plan-modal {
+        padding: 22px;
+        border-radius: 18px;
+    }
+
+    .learning-plan-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+}
+/* =========================================
+   SLIDE 5 — SKILL GAP ANALYSIS
+========================================= */
+
+
+/* Skill Gap Summary */
+
+.skill-gap-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 18px 0;
+}
+
+
+.gap-summary-item {
+    padding: 12px 10px;
+    border-radius: 11px;
+    text-align: center;
+    border: 1px solid #eceef3;
+}
+
+
+.gap-summary-item strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+.gap-summary-item span {
+    display: block;
+    margin-top: 3px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+.gap-summary-item.critical {
+    background: #fff5f5;
+    color: #d44b4b;
+}
+
+
+.gap-summary-item.medium {
+    background: #fff9ed;
+    color: #a56b00;
+}
+
+
+.gap-summary-item.low {
+    background: #f4f7ff;
+    color: #5867a8;
+}
+
+
+/* Expanded Skill Gap Cards */
+
+.skill-gap-card {
+    align-items: flex-start;
+    padding: 16px;
+    transition: 0.2s ease;
+}
+
+
+.skill-gap-card:hover {
+    border-color: #dcd9ff;
+    transform: translateY(-1px);
+}
+
+
+/* Skill Level */
+
+.skill-level {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 5px !important;
+    font-size: 11px !important;
+}
+
+
+.skill-gap-current {
+    font-weight: 700;
+    color: #7b8190;
+}
+
+
+.skill-gap-required {
+    font-weight: 800;
+    color: #5149e8;
+}
+
+
+/* Skill Gap Details */
+
+.skill-gap-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 11px;
+}
+
+
+.skill-gap-details div {
+    background: #f8f9fc;
+    border-radius: 8px;
+    padding: 8px 9px;
+}
+
+
+.skill-gap-details span {
+    display: block;
+    color: #8a91a0;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+
+.skill-gap-details strong {
+    display: block;
+    margin-top: 3px;
+    color: #343a4a;
+    font-size: 10px;
+}
+
+
+/* Why the gap matters */
+
+.skill-gap-reason {
+    color: #687084 !important;
+    font-size: 10px !important;
+    line-height: 1.5;
+    margin-top: 10px !important;
+}
+
+
+/* Recommended action */
+
+.skill-gap-action {
+    margin-top: 9px;
+    padding: 8px 10px;
+
+    background: #f5f4ff;
+    border-radius: 8px;
+
+    color: #5149e8;
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+
+/* LOW priority */
+
+.priority-low {
+    background: #f1f4ff;
+    color: #5867a8;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 7px;
+    border-radius: 6px;
+}
+
+
+/* Low priority icon */
+
+.gap-icon.low {
+    background: #f1f4ff;
+    color: #5867a8;
+}
+
+
+/* Better spacing inside the gaps card */
+
+.gaps-card .skill-gap-card + .skill-gap-card {
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   SLIDE 5 RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .skill-gap-summary {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6px;
+    }
+
+
+    .gap-summary-item {
+        padding: 10px 5px;
+    }
+
+
+    .gap-summary-item strong {
+        font-size: 17px;
+    }
+
+
+    .gap-summary-item span {
+        font-size: 9px;
+    }
+
+
+    .skill-gap-details {
+        grid-template-columns: 1fr;
+    }
+
+
+    .skill-gap-card {
+        padding: 13px;
+    }
+
+}
+/* =========================================
+   7-DAY LEARNING PLAN — PROGRESS
+========================================= */
+
+.learning-plan-progress {
+    margin-top: 18px;
+    padding: 14px;
+    background: #f8f9fc;
+    border: 1px solid #eceef3;
+    border-radius: 12px;
+}
+
+.learning-plan-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.learning-plan-progress-header span {
+    font-size: 9px;
+    font-weight: 800;
+    color: #858b99;
+    letter-spacing: 0.5px;
+}
+
+.learning-plan-progress-header strong {
+    font-size: 11px;
+    font-weight: 800;
+    color: #5149e8;
+}
+
+.learning-plan-progress-bar {
+    width: 100%;
+    height: 7px;
+    background: #e7e8ef;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.learning-plan-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #5149e8;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+.learning-plan-progress p {
+    margin: 8px 0 0;
+    font-size: 9px;
+    line-height: 1.4;
+    color: #747b8b;
+}
+</style>
 
     <style>
         /* Page-specific layout */
@@ -434,6 +3485,48 @@
         </section>
 
 
+        <!-- Your Skills (works on its own, no dependency on other pages) -->
+
+        <section class="map-filters skills-input-card">
+
+            <div class="map-filter" style="grid-column: 1 / -1;">
+
+                <label for="mySkills">
+                    YOUR CURRENT SKILLS
+                </label>
+
+                <input
+                    type="text"
+                    id="mySkills"
+                    placeholder="Example: Python, Git, SQL"
+                    style="width:100%;padding:12px;border:1px solid #dfe2ea;border-radius:9px;font-size:13px;box-sizing:border-box;"
+                >
+
+                <small style="display:block;margin-top:6px;color:#777f91;font-size:11px;">
+                    Separate skills using commas, then click Update. This page remembers your skills even without visiting the dashboard.
+                </small>
+
+                <button
+                    type="button"
+                    id="updateSkillsBtn"
+                    style="margin-top:12px;border:none;background:#635bff;color:white;padding:11px 18px;border-radius:9px;font-size:13px;font-weight:800;cursor:pointer;"
+                >
+                    Update My Skills →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Confirmation banner -->
+
+        <div
+            id="skillMapConfirmation"
+            style="display:none;margin-bottom:16px;padding:13px 16px;background:#eef0ff;border:1px solid #d6d9ff;border-radius:12px;font-size:13px;font-weight:700;color:#4338ca;transition:opacity 0.3s ease;"
+        ></div>
+
+
         <!-- Skill Map -->
 
         <section class="skill-map-card">
@@ -559,6 +3652,38 @@
 
             </div>
 
+
+            <!-- Explicit skill breakdown (works for every domain, -->
+            <!-- not just the 6 skills the visual map can position) -->
+
+            <div class="skill-breakdown" style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+
+                <div style="background:#f4fbf7;border:1px solid #cdeedc;border-radius:14px;padding:18px;">
+
+                    <p style="font-size:12px;font-weight:800;color:#247a55;margin:0 0 10px;">
+                        ✅ YOUR MATCHED SKILLS
+                    </p>
+
+                    <div id="matchedSkillsList" style="display:flex;flex-wrap:wrap;gap:8px;">
+                        <!-- filled by JavaScript -->
+                    </div>
+
+                </div>
+
+                <div style="background:#fdf5f5;border:1px solid #f3d3d3;border-radius:14px;padding:18px;">
+
+                    <p style="font-size:12px;font-weight:800;color:#b13e3e;margin:0 0 10px;">
+                        📌 SKILLS TO LEARN
+                    </p>
+
+                    <div id="gapSkillsList" style="display:flex;flex-wrap:wrap;gap:8px;">
+                        <!-- filled by JavaScript -->
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
 
 
@@ -607,14 +3732,4738 @@
 
             <button
                 type="button"
-                onclick="window.location.href='skill-gap.html'"
+                onclick="window.location.href='dashboard.html'"
             >
-                View Skill Gap Analysis →
+                Continue to Dashboard →
             </button>
 
         </div>
 
     </main>
-<script src="script.js"></script>
+<script>
+// ================================
+// GO BEYOND - MATCH MODAL
+// ================================
+
+const matchModal =
+    document.getElementById("matchModal");
+
+const closeModal =
+    document.getElementById("closeModal");
+
+const viewMatchButtons =
+    document.querySelectorAll(
+        ".priority-card button"
+    );
+
+
+if (matchModal && closeModal) {
+
+    viewMatchButtons.forEach((button) => {
+
+        if (button.textContent.includes("View Match")) {
+
+            button.addEventListener("click", () => {
+
+                matchModal.classList.add("active");
+
+            });
+
+        }
+
+    });
+
+
+    // Close using X button
+    closeModal.addEventListener("click", () => {
+
+        matchModal.classList.remove("active");
+
+    });
+
+
+    // Close when clicking outside popup
+    matchModal.addEventListener("click", (event) => {
+
+        if (event.target === matchModal) {
+
+            matchModal.classList.remove("active");
+
+        }
+
+    });
+
+}
+// =====================================================
+// 7-DAY PERSONALIZED LEARNING PLAN
+// =====================================================
+
+const learningPlans = {
+
+    "Machine Learning": [
+        ["Day 1", "ML Fundamentals", "Learn supervised vs unsupervised learning."],
+        ["Day 2", "Data Preparation", "Clean, transform and explore a dataset."],
+        ["Day 3", "Regression", "Build a simple regression model."],
+        ["Day 4", "Classification", "Build a basic classification model."],
+        ["Day 5", "Model Evaluation", "Learn accuracy, precision, recall and F1-score."],
+        ["Day 6", "Mini Project", "Build a small ML prediction project."],
+        ["Day 7", "Reassess", "Test yourself and review what you learned."]
+    ],
+
+    "SQL": [
+        ["Day 1", "SQL Fundamentals", "Learn SELECT, WHERE, ORDER BY and LIMIT."],
+        ["Day 2", "Filtering & Functions", "Practice conditions and SQL functions."],
+        ["Day 3", "Joins", "Learn INNER, LEFT and RIGHT JOIN."],
+        ["Day 4", "Aggregation", "Practice GROUP BY, HAVING and aggregate functions."],
+        ["Day 5", "Subqueries", "Solve problems using nested queries."],
+        ["Day 6", "Mini Project", "Analyse a real dataset using SQL."],
+        ["Day 7", "Reassess", "Solve a short SQL challenge set."]
+    ],
+
+    "Statistics": [
+        ["Day 1", "Statistics Basics", "Review mean, median, mode and variance."],
+        ["Day 2", "Probability", "Practice basic probability concepts."],
+        ["Day 3", "Distributions", "Understand common probability distributions."],
+        ["Day 4", "Correlation", "Learn correlation and covariance."],
+        ["Day 5", "Data Interpretation", "Interpret statistics from a real dataset."],
+        ["Day 6", "Mini Project", "Perform statistical analysis on a dataset."],
+        ["Day 7", "Reassess", "Review concepts and test yourself."]
+    ],
+
+    "React": [
+        ["Day 1", "React Fundamentals", "Learn JSX, components and the React structure."],
+        ["Day 2", "Components & Props", "Build reusable components using props."],
+        ["Day 3", "State", "Learn useState and manage component state."],
+        ["Day 4", "Events & Forms", "Build interactive forms and event handlers."],
+        ["Day 5", "API Integration", "Fetch and display data from an API."],
+        ["Day 6", "Mini Project", "Build a small React application."],
+        ["Day 7", "Reassess", "Review React concepts and improve your project."]
+    ],
+
+    "JavaScript": [
+        ["Day 1", "JavaScript Basics", "Review variables, data types and operators."],
+        ["Day 2", "Functions", "Practice functions, parameters and return values."],
+        ["Day 3", "Arrays & Objects", "Work with common JavaScript data structures."],
+        ["Day 4", "DOM", "Manipulate HTML elements using JavaScript."],
+        ["Day 5", "Events & Async", "Practise events, promises and async functions."],
+        ["Day 6", "Mini Project", "Build an interactive JavaScript feature."],
+        ["Day 7", "Reassess", "Solve JavaScript challenges and review."]
+    ],
+
+    "Node.js": [
+        ["Day 1", "Node Fundamentals", "Understand Node.js and its runtime."],
+        ["Day 2", "Modules", "Learn modules, npm and package management."],
+        ["Day 3", "Express", "Create a basic Express server."],
+        ["Day 4", "REST APIs", "Build GET and POST API endpoints."],
+        ["Day 5", "Database", "Connect an application to a database."],
+        ["Day 6", "Mini Project", "Build a small REST API."],
+        ["Day 7", "Reassess", "Test your API and review backend concepts."]
+    ],
+
+    "Networking": [
+        ["Day 1", "Networking Basics", "Learn OSI and TCP/IP models."],
+        ["Day 2", "IP Addressing", "Understand IPv4, IPv6 and subnetting."],
+        ["Day 3", "Protocols", "Study HTTP, DNS, TCP and UDP."],
+        ["Day 4", "Network Security", "Understand common network attacks."],
+        ["Day 5", "Tools", "Practise basic networking diagnostic tools."],
+        ["Day 6", "Mini Project", "Analyse a small network scenario."],
+        ["Day 7", "Reassess", "Review networking fundamentals."]
+    ],
+
+    "Linux": [
+        ["Day 1", "Linux Basics", "Learn the terminal and basic commands."],
+        ["Day 2", "Files & Directories", "Practise navigation, permissions and file operations."],
+        ["Day 3", "Processes", "Learn processes and system monitoring."],
+        ["Day 4", "Users & Permissions", "Practise users, groups and permissions."],
+        ["Day 5", "Networking", "Use Linux networking commands."],
+        ["Day 6", "Mini Project", "Complete a basic Linux administration task."],
+        ["Day 7", "Reassess", "Review commands and practise independently."]
+    ],
+
+    "Cybersecurity": [
+        ["Day 1", "Security Fundamentals", "Learn CIA triad and common threats."],
+        ["Day 2", "Threats", "Study phishing, malware and social engineering."],
+        ["Day 3", "Authentication", "Understand passwords, MFA and access control."],
+        ["Day 4", "Network Security", "Learn firewalls and secure communication."],
+        ["Day 5", "Security Tools", "Explore basic defensive security tools."],
+        ["Day 6", "Mini Project", "Analyse a simple security scenario."],
+        ["Day 7", "Reassess", "Review concepts and test yourself."]
+    ]
+
+};
+// =====================================================
+// OPEN / CLOSE LEARNING PLAN
+// =====================================================
+
+const learningPlanModal =
+    document.getElementById(
+        "learningPlanModal"
+    );
+
+const learningPlanDays =
+    document.getElementById(
+        "learningPlanDays"
+    );
+
+const learningPlanTitle =
+    document.getElementById(
+        "learningPlanTitle"
+    );
+
+const learningPlanSubtitle =
+    document.getElementById(
+        "learningPlanSubtitle"
+    );
+
+const learningPlanProgressText =
+    document.getElementById(
+        "learningPlanProgressText"
+    );
+
+const learningPlanProgressFill =
+    document.getElementById(
+        "learningPlanProgressFill"
+    );
+
+const learningPlanMessage =
+    document.getElementById(
+        "learningPlanMessage"
+    );
+
+
+// Current selected learning skill
+let currentLearningSkill = "";
+
+
+// Open the plan
+function openLearningPlan(skill, careerGoal) {
+
+    if (!learningPlanModal) return;
+
+    currentLearningSkill = skill;
+
+    const plan =
+        learningPlans[skill];
+
+    if (!plan) {
+
+        alert(
+            `A personalized plan for ${skill} is coming soon.`
+        );
+
+        return;
+    }
+
+
+    learningPlanTitle.textContent =
+        `7-Day ${skill} Learning Plan`;
+
+    learningPlanSubtitle.textContent =
+        `Personalized for your ${careerGoal} goal.`;
+
+
+    const storageKey =
+        `goBeyondLearning_${skill}`;
+
+    let completedDays = [];
+
+    try {
+
+        completedDays =
+            JSON.parse(
+                localStorage.getItem(
+                    storageKey
+                )
+            ) || [];
+
+    } catch (error) {
+
+        completedDays = [];
+
+    }
+
+
+    learningPlanDays.innerHTML =
+        plan.map(
+            (day, index) => {
+
+                const isCompleted =
+                    completedDays.includes(index);
+
+                return `
+
+                    <div
+                        class="learning-day ${
+                            isCompleted
+                                ? "completed"
+                                : ""
+                        }"
+                        data-day-index="${index}"
+                    >
+
+                        <input
+                            type="checkbox"
+                            class="learning-day-checkbox"
+                            data-day="${index}"
+                            ${
+                                isCompleted
+                                    ? "checked"
+                                    : ""
+                            }
+                        >
+
+                        <div class="learning-day-content">
+
+                            <span class="learning-day-number">
+                                ${day[0]}
+                            </span>
+
+                            <h4>
+                                ${day[1]}
+                            </h4>
+
+                            <p>
+                                ${day[2]}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }
+        ).join("");
+
+
+    updateLearningPlanProgress(
+        completedDays,
+        plan.length
+    );
+
+
+    learningPlanModal.classList.add(
+        "active"
+    );
+
+
+    // Add checkbox listeners
+    document
+        .querySelectorAll(
+            ".learning-day-checkbox"
+        )
+        .forEach(
+            checkbox => {
+
+                checkbox.addEventListener(
+                    "change",
+                    function () {
+
+                        const dayIndex =
+                            Number(
+                                this.dataset.day
+                            );
+
+                        let savedDays =
+                            JSON.parse(
+                                localStorage.getItem(
+                                    storageKey
+                                )
+                            ) || [];
+
+
+                        if (this.checked) {
+
+                            if (
+                                !savedDays.includes(
+                                    dayIndex
+                                )
+                            ) {
+
+                                savedDays.push(
+                                    dayIndex
+                                );
+
+                            }
+
+                        } else {
+
+                            savedDays =
+                                savedDays.filter(
+                                    day =>
+                                        day !==
+                                        dayIndex
+                                );
+
+                        }
+
+
+                        localStorage.setItem(
+                            storageKey,
+                            JSON.stringify(
+                                savedDays
+                            )
+                        );
+
+
+                        const dayCard =
+                            this.closest(
+                                ".learning-day"
+                            );
+
+                        if (dayCard) {
+
+                            dayCard.classList.toggle(
+                                "completed",
+                                this.checked
+                            );
+
+                        }
+
+
+                        updateLearningPlanProgress(
+                            savedDays,
+                            plan.length
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+}
+
+
+// Update progress
+function updateLearningPlanProgress(
+    completedDays,
+    totalDays
+) {
+
+    const completed =
+        completedDays.length;
+
+    const percentage =
+        Math.round(
+            (completed / totalDays) * 100
+        );
+
+
+    if (learningPlanProgressText) {
+
+        learningPlanProgressText.textContent =
+            `${completed} / ${totalDays} days`;
+
+    }
+
+
+    if (learningPlanProgressFill) {
+
+        learningPlanProgressFill.style.width =
+            `${percentage}%`;
+
+    }
+
+
+    if (learningPlanMessage) {
+
+        if (completed === totalDays) {
+
+            learningPlanMessage.textContent =
+                "🎉 Plan completed! You're ready to reassess this skill.";
+
+        } else if (completed > 0) {
+
+            learningPlanMessage.textContent =
+                `${completed} day${completed > 1 ? "s" : ""} completed. Keep going!`;
+
+        } else {
+
+            learningPlanMessage.textContent =
+                "Complete each day to strengthen this skill.";
+
+        }
+
+    }
+
+}
+
+
+// Close buttons
+function closeLearningPlan() {
+
+    if (learningPlanModal) {
+
+        learningPlanModal.classList.remove(
+            "active"
+        );
+
+    }
+
+}
+
+
+const closeLearningPlanButton =
+    document.getElementById(
+        "closeLearningPlan"
+    );
+
+const closeLearningPlanBottom =
+    document.getElementById(
+        "closeLearningPlanBottom"
+    );
+
+
+if (closeLearningPlanButton) {
+
+    closeLearningPlanButton.addEventListener(
+        "click",
+        closeLearningPlan
+    );
+
+}
+
+
+if (closeLearningPlanBottom) {
+
+    closeLearningPlanBottom.addEventListener(
+        "click",
+        closeLearningPlan
+    );
+
+}
+
+
+if (learningPlanModal) {
+
+    learningPlanModal.addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target ===
+                learningPlanModal
+            ) {
+
+                closeLearningPlan();
+
+            }
+
+        }
+    );
+
+}
+
+// ================================
+// STUDENT PROFILE
+// ================================
+
+const profileForm = document.getElementById("profileForm");
+
+if (profileForm) {
+
+    profileForm.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+        const studentProfile = {
+
+            name: document.getElementById("studentName").value,
+
+            branch: document.getElementById("branch").value,
+
+            year: document.getElementById("year").value,
+
+            careerGoal: document.getElementById("careerGoal").value,
+
+            skills: document
+                .getElementById("skills")
+                .value
+                .split(",")
+                .map(skill => skill.trim())
+                .filter(skill => skill !== ""),
+
+            interests: document
+                .getElementById("interests")
+                .value
+                .split(",")
+                .map(interest => interest.trim())
+                .filter(interest => interest !== "")
+
+        };
+
+
+        fetch("http://127.0.0.1:5000/api/student", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(studentProfile)
+
+        })
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            console.log(
+                "Student profile sent to backend:",
+                data
+            );
+
+        })
+
+        .catch(error => {
+
+            console.error(
+                "Backend profile upload failed:",
+                error
+            );
+
+        });
+
+
+        // Save profile in browser
+        localStorage.setItem(
+            "goBeyondProfile",
+            JSON.stringify(studentProfile)
+        );
+
+
+        // Update dashboard immediately with the new profile
+        updateDashboard(studentProfile);
+
+
+        alert(
+            "Profile saved successfully! 🎉\n\n" +
+            "Career Goal: " +
+            studentProfile.careerGoal
+        );
+
+    });
+
+}
+
+
+// ================================
+// UPDATE DASHBOARD FROM PROFILE
+// ================================
+
+function updateDashboard(profile) {
+
+    // Update student name
+    const welcomeName =
+        document.querySelector(".welcome h1 span");
+
+    if (welcomeName) {
+
+        welcomeName.textContent =
+            profile.name;
+
+    }
+
+
+    // Update branch and year
+    const studentBadge =
+        document.querySelector(".student-badge");
+
+    if (studentBadge) {
+
+        studentBadge.innerHTML = `
+            <strong>
+                ${
+                    profile.branch === "Computer Science"
+                    ? "CSE"
+                    : profile.branch.substring(0, 3).toUpperCase()
+                }
+            </strong>
+
+            <span>
+                ${profile.year}
+            </span>
+        `;
+
+    }
+
+
+    // Update career goal stat
+    const statCards =
+        document.querySelectorAll(".stat-card");
+
+    if (statCards.length > 0) {
+
+        const careerGoalHeading =
+            statCards[0].querySelector("h3");
+
+        if (careerGoalHeading) {
+
+            careerGoalHeading.textContent =
+                profile.careerGoal;
+
+        }
+
+    }
+
+updateCareerRoadmap(
+    profile.careerGoal,
+    profile.skills || []
+);
+
+updateSkillGapAnalysis(profile);
+
+updatePriorities(profile.careerGoal);
+
+updateOpportunities(profile.careerGoal);
+
+    console.log(
+        "Opportunity update:",
+        profile.careerGoal
+    );
+
+}
+
+
+// ================================
+// DYNAMIC PRIORITIES
+// ================================
+
+const priorityData = {
+
+    "AI/ML Engineer": {
+
+        priority1: {
+
+            tag: "Deadline Soon",
+
+            icon: "🔴",
+
+            title: "AI/ML Internship",
+
+            description:
+                "You have a 75% match. Improve your SQL and Machine Learning skills."
+
+        },
+
+        priority2: {
+
+            tag: "Skill Gap",
+
+            icon: "🧠",
+
+            title: "Learn SQL",
+
+            description:
+                "SQL is required for your recommended AI/ML opportunities."
+
+        },
+
+        priority3: {
+
+            tag: "Recommended",
+
+            icon: "⭐",
+
+            title: "Python & AI Workshop",
+
+            description:
+                "This workshop matches your interests in Artificial Intelligence."
+
+        }
+
+    },
+
+
+    "Web Developer": {
+
+        priority1: {
+
+            tag: "Deadline Soon",
+
+            icon: "🔴",
+
+            title: "Web Development Internship",
+
+            description:
+                "You have a strong match. Strengthen your JavaScript and React skills."
+
+        },
+
+        priority2: {
+
+            tag: "Skill Gap",
+
+            icon: "🧠",
+
+            title: "Learn React",
+
+            description:
+                "React is an important skill for your recommended web development opportunities."
+
+        },
+
+        priority3: {
+
+            tag: "Recommended",
+
+            icon: "⭐",
+
+            title: "Web Development Hackathon",
+
+            description:
+                "This hackathon matches your interest in building web applications."
+
+        }
+
+    },
+
+
+    "Data Scientist": {
+
+        priority1: {
+
+            tag: "Deadline Soon",
+
+            icon: "🔴",
+
+            title: "Data Science Internship",
+
+            description:
+                "You have a strong match. Improve your Statistics and Data Analysis skills."
+
+        },
+
+        priority2: {
+
+            tag: "Skill Gap",
+
+            icon: "🧠",
+
+            title: "Learn Statistics",
+
+            description:
+                "Statistics is required for your recommended Data Science opportunities."
+
+        },
+
+        priority3: {
+
+            tag: "Recommended",
+
+            icon: "⭐",
+
+            title: "Data Science Workshop",
+
+            description:
+                "This workshop matches your interest in Data Science and Machine Learning."
+
+        }
+
+    },
+
+
+    "Cybersecurity Engineer": {
+
+        priority1: {
+
+            tag: "Deadline Soon",
+
+            icon: "🔴",
+
+            title: "Cybersecurity Internship",
+
+            description:
+                "You have a strong match. Strengthen your Networking and Linux skills."
+
+        },
+
+        priority2: {
+
+            tag: "Skill Gap",
+
+            icon: "🧠",
+
+            title: "Learn Networking",
+
+            description:
+                "Networking is an important skill for your recommended cybersecurity opportunities."
+
+        },
+
+        priority3: {
+
+            tag: "Recommended",
+
+            icon: "⭐",
+
+            title: "Cybersecurity Workshop",
+
+            description:
+                "This workshop matches your interest in cybersecurity and security tools."
+
+        }
+
+    }
+
+};
+
+
+function updatePriorities(careerGoal) {
+
+    const priorities =
+        priorityData[careerGoal];
+
+    if (!priorities) return;
+
+
+    Object.keys(priorities).forEach(priorityId => {
+
+        const card =
+            document.getElementById(priorityId);
+
+        if (!card) return;
+
+
+        const data =
+            priorities[priorityId];
+
+
+        const tag =
+            card.querySelector(".tag");
+
+        const icon =
+            card.querySelector(
+                ".priority-top span:last-child"
+            );
+
+        const title =
+            card.querySelector("h3");
+
+        const description =
+            card.querySelector("p");
+
+
+        if (tag) {
+
+            tag.textContent =
+                data.tag;
+
+        }
+
+
+        if (icon) {
+
+            icon.textContent =
+                data.icon;
+
+        }
+
+
+        if (title) {
+
+            title.textContent =
+                data.title;
+
+        }
+
+
+        if (description) {
+
+            description.textContent =
+                data.description;
+
+        }
+
+    });
+
+}
+// ================================
+// DYNAMIC SKILL GAP ANALYSIS
+// SLIDE 5
+// ================================
+
+const skillGapData = {
+
+    "AI/ML Engineer": [
+
+        {
+            skill: "Machine Learning",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "HIGH",
+            priorityClass: "high",
+            demand: "Very High",
+            opportunities: 6,
+            reason:
+                "Machine Learning is a core requirement for AI/ML roles and many relevant opportunities.",
+            action:
+                "Start with supervised learning, model evaluation and practical ML projects."
+        },
+
+        {
+            skill: "SQL",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            priorityClass: "medium",
+            demand: "High",
+            opportunities: 4,
+            reason:
+                "SQL is frequently required for working with datasets and real-world AI applications.",
+            action:
+                "Practice SELECT, JOIN, GROUP BY and subqueries using real datasets."
+        },
+
+        {
+            skill: "Statistics",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            priorityClass: "medium",
+            demand: "High",
+            opportunities: 4,
+            reason:
+                "Statistics helps you understand datasets, evaluate models and interpret results.",
+            action:
+                "Learn probability, distributions, mean, variance and basic hypothesis testing."
+        }
+
+    ],
+
+
+    "Web Developer": [
+
+        {
+            skill: "React.js",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "HIGH",
+            priorityClass: "high",
+            demand: "Very High",
+            opportunities: 7,
+            reason:
+                "React is widely used for building modern frontend applications.",
+            action:
+                "Learn components, props, state, hooks and build a small React project."
+        },
+
+        {
+            skill: "JavaScript",
+            current: "Intermediate",
+            required: "Advanced",
+            priority: "HIGH",
+            priorityClass: "high",
+            demand: "Very High",
+            opportunities: 8,
+            reason:
+                "Strong JavaScript fundamentals are essential for modern web development.",
+            action:
+                "Practice DOM manipulation, APIs, asynchronous JavaScript and ES6+."
+        },
+
+        {
+            skill: "Node.js",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            priorityClass: "medium",
+            demand: "High",
+            opportunities: 5,
+            reason:
+                "Node.js allows you to build backend APIs and full-stack applications.",
+            action:
+                "Learn Node.js, Express.js and build a REST API."
+        }
+
+    ],
+
+
+    "Data Scientist": [
+
+        {
+            skill: "Statistics",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "HIGH",
+            priorityClass: "high",
+            demand: "Very High",
+            opportunities: 7,
+            reason:
+                "Statistics is fundamental for analysing data and interpreting results.",
+            action:
+                "Practice probability, distributions, hypothesis testing and statistical analysis."
+        },
+
+        {
+            skill: "SQL",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "HIGH",
+            priorityClass: "high",
+            demand: "High",
+            opportunities: 6,
+            reason:
+                "Data scientists regularly use SQL to retrieve and analyse data.",
+            action:
+                "Practice joins, aggregation, subqueries and analytical queries."
+        },
+
+        {
+            skill: "Machine Learning",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            priorityClass: "medium",
+            demand: "Very High",
+            opportunities: 6,
+            reason:
+                "Machine Learning is an important part of many modern Data Science roles.",
+            action:
+                "Learn regression, classification, model evaluation and feature engineering."
+        }
+
+    ],
+
+
+    "Cybersecurity Engineer": [
+
+        {
+            skill: "Networking",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "HIGH",
+            priorityClass: "high",
+            demand: "Very High",
+            opportunities: 6,
+            reason:
+                "Networking knowledge is essential for understanding attacks, traffic and security systems.",
+            action:
+                "Learn TCP/IP, HTTP, DNS, ports, protocols and network troubleshooting."
+        },
+
+        {
+            skill: "Linux",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            priorityClass: "medium",
+            demand: "High",
+            opportunities: 5,
+            reason:
+                "Linux is widely used in security environments and penetration testing.",
+            action:
+                "Practice Linux commands, permissions, processes and basic shell scripting."
+        },
+
+        {
+            skill: "Security Tools",
+            current: "Beginner",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            priorityClass: "medium",
+            demand: "High",
+            opportunities: 4,
+            reason:
+                "Hands-on security tools help convert cybersecurity concepts into practical skills.",
+            action:
+                "Practice with tools such as Wireshark, Nmap and basic security labs."
+        }
+
+    ]
+
+};
+
+
+// ================================
+// UPDATE SKILL GAP ANALYSIS
+// ================================
+
+function updateSkillGapAnalysis(profile) {
+
+    const gaps =
+        skillGapData[profile.careerGoal] ||
+        skillGapData["AI/ML Engineer"];
+
+
+    const studentSkills =
+        profile.skills.map(skill =>
+            skill.toLowerCase().trim()
+        );
+
+
+    let criticalCount = 0;
+    let mediumCount = 0;
+    let lowCount = 0;
+
+
+    gaps.forEach(gap => {
+
+        if (gap.priority === "HIGH") {
+            criticalCount++;
+        }
+
+        else if (gap.priority === "MEDIUM") {
+            mediumCount++;
+        }
+
+        else {
+            lowCount++;
+        }
+
+    });
+
+
+    // Update gap counts if elements exist
+    const criticalElement =
+        document.getElementById("criticalGapCount");
+
+    const mediumElement =
+        document.getElementById("mediumGapCount");
+
+    const lowElement =
+        document.getElementById("lowGapCount");
+
+
+    if (criticalElement) {
+        criticalElement.textContent =
+            criticalCount;
+    }
+
+    if (mediumElement) {
+        mediumElement.textContent =
+            mediumCount;
+    }
+
+    if (lowElement) {
+        lowElement.textContent =
+            lowCount;
+    }
+
+
+    // Update individual skill gaps
+    gaps.forEach((gap, index) => {
+
+        const card =
+            document.querySelector(
+                `[data-skill-gap="${index}"]`
+            );
+
+
+        if (!card) return;
+
+
+        const title =
+            card.querySelector(".skill-gap-name");
+
+        const current =
+            card.querySelector(".skill-gap-current");
+
+        const required =
+            card.querySelector(".skill-gap-required");
+
+        const priority =
+            card.querySelector(".skill-gap-priority");
+
+        const demand =
+            card.querySelector(".skill-gap-demand");
+
+        const opportunities =
+            card.querySelector(".skill-gap-opportunities");
+
+        const reason =
+            card.querySelector(".skill-gap-reason");
+
+        const action =
+            card.querySelector(".skill-gap-action");
+
+
+        if (title) {
+            title.textContent =
+                gap.skill;
+        }
+
+
+        if (current) {
+            current.textContent =
+                gap.current;
+        }
+
+
+        if (required) {
+            required.textContent =
+                gap.required;
+        }
+
+
+        if (priority) {
+            priority.textContent =
+                gap.priority;
+
+            priority.className =
+                `skill-gap-priority ${gap.priorityClass}`;
+        }
+
+
+        if (demand) {
+            demand.textContent =
+                gap.demand;
+        }
+
+
+        if (opportunities) {
+            opportunities.textContent =
+                `${gap.opportunities} matched opportunities`;
+        }
+
+
+        if (reason) {
+            reason.textContent =
+                gap.reason;
+        }
+
+
+        if (action) {
+            action.textContent =
+                gap.action;
+        }
+
+    });
+
+
+    // ================================
+    // NEXT BEST ACTION
+    // ================================
+
+    const highestPriorityGap =
+        gaps.find(
+            gap => gap.priority === "HIGH"
+        ) || gaps[0];
+
+
+    const nextActionTitle =
+        document.getElementById(
+            "nextActionTitle"
+        );
+
+    const nextActionText =
+        document.getElementById(
+            "nextActionText"
+        );
+
+    const nextActionTag =
+        document.getElementById(
+            "nextActionTag"
+        );
+
+
+    if (nextActionTitle) {
+
+        nextActionTitle.textContent =
+            `Strengthen your ${highestPriorityGap.skill} skills`;
+
+    }
+
+
+    if (nextActionText) {
+
+        nextActionText.textContent =
+            highestPriorityGap.reason +
+            " Start by following a focused learning plan and building a practical project.";
+
+    }
+
+
+    if (nextActionTag) {
+
+        nextActionTag.textContent =
+            `${highestPriorityGap.priority} PRIORITY`;
+
+    }
+
+}
+// =========================================
+// START LEARNING BUTTON
+// Connects Next Best Action to 7-Day Plan
+// =========================================
+
+const nextStartLearning =
+    document.getElementById("nextStartLearning");
+
+if (nextStartLearning) {
+
+    nextStartLearning.addEventListener(
+        "click",
+        function () {
+
+            const savedProfile =
+                localStorage.getItem("goBeyondProfile");
+
+            if (!savedProfile) {
+                alert("Please save your profile first.");
+                return;
+            }
+
+            const profile =
+                JSON.parse(savedProfile);
+
+            const gaps =
+                skillGapData[profile.careerGoal] ||
+                skillGapData["AI/ML Engineer"];
+
+            const highestPriorityGap =
+                gaps.find(
+                    gap => gap.priority === "HIGH"
+                ) || gaps[0];
+
+            const learningSkillMap = {
+                "React.js": "React",
+                "Security Tools": "Cybersecurity"
+            };
+
+            const learningSkill =
+                learningSkillMap[
+                    highestPriorityGap.skill
+                ] || highestPriorityGap.skill;
+
+            openLearningPlan(
+                learningSkill,
+                profile.careerGoal
+            );
+
+        }
+    );
+
+}
+
+
+// ================================
+// DYNAMIC CAREER ROADMAP
+// ================================
+
+const careerPaths = {
+
+    "AI/ML Engineer": [
+
+        "Python",
+        "SQL",
+        "Machine Learning",
+        "AI/ML Projects",
+        "Internship",
+        "AI/ML Engineer"
+
+    ],
+
+
+    "Web Developer": [
+
+        "HTML & CSS",
+        "JavaScript",
+        "React",
+        "Frontend Projects",
+        "Internship",
+        "Web Developer"
+
+    ],
+
+
+    "Data Scientist": [
+
+        "Python",
+        "Statistics",
+        "SQL",
+        "Data Analysis",
+        "Machine Learning",
+        "Data Scientist"
+
+    ],
+
+
+    "Cybersecurity Engineer": [
+
+        "Networking",
+        "Linux",
+        "Cybersecurity Fundamentals",
+        "Security Tools",
+        "Security Projects",
+        "Cybersecurity Engineer"
+
+    ]
+
+};
+
+
+function updateCareerRoadmap(careerGoal, studentSkills = []) {
+
+    const roadmap =
+        document.getElementById("careerRoadmap");
+
+    if (!roadmap) return;
+
+    const steps =
+        careerPaths[careerGoal];
+
+    if (!steps) return;
+
+
+    // -----------------------------------------
+    // ROADMAP TITLE
+    // -----------------------------------------
+
+    const roadmapTitle =
+        document.getElementById(
+            "careerRoadmapTitle"
+        );
+
+    if (roadmapTitle) {
+
+        const roadmapTitles = {
+
+            "AI/ML Engineer":
+                "AI/ML Career Roadmap",
+
+            "Web Developer":
+                "Web Development Career Roadmap",
+
+            "Data Scientist":
+                "Data Science Career Roadmap",
+
+            "Cybersecurity Engineer":
+                "Cybersecurity Career Roadmap",
+
+            "Java Backend Developer":
+                "Java Backend Development Career Roadmap"
+
+        };
+
+        roadmapTitle.textContent =
+            roadmapTitles[careerGoal] ||
+            "Career Roadmap";
+    }
+
+
+    // -----------------------------------------
+    // NORMALIZE STUDENT SKILLS
+    // -----------------------------------------
+
+    const normalizedSkills =
+        studentSkills.map(skill =>
+            skill
+                .toLowerCase()
+                .trim()
+        );
+
+
+    // -----------------------------------------
+    // CHECK WHETHER A ROADMAP SKILL IS KNOWN
+    // -----------------------------------------
+
+    function hasSkill(step) {
+
+        const skillAliases = {
+
+            "HTML & CSS": [
+                "html",
+                "css",
+                "html & css"
+            ],
+
+            "JavaScript": [
+                "javascript",
+                "js"
+            ],
+
+            "React": [
+                "react",
+                "react.js",
+                "reactjs"
+            ],
+
+            "Python": [
+                "python"
+            ],
+
+            "SQL": [
+                "sql"
+            ],
+
+            "Machine Learning": [
+                "machine learning",
+                "ml"
+            ],
+
+            "Statistics": [
+                "statistics",
+                "statistics & probability"
+            ],
+
+            "Data Analysis": [
+                "data analysis",
+                "pandas",
+                "numpy"
+            ],
+
+            "Networking": [
+                "networking",
+                "computer networks"
+            ],
+
+            "Linux": [
+                "linux"
+            ],
+
+            "Cybersecurity Fundamentals": [
+                "cybersecurity",
+                "cybersecurity fundamentals"
+            ],
+
+            "Java": [
+                "java"
+            ],
+
+            "Spring Boot": [
+                "spring boot"
+            ]
+
+        };
+
+
+        const aliases =
+            skillAliases[step] || [
+                step.toLowerCase()
+            ];
+
+
+        return aliases.some(alias =>
+            normalizedSkills.includes(alias)
+        );
+
+    }
+
+
+    // -----------------------------------------
+    // FIND CURRENT FOCUS
+    // -----------------------------------------
+
+    let currentFocusFound = false;
+
+
+    roadmap.innerHTML = "";
+
+
+    steps.forEach((step, index) => {
+
+        const isCareerGoal =
+            index === steps.length - 1;
+
+
+        let status =
+            "Upcoming";
+
+        let statusClass =
+            "";
+
+
+        // Career goal
+        if (isCareerGoal) {
+
+            status =
+                "Career Goal";
+
+        }
+
+
+        // Skill already known
+        else if (hasSkill(step)) {
+
+            status =
+                "Completed";
+
+            statusClass =
+                "completed";
+
+        }
+
+
+        // First missing skill
+        else if (!currentFocusFound) {
+
+            status =
+                "Current Focus";
+
+            statusClass =
+                "current";
+
+            currentFocusFound = true;
+
+        }
+
+
+        // Create roadmap step
+        const stepElement =
+            document.createElement("div");
+
+        stepElement.className =
+            "roadmap-step";
+
+
+        if (statusClass) {
+
+            stepElement.classList.add(
+                statusClass
+            );
+
+        }
+
+
+        let icon =
+            index + 1;
+
+
+        if (status === "Completed") {
+
+            icon = "✓";
+
+        }
+
+
+        if (status === "Career Goal") {
+
+            icon = "🎯";
+
+        }
+
+
+        stepElement.innerHTML = `
+
+            <span>
+                ${icon}
+            </span>
+
+            <strong>
+                ${step}
+            </strong>
+
+            <small>
+                ${status}
+            </small>
+
+        `;
+
+
+        roadmap.appendChild(
+            stepElement
+        );
+
+
+        // Connecting line
+        if (
+            index <
+            steps.length - 1
+        ) {
+
+            const line =
+                document.createElement(
+                    "div"
+                );
+
+            line.className =
+                "roadmap-line";
+
+            roadmap.appendChild(
+                line
+            );
+
+        }
+
+    });
+
+}
+
+
+// ================================
+// CAREER-SPECIFIC OPPORTUNITIES
+// ================================
+
+const careerOpportunities = {
+
+    "AI/ML Engineer": [
+
+        {
+            title: "AI/ML Internship",
+            organization: "TechNova",
+            type: "Internship",
+            match: 75,
+            deadline: "Closes in 5 days",
+            requiredSkills: [
+                "Python",
+                "Machine Learning",
+                "SQL"
+            ]
+        },
+
+        {
+            title: "Generative AI Workshop",
+            organization: "AI Innovation Club",
+            type: "Workshop",
+            match: 88,
+            deadline: "This Saturday",
+            requiredSkills: [
+                "Python",
+                "AI"
+            ]
+        },
+
+        {
+            title: "AI Hackathon 2026",
+            organization: "Tech Community",
+            type: "Hackathon",
+            match: 82,
+            deadline: "Closes in 8 days",
+            requiredSkills: [
+                "Python",
+                "Machine Learning"
+            ]
+        }
+
+    ],
+
+
+    "Web Developer": [
+
+        {
+            title: "Frontend Development Internship",
+            organization: "WebWorks",
+            type: "Internship",
+            match: 90,
+            deadline: "Closes in 4 days",
+            requiredSkills: [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ]
+        },
+
+        {
+            title: "React Development Workshop",
+            organization: "Developer Community",
+            type: "Workshop",
+            match: 85,
+            deadline: "This Friday",
+            requiredSkills: [
+                "JavaScript",
+                "React"
+            ]
+        },
+
+        {
+            title: "Frontend Hackathon",
+            organization: "CodeFest",
+            type: "Hackathon",
+            match: 78,
+            deadline: "Closes in 7 days",
+            requiredSkills: [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ]
+        }
+
+    ],
+
+
+    "Data Scientist": [
+
+        {
+            title: "Data Science Internship",
+            organization: "DataLabs",
+            type: "Internship",
+            match: 84,
+            deadline: "Closes in 6 days",
+            requiredSkills: [
+                "Python",
+                "SQL",
+                "Statistics"
+            ]
+        },
+
+        {
+            title: "Data Analytics Workshop",
+            organization: "Analytics Club",
+            type: "Workshop",
+            match: 80,
+            deadline: "This Saturday",
+            requiredSkills: [
+                "Python",
+                "Data Analysis"
+            ]
+        },
+
+        {
+            title: "Data Science Challenge",
+            organization: "Tech Community",
+            type: "Hackathon",
+            match: 76,
+            deadline: "Closes in 10 days",
+            requiredSkills: [
+                "Python",
+                "Statistics"
+            ]
+        }
+
+    ],
+
+
+    "Cybersecurity Engineer": [
+
+        {
+            title: "Cybersecurity Internship",
+            organization: "SecureNet",
+            type: "Internship",
+            match: 81,
+            deadline: "Closes in 5 days",
+            requiredSkills: [
+                "Networking",
+                "Linux",
+                "Cybersecurity"
+            ]
+        },
+
+        {
+            title: "Ethical Hacking Workshop",
+            organization: "Cyber Club",
+            type: "Workshop",
+            match: 87,
+            deadline: "This Friday",
+            requiredSkills: [
+                "Linux",
+                "Cybersecurity"
+            ]
+        },
+
+        {
+            title: "Cybersecurity Hackathon",
+            organization: "Security Community",
+            type: "Hackathon",
+            match: 79,
+            deadline: "Closes in 9 days",
+            requiredSkills: [
+                "Networking",
+                "Linux"
+            ]
+        }
+
+    ],
+
+
+    "Java Backend Developer": [
+
+        {
+            title: "Java Backend Internship",
+            organization: "CodeForge",
+            type: "Internship",
+            match: 89,
+            deadline: "Closes in 7 days",
+            requiredSkills: [
+                "Java",
+                "SQL",
+                "Spring Boot"
+            ]
+        },
+
+        {
+            title: "Backend Development Hackathon",
+            organization: "DevCommunity",
+            type: "Hackathon",
+            match: 86,
+            deadline: "Registration closes in 5 days",
+            requiredSkills: [
+                "Java",
+                "APIs",
+                "SQL"
+            ]
+        }
+
+    ]
+
+};
+
+
+// ================================
+// UPDATE OPPORTUNITIES
+// ================================
+
+async function updateOpportunities(careerGoal) {
+
+    const opportunityGrid =
+        document.getElementById(
+            "opportunityGrid"
+        );
+
+    if (!opportunityGrid) return;
+
+
+    try {
+
+        const response =
+            await fetch(
+                `http://127.0.0.1:5000/api/personalized-opportunities/${encodeURIComponent(careerGoal)}`
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Failed to fetch personalized opportunities"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        const opportunities =
+            data.opportunities || [];
+
+
+        const savedProfile =
+            JSON.parse(
+                localStorage.getItem(
+                    "goBeyondProfile"
+                )
+            );
+
+
+        const studentSkills =
+            savedProfile
+            ? savedProfile.skills
+            : [];
+
+
+        opportunityGrid.innerHTML =
+            "";
+
+
+        opportunities.forEach(
+            (opportunity) => {
+
+                const calculatedMatch =
+                    calculateSkillMatch(
+                        studentSkills,
+                        opportunity.requiredSkills
+                    );
+
+
+                const skillGaps =
+                    findSkillGaps(
+                        studentSkills,
+                        opportunity.requiredSkills
+                    );
+
+
+                const learningRecommendations =
+                    skillGaps
+                        .map(
+                            skill =>
+                                getLearningRecommendation(
+                                    skill
+                                )
+                        )
+                        .join(", ");
+
+
+                const card =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                card.className =
+                    "opportunity-card";
+
+
+                card.innerHTML = `
+
+                    <div class="opportunity-header">
+
+                        <span class="tag blue">
+                            ${opportunity.type}
+                        </span>
+
+                        <span class="match">
+                            ${calculatedMatch}% Match
+                        </span>
+
+                    </div>
+
+                    ${
+                        skillGaps.length > 0
+
+                        ? `
+
+                        <div class="skill-gap">
+
+                            <strong>
+                                Skill Gap:
+                            </strong>
+
+                            ${learningRecommendations}
+
+                        </div>
+
+                        `
+
+                        : `
+
+                        <div class="skill-gap">
+
+                            <strong>
+                                ✅ Skills Matched!
+                            </strong>
+
+                        </div>
+
+                        `
+                    }
+
+                    <h3>
+                        ${opportunity.title}
+                    </h3>
+
+                    <p class="organization">
+                        ${opportunity.organization}
+                    </p>
+
+                    <p>
+                        Recommended for your
+                        ${careerGoal} journey.
+                    </p>
+
+                    <p class="deadline">
+                        ⏰ ${opportunity.deadline}
+                    </p>
+
+                    <button class="opportunity-action">
+                        View Opportunity →
+                    </button>
+
+                `;
+
+
+                opportunityGrid.appendChild(
+                    card
+                );
+
+            }
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Error loading personalized opportunities:",
+            error
+        );
+
+    }
+
+}
+
+
+// ================================
+// PERSONALIZED SKILL MATCH
+// ================================
+
+function calculateSkillMatch(
+    studentSkills,
+    requiredSkills
+) {
+
+    if (
+        !requiredSkills ||
+        requiredSkills.length === 0
+    ) {
+
+        return 0;
+
+    }
+
+
+    const normalizedStudentSkills =
+        studentSkills.map(
+            skill =>
+                skill.toLowerCase().trim()
+        );
+
+
+    const matchedSkills =
+        requiredSkills.filter(
+            skill =>
+                normalizedStudentSkills.includes(
+                    skill.toLowerCase().trim()
+                )
+        );
+
+
+    return Math.round(
+        (
+            matchedSkills.length /
+            requiredSkills.length
+        ) * 100
+    );
+
+}
+
+
+// ================================
+// SKILL GAP DETECTION
+// ================================
+
+function findSkillGaps(
+    studentSkills,
+    requiredSkills
+) {
+
+    const normalizedStudentSkills =
+        studentSkills.map(
+            skill =>
+                skill.toLowerCase().trim()
+        );
+
+
+    const safeRequiredSkills =
+        requiredSkills || [];
+
+
+    return safeRequiredSkills.filter(
+        skill =>
+            !normalizedStudentSkills.includes(
+                skill.toLowerCase().trim()
+            )
+    );
+
+}
+
+
+// ================================
+// LEARNING RECOMMENDATION
+// ================================
+
+function getLearningRecommendation(skill) {
+
+    const recommendations = {
+
+        "HTML":
+            "Learn HTML fundamentals",
+
+        "CSS":
+            "Practice CSS and responsive design",
+
+        "JavaScript":
+            "Learn JavaScript fundamentals",
+
+        "React":
+            "Learn React fundamentals",
+
+        "Python":
+            "Strengthen Python programming",
+
+        "SQL":
+            "Practice SQL and database queries",
+
+        "Statistics":
+            "Study statistics for data science",
+
+        "Java":
+            "Strengthen Java programming",
+
+        "Spring Boot":
+            "Learn Spring Boot fundamentals",
+
+        "Networking":
+            "Learn computer networking fundamentals",
+
+        "Linux":
+            "Practice Linux fundamentals",
+
+        "Cybersecurity":
+            "Study cybersecurity fundamentals"
+
+    };
+
+
+    return recommendations[skill] ||
+        `Learn ${skill} fundamentals`;
+
+}
+
+
+// Load saved profile when website opens
+const savedProfile =
+    localStorage.getItem(
+        "goBeyondProfile"
+    );
+
+
+if (savedProfile) {
+
+    const profile =
+        JSON.parse(savedProfile);
+
+    updateDashboard(profile);
+
+}
+
+
+// ================================
+// BACKEND CONNECTION TEST
+// ================================
+
+fetch(
+    "http://127.0.0.1:5000/api/health"
+)
+
+    .then(
+        response =>
+            response.json()
+    )
+
+    .then(
+        data => {
+
+            console.log(
+                "Backend connected:",
+                data
+            );
+
+        }
+    )
+
+    .catch(
+        error => {
+
+            console.error(
+                "Backend connection failed:",
+                error
+            );
+
+        }
+    );
+
+
+// ===============================
+// JOURNAL & NOTES
+// ===============================
+
+const journalTitle =
+    document.getElementById(
+        "journalTitle"
+    );
+
+const journalText =
+    document.getElementById(
+        "journalText"
+    );
+
+const saveJournalBtn =
+    document.getElementById(
+        "saveJournalBtn"
+    );
+
+const journalEntriesList =
+    document.getElementById(
+        "journalEntriesList"
+    );
+
+
+let journalEntries =
+    JSON.parse(
+        localStorage.getItem(
+            "goBeyondJournal"
+        )
+    ) || [];
+
+
+if (
+    journalTitle &&
+    journalText &&
+    saveJournalBtn &&
+    journalEntriesList
+) {
+
+    saveJournalBtn.addEventListener(
+        "click",
+        function () {
+
+            const title =
+                journalTitle.value.trim();
+
+
+            const text =
+                journalText.value.trim();
+
+
+            if (
+                title === "" ||
+                text === ""
+            ) {
+
+                alert(
+                    "Please enter a title and your thoughts before saving."
+                );
+
+                return;
+
+            }
+
+
+            const entry = {
+
+                id: Date.now(),
+
+                title: title,
+
+                text: text,
+
+                date:
+                    new Date().toLocaleDateString(
+                        "en-IN",
+                        {
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric"
+                        }
+                    )
+
+            };
+
+
+            journalEntries.unshift(
+                entry
+            );
+
+
+            localStorage.setItem(
+                "goBeyondJournal",
+                JSON.stringify(
+                    journalEntries
+                )
+            );
+
+
+            journalTitle.value =
+                "";
+
+            journalText.value =
+                "";
+
+
+            displayJournalEntries();
+
+
+            alert(
+                "Journal entry saved successfully! 📝"
+            );
+
+        }
+    );
+
+
+    function displayJournalEntries() {
+
+        if (
+            journalEntries.length === 0
+        ) {
+
+            journalEntriesList.innerHTML = `
+
+                <p class="empty-journal">
+                    Your saved entries will appear here.
+                </p>
+
+            `;
+
+            return;
+
+        }
+
+
+        journalEntriesList.innerHTML =
+            "";
+
+
+        journalEntries.forEach(
+            function (entry) {
+
+                const entryCard =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                entryCard.className =
+                    "journal-entry";
+
+
+                entryCard.innerHTML = `
+
+                    <div class="journal-entry-header">
+
+                        <div>
+
+                            <h4>
+                                ${entry.title}
+                            </h4>
+
+                            <small>
+                                ${entry.date}
+                            </small>
+
+                        </div>
+
+                        <button
+                            class="delete-journal-btn"
+                            onclick="deleteJournalEntry(${entry.id})"
+                        >
+                            Delete
+                        </button>
+
+                    </div>
+
+                    <p>
+                        ${entry.text}
+                    </p>
+
+                `;
+
+
+                journalEntriesList.appendChild(
+                    entryCard
+                );
+
+            }
+        );
+
+    }
+
+
+    window.deleteJournalEntry =
+        function (id) {
+
+            journalEntries =
+                journalEntries.filter(
+                    function (entry) {
+
+                        return entry.id !== id;
+
+                    }
+                );
+
+
+            localStorage.setItem(
+                "goBeyondJournal",
+                JSON.stringify(
+                    journalEntries
+                )
+            );
+
+
+            displayJournalEntries();
+
+        };
+
+
+    displayJournalEntries();
+
+}
+// ===============================
+// ⭐🔥 GO-BEYOND PROGRESS
+// Stars & Streak
+// ===============================
+
+const starCountElement =
+    document.getElementById("starCount");
+
+const streakCountElement =
+    document.getElementById("streakCount");
+
+
+// Get saved progress
+let goBeyondStars =
+    parseInt(
+        localStorage.getItem(
+            "goBeyondStars"
+        )
+    ) || 0;
+
+
+let goBeyondStreak =
+    parseInt(
+        localStorage.getItem(
+            "goBeyondStreak"
+        )
+    ) || 0;
+
+
+// Display saved progress
+function updateProgressDisplay() {
+
+    if (starCountElement) {
+
+        starCountElement.textContent =
+            goBeyondStars;
+
+    }
+
+
+    if (streakCountElement) {
+
+        streakCountElement.textContent =
+            goBeyondStreak;
+
+    }
+
+}
+
+
+// Load progress when page opens
+updateProgressDisplay();
+
+
+// =========================================
+// 🎯 DAILY GO-BEYOND ACTION
+// Career-based personalization
+// =========================================
+
+const dailyActionTitle =
+    document.getElementById(
+        "dailyActionTitle"
+    );
+
+
+const dailyActionDescription =
+    document.getElementById(
+        "dailyActionDescription"
+    );
+
+
+const dailyActionReason =
+    document.getElementById(
+        "dailyActionReason"
+    );
+
+
+const dailyActions = {
+
+    "AI/ML Engineer": {
+
+        title:
+            "Complete 30 minutes of SQL practice",
+
+        description:
+            "Practice SQL for 30 minutes to strengthen an important skill for your AI/ML journey.",
+
+        reason:
+            "💡 Based on your AI/ML career roadmap"
+
+    },
+
+
+    "Web Developer": {
+
+        title:
+            "Build a small responsive webpage",
+
+        description:
+            "Spend 30 minutes improving your HTML, CSS, or JavaScript skills by building something practical.",
+
+        reason:
+            "💡 Based on your Web Development career roadmap"
+
+    },
+
+
+    "Data Scientist": {
+
+        title:
+            "Practice Python data analysis",
+
+        description:
+            "Spend 30 minutes working with Python and exploring a small dataset.",
+
+        reason:
+            "💡 Based on your Data Science career roadmap"
+
+    },
+
+
+    "Cybersecurity Engineer": {
+
+        title:
+            "Learn one cybersecurity concept",
+
+        description:
+            "Spend 30 minutes learning and taking notes on a cybersecurity concept such as networking, threats, or security fundamentals.",
+
+        reason:
+            "💡 Based on your Cybersecurity career roadmap"
+
+    }
+
+};
+
+
+function updateDailyAction() {
+
+    const careerGoal =
+        document.getElementById(
+            "careerGoal"
+        )?.value;
+
+
+    const action =
+        dailyActions[careerGoal];
+
+
+    if (!action) return;
+
+
+    if (dailyActionTitle) {
+
+        dailyActionTitle.textContent =
+            action.title;
+
+    }
+
+
+    if (dailyActionDescription) {
+
+        dailyActionDescription.textContent =
+            action.description;
+
+    }
+
+
+    if (dailyActionReason) {
+
+        dailyActionReason.textContent =
+            action.reason;
+
+    }
+
+}
+
+
+// Update when page loads
+updateDailyAction();
+
+
+// Update when career goal changes
+const careerGoalSelect =
+    document.getElementById(
+        "careerGoal"
+    );
+
+
+if (careerGoalSelect) {
+
+    careerGoalSelect.addEventListener(
+        "change",
+        updateDailyAction
+    );
+
+}
+
+
+// =========================================
+// 📝 LEARNING REFLECTION + ⭐ REWARD
+// =========================================
+
+const learningReflection =
+    document.getElementById(
+        "learningReflection"
+    );
+
+
+const completeLearningBtn =
+    document.getElementById(
+        "completeLearningBtn"
+    );
+
+
+const learningCompletionMessage =
+    document.getElementById(
+        "learningCompletionMessage"
+    );
+
+
+if (
+    completeLearningBtn &&
+    learningReflection &&
+    learningCompletionMessage
+) {
+
+    completeLearningBtn.addEventListener(
+        "click",
+        function () {
+
+            const reflection =
+                learningReflection.value.trim();
+
+
+            // Don't allow empty reflection
+            if (reflection === "") {
+
+                learningCompletionMessage.textContent =
+                    "Write a little about what you learned first. 💭";
+
+                learningReflection.focus();
+
+                return;
+
+            }
+
+
+            // Check today's completion
+            const today =
+                new Date()
+                    .toISOString()
+                    .split("T")[0];
+
+
+            const completedToday =
+                localStorage.getItem(
+                    "learningCompletedDate"
+                );
+
+
+            // Prevent duplicate reward
+            if (
+                completedToday === today
+            ) {
+
+                learningCompletionMessage.textContent =
+                    "You've already earned today's star! ⭐";
+
+                return;
+
+            }
+
+
+            // Award one star
+            goBeyondStars += 1;
+
+
+            localStorage.setItem(
+                "goBeyondStars",
+                goBeyondStars
+            );
+
+
+            // Update streak
+            const previousDate =
+                localStorage.getItem(
+                    "learningCompletedDate"
+                );
+
+
+            const yesterdayDate =
+                new Date();
+
+
+            yesterdayDate.setDate(
+                yesterdayDate.getDate() - 1
+            );
+
+
+            const yesterday =
+                yesterdayDate
+                    .toISOString()
+                    .split("T")[0];
+
+
+            if (
+                previousDate === yesterday
+            ) {
+
+                goBeyondStreak += 1;
+
+            } else {
+
+                goBeyondStreak = 1;
+
+            }
+
+
+            localStorage.setItem(
+                "goBeyondStreak",
+                goBeyondStreak
+            );
+
+
+            // Save completion date
+            localStorage.setItem(
+                "learningCompletedDate",
+                today
+            );
+
+
+            // Save reflection
+            localStorage.setItem(
+                "learningReflection",
+                reflection
+            );
+
+
+            // Update top counters
+            updateProgressDisplay();
+
+
+            // Update button
+            completeLearningBtn.textContent =
+                "Completed! ⭐";
+
+
+            completeLearningBtn.classList.add(
+                "completed"
+            );
+
+
+            completeLearningBtn.disabled =
+                true;
+
+
+            // Success message
+            learningCompletionMessage.textContent =
+                "Beautiful! You reflected on your learning and earned +1 ⭐";
+
+        }
+    );
+
+}
+
+
+// =========================================
+// 🗺️ INDUSTRY SKILL MAP
+// =========================================
+
+console.log(
+    "SKILL MAP JS LOADED"
+);
+
+
+const skillMapPage =
+    document.querySelector(
+        ".skill-map-page"
+    );
+
+
+if (skillMapPage) {
+
+    const skillData = {
+
+        "Artificial Intelligence": [
+
+            "Python",
+            "Machine Learning",
+            "Data Science",
+            "Statistics",
+            "SQL"
+
+        ],
+
+
+        "Web Development": [
+
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Git"
+
+        ],
+
+
+        "Data Science": [
+
+            "Python",
+            "SQL",
+            "Statistics",
+            "Pandas",
+            "Machine Learning"
+
+        ],
+
+
+        "Cybersecurity": [
+
+            "Networking",
+            "Linux",
+            "Python",
+            "Cryptography",
+            "Security Fundamentals"
+
+        ]
+
+    };
+
+
+    const roleSelect =
+        document.getElementById(
+            "role"
+        );
+
+
+    const domainSelect =
+        document.getElementById(
+            "domain"
+        );
+
+
+    function updateSkillMap() {
+
+        const domain =
+            domainSelect.value;
+
+
+        const requiredSkills =
+            skillData[domain] || [];
+
+
+        const savedProfile =
+            JSON.parse(
+                localStorage.getItem(
+                    "goBeyondProfile"
+                )
+            );
+
+
+        const studentSkills =
+            savedProfile?.skills?.map(
+                skill => {
+
+                    // Handles onboarding skill objects
+                    if (
+                        typeof skill === "object"
+                    ) {
+
+                        return skill.name
+                            .toLowerCase()
+                            .trim();
+
+                    }
+
+
+                    // Handles older string format
+                    return skill
+                        .toLowerCase()
+                        .trim();
+
+                }
+            ) || [];
+
+
+        const matchedSkills =
+            requiredSkills.filter(
+                skill =>
+
+                    studentSkills.includes(
+                        skill
+                            .toLowerCase()
+                            .trim()
+                    )
+
+            );
+
+
+        const gapSkills =
+            requiredSkills.filter(
+                skill =>
+
+                    !studentSkills.includes(
+                        skill
+                            .toLowerCase()
+                            .trim()
+                    )
+
+            );
+
+
+        updateSkillNodes(
+            requiredSkills,
+            matchedSkills
+        );
+
+
+        const matchedCount =
+            document.getElementById(
+                "matchedCount"
+            );
+
+
+        const requiredCount =
+            document.getElementById(
+                "requiredCount"
+            );
+
+
+        const gapCount =
+            document.getElementById(
+                "gapCount"
+            );
+
+
+        if (matchedCount) {
+
+            matchedCount.textContent =
+                matchedSkills.length;
+
+        }
+
+
+        if (requiredCount) {
+
+            requiredCount.textContent =
+                requiredSkills.length;
+
+        }
+
+
+        if (gapCount) {
+
+            gapCount.textContent =
+                gapSkills.length;
+
+        }
+
+
+        // ---- Explicit skill breakdown lists ----
+        // Shows skill NAMES, not just counts, and works
+        // for every domain (unlike the fixed visual nodes).
+
+        const matchedSkillsList =
+            document.getElementById(
+                "matchedSkillsList"
+            );
+
+        const gapSkillsList =
+            document.getElementById(
+                "gapSkillsList"
+            );
+
+        function renderSkillPills(container, skills, matched) {
+
+            if (!container) return;
+
+            if (skills.length === 0) {
+
+                container.innerHTML = `
+                    <span style="font-size:12px;color:#9aa0af;">
+                        ${
+                            matched
+                                ? "No matched skills yet — add some above."
+                                : "None — nice work!"
+                        }
+                    </span>
+                `;
+
+                return;
+
+            }
+
+            container.innerHTML =
+                skills.map(skill => `
+                    <span style="
+                        display:inline-block;
+                        padding:6px 12px;
+                        border-radius:999px;
+                        font-size:12px;
+                        font-weight:700;
+                        background:${matched ? "#dff8e9" : "#fbe4e4"};
+                        color:${matched ? "#16844b" : "#b13e3e"};
+                        border:1px solid ${matched ? "#b7ecc9" : "#f3c5c5"};
+                    ">
+                        ${matched ? "✓" : "!"} ${skill}
+                    </span>
+                `).join("");
+
+        }
+
+        renderSkillPills(
+            matchedSkillsList,
+            matchedSkills,
+            true
+        );
+
+        renderSkillPills(
+            gapSkillsList,
+            gapSkills,
+            false
+        );
+
+
+        // ---- Confirmation banner ----
+        // Lets you SEE that a role/domain/skills change registered.
+
+        const confirmationBox =
+            document.getElementById(
+                "skillMapConfirmation"
+            );
+
+        if (confirmationBox) {
+
+            const roleText =
+                roleSelect
+                    ? roleSelect.value
+                    : domain;
+
+            confirmationBox.style.display =
+                "block";
+
+            confirmationBox.textContent =
+                `✅ Showing "${domain}" skills for ${roleText}: ` +
+                `${matchedSkills.length} matched, ` +
+                `${gapSkills.length} to learn, out of ` +
+                `${requiredSkills.length} required.`;
+
+            confirmationBox.style.opacity =
+                "0";
+
+            requestAnimationFrame(
+                function () {
+
+                    confirmationBox.style.opacity =
+                        "1";
+
+                }
+            );
+
+        }
+
+    }
+
+
+    function updateSkillNodes(
+        requiredSkills,
+        matchedSkills
+    ) {
+
+        const nodeMap = {
+
+            "Python":
+                document.getElementById(
+                    "skill-python"
+                ),
+
+            "Git":
+                document.getElementById(
+                    "skill-git"
+                ),
+
+            "Data Science":
+                document.getElementById(
+                    "skill-data"
+                ),
+
+            "Machine Learning":
+                document.getElementById(
+                    "skill-ml"
+                ),
+
+            "SQL":
+                document.getElementById(
+                    "skill-sql"
+                ),
+
+            "Statistics":
+                document.getElementById(
+                    "skill-statistics"
+                )
+
+        };
+
+
+        Object.values(nodeMap).forEach(
+            node => {
+
+                if (node) {
+
+                    node.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+
+        requiredSkills.forEach(
+            skill => {
+
+                const node =
+                    nodeMap[skill];
+
+
+                if (!node) return;
+
+
+                node.style.display =
+                    "block";
+
+
+                const matched =
+                    matchedSkills.includes(
+                        skill
+                    );
+
+
+                node.classList.remove(
+                    "matched",
+                    "developing",
+                    "gap"
+                );
+
+
+                node.classList.add(
+
+                    matched
+                        ? "matched"
+                        : "gap"
+
+                );
+
+
+                node.innerHTML = `
+
+                    ${skill}
+
+                    <small>
+
+                        ${
+                            matched
+                                ? "Matched"
+                                : "Skill Gap"
+                        }
+
+                    </small>
+
+                `;
+
+            }
+        );
+
+    }
+
+
+    const roleDomainMap = {
+
+        "AI/ML Engineer":
+            "Artificial Intelligence",
+
+        "Data Scientist":
+            "Data Science",
+
+        "Web Developer":
+            "Web Development",
+
+        "Cybersecurity Engineer":
+            "Cybersecurity"
+
+    };
+
+
+    const mapRoleLabel =
+        document.querySelector(
+            ".map-heading > span"
+        );
+
+
+    if (domainSelect) {
+
+        domainSelect.addEventListener(
+            "change",
+            updateSkillMap
+        );
+
+    }
+
+
+    if (roleSelect) {
+
+        roleSelect.addEventListener(
+            "change",
+            function () {
+
+                const selectedRole =
+                    roleSelect.value;
+
+
+                const matchingDomain =
+                    roleDomainMap[
+                        selectedRole
+                    ];
+
+
+                if (
+                    domainSelect &&
+                    matchingDomain
+                ) {
+
+                    domainSelect.value =
+                        matchingDomain;
+
+                }
+
+
+                if (mapRoleLabel) {
+
+                    mapRoleLabel.textContent =
+                        selectedRole;
+
+                }
+
+
+                updateSkillMap();
+
+            }
+        );
+
+    }
+
+
+    if (
+        mapRoleLabel &&
+        roleSelect
+    ) {
+
+        mapRoleLabel.textContent =
+            roleSelect.value;
+
+    }
+
+
+    // -----------------------------------------
+    // "YOUR SKILLS" BOX (self-contained)
+    // Works even if this page is opened on its
+    // own, with no saved profile from dashboard.html.
+    // -----------------------------------------
+
+    const mySkillsInput =
+        document.getElementById(
+            "mySkills"
+        );
+
+    const updateSkillsBtn =
+        document.getElementById(
+            "updateSkillsBtn"
+        );
+
+    // Pre-fill from whatever profile already exists
+    // (e.g. if this file was opened right after the
+    // dashboard, in the same browser storage).
+
+    if (mySkillsInput) {
+
+        const existingProfile =
+            JSON.parse(
+                localStorage.getItem(
+                    "goBeyondProfile"
+                )
+            );
+
+        const existingSkills =
+            existingProfile?.skills?.map(
+                skill =>
+                    typeof skill === "object"
+                        ? skill.name
+                        : skill
+            ) || [];
+
+        if (existingSkills.length > 0) {
+
+            mySkillsInput.value =
+                existingSkills.join(", ");
+
+        }
+
+    }
+
+
+    function saveSkillsFromInput() {
+
+        if (!mySkillsInput) return;
+
+        const enteredSkills =
+            mySkillsInput.value
+                .split(",")
+                .map(skill => skill.trim())
+                .filter(Boolean);
+
+        // Keep any existing profile fields (name,
+        // careerGoal, etc.) and only replace skills,
+        // so this page never wipes data saved elsewhere.
+
+        const existingProfile =
+            JSON.parse(
+                localStorage.getItem(
+                    "goBeyondProfile"
+                )
+            ) || {};
+
+        const updatedProfile = {
+
+            ...existingProfile,
+
+            skills: enteredSkills
+
+        };
+
+        localStorage.setItem(
+            "goBeyondProfile",
+            JSON.stringify(
+                updatedProfile
+            )
+        );
+
+        updateSkillMap();
+
+    }
+
+
+    if (updateSkillsBtn) {
+
+        updateSkillsBtn.addEventListener(
+            "click",
+            saveSkillsFromInput
+        );
+
+    }
+
+
+    if (mySkillsInput) {
+
+        // Also update as soon as you press Enter
+        mySkillsInput.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Enter") {
+
+                    event.preventDefault();
+
+                    saveSkillsFromInput();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    updateSkillMap();
+
+}
+// =====================================================
+// GO BEYOND - SLIDE 5: DYNAMIC SKILL GAP ANALYSIS
+// =====================================================
+
+const slide5SkillGapData = {
+
+    "AI/ML Engineer": [
+        {
+            skill: "Machine Learning",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 6,
+            why: "Machine Learning is a core requirement for AI/ML roles.",
+            action: "Complete ML fundamentals and build one practical ML project."
+        },
+        {
+            skill: "Python",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 7,
+            why: "Python is the primary language used to build and deploy AI/ML systems.",
+            action: "Sharpen Python fundamentals and the core data/ML libraries."
+        },
+        {
+            skill: "SQL",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 4,
+            why: "SQL is commonly required for working with datasets and ML pipelines.",
+            action: "Practice SQL queries and work with a real dataset."
+        },
+        {
+            skill: "Statistics",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 4,
+            why: "Statistics helps you understand data, models and evaluation metrics.",
+            action: "Strengthen probability, statistics and model evaluation."
+        },
+        {
+            skill: "Deep Learning",
+            required: "Beginner",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 3,
+            why: "Deep Learning powers many modern AI applications and is increasingly expected.",
+            action: "Learn neural network basics and build one small deep learning demo."
+        },
+        {
+            skill: "Git",
+            required: "Beginner",
+            priority: "LOW",
+            demand: "Moderate",
+            opportunities: 3,
+            why: "Version control is expected for collaborating on any real engineering project.",
+            action: "Practice Git workflows: commits, branches and pull requests."
+        }
+    ],
+
+    "Web Developer": [
+        {
+            skill: "React",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 7,
+            why: "React is widely used for modern frontend development.",
+            action: "Learn React fundamentals and build a responsive application."
+        },
+        {
+            skill: "JavaScript",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 8,
+            why: "JavaScript is fundamental to modern web development.",
+            action: "Practice JavaScript and build interactive web features."
+        },
+        {
+            skill: "Node.js",
+            required: "Beginner",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 5,
+            why: "Node.js helps you move from frontend development toward full-stack development.",
+            action: "Learn Node.js and build a simple REST API."
+        },
+        {
+            skill: "CSS",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 4,
+            why: "Solid CSS skills are needed to build clean, responsive interfaces.",
+            action: "Practice layout systems like Flexbox and Grid on a real page."
+        },
+        {
+            skill: "HTML",
+            required: "Beginner",
+            priority: "LOW",
+            demand: "Moderate",
+            opportunities: 3,
+            why: "Semantic HTML is the foundation every web application is built on.",
+            action: "Review semantic HTML and accessibility basics."
+        },
+        {
+            skill: "Git",
+            required: "Beginner",
+            priority: "LOW",
+            demand: "Moderate",
+            opportunities: 3,
+            why: "Version control is expected for collaborating on any real engineering project.",
+            action: "Practice Git workflows: commits, branches and pull requests."
+        }
+    ],
+
+    "Data Scientist": [
+        {
+            skill: "Statistics",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 6,
+            why: "Statistics is essential for analysing data and interpreting models.",
+            action: "Strengthen statistics and apply it to real datasets."
+        },
+        {
+            skill: "SQL",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 7,
+            why: "SQL is one of the most important skills for extracting and analysing data.",
+            action: "Practice SQL using real-world datasets."
+        },
+        {
+            skill: "Python",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            demand: "Very High",
+            opportunities: 6,
+            why: "Python is the standard language for data analysis and modelling.",
+            action: "Practice data manipulation and analysis using Python."
+        },
+        {
+            skill: "Machine Learning",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 5,
+            why: "Machine Learning helps data scientists build predictive models.",
+            action: "Learn supervised learning and build a prediction project."
+        },
+        {
+            skill: "Data Visualization",
+            required: "Beginner",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 4,
+            why: "Communicating insights clearly through visuals is a core data science skill.",
+            action: "Build a dashboard or chart set that tells a clear data story."
+        },
+        {
+            skill: "Excel",
+            required: "Beginner",
+            priority: "LOW",
+            demand: "Moderate",
+            opportunities: 2,
+            why: "Excel remains a common tool for quick data exploration in many teams.",
+            action: "Practice pivot tables, formulas and quick data summaries."
+        }
+    ],
+
+    "Cybersecurity Engineer": [
+        {
+            skill: "Networking",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "Very High",
+            opportunities: 6,
+            why: "Networking fundamentals are essential for understanding security threats.",
+            action: "Learn networking fundamentals and practise with security scenarios."
+        },
+        {
+            skill: "Linux",
+            required: "Intermediate",
+            priority: "HIGH",
+            demand: "High",
+            opportunities: 5,
+            why: "Linux is widely used in cybersecurity environments.",
+            action: "Practise Linux commands, permissions and system administration."
+        },
+        {
+            skill: "Cybersecurity",
+            required: "Intermediate",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 5,
+            why: "Security fundamentals are required to analyse and prevent attacks.",
+            action: "Study cybersecurity fundamentals and practise security tools."
+        },
+        {
+            skill: "Security Tools",
+            required: "Beginner",
+            priority: "MEDIUM",
+            demand: "High",
+            opportunities: 4,
+            why: "Hands-on tools turn security concepts into practical, employable skills.",
+            action: "Get hands-on with tools such as Wireshark and Nmap."
+        },
+        {
+            skill: "Python",
+            required: "Beginner",
+            priority: "LOW",
+            demand: "Moderate",
+            opportunities: 3,
+            why: "Scripting helps automate scans, log analysis and repetitive security tasks.",
+            action: "Learn basic Python scripting for security automation."
+        },
+        {
+            skill: "Cryptography",
+            required: "Beginner",
+            priority: "LOW",
+            demand: "Moderate",
+            opportunities: 2,
+            why: "Understanding encryption is important for securing data and communications.",
+            action: "Review core cryptography concepts: hashing, encryption and keys."
+        }
+    ]
+};
+
+
+// =====================================================
+// NORMALIZE STUDENT SKILLS
+// =====================================================
+
+function getStudentSkillData(profile) {
+
+    const skillMap = {};
+
+    if (!profile || !Array.isArray(profile.skills)) {
+        return skillMap;
+    }
+
+    profile.skills.forEach(skill => {
+
+        if (typeof skill === "string") {
+
+            const name = skill
+                .trim()
+                .toLowerCase();
+
+            if (name) {
+                skillMap[name] = "Beginner";
+            }
+
+        } else if (typeof skill === "object" && skill !== null) {
+
+            const name = String(
+                skill.name || ""
+            )
+                .trim()
+                .toLowerCase();
+
+            const level =
+                skill.level ||
+                skill.proficiency ||
+                "Beginner";
+
+            if (name) {
+                skillMap[name] = level;
+            }
+        }
+    });
+
+    return skillMap;
+}
+
+
+// =====================================================
+// CHECK WHETHER STUDENT HAS A SKILL
+// =====================================================
+
+function findStudentSkill(skillMap, skillName) {
+
+    const target = skillName
+        .toLowerCase()
+        .trim();
+
+    const aliases = {
+
+        "machine learning": [
+            "machine learning",
+            "ml"
+        ],
+
+        "javascript": [
+            "javascript",
+            "js"
+        ],
+
+        "react": [
+            "react",
+            "react.js",
+            "reactjs"
+        ],
+
+        "node.js": [
+            "node.js",
+            "nodejs",
+            "node"
+        ],
+
+        "sql": [
+            "sql",
+            "mysql",
+            "postgresql"
+        ],
+
+        "statistics": [
+            "statistics",
+            "stat"
+        ],
+
+        "networking": [
+            "networking",
+            "computer networks"
+        ],
+
+        "linux": [
+            "linux"
+        ],
+
+        "cybersecurity": [
+            "cybersecurity",
+            "cyber security",
+            "security"
+        ],
+
+        "python": [
+            "python",
+            "python3"
+        ],
+
+        "git": [
+            "git",
+            "github",
+            "version control"
+        ],
+
+        "deep learning": [
+            "deep learning",
+            "dl",
+            "neural networks"
+        ],
+
+        "html": [
+            "html",
+            "html5"
+        ],
+
+        "css": [
+            "css",
+            "css3"
+        ],
+
+        "data visualization": [
+            "data visualization",
+            "data viz",
+            "tableau",
+            "power bi"
+        ],
+
+        "excel": [
+            "excel",
+            "ms excel",
+            "spreadsheets"
+        ],
+
+        "security tools": [
+            "security tools",
+            "wireshark",
+            "nmap"
+        ],
+
+        "cryptography": [
+            "cryptography",
+            "crypto",
+            "encryption"
+        ]
+    };
+
+    const possibleNames =
+        aliases[target] || [target];
+
+    for (const name of possibleNames) {
+
+        if (skillMap[name]) {
+            return skillMap[name];
+        }
+    }
+
+    return null;
+}
+
+
+// =====================================================
+// INDUSTRY SKILL CATALOG ANALYSIS
+// Single source of truth for Industry Readiness Score,
+// Industry Skill Coverage and Top Skill Gaps. Recomputed
+// any time skills, interests or career goal change.
+// =====================================================
+
+const priorityWeight = {
+    HIGH: 3,
+    MEDIUM: 2,
+    LOW: 1
+};
+
+const careerInterestKeywords = {
+
+    "AI/ML Engineer": [
+        "ai", "artificial intelligence", "machine learning",
+        "ml", "deep learning", "data science", "robotics", "neural"
+    ],
+
+    "Web Developer": [
+        "web", "frontend", "front-end", "backend", "back-end",
+        "full stack", "fullstack", "ui", "ux", "design"
+    ],
+
+    "Data Scientist": [
+        "data", "analytics", "statistics", "visualization",
+        "ai", "machine learning"
+    ],
+
+    "Cybersecurity Engineer": [
+        "security", "cyber", "privacy", "networking",
+        "hacking", "infosec"
+    ]
+
+};
+
+
+// Work out which industry skills are covered/missing,
+// and calculate a weighted readiness score (with a small
+// bonus for interests that align with the career goal).
+function analyzeIndustrySkills(profile) {
+
+    const careerGoal =
+        (profile && profile.careerGoal) || "AI/ML Engineer";
+
+    const catalog =
+        slide5SkillGapData[careerGoal] ||
+        slide5SkillGapData["AI/ML Engineer"];
+
+    const studentSkills =
+        getStudentSkillData(profile);
+
+    const analyzed = catalog.map(item => ({
+        ...item,
+        covered: !!findStudentSkill(studentSkills, item.skill)
+    }));
+
+    const missing = analyzed
+        .filter(item => !item.covered)
+        .sort((a, b) =>
+            (priorityWeight[b.priority] || 0) -
+            (priorityWeight[a.priority] || 0)
+        );
+
+    const coveredCount =
+        analyzed.length - missing.length;
+
+    const totalCount =
+        analyzed.length;
+
+    const totalWeight = catalog.reduce(
+        (sum, item) => sum + (priorityWeight[item.priority] || 1),
+        0
+    );
+
+    const coveredWeight = analyzed
+        .filter(item => item.covered)
+        .reduce(
+            (sum, item) => sum + (priorityWeight[item.priority] || 1),
+            0
+        );
+
+    const baseScore =
+        totalWeight
+            ? (coveredWeight / totalWeight) * 100
+            : 0;
+
+    const interestKeywords =
+        careerInterestKeywords[careerGoal] || [];
+
+    const interests =
+        (profile && profile.interests) || [];
+
+    const interestMatches = interests.filter(interest =>
+        interestKeywords.some(keyword =>
+            interest.toLowerCase().includes(keyword)
+        )
+    ).length;
+
+    // Up to +10 for having interests that align with the career goal
+    const interestBonus =
+        Math.min(interestMatches * 3, 10);
+
+    const readinessScore = Math.max(
+        0,
+        Math.min(100, Math.round(baseScore + interestBonus))
+    );
+
+    return {
+        careerGoal,
+        catalog,
+        analyzed,
+        missing,
+        coveredCount,
+        totalCount,
+        readinessScore,
+        interestBonus
+    };
+
+}
+
+
+function getReadinessLabel(score) {
+
+    if (score >= 80) return "READY";
+    if (score >= 50) return "BUILDING";
+    return "GETTING STARTED";
+
+}
+
+
+// =====================================================
+// UPDATE INDUSTRY READINESS SCORE + SKILL COVERAGE
+// =====================================================
+
+function updateIndustryReadiness(profile) {
+
+    const analysis =
+        analyzeIndustrySkills(profile);
+
+    // ---- Industry Readiness Score card ----
+    const readinessScoreEl =
+        document.getElementById("readinessScore");
+
+    const readinessLabelEl =
+        document.getElementById("readinessLabel") ||
+        document.querySelector(".readiness-score span");
+
+    if (readinessScoreEl) {
+        readinessScoreEl.textContent =
+            `${analysis.readinessScore}%`;
+    }
+
+    if (readinessLabelEl) {
+        readinessLabelEl.textContent =
+            getReadinessLabel(analysis.readinessScore);
+    }
+
+
+    // ---- Quick Stats ----
+    const skillsCoveredEl =
+        document.getElementById("skillsCovered");
+
+    const criticalGapsEl =
+        document.getElementById("criticalGaps");
+
+    const placementReadinessEl =
+        document.getElementById("placementReadiness");
+
+    if (skillsCoveredEl) {
+        skillsCoveredEl.textContent =
+            analysis.coveredCount;
+    }
+
+    if (criticalGapsEl) {
+        criticalGapsEl.textContent =
+            analysis.missing.filter(
+                item => item.priority === "HIGH"
+            ).length;
+    }
+
+    if (placementReadinessEl) {
+        placementReadinessEl.textContent =
+            `${analysis.readinessScore}%`;
+    }
+
+
+    // ---- Industry Skill Coverage card ----
+    const coverageCountEl =
+        document.getElementById("coverageCount");
+
+    const coverageProgressEl =
+        document.querySelector(".coverage-progress");
+
+    const skillStatusListEl =
+        document.getElementById("skillStatusList");
+
+    if (coverageCountEl) {
+        coverageCountEl.textContent =
+            `${analysis.coveredCount} / ${analysis.totalCount}`;
+    }
+
+    if (coverageProgressEl) {
+
+        const coveragePercent =
+            analysis.totalCount
+                ? Math.round(
+                    (analysis.coveredCount / analysis.totalCount) * 100
+                )
+                : 0;
+
+        coverageProgressEl.style.width =
+            `${coveragePercent}%`;
+
+    }
+
+    if (skillStatusListEl) {
+
+        skillStatusListEl.innerHTML = analysis.analyzed.map(item => `
+            <div class="skill-status-item ${item.covered ? "covered" : "not-covered"}"
+                style="display:flex;align-items:center;justify-content:space-between;
+                padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.08);">
+                <span>${item.covered ? "✅" : "⭕"} ${item.skill}</span>
+                <span style="font-size:12px;font-weight:600;
+                    color:${item.covered ? "#16a34a" : "#dc2626"};">
+                    ${item.covered ? "Covered" : `${item.priority} priority`}
+                </span>
+            </div>
+        `).join("");
+
+    }
+
+    return analysis;
+
+}
+
+
+// =====================================================
+// RENDER SLIDE 5 (Top 3 Skill Gaps + Next Best Action)
+// =====================================================
+
+function renderSlide5SkillGaps(profile) {
+
+    if (!profile) return;
+
+    // Recompute readiness score + skill coverage first,
+    // then reuse the same analysis for the top gaps below.
+    const analysis =
+        updateIndustryReadiness(profile);
+
+    const careerGoal =
+        analysis.careerGoal;
+
+    const gaps =
+        analysis.missing.slice(0, 3);
+
+    const gapList =
+        document.querySelector(".gap-list");
+
+
+    // -----------------------------------------------
+    // UPDATE TOP 3 GAP CARDS
+    // -----------------------------------------------
+
+    if (gapList) {
+
+        if (gaps.length === 0) {
+
+            gapList.innerHTML = `
+                <div class="gap-item">
+                    <div class="gap-content">
+                        <strong>🎉 You're covering all core skills for ${careerGoal}!</strong>
+                        <p>Keep sharpening these skills and explore advanced or stretch topics to stay ahead.</p>
+                    </div>
+                </div>
+            `;
+
+        } else {
+
+            gapList.innerHTML = gaps.map((gap) => {
+
+                const currentLevel =
+                    findStudentSkill(
+                        getStudentSkillData(profile),
+                        gap.skill
+                    ) || "Not Started";
+
+                const priorityClass =
+                    gap.priority === "HIGH"
+                    ? "high"
+                    : gap.priority === "MEDIUM"
+                    ? "medium"
+                    : "low";
+
+                const priorityBadge =
+                    gap.priority === "HIGH"
+                    ? "priority-high"
+                    : gap.priority === "MEDIUM"
+                    ? "priority-medium"
+                    : "priority-low";
+
+                return `
+
+                    <div class="gap-item">
+
+                        <div class="gap-icon ${priorityClass}">
+                            ${gap.priority === "HIGH" ? "!" : "•"}
+                        </div>
+
+                        <div class="gap-content">
+
+                            <div class="gap-title">
+
+                                <strong>
+                                    ${gap.skill}
+                                </strong>
+
+                                <span class="${priorityBadge}">
+                                    ${gap.priority}
+                                </span>
+
+                            </div>
+
+                            <p>
+                                ${currentLevel}
+                                →
+                                ${gap.required}
+                            </p>
+
+                            <div class="slide5-gap-details">
+
+                                <span>
+                                    📈 Demand:
+                                    <strong>${gap.demand}</strong>
+                                </span>
+
+                                <span>
+                                    🎯
+                                    ${gap.opportunities}
+                                    matched opportunities
+                                </span>
+
+                            </div>
+
+                            <small class="slide5-gap-why">
+                                ${gap.why}
+                            </small>
+
+                            <div class="gap-path">
+
+                                <span>Learn</span>
+                                <b>→</b>
+
+                                <span>Practice</span>
+                                <b>→</b>
+
+                                <span>Build Project</span>
+                                <b>→</b>
+
+                                <span>Reassess</span>
+
+                            </div>
+
+                            <div class="slide5-gap-action">
+
+                                <strong>
+                                    Next:
+                                </strong>
+
+                                ${gap.action}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                `;
+
+            }).join("");
+
+        }
+
+    }
+
+
+    // -----------------------------------------------
+    // UPDATE "NEXT BEST ACTION"
+    // -----------------------------------------------
+
+    const nextAction =
+        document.querySelector(
+            ".next-action-card"
+        );
+
+    if (nextAction) {
+
+        const heading =
+            nextAction.querySelector(
+                ".next-action-content h2"
+            );
+
+        const description =
+            nextAction.querySelector(
+                ".next-action-content p"
+            );
+
+        const tag =
+            nextAction.querySelector(
+                ".action-tag"
+            );
+
+        const button =
+            nextAction.querySelector(
+                "button"
+            );
+
+        if (gaps.length === 0) {
+
+            if (heading) {
+                heading.textContent =
+                    `Great work — keep building on ${careerGoal}!`;
+            }
+
+            if (description) {
+                description.textContent =
+                    `You're covering all core industry skills for ${careerGoal}. Deepen your expertise with an advanced project or explore a new stretch skill.`;
+            }
+
+            if (tag) {
+                tag.textContent =
+                    "ON TRACK";
+            }
+
+            if (button) {
+
+                button.textContent =
+                    "Explore Advanced Topics →";
+
+                button.onclick = function () {
+
+                    alert(
+                        "Nice work! Check the Opportunities and Roadmap sections for advanced next steps."
+                    );
+
+                };
+
+            }
+
+        } else {
+
+            const highestPriority =
+                gaps[0];
+
+            if (heading) {
+                heading.textContent =
+                    `Strengthen your ${highestPriority.skill} skills`;
+            }
+
+            if (description) {
+                description.textContent =
+                    `${highestPriority.skill} is one of your highest-priority skill gaps for the ${careerGoal} role. ${highestPriority.action}`;
+            }
+
+            if (tag) {
+                tag.textContent =
+                    `${highestPriority.priority} PRIORITY`;
+            }
+
+            if (button) {
+
+                button.textContent =
+                    `Start ${highestPriority.skill} Plan →`;
+
+                button.onclick = function () {
+
+                    openLearningPlan(
+                        highestPriority.skill,
+                        careerGoal
+                    );
+
+                };
+
+            }
+
+        }
+
+    }
+
+
+    // -----------------------------------------------
+    // UPDATE SLIDE 5 SUMMARY COUNTS
+    // -----------------------------------------------
+
+    const criticalCount =
+        document.getElementById("criticalGapCount");
+
+    const mediumCount =
+        document.getElementById("mediumGapCount");
+
+    const lowCount =
+        document.getElementById("lowGapCount");
+
+    if (criticalCount) {
+        criticalCount.textContent =
+            analysis.missing.filter(
+                gap => gap.priority === "HIGH"
+            ).length;
+    }
+
+    if (mediumCount) {
+        mediumCount.textContent =
+            analysis.missing.filter(
+                gap => gap.priority === "MEDIUM"
+            ).length;
+    }
+
+    if (lowCount) {
+        lowCount.textContent =
+            analysis.missing.filter(
+                gap => gap.priority === "LOW"
+            ).length;
+    }
+
+}
+
+    
+
+// =====================================================
+// CONNECT SLIDE 5 TO EXISTING DASHBOARD
+// =====================================================
+
+// Keep your existing updateDashboard()
+// and add Slide 5 behaviour to it.
+
+const originalGoBeyondUpdateDashboard =
+    updateDashboard;
+
+updateDashboard = function(profile) {
+
+    originalGoBeyondUpdateDashboard(profile);
+
+    renderSlide5SkillGaps(profile);
+
+};
+
+
+// Render immediately if a profile already exists.
+
+const slide5SavedProfile =
+    localStorage.getItem(
+        "goBeyondProfile"
+    );
+
+if (slide5SavedProfile) {
+
+    try {
+
+        const slide5Profile =
+            JSON.parse(
+                slide5SavedProfile
+            );
+
+        renderSlide5SkillGaps(
+            slide5Profile
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Slide 5 profile error:",
+            error
+        );
+
+    }
+}
+// =====================================================
+// LIVE PROFILE UPDATES
+// =====================================================
+
+const liveCareerGoal =
+    document.getElementById("careerGoal");
+
+const liveStudentName =
+    document.getElementById("studentName");
+
+const liveBranch =
+    document.getElementById("branch");
+
+const liveYear =
+    document.getElementById("year");
+
+const liveSkills =
+    document.getElementById("skills");
+
+const liveInterests =
+    document.getElementById("interests");
+
+
+// Create the current profile directly from the form
+function getLiveProfile() {
+
+    return {
+
+        name:
+            liveStudentName
+                ? liveStudentName.value.trim()
+                : "Student",
+
+        branch:
+            liveBranch
+                ? liveBranch.value
+                : "Computer Science",
+
+        year:
+            liveYear
+                ? liveYear.value
+                : "1st Year",
+
+        careerGoal:
+            liveCareerGoal
+                ? liveCareerGoal.value
+                : "AI/ML Engineer",
+
+        skills:
+            liveSkills
+                ? liveSkills.value
+                    .split(",")
+                    .map(skill => skill.trim())
+                    .filter(Boolean)
+                : [],
+
+        interests:
+            liveInterests
+                ? liveInterests.value
+                    .split(",")
+                    .map(interest => interest.trim())
+                    .filter(Boolean)
+                : []
+
+    };
+}
+
+
+// -----------------------------------------------------
+// CAREER GOAL CHANGE
+// -----------------------------------------------------
+
+if (liveCareerGoal) {
+
+    liveCareerGoal.addEventListener(
+        "change",
+        function () {
+
+            const profile =
+                getLiveProfile();
+
+            console.log(
+                "Career changed to:",
+                profile.careerGoal
+            );
+
+            updateDashboard(profile);
+
+        }
+    );
+
+}
+
+
+// -----------------------------------------------------
+// NAME CHANGE
+// -----------------------------------------------------
+
+if (liveStudentName) {
+
+    liveStudentName.addEventListener(
+        "input",
+        function () {
+
+            const welcomeName =
+                document.querySelector(
+                    ".welcome h1 span"
+                );
+
+            if (welcomeName) {
+
+                welcomeName.textContent =
+                    liveStudentName.value.trim()
+                    || "Student";
+
+            }
+
+        }
+    );
+
+}
+
+
+// -----------------------------------------------------
+// BRANCH / YEAR CHANGE
+// -----------------------------------------------------
+
+if (liveBranch) {
+
+    liveBranch.addEventListener(
+        "change",
+        function () {
+
+            const profile =
+                getLiveProfile();
+
+            updateDashboard(profile);
+
+        }
+    );
+
+}
+
+if (liveYear) {
+
+    liveYear.addEventListener(
+        "change",
+        function () {
+
+            const profile =
+                getLiveProfile();
+
+            updateDashboard(profile);
+
+        }
+    );
+
+}
+
+
+// -----------------------------------------------------
+// SKILLS / INTERESTS CHANGE
+// (live update: Industry Readiness Score, Industry Skill
+// Coverage and Top 3 Skill Gaps update as you type)
+// -----------------------------------------------------
+
+function debounce(fn, delay) {
+
+    let timer;
+
+    return function (...args) {
+
+        clearTimeout(timer);
+
+        timer = setTimeout(
+            () => fn.apply(this, args),
+            delay
+        );
+
+    };
+
+}
+
+const liveSkillsInterestsUpdate = debounce(function () {
+
+    const profile =
+        getLiveProfile();
+
+    updateDashboard(profile);
+
+}, 400);
+
+if (liveSkills) {
+
+    liveSkills.addEventListener(
+        "input",
+        liveSkillsInterestsUpdate
+    );
+
+}
+
+if (liveInterests) {
+
+    liveInterests.addEventListener(
+        "input",
+        liveSkillsInterestsUpdate
+    );
+
+}
+
+</script>
 </body>
 </html>
