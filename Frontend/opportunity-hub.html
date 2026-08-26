@@ -759,7 +759,7 @@ const categories = {
 
 Promise.all([
 
-    fetch("http://127.0.0.1:5000/api/opportunities")
+    fetch("https://gobeyond-3xld.onrender.com/api/opportunities")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to load opportunities");
@@ -767,7 +767,7 @@ Promise.all([
             return response.json();
         }),
 
-    fetch("http://127.0.0.1:5000/api/internships")
+    fetch("https://gobeyond-3xld.onrender.com/api/internships")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to load internships");
@@ -775,7 +775,7 @@ Promise.all([
             return response.json();
         }),
 
-    fetch("http://127.0.0.1:5000/api/workshops")
+    fetch("https://gobeyond-3xld.onrender.com/api/workshops")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to load workshops");

@@ -551,7 +551,7 @@ if (profileForm) {
         };
 
 
-        fetch("http://127.0.0.1:5000/api/student", {
+        fetch("https://gobeyond-3xld.onrender.com/api/student"), {
 
             method: "POST",
 
@@ -1964,10 +1964,10 @@ async function updateOpportunities(careerGoal) {
 
     try {
 
-        const response =
-            await fetch(
-                `http://127.0.0.1:5000/api/personalized-opportunities/${encodeURIComponent(careerGoal)}`
-            );
+       const response =
+    await fetch(
+        `https://gobeyond-3xld.onrender.com/api/personalized-opportunities/${encodeURIComponent(careerGoal)}`
+    );
 
 
         if (!response.ok) {
@@ -2281,7 +2281,7 @@ if (savedProfile) {
 // ================================
 
 fetch(
-    "http://127.0.0.1:5000/api/health"
+    "https://gobeyond-3xld.onrender.com/api/health"
 )
 
     .then(
