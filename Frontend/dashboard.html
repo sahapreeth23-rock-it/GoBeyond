@@ -7,8 +7,11 @@
     <title>GoBeyond | Smart Student Journey</title>
 
     <link rel="stylesheet" href="style.css">
-
+    
     <style>
+            #coverageBar.hidden {
+        display: none;
+    }
         /* Smooth, live-feeling transitions when skills/interests change */
         #readinessScore,
         #skillsCovered,
@@ -342,9 +345,9 @@
             <span>skills currently covered</span>
         </div>
 
-        <div class="coverage-bar">
-            <div class="coverage-progress"></div>
-        </div>
+            <div class="coverage-bar" id="coverageBar">
+        <div class="coverage-progress"></div>
+    </div>
 
         <div class="skill-status-list" id="skillStatusList">
 
@@ -1052,5 +1055,37 @@
     </div>
 
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const coverageCount = document.getElementById("coverageCount");
+    const coverageBar = document.getElementById("coverageBar");
+
+    function updateCoverageBarVisibility() {
+        if (!coverageCount || !coverageBar) return;
+
+        const value = coverageCount.textContent.trim();
+
+        if (value === "0 / 0") {
+            coverageBar.classList.add("hidden");
+        } else {
+            coverageBar.classList.remove("hidden");
+        }
+    }
+
+    updateCoverageBarVisibility();
+
+    const observer = new MutationObserver(updateCoverageBarVisibility);
+
+    if (coverageCount) {
+        observer.observe(coverageCount, {
+            childList: true,
+            characterData: true,
+            subtree: true
+        });
+    }
+
+});
+</script>
 </body>
 </html>
