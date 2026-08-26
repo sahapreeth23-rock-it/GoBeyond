@@ -551,7 +551,7 @@ if (profileForm) {
         };
 
 
-        fetch("https://gobeyond-3xld.onrender.com/api/student"), {
+        fetch("https://gobeyond-3xld.onrender.com/api/student", {
 
             method: "POST",
 
@@ -3910,24 +3910,24 @@ function updateIndustryReadiness(profile) {
     const skillStatusListEl =
         document.getElementById("skillStatusList");
 
-    if (coverageCountEl) {
-        coverageCountEl.textContent =
-            `${analysis.coveredCount} / ${analysis.totalCount}`;
-    }
-
     if (coverageProgressEl) {
 
+    const coverageBar = coverageProgressEl.parentElement;
+
+    if (analysis.totalCount === 0) {
+        coverageBar.style.display = "none";
+    } else {
+        coverageBar.style.display = "block";
+
         const coveragePercent =
-            analysis.totalCount
-                ? Math.round(
-                    (analysis.coveredCount / analysis.totalCount) * 100
-                )
-                : 0;
+            Math.round(
+                (analysis.coveredCount / analysis.totalCount) * 100
+            );
 
         coverageProgressEl.style.width =
             `${coveragePercent}%`;
-
     }
+}
 
     if (skillStatusListEl) {
 
