@@ -512,99 +512,36 @@ if (learningPlanModal) {
 
 }
 
+
 // ================================
-// STUDENT PROFILE
+// DYNAMIC TIME-BASED GREETING
 // ================================
 
-const profileForm = document.getElementById("profileForm");
+function updateWelcomeGreeting() {
 
-if (profileForm) {
+    const greetingEl =
+        document.getElementById("welcomeGreeting");
 
-    profileForm.addEventListener("submit", (event) => {
+    if (!greetingEl) return;
 
-        event.preventDefault();
+    const hour = new Date().getHours();
 
-        const studentProfile = {
+    let greeting = "Good morning";
 
-            name: document.getElementById("studentName").value,
+    if (hour >= 12 && hour < 17) {
+        greeting = "Good afternoon";
+    }
+    else if (hour >= 17) {
+        greeting = "Good evening";
+    }
 
-            branch: document.getElementById("branch").value,
-
-            year: document.getElementById("year").value,
-
-            careerGoal: document.getElementById("careerGoal").value,
-
-            skills: document
-                .getElementById("skills")
-                .value
-                .split(",")
-                .map(skill => skill.trim())
-                .filter(skill => skill !== ""),
-
-            interests: document
-                .getElementById("interests")
-                .value
-                .split(",")
-                .map(interest => interest.trim())
-                .filter(interest => interest !== "")
-
-        };
-
-
-        fetch("https://gobeyond-3xld.onrender.com/api/student", {
-
-            method: "POST",
-
-            headers: {
-                "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify(studentProfile)
-
-        })
-
-        .then(response => response.json())
-
-        .then(data => {
-
-            console.log(
-                "Student profile sent to backend:",
-                data
-            );
-
-        })
-
-        .catch(error => {
-
-            console.error(
-                "Backend profile upload failed:",
-                error
-            );
-
-        });
-
-
-        // Save profile in browser
-        localStorage.setItem(
-            "goBeyondProfile",
-            JSON.stringify(studentProfile)
-        );
-
-
-        // Update dashboard immediately with the new profile
-        updateDashboard(studentProfile);
-
-
-        alert(
-            "Profile saved successfully! 🎉\n\n" +
-            "Career Goal: " +
-            studentProfile.careerGoal
-        );
-
-    });
-
+    greetingEl.textContent = greeting;
 }
 
+updateWelcomeGreeting();
+
+// Keep greeting correct if dashboard stays open
+setInterval(updateWelcomeGreeting, 60000);
 
 // ================================
 // UPDATE DASHBOARD FROM PROFILE
@@ -614,7 +551,7 @@ function updateDashboard(profile) {
 
     // Update student name
     const welcomeName =
-        document.querySelector(".welcome h1 span");
+    document.getElementById("welcomeName");
 
     if (welcomeName) {
 
@@ -669,11 +606,9 @@ updateCareerRoadmap(
     profile.careerGoal,
     profile.skills || []
 );
-
+updateIndustryReadiness(profile);
 updateSkillGapAnalysis(profile);
-
 updatePriorities(profile.careerGoal);
-
 updateOpportunities(profile.careerGoal);
 
     console.log(
