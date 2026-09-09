@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GoBeyond | Institution</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =====================================================
+           INSTITUTION PORTAL
+        ===================================================== */
+
+        .institution-page {
+            width: 92%;
+            max-width: 1400px;
+            margin: 40px auto 80px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .institution-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
+
+            margin-bottom: 35px;
+        }
+
+        .institution-header h1 {
+            font-size: 38px;
+            margin: 8px 0;
+        }
+
+        .institution-header p {
+            color: #697185;
+            max-width: 750px;
+            line-height: 1.6;
+        }
+
+        .institution-badge {
+            padding: 12px 18px;
+
+            border-radius: 14px;
+
+            background: #fff3df;
+            color: #c46b00;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           OVERVIEW STATS
+        ========================= */
+
+        .institution-stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+
+            margin-bottom: 45px;
+        }
+
+        .institution-stat {
+            background: #ffffff;
+
+            border: 1px solid #e4e7ef;
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            transition: .25s;
+        }
+
+        .institution-stat:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 28px
+                rgba(30, 35, 60, .08);
+        }
+
+        .institution-stat p {
+            color: #7b8292;
+
+            font-size: 13px;
+
+            margin-bottom: 8px;
+        }
+
+        .institution-stat strong {
+            font-size: 30px;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        .institution-section {
+            margin-top: 50px;
+        }
+
+        .institution-section-heading {
+            margin-bottom: 22px;
+        }
+
+        .institution-section-heading h2 {
+            font-size: 26px;
+            margin: 5px 0;
+        }
+
+        .institution-section-heading p {
+            color: #697185;
+        }
+
+
+        /* =========================
+           ANALYTICS GRID
+        ========================= */
+
+        .analytics-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .analytics-card {
+            background: #ffffff;
+
+            border: 1px solid #e4e7ef;
+
+            border-radius: 18px;
+
+            padding: 25px;
+        }
+
+        .analytics-card h3 {
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           PROGRESS BAR
+        ========================= */
+
+        .progress-item {
+            margin-bottom: 20px;
+        }
+
+        .progress-label {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+        }
+
+        .progress-label span:first-child {
+            color: #596174;
+        }
+
+        .progress-label span:last-child {
+            font-weight: 700;
+        }
+
+        .progress-bar {
+            width: 100%;
+
+            height: 9px;
+
+            background: #edf0f5;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+
+            border-radius: 10px;
+
+            background: #635bff;
+        }
+
+
+        /* =========================
+           ANALYTICS NUMBERS
+        ========================= */
+
+        .analytics-numbers {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+        .analytics-number {
+            padding: 18px;
+
+            background: #f8f9fc;
+
+            border-radius: 12px;
+        }
+
+        .analytics-number span {
+            display: block;
+
+            color: #697185;
+
+            font-size: 13px;
+
+            margin-bottom: 7px;
+        }
+
+        .analytics-number strong {
+            font-size: 25px;
+        }
+
+
+        /* =========================
+           SKILL DEMAND
+        ========================= */
+
+        .skill-demand {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 16px;
+        }
+
+        .skill-row {
+            display: grid;
+
+            grid-template-columns:
+                150px 1fr 60px;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+        .skill-name {
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+        .skill-meter {
+            height: 9px;
+
+            background: #edf0f5;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+        .skill-meter-fill {
+            height: 100%;
+
+            background: #635bff;
+
+            border-radius: 10px;
+        }
+
+        .skill-value {
+            text-align: right;
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           PLACEMENT PIPELINE
+        ========================= */
+
+        .placement-pipeline {
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 12px;
+        }
+
+        .pipeline-item {
+            text-align: center;
+
+            padding: 22px 12px;
+
+            background: #f8f9fc;
+
+            border-radius: 14px;
+        }
+
+        .pipeline-item strong {
+            display: block;
+
+            font-size: 25px;
+
+            margin-bottom: 6px;
+        }
+
+        .pipeline-item span {
+            color: #697185;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           INSIGHT BOX
+        ========================= */
+
+        .institution-insight {
+            margin-top: 20px;
+
+            padding: 22px;
+
+            background: #f8f9fc;
+
+            border-radius: 14px;
+
+            border-left: 4px solid #635bff;
+        }
+
+        .institution-insight strong {
+            display: block;
+
+            margin-bottom: 6px;
+        }
+
+        .institution-insight p {
+            color: #697185;
+
+            line-height: 1.6;
+
+            margin: 0;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .institution-stats {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .placement-pipeline {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 750px) {
+
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-row {
+                grid-template-columns:
+                    110px 1fr 45px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .institution-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .institution-header {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .placement-pipeline {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <span>Go</span>Beyond
+    </div>
+
+    <nav>
+
+        <a href="dashboard.html">
+            Student Dashboard
+        </a>
+
+        <a href="academia.html">
+            Academia
+        </a>
+
+        <a href="institution.html">
+            Institution
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="institution-page">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================= -->
+
+    <section class="institution-header">
+
+        <div>
+
+            <p class="small-text">
+                INSTITUTIONAL INTELLIGENCE
+            </p>
+
+            <h1>
+                Institution Dashboard
+            </h1>
+
+            <p>
+                Monitor student skill development, internship
+                participation, placement readiness and
+                industry skill demand through institutional
+                analytics.
+            </p>
+
+        </div>
+
+
+        <div class="institution-badge">
+            INSTITUTION
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         OVERVIEW
+    ================================================= -->
+     <section class="institution-stats">
+
+    <div class="institution-stat">
+        <p>Total Students</p>
+        <strong id="totalStudents">0</strong>
+    </div>
+
+    <div class="institution-stat">
+        <p>Students Assessed</p>
+        <strong id="studentsAssessed">—</strong>
+    </div>
+
+    <div class="institution-stat">
+        <p>Internship Opportunities</p>
+        <strong id="internshipCount">0</strong>
+    </div>
+
+    <div class="institution-stat">
+        <p>Industry Workshops</p>
+        <strong id="workshopCount">0</strong>
+    </div>
+
+    </section>
+    
+
+
+
+    <!-- =================================================
+         SKILL DEVELOPMENT
+    ================================================= -->
+
+    <section class="institution-section">
+
+        <div class="institution-section-heading">
+
+            <p class="small-text">
+                STUDENT DEVELOPMENT
+            </p>
+
+            <h2>
+                Skill Development Analytics
+            </h2>
+
+            <p>
+                Institution-level view of student skills
+                and industry readiness.
+            </p>
+
+        </div>
+
+
+        <div class="analytics-grid">
+
+
+            <!-- Technical Skills -->
+
+            <div class="analytics-card">
+
+                <h3>
+                    Skill Development
+                </h3>
+
+            <div class="progress-item">
+
+    <div class="progress-label">
+        <span>Technical Skills Coverage</span>
+        <span id="technicalSkillPercent">0%</span>
+    </div>
+
+    <div class="progress-bar">
+        <div
+            class="progress-fill"
+            id="technicalSkillBar"
+            style="width:0%;">
+        </div>
+    </div>
+
+</div>
+
+
+<div class="progress-item">
+
+    <div class="progress-label">
+        <span>Career Interest Alignment</span>
+        <span id="interestAlignmentPercent">0%</span>
+    </div>
+
+    <div class="progress-bar">
+        <div
+            class="progress-fill"
+            id="interestAlignmentBar"
+            style="width:0%;">
+        </div>
+    </div>
+
+</div>
+
+
+<div class="progress-item">
+
+    <div class="progress-label">
+        <span>Industry Skill Alignment</span>
+        <span id="industryAlignmentPercent">0%</span>
+    </div>
+
+    <div class="progress-bar">
+        <div
+            class="progress-fill"
+            id="industryAlignmentBar"
+            style="width:0%;">
+        </div>
+    </div>
+
+</div>
+                
+            <!-- Skill Coverage -->
+
+            <div class="analytics-card">
+
+                <h3>
+                    Student Skill Coverage
+                </h3>
+
+            <div class="analytics-numbers">
+
+    <div class="analytics-number">
+
+        <span>
+            Students with Skills
+        </span>
+
+        <strong id="studentsWithSkills">
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="analytics-number">
+
+        <span>
+            Unique Skills
+        </span>
+
+        <strong id="uniqueSkills">
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="analytics-number">
+
+        <span>
+            Career Domains
+        </span>
+
+        <strong id="careerDomains">
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="analytics-number">
+
+        <span>
+            Industry-Relevant Skills
+        </span>
+
+        <strong id="industrySkills">
+            0
+        </strong>
+
+    </div>
+
+</div>
+                
+
+    </section>
+
+
+
+    <!-- =================================================
+         INTERNSHIP ANALYTICS
+    ================================================= -->
+
+    <section class="institution-section">
+
+        <div class="institution-section-heading">
+
+            <p class="small-text">
+                INDUSTRY EXPOSURE
+            </p>
+
+            <h2>
+                Internship Analytics
+            </h2>
+
+            <p>
+                Track student participation and outcomes
+                in internships and industrial training.
+            </p>
+
+        </div>
+
+
+        <div class="analytics-grid">
+
+
+            <div class="analytics-card">
+
+    <h3>
+        Internship Opportunities
+    </h3>
+
+    <div class="analytics-numbers">
+
+        <div class="analytics-number">
+
+            <span>
+                Total Opportunities
+            </span>
+
+            <strong id="internshipOpportunities">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="analytics-number">
+
+            <span>
+                Organizations
+            </span>
+
+            <strong id="internshipOrganizations">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="analytics-number">
+
+            <span>
+                Domains
+            </span>
+
+            <strong id="internshipDomains">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="analytics-number">
+
+            <span>
+                Modes
+            </span>
+
+            <strong id="internshipModes">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+           <div class="analytics-card">
+
+    <h3>
+        Internship Opportunity Coverage
+    </h3>
+
+
+    <div class="progress-item">
+
+        <div class="progress-label">
+
+            <span>
+                Opportunities with Required Skills
+            </span>
+
+            <span id="skillCoveragePercent">
+                0%
+            </span>
+
+        </div>
+
+
+        <div class="progress-bar">
+
+            <div
+                class="progress-fill"
+                id="skillCoverageBar"
+                style="width:0%;">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="progress-item">
+
+        <div class="progress-label">
+
+            <span>
+                Opportunities with Deadlines
+            </span>
+
+            <span id="deadlineCoveragePercent">
+                0%
+            </span>
+
+        </div>
+
+
+        <div class="progress-bar">
+
+            <div
+                class="progress-fill"
+                id="deadlineCoverageBar"
+                style="width:0%;">
+            </div>
+
+        </div>
+
+    </div>
+
+</div> 
+
+    </section>
+
+
+
+    <!-- =================================================
+         PLACEMENT ANALYTICS
+    ================================================= -->
+
+    <section class="institution-section">
+
+        <div class="institution-section-heading">
+
+            <p class="small-text">
+                CAREER OUTCOMES
+            </p>
+
+            <h2>
+                Placement Analytics
+            </h2>
+
+            <p>
+                Monitor the institutional placement pipeline
+                from eligibility to recruitment outcome.
+            </p>
+
+        </div>
+
+
+        <div class="analytics-card">
+              <div class="placement-pipeline">
+
+    <div class="pipeline-item">
+
+        <strong id="placementAssessed">
+            —
+        </strong>
+
+        <span>
+            Students Assessed
+        </span>
+
+    </div>
+
+
+    <div class="pipeline-item">
+
+        <strong id="placementEligible">
+            —
+        </strong>
+
+        <span>
+            Placement Eligible
+        </span>
+
+    </div>
+
+
+    <div class="pipeline-item">
+
+        <strong id="placementReady">
+            —
+        </strong>
+
+        <span>
+            Placement Ready
+        </span>
+
+    </div>
+
+
+    <div class="pipeline-item">
+
+        <strong id="studentsPlaced">
+            —
+        </strong>
+
+        <span>
+            Placed
+        </span>
+
+    </div>
+
+
+    <div class="pipeline-item">
+
+        <strong id="studentsSeeking">
+            —
+        </strong>
+
+        <span>
+            Seeking Opportunities
+        </span>
+
+    </div>
+
+</div>
+
+           
+
+
+            <div class="institution-insight">
+
+                <strong>
+                    Placement Insight
+                </strong>
+
+                <p id="placementInsightText">
+                    No verified placement outcome records are available
+                    in the current dataset.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         INDUSTRY SKILL DEMAND
+    ================================================= -->
+
+    <section class="institution-section">
+
+        <div class="institution-section-heading">
+
+            <p class="small-text">
+                INDUSTRY INTELLIGENCE
+            </p>
+
+            <h2>
+                Industry Skill Demand
+            </h2>
+
+            <p>
+                Identify the skills most relevant to current
+                industry requirements.
+            </p>
+
+        </div>
+
+
+        <div class="analytics-card">
+        <div
+            class="skill-demand"
+            id="skillDemandContainer">
+
+    <p>
+        Loading industry skill demand...
+    </p>
+
+        </div>
+    </section>
+
+
+</main>
+
+<script>
+
+async function loadInstitutionAnalytics() {
+
+    try {
+
+        /* =========================================
+           LOAD DATA
+        ========================================= */
+
+        const studentsResponse =
+    await fetch("../Data/students.json");
+
+const internshipsResponse =
+    await fetch("../Data/internships.json");
+
+const workshopsResponse =
+    await fetch("../Data/workshops.json");
+
+const placementResponse =
+    await fetch("../Data/placement_outcomes.json");
+
+
+        if (
+            !studentsResponse.ok ||
+            !internshipsResponse.ok ||
+            !workshopsResponse.ok ||
+            !placementResponse.ok
+        ) {
+            throw new Error("Unable to load data files.");
+        }
+
+
+        const students =
+            await studentsResponse.json();
+
+        const internships =
+            await internshipsResponse.json();
+
+        const workshops =
+            await workshopsResponse.json();
+
+        const placementData =
+            await placementResponse.json();
+
+        const internshipList =
+            Array.isArray(internships) ? internships : [];
+
+        const workshopList =
+            Array.isArray(workshops) ? workshops : [];
+        /* =========================================
+   INTERNSHIP ANALYTICS
+========================================= */
+
+const internshipOpportunities =
+    internshipList.length;
+
+
+/* Organizations */
+
+const organizations =
+    new Set(
+        internshipList
+            .map(item => item.organization)
+            .filter(Boolean)
+    );
+
+
+/* Domains */
+
+const domains =
+    new Set(
+        internshipList
+            .map(item => item.domain)
+            .filter(Boolean)
+    );
+
+
+/* Modes */
+
+const modes =
+    new Set(
+        internshipList
+            .map(item => item.mode)
+            .filter(Boolean)
+    );
+
+const distinctFieldCount = values =>
+    values.size > 0
+        ? values.size
+        : "Not available";
+
+
+/* Opportunities with required skills */
+
+const withSkills =
+    internshipList.filter(
+        item =>
+            Array.isArray(item.required_skills) &&
+            item.required_skills.length > 0
+    ).length;
+
+
+/* Opportunities with deadlines */
+
+const withDeadlines =
+    internshipList.filter(
+        item => item.deadline
+    ).length;
+
+
+/* =========================================
+   DISPLAY COUNTS
+========================================= */
+
+document.getElementById(
+    "internshipOpportunities"
+).textContent =
+    internshipOpportunities;
+
+
+document.getElementById(
+    "internshipOrganizations"
+).textContent =
+    organizations.size;
+
+
+document.getElementById(
+    "internshipDomains"
+).textContent =
+    distinctFieldCount(domains);
+
+
+document.getElementById(
+    "internshipModes"
+).textContent =
+    distinctFieldCount(modes);
+
+
+/* =========================================
+   DISPLAY COVERAGE
+========================================= */
+
+const skillCoverage =
+    internshipOpportunities > 0
+        ? Math.round(
+            (withSkills /
+                internshipOpportunities) * 100
+        )
+        : 0;
+
+
+const deadlineCoverage =
+    internshipOpportunities > 0
+        ? Math.round(
+            (withDeadlines /
+                internshipOpportunities) * 100
+        )
+        : 0;
+
+
+document.getElementById(
+    "skillCoveragePercent"
+).textContent =
+    skillCoverage + "%";
+
+
+document.getElementById(
+    "skillCoverageBar"
+).style.width =
+    skillCoverage + "%";
+
+
+document.getElementById(
+    "deadlineCoveragePercent"
+).textContent =
+    deadlineCoverage + "%";
+
+
+document.getElementById(
+    "deadlineCoverageBar"
+).style.width =
+    deadlineCoverage + "%";   
+
+
+        /* =========================================
+           BASIC COUNTS
+        ========================================= */
+
+        const studentList =
+        Array.isArray(students)
+        ? students
+        : [students];
+
+
+const totalStudents =
+    studentList.length;
+
+    /* =========================================
+       PLACEMENT OUTCOME ANALYTICS
+       These values are only shown when explicit outcome
+       records are present. Student skills are not used as
+       a proxy for placement status.
+    ========================================= */
+
+const studentIds =
+    new Set(
+        studentList
+            .map(student => String(student.student_id))
+            .filter(Boolean)
+    );
+
+const placementRecords =
+    Array.isArray(placementData?.records)
+        ? placementData.records.filter(
+            record =>
+                record &&
+                studentIds.has(String(record.student_id))
+        )
+        : [];
+
+const setPlacementMetric = (id, value) => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.textContent = value;
+    }
+};
+
+if (placementRecords.length === 0) {
+    [
+        "placementAssessed",
+        "placementEligible",
+        "placementReady",
+        "studentsPlaced",
+        "studentsSeeking",
+        "studentsAssessed"
+    ].forEach(id => setPlacementMetric(id, "Not available"));
+
+    const placementInsight =
+        document.getElementById("placementInsightText");
+
+    if (placementInsight) {
+        placementInsight.textContent =
+            "No verified placement outcome records are available " +
+            "in the current dataset. Populate Data/placement_outcomes.json " +
+            "with one record per student when those outcomes are available.";
+    }
+} else {
+    const countTrue = field =>
+        placementRecords.filter(
+            record => record[field] === true
+        ).length;
+
+    const countStatus = statuses =>
+        placementRecords.filter(record =>
+            statuses.includes(
+                String(record.status || "").toLowerCase()
+            )
+        ).length;
+
+    setPlacementMetric(
+        "placementAssessed",
+        countTrue("assessed")
+    );
+    setPlacementMetric(
+        "placementEligible",
+        countTrue("eligible")
+    );
+    setPlacementMetric(
+        "placementReady",
+        countTrue("ready")
+    );
+    setPlacementMetric(
+        "studentsPlaced",
+        countStatus(["placed"])
+    );
+    setPlacementMetric(
+        "studentsSeeking",
+        countStatus(["seeking", "seeking opportunities"])
+    );
+    setPlacementMetric(
+        "studentsAssessed",
+        countTrue("assessed")
+    );
+
+    const placementInsight =
+        document.getElementById("placementInsightText");
+
+    if (placementInsight) {
+        placementInsight.textContent =
+            "Placement metrics are calculated from explicit records " +
+            "in Data/placement_outcomes.json.";
+    }
+}
+        const internshipCount =
+            internshipList.length;
+
+        const workshopCount =
+            workshopList.length;
+
+
+        document.getElementById(
+            "totalStudents"
+        ).textContent = totalStudents;
+
+
+        document.getElementById(
+            "internshipCount"
+        ).textContent = internshipCount;
+
+
+        document.getElementById(
+            "workshopCount"
+        ).textContent = workshopCount;
+
+
+
+        /* =========================================
+           STUDENT SKILLS
+           Only explicit aliases are normalized. Similar-looking
+           but different skills remain separate.
+        ========================================= */
+
+        const skillAliases = {
+            "ml": "machine learning",
+            "ai": "artificial intelligence",
+            "cyber security": "cybersecurity",
+            "internet of things": "internet of things",
+            "iot": "internet of things",
+            "llms": "llm"
+        };
+
+        const skillLabels = {
+            "machine learning": "Machine Learning",
+            "artificial intelligence": "Artificial Intelligence",
+            "cybersecurity": "Cybersecurity",
+            "internet of things": "Internet of Things",
+            "llm": "LLM"
+        };
+
+        const normalizeSkill = value => {
+            const key =
+                String(value || "")
+                    .trim()
+                    .toLowerCase()
+                    .replace(/\s+/g, " ");
+
+            return skillAliases[key] || key;
+        };
+
+        const skillLabel = (originalValue, normalizedValue) =>
+            skillLabels[normalizedValue] ||
+            String(originalValue || "").trim();
+
+        const skillsMatch = (left, right) => {
+            const leftKey = normalizeSkill(left);
+            const rightKey = normalizeSkill(right);
+
+            if (!leftKey || !rightKey) {
+                return false;
+            }
+
+            if (leftKey === rightKey) {
+                return true;
+            }
+
+            const aiMlGroup = new Set([
+                "ai/ml",
+                "artificial intelligence",
+                "machine learning"
+            ]);
+
+            return (
+                aiMlGroup.has(leftKey) &&
+                aiMlGroup.has(rightKey)
+            );
+        };
+
+        let allStudentSkills = [];
+
+        let allInterests = [];
+
+        studentList.forEach(student => {
+
+            if (Array.isArray(student.skills)) {
+
+                    allStudentSkills =
+                    allStudentSkills.concat(
+                        student.skills.map(normalizeSkill)
+                    );
+
+            }
+
+            if (Array.isArray(student.interests)) {
+
+                    allInterests =
+                    allInterests.concat(
+                        student.interests.map(normalizeSkill)
+                    );
+
+            }
+
+        });
+
+
+        const uniqueStudentSkills =
+            [...new Set(allStudentSkills)];
+
+
+        const uniqueInterests =
+            [...new Set(allInterests)];
+
+
+        document.getElementById(
+            "studentsWithSkills"
+        ).textContent =
+            studentList.filter(
+                student =>
+                    Array.isArray(student.skills) &&
+                    student.skills.length > 0
+            ).length;
+
+
+        document.getElementById(
+            "uniqueSkills"
+        ).textContent =
+            uniqueStudentSkills.length;
+
+
+        document.getElementById(
+            "careerDomains"
+        ).textContent =
+            uniqueInterests.length;
+
+
+
+        /* =========================================
+           INDUSTRY REQUIRED SKILLS
+        ========================================= */
+
+        const skillFrequency = {};
+
+
+        internshipList.forEach(internship => {
+
+            if (!Array.isArray(internship.required_skills)) {
+                return;
+            }
+
+            internship.required_skills.forEach(skill => {
+
+                const cleanSkill =
+                    String(skill || "").trim();
+
+                if (!cleanSkill) {
+                    return;
+                }
+
+                const key =
+                    normalizeSkill(cleanSkill);
+
+                if (!skillFrequency[key]) {
+
+                    skillFrequency[key] = {
+                        name: skillLabel(cleanSkill, key),
+                        count: 0
+                    };
+
+                }
+
+                skillFrequency[key].count++;
+
+            });
+
+        });
+
+
+        const sortedSkills =
+            Object.values(skillFrequency)
+                .sort(
+                    (a, b) =>
+                        b.count - a.count
+                );
+
+
+        const topSkills =
+            sortedSkills.slice(0, 8);
+
+
+        /* =========================================
+           INDUSTRY SKILL DEMAND UI
+        ========================================= */
+
+        const skillContainer =
+            document.getElementById(
+                "skillDemandContainer"
+            );
+
+
+        if (skillContainer) {
+
+            const maxCount =
+                topSkills.length > 0
+                    ? topSkills[0].count
+                    : 1;
+
+
+            skillContainer.innerHTML =
+                topSkills.map(skill => {
+
+                    const percentage =
+                        Math.round(
+                            (skill.count /
+                                maxCount) * 100
+                        );
+
+
+                    return `
+
+                        <div class="skill-row">
+
+                            <span class="skill-name">
+                                ${skill.name}
+                            </span>
+
+                            <div class="skill-meter">
+
+                                <div
+                                    class="skill-meter-fill"
+                                    style="width:${percentage}%;">
+                                </div>
+
+                            </div>
+
+                            <span class="skill-value">
+                                ${skill.count}
+                            </span>
+
+                        </div>
+
+                    `;
+
+                }).join("");
+
+        }
+
+
+
+        /* =========================================
+           SKILL ALIGNMENT
+        ========================================= */
+
+        const industrySkillNames =
+    Object.keys(skillFrequency);
+
+
+/* =========================================
+   TECHNICAL SKILL ALIGNMENT
+========================================= */
+
+let matchingTechnicalSkills = 0;
+
+uniqueStudentSkills.forEach(skill => {
+
+    const matches =
+        industrySkillNames.some(
+            industrySkill =>
+                skillsMatch(skill, industrySkill)
+        );
+
+    if (matches) {
+        matchingTechnicalSkills++;
+    }
+
+});
+
+
+const technicalSkillPercent =
+    uniqueStudentSkills.length > 0
+        ? Math.round(
+            (matchingTechnicalSkills /
+                uniqueStudentSkills.length) *
+            100
+        )
+        : 0;
+
+
+/* =========================================
+   INTEREST ALIGNMENT
+========================================= */
+
+let matchingInterests = 0;
+
+uniqueInterests.forEach(interest => {
+
+    const matches =
+        industrySkillNames.some(
+            industrySkill =>
+                skillsMatch(interest, industrySkill)
+        );
+
+    if (matches) {
+        matchingInterests++;
+    }
+
+});
+
+
+const interestAlignment =
+    uniqueInterests.length > 0
+        ? Math.round(
+            (matchingInterests /
+                uniqueInterests.length) *
+            100
+        )
+        : 0;
+
+
+/* =========================================
+   OVERALL INDUSTRY ALIGNMENT
+========================================= */
+
+const matchingSkills =
+    matchingTechnicalSkills;
+
+const industryAlignment =
+    uniqueStudentSkills.length > 0
+        ? Math.round(
+            (matchingSkills /
+                uniqueStudentSkills.length) *
+            100
+        )
+        : 0;
+
+
+        /* =========================================
+           UPDATE PROGRESS BARS
+        ========================================= */
+
+        document.getElementById(
+            "technicalSkillPercent"
+        ).textContent =
+            technicalSkillPercent + "%";
+
+
+        document.getElementById(
+            "technicalSkillBar"
+        ).style.width =
+            technicalSkillPercent + "%";
+
+
+        document.getElementById(
+            "interestAlignmentPercent"
+        ).textContent =
+            interestAlignment + "%";
+
+
+        document.getElementById(
+            "interestAlignmentBar"
+        ).style.width =
+            interestAlignment + "%";
+
+
+        document.getElementById(
+            "industryAlignmentPercent"
+        ).textContent =
+            industryAlignment + "%";
+
+
+        document.getElementById(
+            "industryAlignmentBar"
+        ).style.width =
+            industryAlignment + "%";
+
+
+        document.getElementById(
+            "industrySkills"
+        ).textContent =
+            matchingSkills;
+
+
+
+    } catch (error) {
+
+        console.error(
+            "Institution analytics error:",
+            error
+        );
+
+        document.getElementById(
+            "skillDemandContainer"
+        ).innerHTML = `
+            <p>
+                Unable to load institution data.
+                Please open the page using Live Server.
+            </p>
+        `;
+
+    }
+
+}
+
+
+/* =========================================
+   START
+========================================= */
+
+loadInstitutionAnalytics();
+
+</script>
+</body>
+
+</html>

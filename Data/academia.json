@@ -1,0 +1,98 @@
+{
+    "mentorships": [
+        {
+            "title": "Industry Mentorship - Artificial Intelligence",
+            "mentor": null,
+            "organization": null,
+            "domain": "Artificial Intelligence",
+            "mode": "Online",
+            "status": "Open"
+        },
+        {
+            "title": "Research Mentorship - Machine Learning",
+            "mentor": null,
+            "organization": null,
+            "domain": "Machine Learning",
+            "mode": "Hybrid",
+            "status": "Open"
+        }
+    ],
+
+    "fdps": [
+        {
+            "title": "AI for Healthcare",
+            "organization": null,
+            "domain": "Artificial Intelligence",
+            "mode": "Online",
+            "date": "October 2026",
+            "status": "Upcoming"
+        },
+        {
+            "title": "Data Analytics for Faculty",
+            "organization": null,
+            "domain": "Data Analytics",
+            "mode": "Hybrid",
+            "date": "November 2026",
+            "status": "Upcoming"
+        }
+    ],
+
+    "research": [
+        {
+            "title": "AI-Based Skill Assessment",
+            "organization": null,
+            "domain": "Artificial Intelligence",
+            "type": "Collaborative Research",
+            "status": "Open"
+        },
+        {
+            "title": "Digital Healthcare Research",
+            "organization": null,
+            "domain": "Healthcare + AI",
+            "type": "Industry-Academia Research",
+            "status": "Open"
+        }
+    ],
+
+    "industrial_training": [
+        {
+            "title": "Faculty Industrial Training Program",
+            "organization": null,
+            "domain": "Emerging Technologies",
+            "mode": "Hybrid",
+            "duration": "4 Weeks",
+            "status": "Open"
+        }
+    ],
+
+    "consultancy": [
+        {
+            "title": "Industry Data Analytics Project",
+            "organization": null,
+            "domain": "Data Analytics",
+            "type": "Consultancy",
+            "status": "Open"
+        }
+    ],
+
+    "collaboration": [
+        {
+            "title": "Industry Guest Lecture",
+            "organization": null,
+            "domain": "Emerging Technologies",
+            "type": "Guest Lecture"
+        },
+        {
+            "title": "Innovation Challenge",
+            "organization": null,
+            "domain": "Artificial Intelligence",
+            "type": "Innovation Challenge"
+        },
+        {
+            "title": "Live Industry Project",
+            "organization": null,
+            "domain": "Software Development",
+            "type": "Live Project"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+  "records": [],
+  "fields": {
+    "student_id": "Required: match Data/students.json.student_id",
+    "assessed": "Optional boolean",
+    "eligible": "Optional boolean",
+    "ready": "Optional boolean",
+    "status": "Optional: placed, seeking, not seeking, or unknown",
+    "organization": "Optional",
+    "role": "Optional",
+    "salary": "Optional",
+    "offer_date": "Optional"
+  }
+}

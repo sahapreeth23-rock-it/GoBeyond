@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GoBeyond | Academia</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =====================================================
+           ACADEMIA PORTAL
+        ===================================================== */
+
+        .academia-page {
+            width: 92%;
+            max-width: 1400px;
+            margin: 40px auto 80px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .academia-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+
+            margin-bottom: 35px;
+        }
+
+        .academia-header h1 {
+            font-size: 38px;
+            margin: 8px 0;
+        }
+
+        .academia-header p {
+            color: #697185;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .role-badge {
+            padding: 12px 18px;
+
+            border-radius: 14px;
+
+            background: #eeeaff;
+            color: #5c4ce6;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           QUICK STATS
+        ========================= */
+
+        .academia-stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+
+            margin-bottom: 45px;
+        }
+
+        .academia-stat {
+            background: #ffffff;
+
+            border: 1px solid #e4e7ef;
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            transition: .25s;
+        }
+
+        .academia-stat:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 28px
+                rgba(30, 35, 60, .08);
+        }
+
+        .academia-stat p {
+            color: #7b8292;
+
+            font-size: 13px;
+
+            margin-bottom: 8px;
+        }
+
+        .academia-stat strong {
+            font-size: 30px;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .academia-section {
+            margin-top: 50px;
+        }
+
+        .academia-section-heading {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            margin-bottom: 22px;
+        }
+
+        .academia-section-heading h2 {
+            font-size: 26px;
+        }
+
+        .academia-section-heading p {
+            color: #697185;
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           OPPORTUNITY GRID
+        ========================= */
+
+        .academia-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .academia-card {
+            background: #ffffff;
+
+            border: 1px solid #e4e7ef;
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            transition: .25s;
+        }
+
+        .academia-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 14px 30px
+                rgba(30, 35, 60, .08);
+        }
+
+        .academia-card-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+        .academia-card h3 {
+            margin: 18px 0 10px;
+
+            font-size: 20px;
+        }
+
+        .academia-card > p {
+            color: #697185;
+
+            line-height: 1.6;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           STATUS
+        ========================= */
+
+        .academia-status {
+            display: inline-block;
+
+            padding: 6px 12px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+        .status-open {
+            background: #e8f8ef;
+            color: #23824b;
+        }
+
+        .status-upcoming {
+            background: #eeeaff;
+            color: #5c4ce6;
+        }
+
+        .status-active {
+            background: #e8f0ff;
+            color: #3563bd;
+        }
+
+
+        /* =========================
+           DETAILS
+        ========================= */
+
+        .academia-details {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+
+            margin-bottom: 20px;
+
+            color: #596174;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .academia-btn {
+            border: none;
+
+            background: #635bff;
+
+            color: white;
+
+            padding: 10px 16px;
+
+            border-radius: 9px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+        .academia-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 7px 16px
+                rgba(99, 91, 255, .2);
+        }
+
+
+        /* =========================
+           RESEARCH / CONSULTANCY
+        ========================= */
+
+        .academia-wide-card {
+            background: #ffffff;
+
+            border: 1px solid #e4e7ef;
+
+            border-radius: 18px;
+
+            padding: 28px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 25px;
+        }
+
+        .academia-wide-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .academia-wide-card p {
+            color: #697185;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .academia-stats {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .academia-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .academia-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .academia-header {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .academia-wide-card {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <span>Go</span>Beyond
+    </div>
+
+    <nav>
+
+        <a href="dashboard.html">
+            Student Dashboard
+        </a>
+
+        <a href="academia.html">
+            Academia
+        </a>
+
+        <a href="institution.html">
+            Institution
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     ACADEMIA MAIN
+===================================================== -->
+
+<main class="academia-page">
+
+
+    <!-- HEADER -->
+
+    <section class="academia-header">
+
+        <div>
+
+            <p class="small-text">
+                ACADEMIA–INDUSTRY COLLABORATION
+            </p>
+
+            <h1>
+                Academia Portal
+            </h1>
+
+            <p>
+                Explore industry mentorship, faculty development,
+                industrial training, research collaboration and
+                consultancy opportunities through GoBeyond.
+            </p>
+
+        </div>
+
+
+        <div class="role-badge">
+            ACADEMICIAN
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         QUICK STATS
+    ================================================= -->
+
+    <section class="academia-stats">
+
+        <div class="academia-stat">
+
+            <p>
+                Active Mentorships
+            </p>
+            <strong id="activeMentorships">
+              0
+            </strong>
+
+        </div>
+
+
+        <div class="academia-stat">
+
+            <p>
+                FDPs
+            </p>
+
+           <strong id="fdpCount">
+    0
+</strong>
+
+        </div>
+
+
+        <div class="academia-stat">
+
+            <p>
+                Research Projects
+            </p>
+
+            <strong id="researchCount">
+              0
+            </strong>
+
+        </div>
+
+
+        <div class="academia-stat">
+
+            <p>
+                Industry Collaborations
+            </p>
+
+           <strong id="collaborationCount">
+    0
+</strong>
+
+        </div>
+
+    </section>
+<!-- =================================================
+     ACADEMIA SEARCH
+================================================= -->
+
+<section class="academia-search-section">
+
+    <div class="academia-section-heading">
+        <div>
+            <p class="small-text">
+                FIND OPPORTUNITIES
+            </p>
+
+            <h2>
+                Search Academia Opportunities
+            </h2>
+
+            <p>
+                Search across mentorship, FDPs, research,
+                industrial training and consultancy projects.
+            </p>
+        </div>
+    </div>
+
+    <input
+        type="text"
+        id="academiaSearch"
+        class="academia-search"
+        placeholder="Search by title, organization, domain or type..."
+    >
+
+</section>
+
+
+    <!-- =================================================
+         MENTORSHIP
+    ================================================= -->
+
+    <section class="academia-section">
+
+        <div class="academia-section-heading">
+
+            <div>
+
+                <p class="small-text">
+                    INDUSTRY CONNECTION
+                </p>
+
+                <h2>
+                    Mentorship Programs
+                </h2>
+
+                <p>
+                    Connect with industry professionals
+                    for mentorship and knowledge exchange.
+                </p>
+
+            </div>
+
+        </div>
+
+
+       <div class="academia-grid" id="mentorshipContainer">
+    
+           <p>Loading mentorship opportunities...</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         FDP
+    ================================================= -->
+
+    <section class="academia-section">
+
+        <div class="academia-section-heading">
+
+            <div>
+
+                <p class="small-text">
+                    FACULTY DEVELOPMENT
+                </p>
+
+                <h2>
+                    Faculty Development Programs
+                </h2>
+
+                <p>
+                    Discover industry-relevant training
+                    and faculty development programs.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="academia-grid" id="fdpContainer">
+    
+            <p>Loading faculty development programs...</p>
+    
+         </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RESEARCH
+    ================================================= -->
+
+    <section class="academia-section">
+
+        <div class="academia-section-heading">
+
+            <div>
+
+                <p class="small-text">
+                    RESEARCH & COLLABORATION
+                </p>
+
+                <h2>
+                    Collaborative Research Projects
+                </h2>
+
+                <p>
+                    Find opportunities for industry–academia
+                    research and innovation.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="academia-grid" id="researchContainer">
+    
+            <p>Loading research collaborations...</p>
+    
+         </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FACULTY INTERNSHIP / INDUSTRIAL TRAINING
+    ================================================= -->
+
+    <section class="academia-section">
+
+        <div class="academia-section-heading">
+
+            <div>
+
+                <p class="small-text">
+                    INDUSTRY EXPOSURE
+                </p>
+
+                <h2>
+                    Faculty Internship & Industrial Training
+                </h2>
+
+                <p>
+                    Gain practical exposure to current
+                    industry practices and technologies.
+                </p>
+
+            </div>
+
+        </div>
+
+
+       <div id="trainingContainer">
+
+            <p>Loading industrial training opportunities...</p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CONSULTANCY / LIVE PROJECTS
+    ================================================= -->
+
+    <section class="academia-section">
+
+        <div class="academia-section-heading">
+
+            <div>
+
+                <p class="small-text">
+                    INDUSTRY ENGAGEMENT
+                </p>
+
+                <h2>
+                    Consultancy & Live Industry Projects
+                </h2>
+
+                <p>
+                    Work with industry partners on
+                    real-world problems and innovation projects.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div id="consultancyContainer">
+
+            <p>Loading consultancy projects...</p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+<script>
+
+async function loadAcademiaData() {
+
+    try {
+
+        const response =
+            await fetch("../Data/academia.json");
+
+        if (!response.ok) {
+            throw new Error("Could not load academia.json");
+        }
+
+        const data =
+            await response.json();
+
+        const records = key =>
+            Array.isArray(data[key]) ? data[key] : [];
+
+        const displayValue = value =>
+            value === null ||
+            value === undefined ||
+            String(value).trim() === ""
+                ? "Not specified"
+                : String(value);
+
+        window.academiaData = data;
+        /* ==========================================
+              ACADEMIA QUICK STATS
+           ========================================== */
+
+const mentorships =
+    records("mentorships");
+
+const fdps =
+    records("fdps");
+
+const researchProjects =
+    records("research");
+
+const industrialTraining =
+    records("industrial_training");
+
+const consultancyProjects =
+    records("consultancy");
+
+const collaborationRecords =
+    records("collaboration");
+
+
+/* Active mentorships */
+
+document.getElementById(
+    "activeMentorships"
+).textContent =
+    mentorships.filter(item =>
+        ["open", "active"].includes(
+            String(item.status || "").toLowerCase()
+        )
+    ).length;
+
+
+/* FDPs */
+
+document.getElementById(
+    "fdpCount"
+).textContent =
+    fdps.length;
+
+
+/* Research projects */
+
+document.getElementById(
+    "researchCount"
+).textContent =
+    researchProjects.length;
+
+
+/* Industry collaborations */
+
+document.getElementById(
+    "collaborationCount"
+).textContent =
+    industrialTraining.length +
+    consultancyProjects.length +
+    collaborationRecords.length;
+
+        /* ==========================================
+           MENTORSHIPS
+        ========================================== */
+
+        const mentorshipContainer =
+            document.getElementById(
+                "mentorshipContainer"
+            );
+
+        if (mentorshipContainer) {
+
+            mentorshipContainer.innerHTML =
+                mentorships.map((item, index) => `
+
+                    <article class="academia-card">
+
+                        <div class="academia-card-top">
+
+                            <span class="academia-status status-open">
+                                ${displayValue(item.status)}
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            ${displayValue(item.title)}
+                        </h3>
+
+                        <p>
+                            ${displayValue(item.description)}
+                        </p>
+
+                        <div class="academia-details">
+
+                            <span>
+                                👤 Mentor: ${displayValue(item.mentor)}
+                            </span>
+
+                            <span>
+                                🏢 ${displayValue(item.organization)}
+                            </span>
+
+                            <span>
+                                🔬 ${displayValue(item.domain)}
+                            </span>
+
+                            <span>
+                                💻 ${displayValue(item.mode)}
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="academia-btn"
+                            onclick="viewAcademiaOpportunity('mentorships', ${index})">
+
+                            View Mentorship
+
+                        </button>
+
+                    </article>
+
+                `).join("");
+
+        }
+
+
+        /* ==========================================
+           FDPs
+        ========================================== */
+
+        const fdpContainer =
+            document.getElementById(
+                "fdpContainer"
+            );
+
+        if (fdpContainer) {
+
+            fdpContainer.innerHTML =
+                fdps.map((item, index) => `
+
+                    <article class="academia-card">
+
+                        <div class="academia-card-top">
+
+                            <span class="academia-status status-upcoming">
+                                ${displayValue(item.status)}
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            ${displayValue(item.title)}
+                        </h3>
+
+                        <p>
+                            ${displayValue(item.description)}
+                        </p>
+
+                        <div class="academia-details">
+
+                            <span>
+                                🏢 ${displayValue(item.organization)}
+                            </span>
+
+                            <span>
+                                🔬 ${displayValue(item.domain)}
+                            </span>
+
+                            <span>
+                                💻 ${displayValue(item.mode)}
+                            </span>
+
+                            <span>
+                                📅 ${displayValue(item.date)}
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="academia-btn"
+                            onclick="viewAcademiaOpportunity('fdps', ${index})">
+
+                            View FDP
+
+                        </button>
+
+                    </article>
+
+                `).join("");
+
+        }
+
+
+        /* ==========================================
+           RESEARCH
+        ========================================== */
+
+        const researchContainer =
+            document.getElementById(
+                "researchContainer"
+            );
+
+        if (researchContainer) {
+
+            researchContainer.innerHTML =
+                researchProjects.map((item, index) => `
+
+                    <article class="academia-card">
+
+                        <div class="academia-card-top">
+
+                            <span class="academia-status status-open">
+                                ${displayValue(item.status)}
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            ${displayValue(item.title)}
+                        </h3>
+
+                        <p>
+                            ${displayValue(item.description)}
+                        </p>
+
+                        <div class="academia-details">
+
+                            <span>
+                                🏢 ${displayValue(item.organization)}
+                            </span>
+
+                            <span>
+                                🔬 ${displayValue(item.domain)}
+                            </span>
+
+                            <span>
+                                📚 ${displayValue(item.type)}
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="academia-btn"
+                            onclick="viewAcademiaOpportunity('research', ${index})">
+
+                            Explore Collaboration
+
+                        </button>
+
+                    </article>
+
+                `).join("");
+
+        }
+
+
+        /* ==========================================
+           INDUSTRIAL TRAINING
+        ========================================== */
+
+        const trainingContainer =
+            document.getElementById(
+                "trainingContainer"
+            );
+
+        if (trainingContainer) {
+
+            trainingContainer.innerHTML =
+                industrialTraining.map((item, index) => `
+
+                    <div class="academia-wide-card">
+
+                        <div>
+
+                            <span class="academia-status status-open">
+                                ${displayValue(item.status)}
+                            </span>
+
+                            <h3>
+                                ${displayValue(item.title)}
+                            </h3>
+
+                            <p>
+                                ${displayValue(item.description)}
+                            </p>
+
+                            <div class="academia-details">
+
+                                <span>
+                                    🏢 ${displayValue(item.organization)}
+                                </span>
+
+                                <span>
+                                    🔬 ${displayValue(item.domain)}
+                                </span>
+
+                                <span>
+                                    💻 ${displayValue(item.mode)}
+                                </span>
+
+                                <span>
+                                    ⏱️ ${displayValue(item.duration)}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button
+                            class="academia-btn"
+                            onclick="viewAcademiaOpportunity('industrial_training', ${index})">
+
+                            Explore Program
+
+                        </button>
+
+                    </div>
+
+                `).join("");
+
+        }
+
+
+        /* ==========================================
+           CONSULTANCY
+        ========================================== */
+
+        const consultancyContainer =
+            document.getElementById(
+                "consultancyContainer"
+            );
+
+        if (consultancyContainer) {
+
+            consultancyContainer.innerHTML =
+                consultancyProjects.map((item, index) => `
+
+                    <div class="academia-wide-card">
+
+                        <div>
+
+                            <span class="academia-status status-open">
+                                ${displayValue(item.status)}
+                            </span>
+
+                            <h3>
+                                ${displayValue(item.title)}
+                            </h3>
+
+                            <p>
+                                ${displayValue(item.description)}
+                            </p>
+
+                            <div class="academia-details">
+
+                                <span>
+                                    🏢 ${displayValue(item.organization)}
+                                </span>
+
+                                <span>
+                                    🔬 ${displayValue(item.domain)}
+                                </span>
+
+                                <span>
+                                    📚 ${displayValue(item.type)}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button
+                            class="academia-btn"
+                            onclick="viewAcademiaOpportunity('consultancy', ${index})">
+
+                            View Project
+
+                        </button>
+
+                    </div>
+
+                `).join("");
+
+        }
+
+
+    } catch (error) {
+
+        console.error(
+            "Academia data error:",
+            error
+        );
+
+        alert(
+            "Unable to load Academia data. " +
+            "Please make sure the page is opened using Live Server."
+        );
+
+    }
+
+}
+
+
+/* ==========================================
+   OPPORTUNITY BUTTON
+========================================== */
+
+function viewAcademiaOpportunity(section, index) {
+
+    const records =
+        window.academiaData?.[section];
+
+    const opportunity =
+        Array.isArray(records)
+            ? records[index]
+            : null;
+
+    if (!opportunity) {
+        alert("Opportunity details could not be found.");
+        return;
+    }
+
+
+    const details = `
+
+${opportunity.title}
+
+Organization:
+${opportunity.organization || "Not specified"}
+
+Domain:
+${opportunity.domain || "Not specified"}
+
+Status:
+${opportunity.status || "Not specified"}
+
+Mode:
+${opportunity.mode || "Not specified"}
+
+${opportunity.mentor
+    ? "Mentor:\n" + opportunity.mentor + "\n"
+    : ""}
+
+${opportunity.date
+    ? "Date:\n" + opportunity.date + "\n"
+    : ""}
+
+${opportunity.duration
+    ? "Duration:\n" + opportunity.duration + "\n"
+    : ""}
+
+${opportunity.type
+    ? "Type:\n" + opportunity.type + "\n"
+    : ""}
+
+${opportunity.description
+    ? "Description:\n" + opportunity.description
+    : ""}
+`;
+
+    alert(details);
+
+}
+
+
+/* ==========================================
+   LOAD DATA
+========================================== */
+
+loadAcademiaData();
+/* ==========================================
+   ACADEMIA SEARCH
+========================================== */
+
+const academiaSearch =
+    document.getElementById("academiaSearch");
+
+if (academiaSearch) {
+
+    academiaSearch.addEventListener(
+        "input",
+        function () {
+
+            const searchText =
+                this.value.toLowerCase().trim();
+
+            const cards =
+                document.querySelectorAll(
+                    ".academia-card, .academia-wide-card"
+                );
+
+            cards.forEach(card => {
+
+                const cardText =
+                    card.textContent.toLowerCase();
+
+                if (
+                    searchText === "" ||
+                    cardText.includes(searchText)
+                ) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+
+            });
+
+        }
+    );
+
+}
+
+</script>
+</body>
+
+</html>

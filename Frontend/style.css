@@ -3048,3 +3048,39 @@ footer {
     line-height: 1.4;
     color: #747b8b;
 }
+/* ==========================================
+   ACADEMIA SEARCH
+========================================== */
+
+.academia-search-section {
+    margin-bottom: 50px;
+}
+
+.academia-search {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 20px;
+    margin-top: 20px;
+
+    border: 1px solid #dfe3ee;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    font-size: 16px;
+    color: #172b4d;
+
+    outline: none;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.academia-search:focus {
+    border-color: #635bff;
+    box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.12);
+}
+
+.academia-search::placeholder {
+    color: #7a869a;
+}

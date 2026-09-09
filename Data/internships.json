@@ -25,9 +25,11 @@
     "organization": "IndentixWeb",
     "required_skills": [
       "Debugging Skills",
-      "HTML & CSSProblem-Solving Skills",
+      "HTML & CSS",
+      "Problem-Solving Skills",
       "Basic Web Development",
-      "Database Basics (MySQL)API Understanding",
+      "Database Basics (MySQL)",
+      "API Understanding",
       "JavaScript Fundamentals",
       "Logical Thinking",
       "Client-Server Architecture"
@@ -56,7 +58,8 @@
       "REST API",
       "Software Development Life Cycle (SDLC)",
       "SQL",
-      "VS CodeWeb Design"
+      "VS Code",
+      "Web Design"
     ],
     "interests": [],
     "deadline": "19th sept'26",
@@ -820,9 +823,11 @@
     "organization": "IndentixWeb",
     "required_skills": [
       "Debugging Skills",
-      "HTML & CSSProblem-Solving Skills",
+      "HTML & CSS",
+      "Problem-Solving Skills",
       "Basic Web Development",
-      "Database Basics (MySQL)API Understanding",
+      "Database Basics (MySQL)",
+      "API Understanding",
       "JavaScript Fundamentals",
       "Logical Thinking",
       "Client-Server Architecture"
@@ -851,7 +856,8 @@
       "REST API",
       "Software Development Life Cycle (SDLC)",
       "SQL",
-      "VS CodeWeb Design"
+      "VS Code",
+      "Web Design"
     ],
     "interests": [],
     "deadline": "19th sept'26",
@@ -1607,9 +1613,9 @@
     "type": "Internship",
     "organization": "Toyart DIY Enterprises",
     "required_skills": [
-      "EDA tools (Altium",
+      "EDA tools (Altium)",
       "Eagle",
-      "KiCad)",
+      "KiCad",
       "SPICE simulation",
       "DRC"
     ],
@@ -1710,9 +1716,9 @@
     "type": "Internship",
     "organization": "Toyart DIY Enterprises",
     "required_skills": [
-      "EDA tools (Altium",
+      "EDA tools (Altium)",
       "Eagle",
-      "KiCad)",
+      "KiCad",
       "SPICE simulation",
       "DRC"
     ],
