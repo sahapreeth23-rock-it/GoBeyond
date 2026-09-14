@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "company": "TechNova",
+        "title": "AI/ML Internship",
+        "type": "Internship",
+        "required_skills": [
+            "Python",
+            "SQL",
+            "Machine Learning",
+            "Git"
+        ],
+        "eligibility": "3rd/4th year CSE/IT",
+        "duration": "3 months",
+        "location": "Hyderabad"
+    },
+    {
+        "id": 2,
+        "company": "TechNova",
+        "title": "AIML Internship",
+        "type": "Internship",
+        "required_skills": [
+            "Python",
+            "SQL",
+            "Machine Learning",
+            "git"
+        ],
+        "eligibility": "3rd/4th year CSE/IT",
+        "duration": "3 months",
+        "location": "Hyderabad"
+    },
+    {
+        "id": 3,
+        "company": "TechNova",
+        "title": "ai/ml internship",
+        "type": "Internship",
+        "required_skills": [
+            "Python",
+            "SQL",
+            "Machine Learning",
+            "git"
+        ],
+        "eligibility": "3rd/4th year CSE/IT",
+        "duration": "3 months",
+        "location": "Hyderabad"
+    },
+    {
+        "id": 4,
+        "company": "TechNova",
+        "title": "AI/ML internship",
+        "type": "Internship",
+        "required_skills": [
+            "Python",
+            "SQL",
+            "Machine Learning",
+            "git"
+        ],
+        "eligibility": "3rd/4th year CSE/IT",
+        "duration": "3 months",
+        "location": "Hyderabad"
+    }
+]

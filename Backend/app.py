@@ -45,7 +45,14 @@ WORKSHOPS_FILE = os.path.join(
     DATA_DIR,
     "workshops.json"
 )
-
+INDUSTRY_OPPORTUNITIES_FILE = os.path.join(
+    DATA_DIR,
+    "industry_opportunities.json"
+)
+APPLICATIONS_FILE = os.path.join(
+    DATA_DIR,
+    "applications.json"
+)
 USERS_FILE = os.path.join(
     DATA_DIR,
     "users.json"
@@ -87,8 +94,28 @@ with open(
 
     workshops = json.load(file)
 
+with open(
+    INDUSTRY_OPPORTUNITIES_FILE,
+    "r",
+    encoding="utf-8"
+) as file:
 
+    industry_opportunities = json.load(file)
 
+with open(
+    os.path.join(DATA_DIR, "students.json"),
+    "r",
+    encoding="utf-8"
+) as file:
+
+    student = json.load(file)
+with open(
+    APPLICATIONS_FILE,
+    "r",
+    encoding="utf-8"
+) as file:
+
+    applications = json.load(file)
 # --------------------------------------------------
 # USER STORAGE
 # --------------------------------------------------
@@ -457,7 +484,329 @@ def health():
 def get_opportunities():
 
     return opportunities
+@app.route(
+    "/api/industry/opportunities",
+    methods=["POST"]
+)
+def create_industry_opportunity():
 
+    data = request.get_json()
+
+    if not data:
+        return jsonify({
+            "success": False,
+            "message": "Invalid request."
+        }), 400
+
+    required_fields = [
+        "company",
+        "title",
+        "type",
+        "required_skills",
+        "eligibility",
+        "duration",
+        "location"
+    ]
+
+    for field in required_fields:
+        if field not in data:
+            return jsonify({
+                "success": False,
+                "message": f"Missing field: {field}"
+            }), 400
+
+    new_id = (
+        max(
+            [
+                opportunity.get("id", 0)
+                for opportunity in industry_opportunities
+            ],
+            default=0
+        ) + 1
+    )
+
+    new_opportunity = {
+        "id": new_id,
+        "company": data["company"],
+        "title": data["title"],
+        "type": data["type"],
+        "required_skills": data["required_skills"],
+        "eligibility": data["eligibility"],
+        "duration": data["duration"],
+        "location": data["location"]
+    }
+
+    industry_opportunities.append(
+        new_opportunity
+    )
+
+    with open(
+        INDUSTRY_OPPORTUNITIES_FILE,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            industry_opportunities,
+            file,
+            indent=4
+        )
+
+    return jsonify({
+        "success": True,
+        "message": "Opportunity posted successfully.",
+        "opportunity": new_opportunity
+    }), 201
+@app.route(
+    "/api/industry/opportunities",
+    methods=["GET"]
+)
+def get_industry_opportunities():
+
+    return jsonify({
+        "success": True,
+        "opportunities": industry_opportunities
+    })
+@app.route(
+    "/api/industry/applications",
+    methods=["POST"]
+)
+def create_application():
+
+    data = request.get_json()
+
+    if not data:
+        return jsonify({
+            "success": False,
+            "message": "Invalid request."
+        }), 400
+
+    required_fields = [
+        "opportunity_id",
+        "student_id"
+    ]
+
+    for field in required_fields:
+        if field not in data:
+            return jsonify({
+                "success": False,
+                "message": f"Missing field: {field}"
+            }), 400
+
+    application = {
+        "id": len(applications) + 1,
+        "opportunity_id": data["opportunity_id"],
+        "student_id": data["student_id"],
+        "status": "Applied"
+    }
+
+    applications.append(application)
+
+    with open(
+        APPLICATIONS_FILE,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            applications,
+            file,
+            indent=4
+        )
+
+    return jsonify({
+        "success": True,
+        "message": "Application submitted successfully.",
+        "application": application
+    }), 201
+@app.route(
+    "/api/industry/applications/<int:opportunity_id>",
+    methods=["GET"]
+)
+def get_applications(opportunity_id):
+
+    opportunity_applications = []
+
+    for application in applications:
+
+        if application["opportunity_id"] == opportunity_id:
+
+            student_id = application["student_id"]
+
+            if (
+                isinstance(student, dict)
+                and student.get("student_id") == student_id
+            ):
+                opportunity_applications.append({
+                    "application_id": application["id"],
+                    "student_id": student["student_id"],
+                    "candidate": student["name"],
+                    "status": application["status"]
+                })
+
+    return jsonify({
+        "success": True,
+        "applications": opportunity_applications
+    })
+@app.route(
+    "/api/industry/opportunities/<int:opportunity_id>/candidates",
+    methods=["GET"]
+)
+def get_candidate_matches(opportunity_id):
+
+    # Find the opportunity
+    opportunity = None
+
+    for item in industry_opportunities:
+        if item.get("id") == opportunity_id:
+            opportunity = item
+            break
+
+    if not opportunity:
+        return jsonify({
+            "success": False,
+            "message": "Opportunity not found."
+        }), 404
+
+    required_skills = opportunity.get(
+        "required_skills",
+        []
+    )
+
+    candidates = []
+
+    for application in applications:
+
+        if application.get("opportunity_id") != opportunity_id:
+            continue
+
+        if (
+            not isinstance(student, dict)
+            or student.get("student_id") != application.get("student_id")
+        ):
+            continue
+
+        student_skills = [
+            skill.strip().lower()
+            for skill in student.get("skills", [])
+        ]
+
+        student_interests = [
+            interest.strip().lower()
+            for interest in student.get("interests", [])
+        ]
+
+        matched_skills = []
+        missing_skills = []
+
+        for skill in required_skills:
+
+            skill_lower = skill.strip().lower()
+
+            if skill_lower in student_skills:
+                matched_skills.append(skill)
+            else:
+                missing_skills.append(skill)
+
+        # Skill match
+        if required_skills:
+            skill_match = (
+                len(matched_skills)
+                / len(required_skills)
+            ) * 100
+        else:
+            skill_match = 0
+
+        # Interest match
+        interest_matches = []
+
+        for skill in required_skills:
+
+            if skill.strip().lower() in student_interests:
+                interest_matches.append(skill)
+
+        if required_skills:
+            interest_match = (
+                len(interest_matches)
+                / len(required_skills)
+            ) * 100
+        else:
+            interest_match = 0
+
+        # Career match
+        career_goal = (
+            student.get("career_goal", "")
+            .strip()
+            .lower()
+        )
+
+        career_match = 0
+
+        for skill in required_skills:
+
+            if skill.strip().lower() in career_goal:
+                career_match = 100
+                break
+
+        # Final score
+        final_match = (
+            skill_match * 0.50
+            + interest_match * 0.25
+            + career_match * 0.25
+        )
+
+        candidates.append({
+            "application_id": application.get("id"),
+            "student_id": student.get("student_id"),
+            "candidate": student.get("name"),
+            "skill_match": round(skill_match, 2),
+            "interest_match": round(interest_match, 2),
+            "career_match": round(career_match, 2),
+            "overall_match": round(final_match, 2),
+            "matched_skills": matched_skills,
+            "missing_skills": missing_skills,
+            "status": application.get("status")
+        })
+
+    return jsonify({
+        "success": True,
+        "opportunity_id": opportunity_id,
+        "candidates": candidates
+    })
+@app.route(
+    "/api/industry/applications/<int:application_id>/shortlist",
+    methods=["POST"]
+)
+def shortlist_application(application_id):
+
+    for application in applications:
+
+        if application.get("id") == application_id:
+
+            application["status"] = "Shortlisted"
+
+            with open(
+                APPLICATIONS_FILE,
+                "w",
+                encoding="utf-8"
+            ) as file:
+
+                json.dump(
+                    applications,
+                    file,
+                    indent=4
+                )
+
+            return jsonify({
+                "success": True,
+                "message": "Candidate shortlisted successfully.",
+                "application": application
+            })
+
+    return jsonify({
+        "success": False,
+        "message": "Application not found."
+    }), 404
 @app.route(
     "/api/internships"
 )

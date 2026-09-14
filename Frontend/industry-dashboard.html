@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoBeyond | Industry Dashboard</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #e6e9f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #172033;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #635bff;
+        }
+
+        .navbar nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .navbar nav a {
+            text-decoration: none;
+            color: #687084;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .navbar nav a:hover,
+        .navbar nav a.active {
+            color: #635bff;
+        }
+
+
+        /* =========================
+           PAGE
+        ========================= */
+
+        .page {
+            width: 86%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 55px 0 80px;
+        }
+
+        .eyebrow {
+            color: #635bff;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+
+        h1 {
+            font-size: 40px;
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #687084;
+            max-width: 720px;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section-title {
+            margin: 38px 0 17px;
+        }
+
+        .section-title h2 {
+            font-size: 24px;
+        }
+
+        .section-title p {
+            color: #7b8395;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           QUICK STATS
+        ========================= */
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 17px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid #e6e9f0;
+            border-radius: 17px;
+            padding: 23px;
+            box-shadow: 0 7px 22px rgba(25, 35, 60, 0.04);
+        }
+
+        .stat-card .label {
+            color: #7b8395;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .number {
+            font-size: 28px;
+            font-weight: 800;
+            color: #172033;
+        }
+
+
+        /* =========================
+           TWO COLUMNS
+        ========================= */
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin-top: 28px;
+        }
+
+        .panel {
+            background: white;
+            border: 1px solid #e6e9f0;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 7px 22px rgba(25, 35, 60, 0.04);
+        }
+
+        .panel h3 {
+            font-size: 20px;
+            margin-bottom: 17px;
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #172033;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #dfe2ea;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            background: white;
+            color: #172033;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #635bff;
+            box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.08);
+        }
+
+        .primary-btn {
+            border: none;
+            background: #635bff;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 18px;
+            transition: 0.2s;
+        }
+
+        .primary-btn:hover {
+            background: #5048e8;
+            transform: translateY(-1px);
+        }
+
+        .message {
+            margin-top: 13px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           OPPORTUNITY CARDS
+        ========================= */
+
+        .opportunity-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .opportunity-card {
+            border: 1px solid #e6e9f0;
+            border-radius: 15px;
+            padding: 18px;
+            background: #ffffff;
+        }
+
+        .opportunity-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 8px;
+        }
+
+        .opportunity-card h4 {
+            font-size: 17px;
+        }
+
+        .company {
+            color: #687084;
+            font-size: 13px;
+        }
+
+        .badge {
+            background: #eeeaff;
+            color: #635bff;
+            padding: 5px 9px;
+            border-radius: 7px;
+            font-size: 10px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .opportunity-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px 18px;
+            margin-top: 12px;
+        }
+
+        .detail {
+            color: #737b8d;
+            font-size: 13px;
+        }
+
+        .detail strong {
+            color: #172033;
+        }
+
+
+        /* =========================
+           CANDIDATES
+        ========================= */
+
+        .candidate-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .candidate-card {
+            background: #f8f8fc;
+            border-radius: 13px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .candidate-info h4 {
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .candidate-info span {
+            color: #737b8d;
+            font-size: 12px;
+        }
+
+        .match-score {
+            font-size: 20px;
+            font-weight: 800;
+            color: #635bff;
+            white-space: nowrap;
+        }
+
+        .secondary-btn {
+            border: 1px solid #dddff0;
+            background: white;
+            color: #172033;
+            padding: 8px 12px;
+            border-radius: 9px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .secondary-btn:hover {
+            border-color: #635bff;
+            color: #635bff;
+        }
+
+
+        /* =========================
+           MATCH DETAILS
+        ========================= */
+
+        .match-panel {
+            margin-top: 28px;
+        }
+
+        .match-score-large {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #635bff, #786dff);
+            color: white;
+            border-radius: 18px;
+            padding: 25px;
+            margin-bottom: 18px;
+        }
+
+        .match-score-large small {
+            opacity: 0.85;
+        }
+
+        .match-score-large .big-number {
+            font-size: 36px;
+            font-weight: 800;
+        }
+
+        .match-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .match-box {
+            border: 1px solid #e6e9f0;
+            border-radius: 15px;
+            padding: 17px;
+        }
+
+        .match-box h4 {
+            margin-bottom: 10px;
+        }
+
+        .match-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 9px 0;
+            border-bottom: 1px solid #f0f1f5;
+            font-size: 13px;
+        }
+
+        .match-item:last-child {
+            border-bottom: none;
+        }
+
+        .match-good {
+            font-weight: 800;
+            color: #20a464;
+        }
+
+        .match-missing {
+            font-weight: 800;
+            color: #b56a00;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 9px;
+            border-radius: 7px;
+            background: #eeeaff;
+            color: #635bff;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .status.shortlisted {
+            background: #e8f8f0;
+            color: #16834f;
+        }
+
+
+        /* =========================
+           EMPTY STATE
+        ========================= */
+
+        .empty {
+            color: #7b8395;
+            font-size: 14px;
+            padding: 12px 0;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: 55px;
+            padding-top: 25px;
+            border-top: 1px solid #e6e9f0;
+            color: #8a91a2;
+            font-size: 13px;
+            text-align: center;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .match-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar nav {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                padding: 16px 5%;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .navbar nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page {
+                width: 90%;
+                padding-top: 35px;
+            }
+
+            h1 {
+                font-size: 31px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .opportunity-details {
+                grid-template-columns: 1fr;
+            }
+
+            .candidate-card {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<header class="navbar">
+
+    <a href="GoBeyond(3).html" class="logo">
+        Go<span>Beyond</span>
+    </a>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="GoBeyond(3).html">Home</a>
+        <a href="GoBeyond(3).html#opportunities">Opportunities</a>
+        <a href="GoBeyond(3).html#skills">Skills</a>
+        <a href="placement.html">Placement</a>
+        <a href="industry-dashboard.html" class="active">Industry</a>
+    </nav>
+
+</header>
+
+
+<main class="page">
+
+    <!-- HEADER -->
+
+    <section>
+        <div class="eyebrow">10 — Industry Portal</div>
+
+        <h1>Industry Dashboard</h1>
+
+        <p class="subtitle">
+            Post opportunities, discover suitable candidates,
+            and build your next team through intelligent matching.
+        </p>
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+            <div class="label">Posted Opportunities</div>
+            <div class="number" id="opportunityCount">0</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="label">Applications</div>
+            <div class="number" id="applicationCount">0</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="label">Shortlisted</div>
+            <div class="number" id="shortlistedCount">0</div>
+        </div>
+
+    </section>
+
+
+    <!-- POST + OPPORTUNITIES -->
+
+    <section class="two-column">
+
+        <div class="panel">
+
+            <h3>Post Opportunity</h3>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Company</label>
+                    <input type="text" id="company" placeholder="TechNova">
+                </div>
+
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="title" placeholder="AI/ML Internship">
+                </div>
+
+                <div class="form-group">
+                    <label>Opportunity Type</label>
+
+                    <select id="type">
+                        <option value="">Select type</option>
+                        <option>Internship</option>
+                        <option>Project</option>
+                        <option>Apprenticeship</option>
+                        <option>Job</option>
+                        <option>Training</option>
+                        <option>Certification</option>
+                        <option>Workshop</option>
+                        <option>Mentorship</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Duration</label>
+                    <input type="text" id="duration" placeholder="3 months">
+                </div>
+
+                <div class="form-group full">
+                    <label>Required Skills</label>
+                    <input
+                            type="text"
+                            id="required_skills"
+                            placeholder="Python, SQL, Machine Learning, Git"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Eligibility</label>
+                    <input
+                            type="text"
+                            id="eligibility"
+                            placeholder="3rd/4th year CSE/IT"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Location</label>
+                    <input
+                            type="text"
+                            id="location"
+                            placeholder="Hyderabad"
+                    >
+                </div>
+
+            </div>
+
+            <button class="primary-btn" onclick="postOpportunity()">
+                Post Opportunity
+            </button>
+
+            <div class="message" id="message"></div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h3>Posted Opportunities</h3>
+
+            <div id="opportunitiesList" class="opportunity-list">
+                <div class="empty">
+                    Loading opportunities...
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- APPLICATIONS -->
+
+    <div class="section-title">
+
+        <h2>Applications</h2>
+
+        <p>
+            Review candidates and see how well their profiles align
+            with your opportunity.
+        </p>
+
+    </div>
+
+
+    <section class="panel">
+
+        <div id="applicationsList" class="candidate-list">
+
+            <div class="empty">
+                Select an opportunity to view applications.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MATCH DETAILS -->
+
+    <div class="section-title">
+
+        <h2>Candidate Match</h2>
+
+        <p>
+            Understand why a candidate matches the opportunity.
+        </p>
+
+    </div>
+
+
+    <section class="panel match-panel">
+
+        <div id="matchDetails">
+
+            <div class="empty">
+                Select a candidate to see the match reason.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        GoBeyond • Smart Industry Journey
+    </footer>
+
+</main>
+
+
+<script>
+
+    const API = "http://127.0.0.1:5000";
+
+    let currentOpportunityId = null;
+
+
+    /* =========================
+       POST OPPORTUNITY
+    ========================= */
+
+    async function postOpportunity() {
+
+        const data = {
+
+            company:
+                document.getElementById("company").value.trim(),
+
+            title:
+                document.getElementById("title").value.trim(),
+
+            type:
+            document.getElementById("type").value,
+
+            required_skills:
+                document
+                    .getElementById("required_skills")
+                    .value
+                    .split(",")
+                    .map(skill => skill.trim())
+                    .filter(skill => skill.length > 0),
+
+            eligibility:
+                document.getElementById("eligibility").value.trim(),
+
+            duration:
+                document.getElementById("duration").value.trim(),
+
+            location:
+                document.getElementById("location").value.trim()
+        };
+
+
+        if (
+            !data.company ||
+            !data.title ||
+            !data.type ||
+            data.required_skills.length === 0 ||
+            !data.eligibility ||
+            !data.duration ||
+            !data.location
+        ) {
+
+            document.getElementById("message").textContent =
+                "Please fill in all fields.";
+
+            return;
+        }
+
+
+        try {
+
+            const response = await fetch(
+                `${API}/api/industry/opportunities`,
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify(data)
+                }
+            );
+
+
+            const result = await response.json();
+
+
+            document.getElementById("message").textContent =
+                result.message;
+
+
+            if (result.success) {
+
+                document
+                    .getElementById("company")
+                    .value = "";
+
+                document
+                    .getElementById("title")
+                    .value = "";
+
+                document
+                    .getElementById("type")
+                    .value = "";
+
+                document
+                    .getElementById("required_skills")
+                    .value = "";
+
+                document
+                    .getElementById("eligibility")
+                    .value = "";
+
+                document
+                    .getElementById("duration")
+                    .value = "";
+
+                document
+                    .getElementById("location")
+                    .value = "";
+
+
+                await loadOpportunities();
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            document.getElementById("message").textContent =
+                "Could not connect to backend.";
+        }
+    }
+
+
+    /* =========================
+       LOAD OPPORTUNITIES
+    ========================= */
+
+    async function loadOpportunities() {
+
+        try {
+
+            const response = await fetch(
+                `${API}/api/industry/opportunities`
+            );
+
+            const result = await response.json();
+
+            const opportunities =
+                result.opportunities || [];
+
+
+            document
+                .getElementById("opportunityCount")
+                .textContent = opportunities.length;
+
+
+            const container =
+                document.getElementById("opportunitiesList");
+
+
+            container.innerHTML = "";
+
+
+            if (opportunities.length === 0) {
+
+                container.innerHTML =
+                    `<div class="empty">
+                        No opportunities posted yet.
+                    </div>`;
+
+                return;
+            }
+
+
+            opportunities.forEach(opportunity => {
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "opportunity-card";
+
+
+                card.innerHTML = `
+
+                    <div class="opportunity-header">
+
+                        <div>
+
+                            <h4>
+                                ${escapeHtml(opportunity.title)}
+                            </h4>
+
+                            <div class="company">
+                                ${escapeHtml(opportunity.company)}
+                            </div>
+
+                        </div>
+
+                        <span class="badge">
+                            ${escapeHtml(opportunity.type)}
+                        </span>
+
+                    </div>
+
+
+                    <div class="opportunity-details">
+
+                        <div class="detail">
+                            <strong>Skills:</strong>
+                            ${escapeHtml(
+                    opportunity.required_skills.join(", ")
+                )}
+                        </div>
+
+                        <div class="detail">
+                            <strong>Duration:</strong>
+                            ${escapeHtml(opportunity.duration)}
+                        </div>
+
+                        <div class="detail">
+                            <strong>Eligibility:</strong>
+                            ${escapeHtml(opportunity.eligibility)}
+                        </div>
+
+                        <div class="detail">
+                            <strong>Location:</strong>
+                            ${escapeHtml(opportunity.location)}
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="secondary-btn"
+                        style="margin-top:14px;"
+                        onclick="loadCandidates(${opportunity.id})"
+                    >
+                        View Applications
+                    </button>
+
+                `;
+
+
+                container.appendChild(card);
+            });
+
+
+            await updateStats(opportunities);
+
+        } catch (error) {
+
+            console.error(error);
+
+            document.getElementById("opportunitiesList").innerHTML =
+                `<div class="empty">
+                    Could not load opportunities.
+                </div>`;
+        }
+    }
+
+
+    /* =========================
+       LOAD CANDIDATES
+    ========================= */
+
+    async function loadCandidates(opportunityId) {
+
+        currentOpportunityId =
+            opportunityId;
+
+
+        const container =
+            document.getElementById("applicationsList");
+
+
+        container.innerHTML =
+            `<div class="empty">
+                Loading candidates...
+            </div>`;
+
+
+        try {
+
+            const response = await fetch(
+                `${API}/api/industry/opportunities/${opportunityId}/candidates`
+            );
+
+
+            const result = await response.json();
+
+
+            const candidates =
+                result.candidates || [];
+
+
+            document
+                .getElementById("applicationCount")
+                .textContent = candidates.length;
+
+
+            container.innerHTML = "";
+
+
+            if (candidates.length === 0) {
+
+                container.innerHTML =
+                    `<div class="empty">
+                        No applications yet.
+                    </div>`;
+
+                return;
+            }
+
+
+            candidates.forEach(candidate => {
+
+                const card =
+                    document.createElement("div");
+
+
+                card.className =
+                    "candidate-card";
+
+
+                card.innerHTML = `
+
+                    <div class="candidate-info">
+
+                        <h4>
+                            ${escapeHtml(candidate.candidate)}
+                        </h4>
+
+                        <span>
+                            ${candidate.status}
+                        </span>
+
+                    </div>
+
+
+                    <div>
+                        <span class="match-score">
+                            ${candidate.overall_match}%
+                        </span>
+
+                        <button
+                            class="secondary-btn"
+                            onclick="showMatchDetails(
+                                ${candidate.application_id},
+                                ${opportunityId}
+                            )"
+                        >
+                            View Match
+                        </button>
+
+                    </div>
+
+                `;
+
+
+                container.appendChild(card);
+            });
+
+
+            updateShortlistCount(candidates);
+
+        } catch (error) {
+
+            console.error(error);
+
+            container.innerHTML =
+                `<div class="empty">
+                    Could not load applications.
+                </div>`;
+        }
+    }
+
+
+    /* =========================
+       SHOW MATCH DETAILS
+    ========================= */
+
+    async function showMatchDetails(
+        applicationId,
+        opportunityId
+    ) {
+
+        const container =
+            document.getElementById("matchDetails");
+
+
+        container.innerHTML =
+            `<div class="empty">
+                Loading match details...
+            </div>`;
+
+
+        try {
+
+            const response = await fetch(
+                `${API}/api/industry/opportunities/${opportunityId}/candidates`
+            );
+
+
+            const result =
+                await response.json();
+
+
+            const candidate =
+                (result.candidates || []).find(
+                    item =>
+                        item.application_id === applicationId
+                );
+
+
+            if (!candidate) {
+
+                container.innerHTML =
+                    `<div class="empty">
+                        Candidate not found.
+                    </div>`;
+
+                return;
+            }
+
+
+            const matchedSkills =
+                candidate.matched_skills || [];
+
+
+            const missingSkills =
+                candidate.missing_skills || [];
+
+
+            let skillsHtml = "";
+
+
+            matchedSkills.forEach(skill => {
+
+                skillsHtml += `
+
+                    <div class="match-item">
+
+                        <span>
+                            ${escapeHtml(skill)}
+                        </span>
+
+                        <span class="match-good">
+                            ✓
+                        </span>
+
+                    </div>
+
+                `;
+            });
+
+
+            missingSkills.forEach(skill => {
+
+                skillsHtml += `
+
+                    <div class="match-item">
+
+                        <span>
+                            ${escapeHtml(skill)}
+                        </span>
+
+                        <span class="match-missing">
+                            ⚠
+                        </span>
+
+                    </div>
+
+                `;
+            });
+
+
+            const shortlisted =
+                candidate.status === "Shortlisted";
+
+
+            container.innerHTML = `
+
+                <div class="match-score-large">
+
+                    <div>
+
+                        <small>
+                            Overall Match
+                        </small>
+
+                        <h3>
+                            ${escapeHtml(candidate.candidate)}
+                        </h3>
+
+                    </div>
+
+                    <div class="big-number">
+                        ${candidate.overall_match}%
+                    </div>
+
+                </div>
+
+
+                <div class="match-grid">
+
+
+                    <div class="match-box">
+
+                        <h4>
+                            Skill Match
+                        </h4>
+
+                        ${skillsHtml}
+
+                        <div class="match-item">
+
+                            <span>
+                                Score
+                            </span>
+
+                            <strong>
+                                ${candidate.skill_match}%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="match-box">
+
+                        <h4>
+                            Profile Match
+                        </h4>
+
+                        <div class="match-item">
+
+                            <span>
+                                Interest Match
+                            </span>
+
+                            <strong>
+                                ${candidate.interest_match}%
+                            </strong>
+
+                        </div>
+
+                        <div class="match-item">
+
+                            <span>
+                                Career Match
+                            </span>
+
+                            <strong>
+                                ${candidate.career_match}%
+                            </strong>
+
+                        </div>
+
+                        <div class="match-item">
+
+                            <span>
+                                Application Status
+                            </span>
+
+                            <strong>
+                                ${escapeHtml(candidate.status)}
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <span class="
+                    status
+                    ${shortlisted ? "shortlisted" : ""}
+                ">
+                    ${shortlisted ? "SHORTLISTED" : "APPLIED"}
+                </span>
+
+
+                ${
+                shortlisted
+
+                    ?
+
+                    ""
+
+                    :
+
+                    `
+                        <br>
+
+                        <button
+                            class="primary-btn"
+                            onclick="
+                                shortlistCandidate(
+                                    ${candidate.application_id},
+                                    ${opportunityId}
+                                )
+                            "
+                        >
+                            Shortlist Candidate
+                        </button>
+                    `
+            }
+
+            `;
+
+        } catch (error) {
+
+            console.error(error);
+
+            container.innerHTML =
+                `<div class="empty">
+                    Could not load match details.
+                </div>`;
+        }
+    }
+
+
+    /* =========================
+       SHORTLIST
+    ========================= */
+
+    async function shortlistCandidate(
+        applicationId,
+        opportunityId
+    ) {
+
+        try {
+
+            const response = await fetch(
+
+                `${API}/api/industry/applications/${applicationId}/shortlist`,
+
+                {
+                    method: "POST"
+                }
+            );
+
+
+            const result =
+                await response.json();
+
+
+            if (!result.success) {
+
+                alert(result.message);
+
+                return;
+            }
+
+
+            alert(
+                "Candidate shortlisted successfully."
+            );
+
+
+            await loadCandidates(
+                opportunityId
+            );
+
+
+            await showMatchDetails(
+                applicationId,
+                opportunityId
+            );
+
+
+            await updateStats();
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert(
+                "Could not connect to backend."
+            );
+        }
+    }
+
+
+    /* =========================
+       STATS
+    ========================= */
+
+    async function updateStats(
+        opportunities = null
+    ) {
+
+        try {
+
+            if (!opportunities) {
+
+                const response =
+                    await fetch(
+                        `${API}/api/industry/opportunities`
+                    );
+
+                const result =
+                    await response.json();
+
+                opportunities =
+                    result.opportunities || [];
+            }
+
+
+            let totalApplications = 0;
+            let totalShortlisted = 0;
+
+
+            for (const opportunity of opportunities) {
+
+                const response =
+                    await fetch(
+                        `${API}/api/industry/opportunities/${opportunity.id}/candidates`
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                const candidates =
+                    result.candidates || [];
+
+
+                totalApplications +=
+                    candidates.length;
+
+
+                totalShortlisted +=
+                    candidates.filter(
+                        candidate =>
+                            candidate.status === "Shortlisted"
+                    ).length;
+            }
+
+
+            document
+                .getElementById("applicationCount")
+                .textContent =
+                totalApplications;
+
+
+            document
+                .getElementById("shortlistedCount")
+                .textContent =
+                totalShortlisted;
+
+        } catch (error) {
+
+            console.error(error);
+        }
+    }
+
+
+    async function updateShortlistCount(
+        candidates
+    ) {
+
+        const count =
+            candidates.filter(
+                candidate =>
+                    candidate.status === "Shortlisted"
+            ).length;
+
+
+        document
+            .getElementById("shortlistedCount")
+            .textContent = count;
+    }
+
+
+    /* =========================
+       SECURITY HELPER
+    ========================= */
+
+    function escapeHtml(value) {
+
+        return String(value ?? "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+
+    /* =========================
+       INITIAL LOAD
+    ========================= */
+
+    loadOpportunities();
+
+</script>
+
+</body>
+</html>
