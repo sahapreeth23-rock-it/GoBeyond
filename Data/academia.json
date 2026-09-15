@@ -15,9 +15,188 @@
             "domain": "Machine Learning",
             "mode": "Hybrid",
             "status": "Open"
+        },
+        {
+            "title": "GirlScript Summer of Code (GSSoC) 2026",
+            "mentor": "Assigned per project (Project Admins/Mentors)",
+            "mentor_designation": "Industry devs, OSS maintainers",
+            "organization": "GirlScript Foundation",
+            "domain": "CSE/IT/AIML",
+            "mode": "Online",
+            "duration": "3 months",
+            "eligibility": "Open to all students",
+            "status": "Ongoing",
+            "link": "gssoc.girlscript.org"
+        },
+        {
+            "title": "Winter of Code (SWOC / KWOC / DWoC)",
+            "mentor": "Assigned per project",
+            "mentor_designation": "Student mentors, OSS contributors",
+            "organization": "Script Foundation / IIT Kharagpur / DSC orgs",
+            "domain": "CSE/IT",
+            "mode": "Online",
+            "duration": "4-8 weeks",
+            "eligibility": "Open to all students",
+            "status": "Upcoming",
+            "link": "https://www.swoc.in/#top"
+        },
+        {
+            "title": "WE Hub – Campuspreneur (GYIP)",
+            "mentor": "Assigned per cohort",
+            "mentor_designation": "Startup mentors, industry experts",
+            "organization": "WE hub Telangana",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "mode": "hybrid(both online and offline)",
+            "duration": "12 weeks",
+            "eligibility": "Students (esp. women), Tier 2/3 Telangana colleges",
+            "status": "Ongoing",
+            "link": "wehub.telangana.gov.in"
+        },
+        {
+            "title": "WE Hub – Campus to Career (WE Enable)",
+            "mentor": "Assigned per cohort",
+            "mentor_designation": "Industry professionals",
+            "organization": "WE hub Telangana",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "mode": "hybrid(both online and offline)",
+            "duration": "Cohort-based",
+            "eligibility": "Women students at 20+ MoU-partner Telangana colleges",
+            "status": "Ongoing",
+            "link": "wehub.telangana.gov.in"
+        },
+        {
+            "title": "INAE Mentoring of Engineering Students by Fellows",
+            "mentor": "Assigned INAE Fellow/Young Associate",
+            "mentor_designation": "Senior engineers, academicians",
+            "organization": "Indian National Academy of Engineering",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "mode": "offline",
+            "duration": "2 months",
+            "eligibility": "3rd/4th year B.E./B.Tech, min. first class, AICTE-recognized college",
+            "status": "Ongoing",
+            "link": "inae.in"
+        },
+        {
+            "title": "AICTE Internship Portal (with mentor guidance)",
+            "mentor": "Assigned per listing",
+            "mentor_designation": "Company professionals/engineers",
+            "organization": "Various partner companies via AICTE",
+            "domain": "CSE/ECE/IT",
+            "mode": "hybrid(both online and offline)",
+            "duration": "4-12 weeks",
+            "eligibility": "UG/PG/Diploma students, AICTE-approved colleges",
+            "status": "Ongoing",
+            "link": "internship.aicte-india.org"
+        },
+        {
+            "title": "AICTE Margdarshan Scheme",
+            "mentor": "Faculty from mentor institute",
+            "mentor_designation": "Senior faculty",
+            "organization": "Mentor institutes designated by AICTE (e.g., NRI Institute of Technology, AP)",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "mode": "hybrid(both online and offline)",
+            "duration": "academic year basis",
+            "eligibility": "Students of AICTE-approved mentee colleges (institution-level tie-up)",
+            "status": "Ongoing",
+            "link": "aicte-india.org"
+        },
+        {
+            "title": "Outreachy (Dec 2026 – Mar 2027 cohort)",
+            "mentor": "Assigned FOSS project mentor",
+            "mentor_designation": "Open-source maintainers",
+            "organization": "Various FOSS orgs (GNOME, etc.)",
+            "domain": "CSE/IT",
+            "mode": "online",
+            "duration": "3 months",
+            "eligibility": "underrepresented in tech",
+            "status": "Ongoing",
+            "link": "outreachy.org"
+        },
+        {
+            "title": "GirlScript Winter of Code / Hacktoberfest-adjacent OSS programs",
+            "mentor": "Assigned per repo",
+            "mentor_designation": "OSS maintainers",
+            "organization": "Various",
+            "domain": "CSE/IT",
+            "mode": "Online",
+            "duration": "1 month",
+            "eligibility": "Open to all students",
+            "status": "academic year basis",
+            "link": "hacktoberfest.com"
+        },
+        {
+            "title": "Google Student Ambassador Program (via GDG on Campus)",
+            "mentor": "Assigned Google engineers/GDEs",
+            "mentor_designation": "Software Engineers, Google Developer Experts",
+            "organization": "Google",
+            "domain": "CSE/IT/AIML",
+            "mode": "hybrid(both online and offline)",
+            "duration": "academic year basis",
+            "eligibility": "Full-time UG/PG, any stream, 18+",
+            "status": "Ongoing",
+            "link": "developers.google.com/community/gdg"
+        },
+        {
+            "title": "GDG Solution Challenge 2026 – Build with AI",
+            "mentor": "Assigned during program",
+            "mentor_designation": "Google experts, GDE mentors",
+            "organization": "Google Developer Groups",
+            "domain": "CSE/IT/AIML",
+            "mode": "Online",
+            "duration": "4-6 months",
+            "eligibility": "Open to all students",
+            "status": "Ongoing",
+            "link": "gdg.community.dev"
+        },
+        {
+            "title": "Microsoft Student Ambassadors (2026 relaunch)",
+            "mentor": "Assigned mentors on platform",
+            "mentor_designation": "Microsoft engineers/community leads",
+            "organization": "Microsoft",
+            "domain": "CSE/IT/AIML",
+            "mode": "Online",
+            "duration": "self-paced",
+            "eligibility": "Open to all students",
+            "status": "Ongoing",
+            "link": "studentambassadors.microsoft.com"
+        },
+        {
+            "title": "IEEE Mentoring Program (Collabratec)",
+            "mentor": "Self-selected from IEEE database",
+            "mentor_designation": "IEEE members (all grades), industry professionals",
+            "organization": "IEEE (global, incl. India sections)",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "mode": "Online",
+            "duration": "self-paced",
+            "eligibility": "IEEE student members",
+            "status": "Ongoing",
+            "link": "ieee.org/membership/mentoring"
+        },
+        {
+            "title": "IEEE Industry Mentoring Initiative 2026",
+            "mentor": "Assigned mentor",
+            "mentor_designation": "Senior industry professionals, IEEE Life Members",
+            "organization": "IEEE",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "mode": "hybrid(both online and offline)",
+            "duration": "3-6 months",
+            "eligibility": "Engineering students (IEEE-affiliated preferred)",
+            "status": "Ongoing",
+            "link": "life.ieee.org"
+        },
+        {
+            "title": "IEEE IAS Global Mentoring Program (via local Student Branch Chapters)",
+            "mentor": "Chapter-organized",
+            "mentor_designation": "Local IEEE professionals/faculty",
+            "organization": "IEEE Industry Applications Society, run through campus IEEE Student Branches (e.g., Telangana colleges with IEEE chapters)",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "mode": "hybrid(both online and offline)",
+            "duration": "event based",
+            "eligibility": "IEEE Student Branch members",
+            "status": "Ongoing",
+            "link": "ias.ieee.org"
         }
     ],
-
     "fdps": [
         {
             "title": "AI for Healthcare",
@@ -34,9 +213,198 @@
             "mode": "Hybrid",
             "date": "November 2026",
             "status": "Upcoming"
+        },
+        {
+            "title": "ATAL FDP (Basic & Advanced) — themes: AI, VLSI/Semiconductors, Cybersecurity, Quantum Computing, Green Energy, Research Methodology",
+            "organization": "AICTE (ATAL Academy)",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "mode": "hybrid(online and offline)",
+            "duration": "6 days (Basic) / 12 days (Advanced)",
+            "eligibility": "Faculty, PG students & research scholars from AICTE-approved institutions",
+            "status": "ongoing",
+            "link": "atalacademy.aicte-india.org"
+        },
+        {
+            "title": "AICTE Faculty Development Programme (induction training scheme)",
+            "organization": "AICTE, via ISTI/DST",
+            "domain": "CSE/IT/B.ARCH",
+            "mode": "Offline",
+            "duration": "2 weeks",
+            "eligibility": "Newly inducted faculty at AICTE-approved technical institutions",
+            "status": "ongoing",
+            "link": "indiascienceandtechnology.gov.in"
+        },
+        {
+            "title": "FDP — \"Extensible AI for Smarter Research: Tools that Save Time and Improve Quality\"",
+            "organization": "Research Foundation of India",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "mode": "Online",
+            "duration": "5 days",
+            "eligibility": "Faculty & research scholars",
+            "status": "upcoming",
+            "link": "researchfoundationofindia.com"
+        },
+        {
+            "title": "FDP — \"Innovative Teaching and Learning Pedagogy\"",
+            "organization": "Research Foundation of India",
+            "domain": "pedagogy(cross domain)",
+            "mode": "Online",
+            "duration": "6 days",
+            "eligibility": "Faculty & research scholars",
+            "status": "upcoming",
+            "link": "researchfoundationofindia.com"
+        },
+        {
+            "title": "FDP — \"Advance Tools and Techniques for Research Methodology\"",
+            "organization": "Research Foundation of India",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "mode": "Online",
+            "duration": "10 days",
+            "eligibility": "Faculty & research scholars",
+            "status": "upcoming",
+            "link": "researchfoundationofindia.com"
+        },
+        {
+            "title": "E&ICT Academy FDPs",
+            "organization": "E&ICT Academy, IIT Kanpur",
+            "domain": "ICT/CSE/ECE",
+            "mode": "Online",
+            "duration": "AICTE-aligned",
+            "eligibility": "Faculty of technical institutions",
+            "status": "ongoing",
+            "link": "eicta.iitk.ac.in/fdp"
+        },
+        {
+            "title": "NITTTR Extension Centre Hyderabad — Tailor-made FDPs",
+            "organization": "NITTTR Chennai (Hyderabad Extension Centre)",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "mode": "Offline",
+            "duration": "few days(varies)",
+            "eligibility": "Faculty of Engineering Colleges/Polytechnics in Telangana (via SBTET-TS liaison)",
+            "status": "ongoing",
+            "link": "nitttrc.ac.in/nitttr/hyderabad.php"
+        },
+        {
+            "title": "NITTTR Chennai/Kolkata/Bhopal/Chandigarh — STTP/FDP National Calendar",
+            "organization": "NITTTR (4 national institutes)",
+            "domain": "ECE/CSE",
+            "mode": "Offline",
+            "duration": "5-12 days",
+            "eligibility": "Faculty/research scholars of AICTE-approved institutions",
+            "status": "ongoing",
+            "link": "nitttrc.ac.in / nitttrbpl.ac.in / nitttrkol.ac.in"
+        },
+        {
+            "title": "NPTEL FDP / Teacher Education Courses (SWAYAM)",
+            "organization": "NITTTR Chennai / NPTEL-SWAYAM",
+            "domain": "Teacher training across engg. subjects",
+            "mode": "Online",
+            "duration": "course-based",
+            "eligibility": "Faculty of technical institutions",
+            "status": "ongoing",
+            "link": "nitttrc.ac.in"
+        },
+        {
+            "title": "\"Beyond Teaching Technologies: AI Integration for Educators\"",
+            "organization": "Electronics & ICT Academy, NIT Warangal (in association with CSE Dept, Vijaya Institute of Technology for Women)",
+            "domain": "CSE/IT/AIML/ECE",
+            "mode": "Online",
+            "duration": "5 days",
+            "eligibility": "Faculty & research scholars",
+            "status": "ongoing",
+            "link": "eict.nitw.ac.in"
+        },
+        {
+            "title": "FDP — \"Advance Tools and Techniques for Research Methodology\"",
+            "organization": "Research Foundation of India",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "mode": "Online",
+            "duration": "11 days",
+            "eligibility": "Faculty & research scholars",
+            "status": "upcoming",
+            "link": "researchfoundationofindia.com"
+        },
+        {
+            "title": "FDP — \"Statistical Analysis with Excel\"",
+            "organization": "Research Foundation of India",
+            "domain": "CSE/AIML/ECE",
+            "mode": "Online",
+            "duration": "5 days",
+            "eligibility": "Faculty & research scholars",
+            "status": "upcoming",
+            "link": "researchfoundationofindia.com"
+        },
+        {
+            "title": "FDP — \"A Systematic Way of Research Paper Writing\"",
+            "organization": "Research Foundation of India",
+            "domain": "Research/Publication skills",
+            "mode": "Online",
+            "duration": "6 days",
+            "eligibility": "Faculty & research scholars",
+            "status": "upcoming",
+            "link": "researchfoundationofindia.com"
+        },
+        {
+            "title": "FDP — \"Practical Aspects of ICT Tools & Online Teaching in Current Scenario\"",
+            "organization": "Research Foundation of India",
+            "domain": "Pedagogy/EdTech",
+            "mode": "Online",
+            "duration": "8 days",
+            "eligibility": "Faculty & research scholars",
+            "status": "upcoming",
+            "link": "researchfoundationofindia.com"
+        },
+        {
+            "title": "\"Research and Publication – A Practical FDP\"",
+            "organization": "Raja Bahadur Venkata Rama Reddy (RBVRR) Women's College, Hyderabad",
+            "domain": "Research Publication, Journal Indexing (Scopus/WoS)",
+            "mode": "Online",
+            "duration": "5 days",
+            "eligibility": "Faculty/Research Scholars/UG-PG students",
+            "status": "ongoing",
+            "link": "facultyplus.com"
+        },
+        {
+            "title": "3-Day Fast-Track FDP on Artificial Intelligence",
+            "organization": "Sree Sastha Institute of Engineering & Technology (SSIET), Chennai (AI&DS Dept)",
+            "domain": "AIML",
+            "mode": "hybrid(online and offline)",
+            "duration": "3 days",
+            "eligibility": "Faculty & research scholars",
+            "status": null,
+            "link": "facultyplus.com"
+        },
+        {
+            "title": "Six-Day FDP — \"AI & Machine Learning for Smart Mechanical Engineering and Industry 4.0\"",
+            "organization": "St. Joseph's Institute of Technology, Chennai (Mechanical Dept) — resource persons include faculty from SR University, Telangana",
+            "domain": "AIML/EEE",
+            "mode": "Online",
+            "duration": "6 days",
+            "eligibility": "Faculty (Mechanical, CSE, ECE, IT etc.)",
+            "status": null,
+            "link": "knowafest.com"
+        },
+        {
+            "title": "AICTE–Jio Institute FDP on AI & Data Science",
+            "organization": "AICTE (ATAL) + Jio Institute",
+            "domain": "AI, Data Science, NLP, GenAI, LLMs",
+            "mode": "Offline",
+            "duration": "5 days",
+            "eligibility": "Faculty of AICTE-approved institutions",
+            "status": "upcoming",
+            "link": "aicte-india.org"
+        },
+        {
+            "title": "Faculty.ai Fellowship (Data Science/AI)",
+            "organization": "Faculty.ai (UK-based, but open globally)",
+            "domain": "AIML",
+            "mode": "hybrid(online and offline)",
+            "duration": "8 weeks",
+            "eligibility": "Early-career engineers/academics transitioning into AI/ML",
+            "status": "upcoming",
+            "link": "faculty.ai/fellowship-fellows"
         }
     ],
-
     "research": [
         {
             "title": "AI-Based Skill Assessment",
@@ -51,9 +419,168 @@
             "domain": "Healthcare + AI",
             "type": "Industry-Academia Research",
             "status": "Open"
+        },
+        {
+            "title": "SERB Startup Research Grant (SRG)",
+            "organization": "Science and Engineering Research Board (SERB), DST",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "type": "Individual Research Grant (up to ₹30L, 2 yrs)",
+            "eligibility": "Open to any faculty who joined a regular academic position within last 3 years",
+            "collaboration_type": "Government-funded, faculty as sole PI (no Co-PI allowed)",
+            "link": "serbonline.in",
+            "status": "Open"
+        },
+        {
+            "title": "SERB-POWER Research Grants",
+            "organization": "SERB, DST",
+            "domain": "Science & Engineering(CSE/IT/AIML/ECE/EEE)",
+            "type": "Individual Research Grant",
+            "eligibility": "Open to women faculty/researchers in a regular academic/research position",
+            "collaboration_type": "Government-funded, individual-centric",
+            "link": "indiascienceandtechnology.gov.in",
+            "status": "Open"
+        },
+        {
+            "title": "SERB/DST Scheme for Funding Industry-Relevant R&D",
+            "organization": "SERB, DST",
+            "domain": "Applied engineering research with industry relevance",
+            "type": "Industry-Sponsored Research Grant",
+            "eligibility": "Faculty identifies industry partner via Nodal Officer",
+            "collaboration_type": "Academia–Industry joint proposal",
+            "link": "serb.gov.in",
+            "status": "Open"
+        },
+        {
+            "title": "Anusandhan National Research Foundation (ANRF) Grants",
+            "organization": "ANRF, Dept. of Science & Technology",
+            "domain": "Social science & Engineering",
+            "type": "National Research Funding Scheme",
+            "eligibility": "Any eligible faculty/PI at recognized institution",
+            "collaboration_type": "Promotes academia–industry collaboration",
+            "link": "anrfonline.in",
+            "status": "Open"
+        },
+        {
+            "title": "UGC Research Project Grants",
+            "organization": "University Grants Commission (UGC)",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "type": "Research Project Grant",
+            "eligibility": "Faculty at UGC-recognized institutions",
+            "collaboration_type": "Government-funded individual/team research",
+            "link": "ugc.ac.in",
+            "status": "Open"
+        },
+        {
+            "title": "CSIR Research Funding",
+            "organization": "Council of Scientific & Industrial Research (CSIR)",
+            "domain": "Physical Sciences, Biological Sciences, Engineering",
+            "type": "Research Project Grant",
+            "eligibility": "Faculty/PI in relevant discipline",
+            "collaboration_type": "Government lab–academia collaboration",
+            "link": "csirhrdg.res.in",
+            "status": "Open"
+        },
+        {
+            "title": "Grants to University/College Teachers for Major Research Project",
+            "organization": "DST / ISTI Portal-listed scheme",
+            "domain": "Science & Engineering(CSE/IT/AIML/ECE/EEE)",
+            "type": "Major Research Project Grant",
+            "eligibility": "In-service faculty (university/college)",
+            "collaboration_type": "Government-funded individual research",
+            "link": "indiascienceandtechnology.gov.in",
+            "status": "Open"
+        },
+        {
+            "title": "Research Grant for In-Service Faculty Members",
+            "organization": "Central Govt. Scheme (via MyScheme portal)",
+            "domain": "Cross-disciplinary",
+            "type": "Individual Faculty Research Grant",
+            "eligibility": "In-service teaching faculty",
+            "collaboration_type": "Government scheme",
+            "link": "myscheme.gov.in",
+            "status": "Open"
+        },
+        {
+            "title": "AICTE Research & Innovation Development Schemes",
+            "organization": "AICTE",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "type": "Institutional/Faculty Research Scheme",
+            "eligibility": "Faculty at AICTE-approved institutions",
+            "collaboration_type": "Govt.–Institution collaboration",
+            "link": "aicte-india.org/opportunities/students/research-funds",
+            "status": "Open"
+        },
+        {
+            "title": "AICTE–CII India Innovation Initiative",
+            "organization": "AICTE + Confederation of Indian Industry (CII)",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "type": "Industry-Academia Innovation Programme",
+            "eligibility": "Faculty mentors + industry panel",
+            "collaboration_type": "Academia–Industry partnership",
+            "link": "aicte-india.org",
+            "status": "Open"
+        },
+        {
+            "title": "IMPRESS Scheme",
+            "organization": "ICSSR (Ministry of Education)",
+            "domain": "Social science & Engineering",
+            "type": "Research Project Grant",
+            "eligibility": "Faculty at recognized institutions",
+            "collaboration_type": "Government-funded, policy-oriented",
+            "link": "icssr.org",
+            "status": "Open"
+        },
+        {
+            "title": "Society for Innovation and Development (SID) — Industry-Sponsored Projects",
+            "organization": "IISc Bangalore",
+            "domain": "Mechanical, Electrical, Aerospace, Energy etc.",
+            "type": "Industry-Sponsored Research Consultancy",
+            "eligibility": "Faculty proposes to SID for industry tie-up",
+            "collaboration_type": "Direct academia–industry contract research",
+            "link": "sid.iisc.ac.in",
+            "status": "Open"
+        },
+        {
+            "title": "SPARC (Scheme for Promotion of Academic and Research Collaboration)",
+            "organization": "Ministry of Education, Govt. of India (coordinated via IIT Kharagpur SPARC Cell)",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "type": "International Research Collaboration Grant",
+            "eligibility": "Any faculty at an eligible Indian HEI, partnering with a foreign co-PI",
+            "collaboration_type": "Indian institution + foreign university joint research",
+            "link": "sparc.iitkgp.ac.in",
+            "status": "Open"
+        },
+        {
+            "title": "GIAN (Global Initiative of Academic Networks)",
+            "organization": "Ministry of Education",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "type": "Short-term Visiting Faculty Course Scheme",
+            "eligibility": "Host: Indian faculty; Visiting: international academician",
+            "collaboration_type": "Indian institute hosts a foreign expert to co-teach a course",
+            "link": "gian.iitkgp.ac.in",
+            "status": "Open"
+        },
+        {
+            "title": "VAJRA (Visiting Advanced Joint Research) Faculty Scheme",
+            "organization": "SERB, DST",
+            "domain": "CSE/IT/AIML/ECE/EEE",
+            "type": "Visiting/Adjunct Faculty Research Scheme",
+            "eligibility": "Host Indian faculty + NRI/PIO/OCI visiting scientist",
+            "collaboration_type": "Long-duration joint research residency in India",
+            "link": "via serb.gov.in",
+            "status": "Open"
+        },
+        {
+            "title": "ISRO RESPOND (Research Sponsored Programme)",
+            "organization": "Indian Space Research Organisation (ISRO), admin by Physical Research Laboratory",
+            "domain": "ECE/EEE/CSE",
+            "type": "Sponsored Research Project",
+            "eligibility": "Faculty at institutions with a Space Technology Cell",
+            "collaboration_type": "Academia–ISRO joint R&D",
+            "link": "isro.gov.in/sponsored-research-respond",
+            "status": "Open"
         }
     ],
-
     "industrial_training": [
         {
             "title": "Faculty Industrial Training Program",
@@ -62,9 +589,98 @@
             "mode": "Hybrid",
             "duration": "4 Weeks",
             "status": "Open"
+        },
+        {
+            "title": "IUCEE Industry Internship Program for Faculty",
+            "organization": null,
+            "domain": "CSE/IT/ECE/AIML/EEE",
+            "mode": "Offline",
+            "duration": "Varies",
+            "eligibility": "Faculty at IUCEE consortium member institutions",
+            "status": "Ongoing",
+            "link": "iucee.org/faculty-development"
+        },
+        {
+            "title": "ASD Industrial Training & Internship for Faculty",
+            "organization": null,
+            "domain": "CSE/ IT/ ECE/ EEE/Civil/ AI/DS",
+            "mode": "Online",
+            "duration": "Flexible: 2/3/4/6/8/12 weeks",
+            "eligibility": "Faculty from engineering/diploma colleges (per institution's certificate requirement)",
+            "status": "Ongoing",
+            "link": "asd.org.in"
+        },
+        {
+            "title": "AICTE-CII India Innovation Initiative (i3)",
+            "organization": null,
+            "domain": "Applied innovation across engineering domains",
+            "mode": "Offline",
+            "duration": "Program-based",
+            "eligibility": "Faculty at AICTE-approved institutions",
+            "status": "Ongoing",
+            "link": "aicte-india.org"
+        },
+        {
+            "title": "Society for Innovation and Development (SID) Industry Consultancy Attachment — model programme",
+            "organization": null,
+            "domain": "Mechanical, Electrical, Energy, Aerospace etc.",
+            "mode": "Offline",
+            "duration": "Project-based",
+            "eligibility": "Faculty proposing/joining an industry-sponsored consultancy project",
+            "status": "Ongoing",
+            "link": "sid.iisc.ac.in"
+        },
+        {
+            "title": "AICTE Industry Fellowship Programme (IFP) 2026–27",
+            "organization": null,
+            "domain": "CSE/IT/ECE/AIML/EEE",
+            "mode": "Offline",
+            "duration": "1 year",
+            "eligibility": "Assistant/Associate Professors at AICTE-approved institutions (NOC from Principal/Director required)",
+            "status": "Upcoming",
+            "link": "ifp.aicte.gov.in"
+        },
+        {
+            "title": "IUCEE Industry Internship Program for Faculty",
+            "organization": null,
+            "domain": "CSE/IT/ECE/AIML/EEE",
+            "mode": "Offline",
+            "duration": "Varies",
+            "eligibility": "Faculty at IUCEE consortium member institutions",
+            "status": "Ongoing",
+            "link": "iucee.org/faculty-development"
+        },
+        {
+            "title": "ASD Industrial Training & Internship for Faculty",
+            "organization": null,
+            "domain": "CSE/IT/ECE/AIML/EEE",
+            "mode": "Online",
+            "duration": "2-12 weeks",
+            "eligibility": "Faculty from engineering/diploma colleges",
+            "status": "Ongoing",
+            "link": "asd.org.in"
+        },
+        {
+            "title": "AICTE-CII India Innovation Initiative (i3) — Faculty Industry Attachment",
+            "organization": null,
+            "domain": "CSE/IT/ECE/AIML/EEE",
+            "mode": "Offline",
+            "duration": "Program-based",
+            "eligibility": "Faculty at AICTE-approved institutions",
+            "status": "Ongoing",
+            "link": "aicte-india.org"
+        },
+        {
+            "title": "Infosys Faculty Training (via EduSkills partnership)",
+            "organization": null,
+            "domain": "AIML/CSE",
+            "mode": "hybrid",
+            "duration": null,
+            "eligibility": "Faculty nominated by their institution",
+            "status": "Ongoing",
+            "link": "https://infyspringboard.onwingspan.com/web/en/login"
         }
     ],
-
     "consultancy": [
         {
             "title": "Industry Data Analytics Project",
@@ -72,9 +688,148 @@
             "domain": "Data Analytics",
             "type": "Consultancy",
             "status": "Open"
+        },
+        {
+            "title": "AI/Data Science Consultancy & Skill Development Project",
+            "organization": "Elevatebox Solutions, Hyderabad",
+            "domain": "AI, Data Science, Cloud Architecture, DevOps, AI Automation, Software Development",
+            "type": "Consultancy + Internships + Skill Development + Research (Industry-Academia MoU)",
+            "eligibility": "Dr. B.V. Kiranmayee, Dr. V. Baby, Dr. Md. Thayyaba Khatoon, Dr. N. Sandeep Chaitanya (VNR VJIET, Hyderabad - CSE Dept.)",
+            "status": "Ongoing",
+            "contact": null,
+            "link": "vnrvjiet.ac.in"
+        },
+        {
+            "title": "Software Development & Consultancy - AI/ML, Web & Mobile Enterprise Apps",
+            "organization": "PupilSolutions Private Limited, Hyderabad",
+            "domain": "Computer Science, AI, Machine & Deep Learning, Web & Mobile Enterprise Applications",
+            "type": "Skill Development + Research & Innovation Collaboration + Software Development/Consultancy",
+            "eligibility": "Dr. V. Baby, Mr. Vijayakumar (VNR VJIET, Hyderabad - CSE Dept.)",
+            "status": "Ongoing",
+            "contact": null,
+            "link": "vnrvjiet.ac.in"
+        },
+        {
+            "title": "Industry-Academia MoU (Automotive/EV Manufacturing)",
+            "organization": "Captain Tractors Pvt. Ltd.",
+            "domain": "Mechanical/Automotive Engineering, EV Systems",
+            "type": "Institutional MoU - joint training, projects",
+            "eligibility": "VVP Engineering College, Dept. of Mechanical Engineering",
+            "status": "Ongoing",
+            "contact": "info@vvpedulink.ac.in | +91 91732 15401",
+            "link": "vvpedulink.ac.in"
+        },
+        {
+            "title": "Consultancy MoU with University Partner",
+            "organization": "CHRIST (Deemed to be University), Bengaluru",
+            "domain": "Cross-disciplinary (Faculty/student exchange, ICT-enabled learning, virtual labs)",
+            "type": "Institutional Consultancy MoU (Academia-Academia)",
+            "eligibility": "Sahyadri College of Engineering & Management - CSE/ECE Depts.",
+            "status": "Ongoing",
+            "contact": "principal@sahyadri.edu.in | 0824-2277222",
+            "link": "sahyadri.edu.in"
+        },
+        {
+            "title": "Industry-Academia Engagement Initiative (IAEI)",
+            "organization": "Indian Electrical and Electronics Manufacturers' Association (IEEMA)",
+            "domain": "Electrical & Electronics Engineering",
+            "type": "Long-term institutional partnership - curriculum alignment, research, startups",
+            "eligibility": "Delhi Technological University (DTU)",
+            "status": "Ongoing",
+            "contact": null,
+            "link": "dtu.ac.in"
+        },
+        {
+            "title": "Sponsored Research and Industrial Consultancy (SPORIC) - Open Call for Proposals",
+            "organization": "VIT",
+            "domain": "All engineering domains (open call, varies by scheme: DST, DST-TDB bilateral calls etc.)",
+            "type": "Open standing channel - faculty submit proposals for sponsored/industrial consultancy",
+            "eligibility": "Any interested faculty (via institutional Consultancy Cell)",
+            "status": "Ongoing - periodic calls",
+            "contact": "deancc.sponresearch@vit.ac.in | +91 44 3993 1555",
+            "link": "vit.ac.in/research/call-for-proposals"
+        },
+        {
+            "title": "Campus Connect Industry-Academia Program",
+            "organization": "Infosys",
+            "domain": "IT, Software Engineering (industry-oriented courses for faculty)",
+            "type": "Institutional MoU - faculty-enabled training + student technology exposure",
+            "eligibility": "Any partnering engineering college's CSE/IT Dept.",
+            "status": "Ongoing",
+            "contact": null,
+            "link": "https://www.infosys.com/about/esg/social/employee-development/campus-connect.html"
+        },
+        {
+            "title": "EV Technology Centre of Excellence + Consultancy Project",
+            "organization": "KETO Motors",
+            "domain": "Electric Vehicle (EV) Technology, Clean Mobility",
+            "type": "MoU - Consultancy + R&D + Internships/Placements + Faculty & Student Mentoring (5-year term)",
+            "eligibility": "Anurag University, Hyderabad - Engineering faculty (EV/Automotive)",
+            "status": "ongoing",
+            "contact": "placements@anurag.edu.in | +91 9959613556 (Dr. Siddhartha Ghosh, Director, Office of Industry Alliances)",
+            "link": "anurag.edu.in"
+        },
+        {
+            "title": "BEST (Bajaj Engineering Skills Training) Centre",
+            "organization": "Bajaj Auto Limited",
+            "domain": "Embedded Systems, Firmware, Industry-ready skills training",
+            "type": "MoU - Skills Training Centre establishment",
+            "eligibility": "G. Narayanamma Institute of Technology and Science (GNITS), Hyderabad - ETE Dept.",
+            "status": "ongoing",
+            "contact": "+91-040-29565856",
+            "link": "gnits.ac.in"
+        },
+        {
+            "title": "Academia-Industry Collaboration (Guest Lectures, Industrial Visits, Skill Development)",
+            "organization": "BSNL",
+            "domain": "Telecom, Electronics & Communication",
+            "type": "MoU - Guest lectures + Industrial visits + Technical skill development",
+            "eligibility": "GNITS, Hyderabad - ETE Dept.",
+            "status": "ongoing",
+            "contact": "+91-040-29565856",
+            "link": "gnits.ac.in"
+        },
+        {
+            "title": "Joint Research, Technical Training & Patent Development",
+            "organization": "BLOQ Quantum Technology",
+            "domain": "Quantum Computing/Technology",
+            "type": "MoU - Joint research + Technical training + Patent development",
+            "eligibility": "Srirama Engineering College, Tirupati",
+            "status": "ongoing",
+            "contact": null,
+            "link": "https://www.bloq.in/blog/bloq-quantum-srirama-partnership"
+        },
+        {
+            "title": "Industry-Academia Collaboration (AI, Quantum Technologies, Cybersecurity)",
+            "organization": "Mitsubishi Electric Corporation",
+            "domain": "AI, Quantum Technologies, Cybersecurity",
+            "type": "International MoU - Joint research + Personnel/faculty exchange",
+            "eligibility": "IIT Hyderabad",
+            "status": "ongoing",
+            "contact": "inbound.ir@iith.ac.in",
+            "link": "ir.iith.ac.in"
+        },
+        {
+            "title": "NABL-Accredited Industry Consultancy (Civil Engineering testing)",
+            "organization": "GHMC (Greater Hyderabad Municipal Corporation) - Third-Party Quality Control",
+            "domain": "Civil Engineering, Materials Testing, Quality Control",
+            "type": "Standing Consultancy Accreditation (NABL) - paid testing/consultancy services",
+            "eligibility": "Lords Institute of Engineering and Technology, Hyderabad - Civil Engg. Dept.",
+            "status": "ongoing",
+            "contact": "srmkrishna@lords.ac.in | +91 8247370922 (Dr. S.R.M. Krishna, IIIC)",
+            "link": "lords.ac.in"
+        },
+        {
+            "title": "AICTE-VAANI Workshop Grant",
+            "organization": "AICTE",
+            "domain": "Mechanical Engineering (Vibration/Acoustics - VAANI programme)",
+            "type": "Government-sanctioned Workshop Grant (Rs.2,00,000)",
+            "eligibility": "Lords Institute of Engineering and Technology - Mechanical Dept.",
+            "status": "ongoing",
+            "contact": "principal@lords.ac.in | +91-6309012442/43",
+            "link": "lords.ac.in"
         }
     ],
-
     "collaboration": [
         {
             "title": "Industry Guest Lecture",
