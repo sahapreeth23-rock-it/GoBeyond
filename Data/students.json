@@ -1,18 +1,233 @@
-{
-  "student_id": 1,
-  "name": "Ananya",
-  "year": 3,
-  "branch": "Computer Science",
-  "skills": [
-    "Python",
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "Git"
-  ],
-  "interests": [
-    "Artificial Intelligence",
-    "Machine Learning"
-  ],
-  "career_goal": "AI/ML Engineer"
-}
+[
+  {
+    "student_id": 1,
+    "name": "Ananya",
+    "year": 3,
+    "branch": "Computer Science",
+    "skills": [
+      "Python",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git"
+    ],
+    "interests": [
+      "Artificial Intelligence",
+      "Machine Learning"
+    ],
+    "career_goal": "AI/ML Engineer"
+  },
+  {
+    "student_id": "S001",
+    "department": "IT",
+    "year": 2,
+    "assessed": true,
+    "eligible": true,
+    "internship_ready": true,
+    "internship_completed": false,
+    "seeking_internship": true,
+    "company": null,
+    "internship_role": null,
+    "internship_duration": null,
+    "technical_skills": [
+      "Python",
+      "SQL",
+      "HTML",
+      "CSS"
+    ],
+    "soft_skills": [
+      "Communication",
+      "Teamwork"
+    ],
+    "certifications": [
+      "Python Basics"
+    ],
+    "interests": [
+      "AI",
+      "Web Development"
+    ],
+    "skills": [
+      "Python",
+      "SQL",
+      "HTML",
+      "CSS"
+    ],
+    "skill_level": "Intermediate"
+  },
+  {
+    "student_id": "S002",
+    "department": "CSE",
+    "year": 3,
+    "assessed": true,
+    "eligible": true,
+    "internship_ready": true,
+    "internship_completed": true,
+    "seeking_internship": false,
+    "company": "TCS",
+    "internship_role": "Data Science Intern",
+    "internship_duration": "2 months",
+    "technical_skills": [
+      "Python",
+      "SQL",
+      "Machine Learning"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Communication"
+    ],
+    "certifications": [
+      "Machine Learning Certificate"
+    ],
+    "interests": [
+      "Data Science",
+      "AI"
+    ],
+    "skills": [
+      "Python",
+      "SQL",
+      "Machine Learning"
+    ],
+    "skill_level": "Advanced"
+  },
+  {
+    "student_id": "S003",
+    "department": "AI/ML",
+    "year": 2,
+    "assessed": true,
+    "eligible": true,
+    "internship_ready": false,
+    "internship_completed": false,
+    "seeking_internship": true,
+    "company": null,
+    "internship_role": null,
+    "internship_duration": null,
+    "technical_skills": [
+      "Python",
+      "NumPy",
+      "Pandas"
+    ],
+    "soft_skills": [
+      "Teamwork",
+      "Communication"
+    ],
+    "certifications": [
+      "Python Certificate"
+    ],
+    "interests": [
+      "AI",
+      "Machine Learning"
+    ],
+    "skills": [
+      "Python",
+      "NumPy",
+      "Pandas"
+    ],
+    "skill_level": "Beginner"
+  },
+  {
+    "student_id": "S004",
+    "department": "CSE",
+    "year": 3,
+    "assessed": true,
+    "eligible": true,
+    "internship_ready": true,
+    "internship_completed": true,
+    "seeking_internship": false,
+    "company": "Infosys",
+    "internship_role": "Web Development Intern",
+    "internship_duration": "3 months",
+    "technical_skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React"
+    ],
+    "soft_skills": [
+      "Leadership",
+      "Teamwork"
+    ],
+    "certifications": [
+      "Web Development Certificate"
+    ],
+    "interests": [
+      "Web Development"
+    ],
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React"
+    ],
+    "skill_level": "Advanced"
+  },
+  {
+    "student_id": "S005",
+    "department": "ECE",
+    "year": 2,
+    "assessed": true,
+    "eligible": true,
+    "internship_ready": false,
+    "internship_completed": false,
+    "seeking_internship": true,
+    "company": null,
+    "internship_role": null,
+    "internship_duration": null,
+    "technical_skills": [
+      "C",
+      "Python",
+      "SQL"
+    ],
+    "soft_skills": [
+      "Communication",
+      "Problem Solving"
+    ],
+    "certifications": [
+      "SQL Basics"
+    ],
+    "interests": [
+      "Cybersecurity",
+      "Data Science"
+    ],
+    "skills": [
+      "C",
+      "Python",
+      "SQL"
+    ],
+    "skill_level": "Beginner"
+  },
+  {
+    "student_id": "S006",
+    "department": "AI/ML",
+    "year": 3,
+    "assessed": true,
+    "eligible": true,
+    "internship_ready": true,
+    "internship_completed": false,
+    "seeking_internship": true,
+    "company": null,
+    "internship_role": null,
+    "internship_duration": null,
+    "technical_skills": [
+      "Python",
+      "Machine Learning",
+      "TensorFlow"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Teamwork"
+    ],
+    "certifications": [
+      "AI/ML Certificate"
+    ],
+    "interests": [
+      "AI",
+      "Machine Learning"
+    ],
+    "skills": [
+      "Python",
+      "Machine Learning",
+      "TensorFlow"
+    ],
+    "skill_level": "Intermediate"
+  }
+]
