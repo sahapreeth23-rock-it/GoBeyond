@@ -108,7 +108,10 @@ with open(
     encoding="utf-8"
 ) as file:
 
-    student = json.load(file)
+    students = json.load(file)
+
+if not isinstance(students, list):
+    students = [students]
 with open(
     APPLICATIONS_FILE,
     "r",
@@ -843,36 +846,116 @@ def personalized_opportunities(
             results
 
     }
-
-
 @app.route(
     "/api/student",
     methods=["POST"]
 )
 def receive_student():
 
-    student = request.get_json()
+    data = request.get_json()
 
+    if not data:
+        return jsonify({
+            "status": "error",
+            "message": "No student data received."
+        }), 400
 
-    print(
-        "Received student data:"
+    # Generate a new student ID
+    existing_ids = []
+
+    for item in students:
+        student_id = item.get("student_id")
+
+        if isinstance(student_id, str) and student_id.startswith("S"):
+            try:
+                existing_ids.append(
+                    int(student_id[1:])
+                )
+            except ValueError:
+                pass
+
+    next_number = max(existing_ids, default=0) + 1
+    new_student_id = f"S{next_number:03d}"
+
+    # Convert onboarding data into the same structure
+    # used by students.json
+    new_student = {
+        "student_id": new_student_id,
+        "name": data.get("name", ""),
+        "college": data.get("college", ""),
+        "branch": data.get("branch", ""),
+        "year": data.get("year", ""),
+        "career_goal": data.get("careerGoal", ""),
+
+        "skills": [
+            skill.get("name", "")
+            for skill in data.get("skills", [])
+        ],
+
+        "technical_skills": [
+            skill.get("name", "")
+            for skill in data.get("skills", [])
+        ],
+
+        "skill_level": (
+            data.get("skills", [{}])[0].get(
+                "proficiency", "Beginner"
+            )
+            if data.get("skills")
+            else "Beginner"
+        ),
+
+        "interests": data.get("interests", []),
+
+        "certifications": (
+            [data.get("certifications")]
+            if data.get("certifications")
+            else []
+        ),
+
+        "projects": data.get("projects", ""),
+        "experience": data.get("experience", ""),
+
+        "assessed": True,
+        "eligible": True,
+        "internship_ready": False,
+        "internship_completed": False,
+        "seeking_internship": True,
+
+        "company": None,
+        "internship_role": None,
+        "internship_duration": None
+    }
+
+    # Add the new student
+    students.append(new_student)
+
+    # Save the updated students list
+    STUDENTS_FILE = os.path.join(
+        DATA_DIR,
+        "students.json"
     )
 
-    print(student)
+    with open(
+        STUDENTS_FILE,
+        "w",
+        encoding="utf-8"
+    ) as file:
 
+        json.dump(
+            students,
+            file,
+            indent=4
+        )
 
-    return {
+    print("New student saved:", new_student)
 
-        "status":
-            "success",
+    return jsonify({
+        "status": "success",
+        "message": "Student profile saved successfully.",
+        "student": new_student
+    }), 201
 
-        "message":
-            "Student data received",
-
-        "student":
-            student
-
-    }
 
 
 # ==================================================
