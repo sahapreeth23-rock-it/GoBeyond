@@ -1304,7 +1304,7 @@
 
     document
         .getElementById("profileForm")
-        .addEventListener("submit", function(event) {
+        .addEventListener("submit", async function(event) {
 
             event.preventDefault();
 
@@ -1351,22 +1351,56 @@
                     document.getElementById("experience").value.trim()
 
             };
+try {
 
+    const response = await fetch(
+        "https://gobeyond-3xid.onrender.com/api/student",
+        {
+            method: "POST",
 
-            localStorage.setItem(
-                "goBeyondProfile",
-                JSON.stringify(profile)
-            );
+            headers: {
+                "Content-Type": "application/json"
+            },
 
+            body: JSON.stringify(profile)
+        }
+    );
 
-            /*
-                TEMPORARY NEXT STEP
+    const result = await response.json();
 
-                Later this will trigger the actual
-                skill/industry analysis flow.
-            */
+    if (!response.ok) {
+        alert(
+            result.message ||
+            "Failed to save your profile."
+        );
+        return;
+    }
 
-            window.location.href ="skill-map.html";
+    // Keep a copy locally for the next page
+    localStorage.setItem(
+        "goBeyondProfile",
+        JSON.stringify(result.student)
+    );
+
+    alert(
+        "Your profile has been saved successfully!"
+    );
+
+    window.location.href = "skill-map.html";
+
+} catch (error) {
+
+    console.error(
+        "Error saving student:",
+        error
+    );
+
+    alert(
+        "Unable to connect to GoBeyond server. Please try again."
+    );
+}
+
+            
 
         });
 
