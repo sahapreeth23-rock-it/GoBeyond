@@ -1896,5 +1896,268 @@
     "duration": "6 months",
     "stipend": "₹6,000–12,000/mo",
     "registration_link": "https://internshala.com/internship/detail/embedded-systems-internship-in-delhi-at-xilir-technologies-llp1786700500"
+  },
+  {
+    "id": 103,
+    "title": "Research Internship",
+    "type": "Internship",
+    "organization": "TCS",
+    "required_skills": [
+      "Computer Science",
+      "Problem Solving",
+      "Research"
+    ],
+    "interests": [
+      "AI/ML",
+      "Computer Science"
+    ],
+    "deadline": "Not specified",
+    "duration": "6–8 weeks / 16–18 weeks",
+    "stipend": "Not specified",
+    "registration_link": "",
+    "preferred_skills": [
+      "AI",
+      "Machine Learning",
+      "Data Science"
+    ],
+    "eligibility": "Final-year BE/BTech, MS, MTech or PhD",
+    "location": "India",
+    "mode": "Varies"
+  },
+  {
+    "id": 104,
+    "title": "Winternship",
+    "type": "Internship",
+    "organization": "Infosys",
+    "required_skills": [
+      "Computer Science",
+      "IT",
+      "Technical Skills"
+    ],
+    "interests": [
+      "Software",
+      "IT"
+    ],
+    "deadline": "Not specified",
+    "duration": "76 days",
+    "stipend": "Not specified",
+    "registration_link": "",
+    "preferred_skills": [
+      "Big Data",
+      "Open Systems"
+    ],
+    "eligibility": "Selected 500 engineering students from CS/IT",
+    "location": "Hyderabad, Chennai, Mangalore",
+    "mode": "Offline"
+  },
+  {
+    "id": 105,
+    "title": "InStep",
+    "type": "Internship",
+    "organization": "Infosys",
+    "required_skills": [
+      "Machine Learning",
+      "Programming",
+      "Problem Solving"
+    ],
+    "interests": [
+      "AI/ML",
+      "Cloud",
+      "Cybersecurity",
+      "IoT"
+    ],
+    "deadline": "Not specified",
+    "duration": "Year-round",
+    "stipend": "Not specified",
+    "registration_link": "",
+    "preferred_skills": [
+      "AI",
+      "Big Data",
+      "Cybersecurity",
+      "Cloud",
+      "IoT"
+    ],
+    "eligibility": "Students from eligible partner universities",
+    "location": "India",
+    "mode": "Offline"
+  },
+  {
+    "id": 106,
+    "title": "Explore Microsoft",
+    "type": "Internship",
+    "organization": "Microsoft",
+    "required_skills": [
+      "Programming",
+      "Software Development"
+    ],
+    "interests": [
+      "Software Development"
+    ],
+    "deadline": "Not specified",
+    "duration": "8 weeks",
+    "stipend": "Not specified",
+    "registration_link": "",
+    "preferred_skills": [
+      "Problem Solving",
+      "Computer Science"
+    ],
+    "eligibility": "1st/2nd year students in technical disciplines",
+    "location": "India",
+    "mode": "Hybrid/Varies"
+  },
+  {
+    "id": 107,
+    "title": "SDE Intern",
+    "type": "Internship",
+    "organization": "Amazon",
+    "required_skills": [
+      "Programming",
+      "Data Structures",
+      "Algorithms",
+      "OOP"
+    ],
+    "interests": [
+      "Software Development"
+    ],
+    "deadline": "Not specified",
+    "duration": "6 months",
+    "stipend": "Not specified",
+    "registration_link": "",
+    "preferred_skills": [
+      "SQL",
+      "AWS",
+      "AI/ML",
+      "Databases"
+    ],
+    "eligibility": "Bachelor's/Master's students in CS or related fields",
+    "location": "India",
+    "mode": "Offline"
+  },
+  {
+    "id": 108,
+    "title": "Systems Development Engineer Intern",
+    "type": "Internship",
+    "organization": "Amazon",
+    "required_skills": [
+      "Computer Science",
+      "Algorithms",
+      "Data Structures"
+    ],
+    "interests": [
+      "Software Development"
+    ],
+    "deadline": "Not specified",
+    "duration": "Varies",
+    "stipend": "Not specified",
+    "registration_link": "",
+    "preferred_skills": [
+      "OOP",
+      "Distributed Systems"
+    ],
+    "eligibility": "Bachelor's students in CS or equivalent",
+    "location": "Bengaluru, Hyderabad, Chennai, Gurugram",
+    "mode": "Offline"
+  },
+  {
+    "id": 109,
+    "title": "Software Development Engineer Intern",
+    "type": "Internship",
+    "organization": "Amazon",
+    "required_skills": [
+      "Programming",
+      "Data Structures",
+      "Algorithms"
+    ],
+    "interests": [
+      "Software Development"
+    ],
+    "deadline": "Not specified",
+    "duration": "2 months",
+    "stipend": "Not specified",
+    "registration_link": "",
+    "preferred_skills": [
+      "Cloud",
+      "Machine Learning",
+      "SQL"
+    ],
+    "eligibility": "Computer Science/related degree students",
+    "location": "Bengaluru",
+    "mode": "Offline"
+  },
+  {
+    "id": 110,
+    "title": "Programmer Analyst Intern",
+    "type": "Internship",
+    "organization": "Amazon",
+    "required_skills": [
+      "Programming",
+      "Problem Solving",
+      "Software Development"
+    ],
+    "interests": [
+      "Software/IT"
+    ],
+    "deadline": "Not specified",
+    "duration": "6 months",
+    "stipend": "Not specified",
+    "registration_link": "",
+    "preferred_skills": [
+      "Automation",
+      "Databases"
+    ],
+    "eligibility": "Bachelor's/related students",
+    "location": "India, including Hyderabad",
+    "mode": "Varies"
+  },
+  {
+    "id": 111,
+    "title": "Summer Internship",
+    "type": "Internship",
+    "organization": "Qualcomm",
+    "required_skills": [
+      "CSE/ECE/EE/CE technical skills"
+    ],
+    "interests": [
+      "Technology",
+      "ECE",
+      "CSE"
+    ],
+    "deadline": "Not specified",
+    "duration": "3 months",
+    "stipend": "Not specified",
+    "registration_link": "",
+    "preferred_skills": [
+      "Embedded Systems",
+      "Software",
+      "AI/ML"
+    ],
+    "eligibility": "Students pursuing Bachelor's/Master's/PhD in CSE, ECE, EE, CE or equivalent",
+    "location": "India",
+    "mode": "Varies"
+  },
+  {
+    "id": 112,
+    "title": "Internship Program",
+    "type": "Internship",
+    "organization": "Accenture",
+    "required_skills": [
+      "Analytical Skills",
+      "Problem Solving",
+      "Communication"
+    ],
+    "interests": [
+      "Technology"
+    ],
+    "deadline": "Not specified",
+    "duration": "At least 8 weeks",
+    "stipend": "Not specified",
+    "registration_link": "",
+    "preferred_skills": [
+      "Technology",
+      "Business Solutions"
+    ],
+    "eligibility": "Undergraduate students; specific roles may require 2nd/penultimate year",
+    "location": "India/varies",
+    "mode": "Varies"
   }
 ]
