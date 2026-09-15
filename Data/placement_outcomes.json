@@ -1,5 +1,52 @@
 {
-  "records": [],
+  "records": [
+    {
+      "student_id": "S001",
+      "assessed": true,
+      "eligible": true,
+      "ready": true,
+      "status": "seeking"
+    },
+    {
+      "student_id": "S002",
+      "assessed": true,
+      "eligible": true,
+      "ready": true,
+      "status": "placed",
+      "organization": "TCS",
+      "role": "Data Science Intern"
+    },
+    {
+      "student_id": "S003",
+      "assessed": true,
+      "eligible": true,
+      "ready": false,
+      "status": "seeking"
+    },
+    {
+      "student_id": "S004",
+      "assessed": true,
+      "eligible": true,
+      "ready": true,
+      "status": "placed",
+      "organization": "Infosys",
+      "role": "Web Development Intern"
+    },
+    {
+      "student_id": "S005",
+      "assessed": true,
+      "eligible": true,
+      "ready": false,
+      "status": "seeking"
+    },
+    {
+      "student_id": "S006",
+      "assessed": true,
+      "eligible": true,
+      "ready": true,
+      "status": "seeking"
+    }
+  ],
   "fields": {
     "student_id": "Required: match Data/students.json.student_id",
     "assessed": "Optional boolean",
