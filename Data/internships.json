@@ -1922,7 +1922,8 @@
     ],
     "eligibility": "Final-year BE/BTech, MS, MTech or PhD",
     "location": "India",
-    "mode": "Varies"
+    "mode": "Varies",
+    "domain": "AI/ML, Computer Science"
   },
   {
     "id": 104,
@@ -1948,7 +1949,8 @@
     ],
     "eligibility": "Selected 500 engineering students from CS/IT",
     "location": "Hyderabad, Chennai, Mangalore",
-    "mode": "Offline"
+    "mode": "Offline",
+    "domain": "Software, IT"
   },
   {
     "id": 105,
@@ -1979,7 +1981,8 @@
     ],
     "eligibility": "Students from eligible partner universities",
     "location": "India",
-    "mode": "Offline"
+    "mode": "Offline",
+    "domain": "AI/ML, Cloud, Cybersecurity, IoT"
   },
   {
     "id": 106,
@@ -2003,7 +2006,8 @@
     ],
     "eligibility": "1st/2nd year students in technical disciplines",
     "location": "India",
-    "mode": "Hybrid/Varies"
+    "mode": "Hybrid/Varies",
+    "domain": "Software Development"
   },
   {
     "id": 107,
@@ -2031,7 +2035,8 @@
     ],
     "eligibility": "Bachelor's/Master's students in CS or related fields",
     "location": "India",
-    "mode": "Offline"
+    "mode": "Offline",
+    "domain": "Software Development"
   },
   {
     "id": 108,
@@ -2056,7 +2061,8 @@
     ],
     "eligibility": "Bachelor's students in CS or equivalent",
     "location": "Bengaluru, Hyderabad, Chennai, Gurugram",
-    "mode": "Offline"
+    "mode": "Offline",
+    "domain": "Software Development"
   },
   {
     "id": 109,
@@ -2082,7 +2088,8 @@
     ],
     "eligibility": "Computer Science/related degree students",
     "location": "Bengaluru",
-    "mode": "Offline"
+    "mode": "Offline",
+    "domain": "Software Development"
   },
   {
     "id": 110,
@@ -2107,7 +2114,8 @@
     ],
     "eligibility": "Bachelor's/related students",
     "location": "India, including Hyderabad",
-    "mode": "Varies"
+    "mode": "Varies",
+    "domain": "Software/IT"
   },
   {
     "id": 111,
@@ -2133,7 +2141,8 @@
     ],
     "eligibility": "Students pursuing Bachelor's/Master's/PhD in CSE, ECE, EE, CE or equivalent",
     "location": "India",
-    "mode": "Varies"
+    "mode": "Varies",
+    "domain": "Technology, ECE, CSE"
   },
   {
     "id": 112,
@@ -2158,6 +2167,7 @@
     ],
     "eligibility": "Undergraduate students; specific roles may require 2nd/penultimate year",
     "location": "India/varies",
-    "mode": "Varies"
+    "mode": "Varies",
+    "domain": "Technology"
   }
 ]
