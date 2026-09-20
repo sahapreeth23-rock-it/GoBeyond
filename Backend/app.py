@@ -520,7 +520,7 @@ def health():
         "status":
             "GoBeyond backend is running"
     }
-    @app.route("/")
+@app.route("/")
 def index():
 
     return jsonify({
