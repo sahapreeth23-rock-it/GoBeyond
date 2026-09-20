@@ -675,12 +675,11 @@ def get_applications(opportunity_id):
 
         if application["opportunity_id"] == opportunity_id:
 
-            student_id = application["student_id"]
+           student = find_student(
+    application["student_id"]
+)
 
-            if (
-                isinstance(student, dict)
-                and student.get("student_id") == student_id
-            ):
+if student:
                 opportunity_applications.append({
                     "application_id": application["id"],
                     "student_id": student["student_id"],
