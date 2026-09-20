@@ -2600,73 +2600,25 @@ body{
 
 <section class="stats">
 
-
     <div class="stat">
-
-
-        <strong>
-            2.5K+
-        </strong>
-
-
-        <span>
-            Students on Board
-        </span>
-
-
+        <strong id="studentCount">0</strong>
+        <span>Students on Board</span>
     </div>
 
-
-
     <div class="stat">
-
-
-        <strong>
-            1.2K+
-        </strong>
-
-
-        <span>
-            Opportunities Listed
-        </span>
-
-
+        <strong id="opportunityCount">0</strong>
+        <span>Opportunities Listed</span>
     </div>
 
-
-
     <div class="stat">
-
-
-        <strong>
-            95%
-        </strong>
-
-
-        <span>
-            Progress Rate
-        </span>
-
-
+        <strong id="industryOpportunityCount">0</strong>
+        <span>Industry Opportunities</span>
     </div>
 
-
-
     <div class="stat">
-
-
-        <strong>
-            4.8/5
-        </strong>
-
-
-        <span>
-            Student Rating
-        </span>
-
-
+        <strong id="workshopCount">0</strong>
+        <span>Workshops Listed</span>
     </div>
-
 
 </section>
 
@@ -2739,6 +2691,77 @@ window.addEventListener(
 
 </script>
 
+
+<script>
+async function loadLandingPageStats() {
+    try {
+        const [
+            studentsResponse,
+            opportunitiesResponse,
+            internshipsResponse,
+            workshopsResponse,
+            industryResponse
+        ] = await Promise.all([
+            fetch("../Data/students.json"),
+            fetch("../Data/opportunities.json"),
+            fetch("../Data/internships.json"),
+            fetch("../Data/workshops.json"),
+            fetch("../Data/industry_opportunities.json")
+        ]);
+
+        const [
+            students,
+            opportunities,
+            internships,
+            workshops,
+            industryOpportunities
+        ] = await Promise.all([
+            studentsResponse.json(),
+            opportunitiesResponse.json(),
+            internshipsResponse.json(),
+            workshopsResponse.json(),
+            industryResponse.json()
+        ]);
+
+        const totalOpportunities =
+            opportunities.length +
+            internships.length +
+            workshops.length +
+            industryOpportunities.length;
+
+        const studentCount = document.getElementById("studentCount");
+        const opportunityCount = document.getElementById("opportunityCount");
+        const industryOpportunityCount =
+            document.getElementById("industryOpportunityCount");
+        const workshopCount = document.getElementById("workshopCount");
+
+        if (studentCount) {
+            studentCount.textContent = students.length;
+        }
+
+        if (opportunityCount) {
+            opportunityCount.textContent = totalOpportunities;
+        }
+
+        if (industryOpportunityCount) {
+            industryOpportunityCount.textContent =
+                industryOpportunities.length;
+        }
+
+        if (workshopCount) {
+            workshopCount.textContent = workshops.length;
+        }
+
+    } catch (error) {
+        console.error(
+            "Unable to load GoBeyond landing statistics:",
+            error
+        );
+    }
+}
+
+loadLandingPageStats();
+</script>
 
 </body>
 
