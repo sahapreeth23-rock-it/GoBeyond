@@ -11,7 +11,22 @@ app = Flask(__name__)
 # APP / SESSION CONFIGURATION
 # --------------------------------------------------
 
-app.secret_key = "gobeyond-sih-demo-secret-key"
+app.secret_key = os.environ.get(
+    "SECRET_KEY",
+    "gobeyond-sih-demo-secret-key"
+)
+
+# The frontend (github.io) and backend (onrender.com) are different
+# sites. For the browser to store/send the login session cookie on
+# those cross-site fetches it must be SameSite=None; Secure.
+# Render sets the RENDER env var automatically, so local http://
+# development is unaffected.
+if os.environ.get("RENDER"):
+
+    app.config.update(
+        SESSION_COOKIE_SAMESITE="None",
+        SESSION_COOKIE_SECURE=True
+    )
 
 CORS(
     app,
@@ -125,9 +140,19 @@ with open(
 ) as file:
 
     students = json.load(file)
-
 if not isinstance(students, list):
     students = [students]
+def find_student(student_id):
+
+    for item in students:
+
+        if (
+            isinstance(item, dict)
+            and item.get("student_id") == student_id
+        ):
+            return item
+
+    return None
 with open(
     APPLICATIONS_FILE,
     "r",
