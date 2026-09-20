@@ -520,6 +520,14 @@ def health():
         "status":
             "GoBeyond backend is running"
     }
+    @app.route("/")
+def index():
+
+    return jsonify({
+        "service": "GoBeyond API",
+        "status": "running",
+        "health": "/api/health"
+    })
 
 
 @app.route(
@@ -723,11 +731,11 @@ def get_candidate_matches(opportunity_id):
         if application.get("opportunity_id") != opportunity_id:
             continue
 
-        if (
-            not isinstance(student, dict)
-            or student.get("student_id") != application.get("student_id")
-        ):
-            continue
+       student = find_student(
+    application.get("student_id")
+)
+
+if not student:
 
         student_skills = [
             skill.strip().lower()
