@@ -15,6 +15,13 @@ app.secret_key = "gobeyond-sih-demo-secret-key"
 
 CORS(
     app,
+    resources={
+        r"/api/*": {
+            "origins": [
+                "https://sahapreeth23-rock-it.github.io"
+            ]
+        }
+    },
     supports_credentials=True
 )
 
