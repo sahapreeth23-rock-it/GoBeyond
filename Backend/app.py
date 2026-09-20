@@ -19,12 +19,21 @@ CORS(
         r"/api/*": {
             "origins": [
                 "https://sahapreeth23-rock-it.github.io"
+            ],
+            "methods": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE",
+                "OPTIONS"
+            ],
+            "allow_headers": [
+                "Content-Type"
             ]
         }
     },
     supports_credentials=True
 )
-
 
 # --------------------------------------------------
 # DATA PATHS
