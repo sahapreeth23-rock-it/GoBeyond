@@ -683,11 +683,11 @@ def get_applications(opportunity_id):
 
         if application["opportunity_id"] == opportunity_id:
 
-           student = find_student(
-    application["student_id"]
-)
+            student = find_student(
+                application["student_id"]
+            )
 
-if student:
+            if student:
                 opportunity_applications.append({
                     "application_id": application["id"],
                     "student_id": student["student_id"],
@@ -731,11 +731,12 @@ def get_candidate_matches(opportunity_id):
         if application.get("opportunity_id") != opportunity_id:
             continue
 
-       student = find_student(
-    application.get("student_id")
-)
+        student = find_student(
+            application.get("student_id")
+        )
 
-if not student:
+        if not student:
+            continue
 
         student_skills = [
             skill.strip().lower()
