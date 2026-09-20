@@ -1920,6 +1920,13 @@ async function updateOpportunities(careerGoal) {
 
         const opportunities =
             data.opportunities || [];
+        const matchedOpportunitiesEl =
+    document.getElementById("matchedOpportunities");
+
+if (matchedOpportunitiesEl) {
+    matchedOpportunitiesEl.textContent =
+        opportunities.length;
+}
 
 
         const savedProfile =
@@ -2079,27 +2086,35 @@ function calculateSkillMatch(
         !requiredSkills ||
         requiredSkills.length === 0
     ) {
-
         return 0;
-
     }
 
-
     const normalizedStudentSkills =
-        studentSkills.map(
-            skill =>
-                skill.toLowerCase().trim()
-        );
+        (studentSkills || []).map(skill => {
 
+            if (
+                typeof skill === "object" &&
+                skill !== null
+            ) {
+                return String(
+                    skill.name ||
+                    skill.skill ||
+                    ""
+                ).toLowerCase().trim();
+            }
+
+            return String(skill || "")
+                .toLowerCase().trim();
+
+        }).filter(Boolean);
 
     const matchedSkills =
-        requiredSkills.filter(
-            skill =>
-                normalizedStudentSkills.includes(
-                    skill.toLowerCase().trim()
-                )
+        requiredSkills.filter(skill =>
+            normalizedStudentSkills.includes(
+                String(skill || "")
+                    .toLowerCase().trim()
+            )
         );
-
 
     return Math.round(
         (
@@ -2107,7 +2122,6 @@ function calculateSkillMatch(
             requiredSkills.length
         ) * 100
     );
-
 }
 
 
@@ -2121,23 +2135,34 @@ function findSkillGaps(
 ) {
 
     const normalizedStudentSkills =
-        studentSkills.map(
-            skill =>
-                skill.toLowerCase().trim()
-        );
+        (studentSkills || []).map(skill => {
 
+            if (
+                typeof skill === "object" &&
+                skill !== null
+            ) {
+                return String(
+                    skill.name ||
+                    skill.skill ||
+                    ""
+                ).toLowerCase().trim();
+            }
+
+            return String(skill || "")
+                .toLowerCase().trim();
+
+        }).filter(Boolean);
 
     const safeRequiredSkills =
         requiredSkills || [];
 
-
     return safeRequiredSkills.filter(
         skill =>
             !normalizedStudentSkills.includes(
-                skill.toLowerCase().trim()
+                String(skill || "")
+                    .toLowerCase().trim()
             )
     );
-
 }
 
 
@@ -4432,3 +4457,36 @@ if (liveInterests) {
     );
 
 }
+window.addEventListener("pageshow", function () {
+
+    const dashboardPage =
+        document.getElementById("readinessScore");
+
+    if (!dashboardPage) {
+        return;
+    }
+
+    const savedProfile =
+        localStorage.getItem("goBeyondProfile");
+
+    if (!savedProfile) {
+        return;
+    }
+
+    try {
+
+        const profile =
+            JSON.parse(savedProfile);
+
+        updateDashboard(profile);
+
+    } catch (error) {
+
+        console.error(
+            "Unable to refresh dashboard from saved profile:",
+            error
+        );
+
+    }
+
+});
