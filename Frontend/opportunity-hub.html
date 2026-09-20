@@ -579,10 +579,6 @@
             Opportunities
         </a>
 
-        <a href="opportunity-match.html">
-            Opportunity Match
-        </a>
-
         <a href="placement.html">
             Placement
         </a>
@@ -721,116 +717,85 @@ let opportunities = [];
 const categories = {
 
     internship: {
-        title: "💼 Internships",
+        title: "Internships",
         description:
             "Gain real-world experience through internships that match your skills and career goals."
     },
 
     hackathon: {
-        title: "🚀 Hackathons",
+        title: "Hackathons",
         description:
             "Build innovative solutions, compete with other participants and showcase your skills."
     },
 
     workshop: {
-        title: "🧠 Workshops",
+        title: "Workshops",
         description:
             "Learn practical skills through hands-on workshops and expert sessions."
     },
 
-    project: {
-        title: "🛠 Projects",
-        description:
-            "Build real projects that strengthen your portfolio and practical experience."
-    },
-
-    placement: {
-        title: "🎓 Placements",
-        description:
-            "Explore placement opportunities that match your technical profile and career direction."
-    }
-
 };
 
-
 /* ==========================================
-   LOAD ALL BACKEND DATA
+   LOAD REAL OPPORTUNITY DATA
+   FROM THE DATA FOLDER
 ========================================== */
 
-Promise.all([
+function normalizeType(type, fallbackType = "opportunity") {
+    const value = String(type || fallbackType).trim().toLowerCase();
+    if (value.includes("intern")) return "internship";
+    if (value.includes("hack")) return "hackathon";
+    if (value.includes("workshop")) return "workshop";
+    if (value.includes("project")) return "project";
+    if (value.includes("placement") || value.includes("job")) return "placement";
+    return value;
+}
 
-    fetch("http://127.0.0.1:5000/api/opportunities")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load opportunities");
-            }
-            return response.json();
-        }),
+function normalizeOpportunity(item, fallbackType = "opportunity") {
+    return { ...item, type: normalizeType(item.type, fallbackType), title: item.title || item.name || "Opportunity", organization: item.organization || item.organisation || item.company || item.organizer || "Organization not specified", registration_link: item.registration_link || item.registrationLink || item.apply_url || item.applyUrl || item.url || "", required_skills: Array.isArray(item.required_skills) ? item.required_skills : Array.isArray(item.requiredSkills) ? item.requiredSkills : Array.isArray(item.skills) ? item.skills : item.required_skills ? [item.required_skills] : [] };
+}
 
-    fetch("http://127.0.0.1:5000/api/internships")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load internships");
-            }
-            return response.json();
-        }),
+async function loadJSON(path, fallbackType) {
+    const response = await fetch(path, { cache: "no-store" });
+    if (!response.ok) throw new Error("Could not load " + path + " (" + response.status + ")");
+    const data = await response.json();
+    const records = Array.isArray(data) ? data : data.data || data.items || data.opportunities || data.internships || data.workshops || [];
+    if (!Array.isArray(records)) throw new Error(path + " does not contain a valid data array");
+    return records.map(item => normalizeOpportunity(item, fallbackType));
+}
 
-    fetch("http://127.0.0.1:5000/api/workshops")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load workshops");
-            }
-            return response.json();
-        })
+async function loadAllOpportunityData() {
+    try {
+        const results = await Promise.allSettled([
+            loadJSON("../Data/internships.json", "internship"),
+            loadJSON("../Data/workshops.json", "workshop"),
+            loadJSON("../Data/opportunities.json", "opportunity")
+        ]);
+        opportunities = [];
+        const fileNames = ["internships.json", "workshops.json", "opportunities.json"];
+        const failedFiles = [];
+        results.forEach((result, index) => {
+            if (result.status === "fulfilled") opportunities.push(...result.value);
+            else { failedFiles.push(fileNames[index]); console.error("Failed to load " + fileNames[index] + ":", result.reason); }
+        });
+        console.log("GoBeyond REAL DATA:", opportunities);
+        console.log("Total opportunities:", opportunities.length);
+        console.log("Internships:", opportunities.filter(op => op.type === "internship").length);
+        console.log("Hackathons:", opportunities.filter(op => op.type === "hackathon").length);
+        console.log("Workshops:", opportunities.filter(op => op.type === "workshop").length);
+        console.log("Projects:", opportunities.filter(op => op.type === "project").length);
+        console.log("Placements:", opportunities.filter(op => op.type === "placement").length);
+        if (!opportunities.length) throw new Error("No opportunity records were found in the Data folder.");
+        if (failedFiles.length) console.warn("These files could not be loaded:", failedFiles);
+        showPage();
+    } catch (error) {
+        console.error("Error loading opportunity data:", error);
+        const grid = document.getElementById("categoryGrid");
+        if (grid) grid.innerHTML = `<div class="error"><h3>Unable to load opportunity data</h3><p>${error.message}</p><p>Make sure the Data folder contains: internships.json, workshops.json and opportunities.json.</p></div>`;
+    }
+}
 
-])
-
-.then(([opportunityData, internshipData, workshopData]) => {
-
-    /*
-        Combine every backend source.
-
-        opportunities.json
-        internships.json
-        workshops.json
-    */
-
-    opportunities = [
-        ...opportunityData,
-        ...internshipData,
-        ...workshopData
-    ];
-
-    console.log("GoBeyond - All Opportunities:", opportunities);
-    console.log("Total opportunities:", opportunities.length);
-
-    showPage();
-
-})
-
-.catch(error => {
-
-    console.error("Error loading opportunities:", error);
-
-    document.getElementById("categoryGrid").innerHTML = `
-
-        <div class="error">
-
-            <h3>Unable to load opportunities</h3>
-
-            <p>
-                Please make sure the Flask backend is running.
-            </p>
-
-            <p>
-                Error: ${error.message}
-            </p>
-
-        </div>
-
-    `;
-
-});
+loadAllOpportunityData();
 
 
 /* ==========================================
@@ -881,9 +846,7 @@ function renderCategoryCards() {
     const types = [
         "internship",
         "hackathon",
-        "workshop",
-        "project",
-        "placement"
+        "workshop"
     ];
 
     const icons = {
@@ -1193,16 +1156,7 @@ function renderOpportunities(type) {
                     >
                         Register Now
                     </a>
-
-
-                    <a
-                        class="btn secondary"
-                        href="opportunity-match.html?id=${safeId}&type=${safeType}"
-                    >
-                        View Details
-                    </a>
-
-                </div>
+</div>
 
             </article>
 
